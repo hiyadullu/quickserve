@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script defer src="dashboard.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>QuickServe</h2>
+        <ul>
+            <li class="active">Overview</li>
+            <li>New</li>
+            <li>Processing</li>
+            <li>Dispatched</li>
+            <li>Delivered</li>
+            <li>Cancelled</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <!-- Navbar -->
+        <div class="navbar">
+            <h2>My Orders</h2>
+            <input type="text" placeholder="Search order...">
+        </div>
+
+        <!-- Order Sections -->
+        <div class="orders-container">
+            <!-- New Orders -->
+            <div class="order-section">
+                <h3>NEW ORDERS <span class="count">5</span></h3>
+                <div class="order-card red">
+                    <p>#1235</p>
+                    <p>2 x Aloo Parantha, 3 x French Fries, 1 x Burger +2 more</p>
+                    <select class="order-status">
+                        <option value="accept">Accept</option>
+                        <option value="decline">Decline</option>
+                        
+                    </select>
+                </div>
+                <div class="order-card red">
+                    <p>#1236</p>
+                    <p>3 x French Fries, 1 x Burger +2 more</p>
+                    <select class="order-status">
+                        <option value="accept">Accept</option>
+                        <option value="decline">Decline</option>
+                
+                    </select>
+                </div>
+            </div>
+
+            <!-- Processing Orders -->
+            <div class="order-section">
+                <h3>PROCESSING <span class="count">12</span></h3>
+                <div class="order-card orange">
+                    <p>#1236</p>
+                    <p>2 x Aloo Parantha, 3 x French Fries, 1 x Burger</p>
+                    <select class="order-status">
+                        <option value="processing">Processing</option>
+                        <option value="handover">Handover</option>
+                    </select>
+                </div>
+                <div class="order-card yellow">
+                    <p>#3235</p>
+                    <p>3 x French Fries, 1 x Burger</p>
+                    <select class="order-status">
+                        <option value="processing">Processing</option>
+                        <option value="handover">Handover</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Dispatched Orders -->
+            <div class="order-section">
+                <h3>DISPATCHED <span class="count">2</span></h3>
+                <div class="order-card gray">
+                    <p>#2235</p>
+                    <p>Dispatched at 12:15 PM</p>
+                </div>
+                <div class="order-card gray">
+                    <p>#1235</p>
+                    <p>Dispatched at 12:15 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

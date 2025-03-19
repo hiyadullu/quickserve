@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #004643; /* Soft Mint Green */
+    background-color: #ffffff; /* Soft Mint Green */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@ body {
 .text-section h1 {
     font-size: 40px;
     font-weight: bold;
-    color: #faf4d3; /* Dark Green */
+    color: #000000; /* Dark Green */
 }
 
 .text-section p {
@@ -35,7 +35,7 @@ body {
 }
 
 .explore-btn {
-    background-color: #D50000; /* Red */
+    background-color: #1e00ff; /* Red */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -46,7 +46,7 @@ body {
 }
 
 .explore-btn:hover {
-    background-color: #B71C1C;
+    background-color: #2c73f8;
 }
 
 /* Right Side */

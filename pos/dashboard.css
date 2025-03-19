@@ -1,0 +1,159 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    margin: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #ddd;
+}
+
+/* Delivery header */
+.sidebar h2 {
+    width: 85%;
+    background: black;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li:hover, .sidebar ul li.active {
+    background: #f4f4f4;
+    font-weight: bold;
+    border-left: 4px solid blue;
+}
+
+/* Sidebar Icons */
+.sidebar ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+
+/* Main Content */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navbar input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Orders Container */
+.orders-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Order Sections */
+.order-section {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-section h3 {
+    font-size: 18px;
+}
+
+.count {
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.order-card {
+    background: #fff5f5;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid red;
+    width: 300px;
+}
+
+/* Dropdown Styling */
+.order-status {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+/* Different colors based on status */
+.order-status[value="accept"] { border-left: 5px solid green; }
+.order-status[value="decline"] { border-left: 5px solid red; }
+.order-status[value="processing"] { border-left: 5px solid orange; }
+.order-status[value="handover"] { border-left: 5px solid yellow; }
+
+
+
+/* Buttons */
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.accept-btn {
+    background: red;
+    color: white;
+}
+
+.process-btn {
+    background: orange;
+    color: white;
+}
+
+.handover-btn {
+    background: yellow;
+    color: black;
+}
