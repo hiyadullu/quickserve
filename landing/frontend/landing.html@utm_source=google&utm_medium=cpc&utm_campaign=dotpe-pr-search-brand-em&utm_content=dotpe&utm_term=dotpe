@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dotpe</title>
+  <!-- ================================== SEO TAGS START ================================== -->
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="description" content="Integrated omni-channel solutions to start, manage, and grow any business.">
+  <meta name="image" content="">
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="">
+  <meta itemprop="description" content="">
+  <meta itemprop="image" content="">
+  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+  <meta name="og:title" content="">
+  <meta name="og:description" content="Integrated omni-channel solutions to start, manage, and grow any business.">
+  <meta name="og:image" content="">
+  <meta name="og:url" content="">
+  <meta name="og:site_name" content="">
+  <meta name="og:type" content="website">
+  <meta name="theme-color" content="#050303">
+  <!-- ================================== SEO TAGS END ================================== -->
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.dotpe.in/cfe/image/black-web-logo.svg" id="faviconTag">
+  <link rel="icon" type="image/svg" sizes="32x32" href="https://cdn.dotpe.in/cfe/image/black-web-logo.svg"
+    id="faviconTag">
+  <link rel="icon" type="image/svg" sizes="16x16" href="https://cdn.dotpe.in/cfe/image/black-web-logo.svg"
+    id="faviconTag">
+  <link rel="manifest" href="https://dotpe.in/favicon/site.webmanifest">
+ <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="modal-style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="landing-mob.css">
+  <link rel="stylesheet" href="css-landing-page.css">
+  <link rel="stylesheet" href="dropdown.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.css"
+    integrity="sha512-ZpcaZ031fgI0ryEPFCdjUms80bt0oV453+GxoI0+Xa4rYj7FQRXy1Lsi7BSkvlpiJcq3iYdxZX5/oDHhj/uomw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://use.typekit.net/gpt2ihc.css">
+  <link rel="prefetch" href="https://fonts.googleapis.com">
+  <link rel="prefetch" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '262561675315476');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height=“1” width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=262561675315476&ev=PageView&noscript=1" /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNGSBYFQ5S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-ZNGSBYFQ5S');
+    gtag('config', 'AW-417289495');
+  </script>
+
+  <!-- Hotjar Tracking Code for https://dotpe.in/landing.html -->
+  <script>
+    (function (h, o, t, j, a, r) {
+      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+      h._hjSettings = { hjid: 2571014, hjsv: 6 };
+      a = o.getElementsByTagName('head')[0];
+      r = o.createElement('script'); r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  </script>
+<style>
+input[type=checkbox]:checked+label:before {
+    background-color: #27A251;
+    border-color: #27A251;
+    color: #ffffff;
+}
+@media(min-width: 320px) and (max-width: 767px) {
+        .request-demo-modal .form-group {
+        padding-left: 5px!important;
+        padding-right: 5px!important;
+      }
+      .request-demo-modal form button {
+        height: auto!important;
+      } 
+    }
+</style>
+</head>
+
+<body>
+  <section class="top-area-part">
+    <nav class="landing-new-logo">
+      <div class="container">
+
+        <div class="logo-image-main">
+          <img src="https://cdn.dotpe.in/cfe/image/white-logo.png">
+        </div>
+
+        <div class="text-area-section">
+          <h1>Bring your <br /> business online</h1>
+          <p>With DotPe, the power is now with you.</p>
+          <button type="button" id="landing-form-show-update" data-toggle="modal" data-target="#requestDemoModal">Request
+            Demo
+          </button>
+        </div>
+      </div>
+      <div class="slider-top-head-section">
+        <div class="container">
+          <div class="swiper-container swiper1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="https://cdn.dotpe.in/cfe/image/landing-update-image-20-9-nov-2021.jpg" alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img src="https://cdn.dotpe.in/cfe/image/landing-final-image-3-16-nov-2021.jpg" alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img src="https://cdn.dotpe.in/cfe/image/landing-update-image-2-9-nov-2021.jpg" alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img src="https://cdn.dotpe.in/cfe/image/landing-update-image-19-9-nov-2021.jpg" alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img src="https://cdn.dotpe.in/cfe/image/landing-final-image-2-16-nov-2021.jpg" alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img src="https://cdn.dotpe.in/cfe/image/landing-final-image-1-16-nov-2021.jpg" alt="carousel-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-header-image-section">
+        <div class="container">
+          <div class="row">
+            <div class="final-slider-list-final">
+              <ul>
+                <li class="image-rest-detail">
+                  <img src="https://cdn.dotpe.in/cfe/image/landing-update-image-20-9-nov-2021.jpg" alt="carousel-img">
+                </li>
+                <li class="image-rest-detail">
+                  <img src="https://cdn.dotpe.in/cfe/image/landing-final-image-3-16-nov-2021.jpg" alt="carousel-img">
+                </li>
+                <li class="image-rest-detail">
+                  <img src="https://cdn.dotpe.in/cfe/image/landing-update-image-2-9-nov-2021.jpg" alt="carousel-img">
+                </li>
+                <li class="image-rest-detail">
+                  <img src="https://cdn.dotpe.in/cfe/image/landing-update-image-19-9-nov-2021.jpg" alt="carousel-img">
+                </li>
+                <li class="image-rest-detail">
+                  <img src="https://cdn.dotpe.in/cfe/image/landing-final-image-2-16-nov-2021.jpg" alt="carousel-img">
+                </li>
+                <li class="image-rest-detail">
+                  <img src="https://cdn.dotpe.in/cfe/image/landing-final-image-1-16-nov-2021.jpg" alt="carousel-img">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="sticky-header demo">
+      <span class="connect-text">
+        Connect with our team
+      </span>
+      <div class="cta-container">
+        <a class="btn btn-primary demo-btn CTA-button-width" id="form-show" data-toggle="modal" data-target="#requestDemoModal">Request
+          Demo</a>
+      </div>
+    </div>
+    <section class="only-heading md-mt40" id="section_demo_form">
+      <div class="backdrop" id="backdrop" onclick="formClose()"></div>
+      <div class="form-main-wrapper" id="demo_form">
+        <div id="demo_form_sub">
+          <form action="landing.html@utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=dotpe-pr-search-brand-em&amp;utm_content=dotpe&amp;utm_term=dotpe#" method="POST">
+            <div class="form-group">
+              <div class="form-group-header">
+                <span class="form-heading">Setup Free Demo</span>
+                <img onclick="formClose()" id="form-close" src="https://cdn.dotpe.in/cfe/image/Icon-close.svg"
+                  alt="form-close">
+              </div>
+              <div class="image-pop-detail-wrap">
+                <div class="div-parent">
+                  <input type="text" class="form-control mb-4" placeholder="Your Name" id="name" name="name" required>
+                  <p id="name-err" class="error"></p>
+                </div>
+                <div class="div-parent">
+                  <input type="number" pattern="[0-9\s]*"
+                    onkeydown="if(['Space'].includes(arguments[0].code)){return false;}" inputmode="tel"
+                    class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+                  <p id="phone-err" class="error"></p>
+                </div>
+                <div class="div-parent">
+                  <input type="email" class="form-control mb-4" placeholder="Email ID" id="email" name="email" required>
+                  <p id="email-err" class="error"></p>
+                </div>
+              </div>
+              <div class="msg-heading-part">
+                <p>Select Business Category</p>
+              </div>
+              <div class="div-parent test">
+                <ul class="donate-now" id="form-issue-list">
+                  <li>
+                    <input type="radio" id="rck" name="restaurant" value="Restaurant & Cloud Kitchen"
+                      class="bsuinesstype" required />
+                    <label for="rck">Restaurant & Cloud Kitchen</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="cnb" name="restaurant" value="Cafe & Bakery" class="bsuinesstype"
+                      required />
+                    <label for="cnb">Cafe & Bakery</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="sm" name="restaurant" value="Supermarkets" class="bsuinesstype" required />
+                    <label for="sm">Supermarkets</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="mnp" name="restaurant" value="Meat & Poultry" class="bsuinesstype"
+                      required />
+                    <label for="mnp">Meat & Poultry</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="fnv" name="restaurant" value="Fruits & Vegetables" class="bsuinesstype"
+                      required />
+                    <label for="fnv">Fruits & Vegetables</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="faa" name="restaurant" value="Fashion & Accessories" class="bsuinesstype"
+                      required />
+                    <label for="faa">Fashion & Accessories</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="mae" name="restaurant" value="Mobile & Electronics" class="bsuinesstype"
+                      required />
+                    <label for="mae">Mobile & Electronics</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="other" name="restaurant" value="Other" class="bsuinesstype" required />
+                    <label for="other">Other</label>
+                  </li>
+                </ul>
+                <p id="restaurant-error" class="display-error-time"></p>
+              </div>
+
+            </div>
+            <div class="checkbox row checkbox-square checkbox-green conset-div text-left">
+              <input class="checkbox-input" id="consent-checkbox" type="checkbox" checked>
+              <label class="consent-checkbox" for="consent-checkbox">I hereby provide my consent to
+                receive emails, phone calls, messages and other communications from Dotpe to understand
+                about Dotpe’s services, offerings, promotions and other related information.</label>
+            </div>
+            <button type="button" id="request-submit-form" class="btn btn-primary btn-block">Request
+              Demo</button>
+          </form>
+        </div>
+        <div id="form-success"></div>
+      </div>
+
+    </section>
+    <section class="only-heading md-mt40" id="success-popup">
+      <img src="https://cdn.dotpe.in/cfe/image/form-success.png" alt="form-success">
+      <p class="">Request sent successfully!</p>
+      <p>we will connect with you soon</p>
+    </section>
+    <div class="landing-tab-list">
+      <div class="container">
+        <div class="main-head-online">
+          <h2>Everything <br /> you need to <span class="sell-online"><br /> sell & grow <br /> online</span></h2>
+        </div>
+        <div class="tab-section-area final">
+          <div class="row tab-update">
+            <div class="new-update-tab-section" id="new-tab-5" onclick="gotoCategory('tab-5')">
+              <p>E-Commerce Website</p>
+            </div>
+            <div class="new-update-tab-section" id="new-tab-1" onclick="gotoCategory('tab-1')">
+              <p>Payments</p>
+            </div>
+            <div class="new-update-tab-section" id="new-tab-2" onclick="gotoCategory('tab-2')">
+              <p>Hyperlocal Delivery</p>
+            </div>
+            <div class="new-update-tab-section" id="new-tab-3" onclick="gotoCategory('tab-3')">
+              <p>Order Management</p>
+            </div>
+            <div class="new-update-tab-section" id="new-tab-4" onclick="gotoCategory('tab-4')">
+              <p>Offers and Promotions</p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-new-section-detail">
+          <div class="container">
+            <div class="row tab-final">
+              <div class="listing-update">
+                <ul>
+                  <li class="new-update-tab-section-final" id="new-tab-5" onclick="gotoCategory('tab-5')">
+                    <p>E-Commerce Website</p>
+                  </li>
+                  <li class="new-update-tab-section-final" id="new-tab-1" onclick="gotoCategory('tab-1')">
+                    <p>Payments</p>
+                  </li>
+                  <li class="new-update-tab-section-final" id="new-tab-2" onclick="gotoCategory('tab-2')">
+                    <p>Hyperlocal Delivery</p>
+                  </li>
+                  <li class="new-update-tab-section-final" id="new-tab-3" onclick="gotoCategory('tab-3')">
+                    <p>Order Management</p>
+                  </li>
+                  <li class="new-update-tab-section-final" id="new-tab-4" onclick="gotoCategory('tab-4')">
+                    <p>Offers and Promotions</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="e-comm-website-part">
+      <div class="container">
+        <div class="slider-ecom-website-section" id="tab-5">
+          <div class="swiper-container swiper3">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-new-image-1-16-nov-2021.jpg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-new-image-2-16-nov-2021.jpg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-new-image-3-16-nov-2021.jpg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-new-image-4-16-nov-2021.jpg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-new-image-5-16-nov-2021.jpg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-new-image-6-16-nov-2021.jpg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-new-image-7-16-nov-2021.jpg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-new-image-8-16-nov-2021.jpg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-new-image-9-16-nov-2021.jpg"
+                  alt="carousel-img">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-image-text-wrap">
+          <h5>E-commerce Website</h5>
+          <p>Get a power-packed e-commerce website & impress your customers with a beautiful store.</p>
+        </div>
+      </div>
+    </div>
+    <div class="payment-option-update">
+      <div class="container">
+        <div class="row content">
+          <div class="payment-option" id="tab-1">
+            <div class="rapid-container">
+              <div class="image-option">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-image-15-9-nov-2021.jpg">
+              </div>
+            </div>
+            <div class="rapid-container">
+              <div class="section-image-text-wrap">
+                <h5>More than 150 Payment Options</h5>
+                <p>All banks credit/debit cards, netbanking, Google Pay, PayTM, PhonePe & pay later options.
+                  Collect payments in any payment mode you want.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row content">
+          <div class="hyperlocal" id="tab-2">
+            <div class="rapid-container">
+              <div class="section-image-text-wrap">
+                <h5>Hyperlocal & Pan-India Delivery</h5>
+                <p>Deliver easily anything anywhere with our 3rd party delivery integrations.</p>
+              </div>
+            </div>
+            <div class="rapid-container">
+              <div class="image-option">
+                <img loading="lazy"
+                  src="https://cdn.dotpe.in/cfe/image/landing-page-delivery-partner-image-10-nov-2021.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row content">
+          <div class="order-management" id="tab-3">
+            <div class="rapid-container">
+              <div class="image-option">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-image-17-9-nov-2021.jpg">
+              </div>
+            </div>
+            <div class="rapid-container">
+              <div class="section-image-text-wrap">
+                <h5>Seamless Order Management</h5>
+                <p>Control everything from a single dashboard with centralised inventory, order management,
+                  pricing & more.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row content">
+          <div class="offers" id="tab-4">
+            <div class="rapid-container">
+              <div class="section-image-text-wrap">
+                <h5>Offers & Promotions</h5>
+                <p>Promote your online store. Create customised coupons & offers to generate more orders.
+                </p>
+              </div>
+            </div>
+            <div class="rapid-container">
+              <div class="image-option">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-update-image-18-9-nov-2021.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="trusted-area-section">
+      <div class="container">
+        <h2><span class="sell-online">Trusted by <br /> 75 lac + </span> <br /> merchants <br /> across India</h2>
+        <div class="video-section-update-wrap">
+          <div class="row control-update">
+            <div class="testimonial-video-update">
+              <div class="video-part">
+                <iframe width="260" height="100%" src="https://www.youtube.com/embed/b6J2lsCo5qQ"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-text-part">
+                <div class="video-text-image">
+                  <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-page-design-image-19-21-oct-2021.png">
+                </div>
+                <div class="video-update">
+                  <h3>Gaurav Madaan</h3>
+                  <p>Wholesale Meat Mart</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-video-update">
+              <div class="video-part">
+                <iframe width="260" height="100%" src="https://www.youtube.com/embed/fUjb6me2kn0"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-text-part">
+                <div class="video-text-image">
+                  <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-page-design-image-18-21-oct-2021.png">
+                </div>
+                <div class="video-update">
+                  <h3>Rajat Jaiswal</h3>
+                  <p>Wat-a-Burger</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-video-update">
+              <div class="video-part">
+                <iframe width="260" height="100%" src="https://www.youtube.com/embed/79aMxZzetA4"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="video-text-part">
+                <div class="video-text-image">
+                  <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-page-design-image-20-21-oct-2021.png">
+                </div>
+                <div class="video-update">
+                  <h3>Aastha Almast</h3>
+                  <p>The New Shop</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="video-desktop-section">
+      <div class="container">
+        <h2><span class="sell-online">Trusted by 75 lac + </span>merchants across India</h2>
+        <div class="row">
+          <div class="video-detail-wrap">
+            <div class="video-final-desktop">
+              <iframe width="100%" height="310" src="https://www.youtube.com/embed/b6J2lsCo5qQ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-detail-text">
+              <div class="video-new-image-desktop">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-page-design-image-19-21-oct-2021.png">
+              </div>
+              <div class="video-new-text">
+                <h3>Gaurav Madaan</h3>
+                <p>Wholesale Meat Mart</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-detail-wrap">
+            <div class="video-final-desktop">
+              <iframe width="100%" height="310" src="https://www.youtube.com/embed/fUjb6me2kn0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-detail-text">
+              <div class="video-new-image-desktop">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-page-design-image-18-21-oct-2021.png">
+              </div>
+              <div class="video-new-text">
+                <h3>Rajat Jaiswal</h3>
+                <p>Wat-a-Burger</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-detail-wrap">
+            <div class="video-final-desktop">
+              <iframe width="100%" height="310" src="https://www.youtube.com/embed/79aMxZzetA4"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-detail-text">
+              <div class="video-new-image-desktop">
+                <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-page-design-image-20-21-oct-2021.png">
+              </div>
+              <div class="video-new-text">
+                <h3>Aastha Almast</h3>
+                <p>The New Shop</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="marketing-simple-part">
+      <div class="container">
+        <div class="marketing-content-text">
+          <h3><span class="sell-online market-simple">Marketing</span> <br /> made simple</h3>
+          <img loading="lazy" class="mobile-view-image"
+            src="https://cdn.dotpe.in/cfe/image/landing-page-new-image-3-nov-2021.jpg">
+          <img loading="lazy" class="desktop-view-image"
+            src="https://cdn.dotpe.in/cfe/image/landing-page-desktop-preview-final-image-1-21-oct-2021.png">
+          <p>Get access to your customer's details and run direct promotional campaigns specifically <br /> targeted to
+            & for them. With DotPe's in-built marketing suite, you can reach your customers <br /> easily and always
+            stay ahead of competition</p>
+        </div>
+      </div>
+    </div>
+    <div class="account-manager-section">
+      <div class="account-section-image-part">
+        <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-page-mobile-image-18-nov-2021.jpg">
+      </div>
+    </div>
+    <div class="desktop-manager-center-section">
+      <div class="row">
+        <div class="desktop-content-area-detail">
+          <div class="desktop-account-image-part">
+            <img loading="lazy" src="https://cdn.dotpe.in/cfe/image/landing-page-image-22-1-nov-2021.jpg">
+          </div>
+          <div class="desktop-account-text-part">
+            <h3>Get a dedicated <br /> account manager</h3>
+            <p>Our 1:1 account managers ensure <br /> that you get the support and expertise <br /> you need to grow
+              your business <br /> online with DotPe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="empowered-dotpe-section">
+      <div class="container">
+        <div class="logo-list-main-head">
+          <h2>#empoweredbydotpe</h2>
+        </div>
+        <div class="restaurant-image">
+          <img loading="lazy" src="https://cdn.dotpe.in/kiranaStatic/custom_website/combined_logo.png">
+        </div>
+        <div class="restaurant-img-section md-ph24 md-mt24 col-md12 pb-0 pb-0">
+          <div class="swiper-container swiper2 mb-0">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide1">
+                <img loading="lazy" src="https://cdn.dotpe.in/kiranaStatic/custom_website/pvr_logo.jpeg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide slide1">
+                <img loading="lazy" src="https://cdn.dotpe.in/kiranaStatic/custom_website/book_of_bliss.jpeg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide slide1">
+                <img loading="lazy" src="https://cdn.dotpe.in/kiranaStatic/custom_website/skypets.jpeg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide slide1">
+                <img loading="lazy" src="https://cdn.dotpe.in/kiranaStatic/custom_website/Ammiis_logo.jpeg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide slide1">
+                <img loading="lazy" src="https://cdn.dotpe.in/kiranaStatic/custom_website/sassyKids.jpeg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide slide1">
+                <img loading="lazy" src="https://cdn.dotpe.in/kiranaStatic/custom_website/tizora_logo.jpeg"
+                  alt="carousel-img">
+              </div>
+              <div class="swiper-slide slide1">
+                <img loading="lazy" src="https://cdn.dotpe.in/kiranaStatic/custom_website/abaya_collection.jpeg"
+                  alt="carousel-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="faq-section">
+    <div class="faq-section-wrapper container">
+      <h1 class="section-heading faq-heading md-text32">Read FAQs</h1>
+      <div class="accordion">
+        <div class="accordian-heading">
+          How can I sign up with DotPe?
+        </div>
+        <div class="panel">
+          <p>Once you fill up the Demo Request form on this website, We will get in touch with you within 24
+            hours. We promise to get you onboarded within 3 days.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          What are the commissions?
+        </div>
+        <div class="panel">
+          <p>We have a bare minimum service fee which is charged per transaction.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          Do I get access to my customer data?
+        </div>
+        <div class="panel">
+          <p>Yes, the customer is yours and you completely own their data. You can access your customer data
+            along with
+            insights like purchase behaviour etc on the DotPe dashboard.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          Do you have POS integrations?
+        </div>
+        <div class="panel">
+          <p>We have integrations with all leading POS systems in the industry.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          How is Logistics being handled in case of Delivery business?
+        </div>
+        <div class="panel">
+          <p>We have integrations with leading delivery service providers. Riders are directly assigned to
+            each of your
+            orders on your order dashboard.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          Can I use my own delivery fleet?
+        </div>
+        <div class="panel">
+          <p>Certainly Yes. Also you can configure the delivery charges basis the delivery distance.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          How does a customer access my menu?
+        </div>
+        <div class="panel">
+          <p>We offer multiple services like Dine-in, Pickups & Delivery. For Dine-in, customers can simply
+            scan a QR
+            code available at the table which will show the entire menu on their smartphones. The QR is to
+            be scanned
+            with the phone camera, no additional application is required. For delivery or pickups, a unique
+            URL is
+            created that can be used to market to your customers via your channels. We recommend you to tag
+            the ordering
+            URL on your social channels, websites and aggressively market it using your CRM.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          How can I access my daily business?
+        </div>
+        <div class="panel">
+          <p>We offer a state-of-art Real-time dashboard which helps you to get your business summary at
+            glance. Also
+            you will get access to reports like Daily transactions, settlements, feedbacks etc. You get
+            detailed
+            analysis of the New & repeat user's purchase behaviour, top selling items, Revenue etc. </p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          How is our Menu displayed?
+        </div>
+        <div class="panel">
+          <p>We offer a very attractive & easy to navigate customer interface. Your entire Menu can be
+            digitalised and
+            customized as per your requirement. You get the control to update the menu, pricing,
+            descriptions. Our
+            platform supports full image menu.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          Can discounts be configured?
+        </div>
+        <div class="panel">
+          <p>Yes, we can configure any kind of discounts as per your requirement. We also have banner space on
+            our
+            interface to promote the discounts you would offer.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          How can a customer make payment?
+        </div>
+        <div class="panel">
+          <p>We offer the entire spread of new age digital payments like Credit cards, UPIs, Wallets etc.
+            Customers can
+            opt for any of it.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          How customers be notified about the order status?
+        </div>
+        <div class="panel">
+          <p>We notify the customer on their registered Watsapp number entered while placing the order.
+            Customers will
+            be notified at each stage i.e. order acceptance / order rejection / order dispatched / Rider
+            details / Order
+            completion / Service Feedback</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          How cancellation works?
+        </div>
+        <div class="panel">
+          <p>Cancellation is completely upto you. Incase the product/service is not available you can opt for
+            refund and
+            the customer will get the money back in the original mode of payment within 3-5 working days.
+          </p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          How will I get paid for the business done?
+        </div>
+        <div class="panel">
+          <p>We reconcile and settle the funds to your bank account on T+1 working day (Transaction day+1day).
+          </p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          What other features are offered on your platform?
+        </div>
+        <div class="panel">
+          <p>We offer Watsapp business account for customer engagement, Loyalty program, Subscriptions, Waiter
+            Application etc.</p>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordian-heading">
+          What kind of after sales support is offered by Dotpe?
+        </div>
+        <div class="panel">
+          <p>You will get a dedicated Relationship Mgr who will guide you and give operational support. We
+            also deploy
+            the marketing collaterals
+            like Table QR tent cards, QR standees etc. Our backend technogy is extremely robust and we also
+            provide 24x7
+            technical support.</p>
+        </div>
+      </div>
+      <span class="section-heading faq-view-more">View more</h1>
+    </div>
+  </section>
+  <footer class="bg-dark py-5">
+    <div class="container py-3">
+      <div class="row justify-content-center pt-2 px-3 px-md-0">
+        <div class="mb-3" style="width: 100%;">
+          <section class="white-logo">
+            <img src="https://cdn.dotpe.in/cfe/image/white-logo.png" alt="white-logo">
+          </section>
+          <p class="pt-3 px-3">Get tools that grow your business
+            <!-- Disrupt Catalogue Discovery-->
+          </p>
+          <p class="text-center footer-menu">
+            <a href="about-us.html">About us</a>
+           <!-- <a href="/merchantacquistiontandc.html">Terms & Conditions</a>-->
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="https://dotpe.in/merchantacquistiontandc.html#refund-cancellation">Refund & Cancellation</a>
+            <a href="contact-us.html">Contact us</a>
+          </p>
+        </div>
+
+        <p class="text-center mb-5">&copy; <span id="copyright-year"></span> DotPe</p>
+      </div>
+    </div>
+  </footer>
+
+ <!-- Request Modal -->
+    <div class="modal fade request-demo-modal res-mob-modal" id="requestDemoModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h2 class="modal-title">Setup Free Demo</h2>
+                        <p>With our Product Specialist</p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="https://dotpe.in/images/close-16x16.png" class="img-fluid" alt="close">
+                    </button>
+                </div>
+                <div class="modal-body">
+				    <form id="request_demo_form">
+                        <div class="form-content">
+                            <div class="form-row">                            
+                                <div class="form-group col-md-12">
+                                    <input type="text" class="form-control input-field" id="name" name="name" onchange="stateHandle();" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="form-row">  
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <input type="number" class="form-control input-field" id="phone" name="phone" onchange="stateHandle();" placeholder="Mobile Number">
+                                </div>
+                                <div class="form-group col-md-6 col-sm-6">                                
+                                    <input type="email" class="form-control input-field" id="email" name="email" placeholder="Email">
+                                </div>
+                            </div>
+                            
+                            <h5 class="sub-title">Select Business Category</h5>
+                             <div class="form-inline">
+                                <div class="form-check form-radio">
+                                    <input class="form-check-input" type="radio" name="business_category" id="exampleRadios1" value="Fashion & Accessories" >
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Fashion & Accessories
+                                    </label>
+                                </div>
+                                <div class="form-check form-radio">
+                                    <input class="form-check-input" type="radio" name="business_category" id="exampleRadios2" value="Electronics">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Electronics
+                                    </label>
+                                </div>
+                                <div class="form-check form-radio">
+                                    <input class="form-check-input" type="radio" name="business_category" id="exampleRadios3" value="Home Decor & Furnishing">
+                                    <label class="form-check-label" for="exampleRadios3">
+                                        Home Decor & Furnishing
+                                    </label>
+                                </div>
+                                <div class="form-check form-radio">
+                                    <input class="form-check-input" type="radio" name="business_category" id="exampleRadios4" value="Arts and Handicrafts">
+                                    <label class="form-check-label" for="exampleRadios4">
+                                        Arts and Handicrafts
+                                    </label>
+                                </div>
+                                <div class="form-check form-radio">
+                                    <input class="form-check-input" type="radio" name="business_category" id="exampleRadios5" value="Health & Wellness">
+                                    <label class="form-check-label" for="exampleRadios5">
+                                        Health & Wellness
+                                    </label>
+                                </div>
+                                <div class="form-check form-radio">
+                                    <input class="form-check-input" type="radio" name="business_category" id="exampleRadios6" value="Food and Beverage">
+                                    <label class="form-check-label" for="exampleRadios6">
+                                        Food and Beverage
+                                    </label>
+                                </div>
+                                <div class="form-check form-radio">
+                                    <input class="form-check-input" type="radio" name="business_category" id="exampleRadios7" value="Supermarket & Groceries">
+                                    <label class="form-check-label" for="exampleRadios7">
+                                        Supermarket & Groceries
+                                    </label>
+                                </div>
+                                <div class="form-check form-radio">
+                                    <input class="form-check-input" type="radio" name="business_category" id="exampleRadios8" value="Other">
+                                    <label class="form-check-label" for="exampleRadios8">
+                                        Other
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="tc-check">
+                                <div class="form-check">
+                                   <input type="checkbox" onclick="$(this).attr('value', this.checked ? 1 : 0)" value="1" class="form-check-input" id="tc_condition_check" checked>
+                                    <label class="form-check-label" for="tc_condition_check">I hereby provide my consent to receive emails, phone calls, messages and other communications from Dotpe to understand about Dotpe's services, offerings, promotions and other related information.</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-submit-btn">
+                            <button type="submit" class="btn btn-primary req-demo-btn" >Request Demo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thankyou Modal -->
+    <div class="modal fade thankYouModal" id="thankyouModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h2>Thankyou!</h2>
+                    <p>Our team will reach out to you soon, we look forward to speaking with you.</p>
+                    <button type="button" class="btn btn-primary go-home-btn" data-dismiss="modal" aria-label="Close">Go to Home</button>
+                </div>
+            </div>
+        </div>
+		<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-417289495"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-417289495');
+</script>
+    </div>
+	
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="js/jquery-1-11.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  <script src="scrollsmooth.js"></script>
+  <script src="customform.js"></script>
+  <script src="customDropdown.js"></script>
+  <script src="accordian.js"></script>
+  <script src="scrollheader.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+  <script>
+    document.querySelector('#copyright-year').innerText = new Date().getFullYear();
+  </script>
+  <script>
+    var swiper = new Swiper('.swiper1', {
+      slidesPerView: '2',
+      speed: 3000,
+      grabCursor: true,
+      centerSlides: true,
+      effect: 'card',
+      loop: true,
+      spaceBetween: 15,
+      autoplay: {
+        delay: 5,
+        disableOnInteraction: false
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: '2.25',
+          slidesOffsetAfter: 2000,
+        },
+        768: {
+          slidesPerView: '3',
+        },
+        1024: {
+          slidesPerView: '5',
+          spaceBetween: 0,
+        },
+
+      },
+
+    });
+
+
+    function gotoCategory(id) {
+      var element = document.getElementById(id);
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      document.body.scrollTop = element.offsetTop - 200;
+      var activeElement = document.getElementsByClassName('active');
+      if (activeElement.length) {
+        activeElement[0].classList.remove('active')
+      }
+      var tabElement = document.getElementById('new-' + id);
+      tabElement.classList.add('active');
+
+    }
+    function formShow() {
+      document.getElementById('section_demo_form').style.display = 'block'
+    }
+
+    function formClose() {
+      document.getElementById('section_demo_form').style.display = 'none'
+    }
+
+
+    var swiper_logo = new Swiper('.swiper2', {
+      slidesPerView: '3',
+      speed: 2500,
+      grabCursor: true,
+      mousewheelControl: true,
+      keyboardControl: true,
+      centerSlides: true,
+      loop: true,
+      spaceBetween: 15,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false
+      },
+    });
+
+    var swiper = new Swiper('.swiper3', {
+      slidesPerView: '2',
+      speed: 3000,
+      grabCursor: true,
+      mousewheelControl: true,
+      keyboardControl: true,
+      centerSlides: true,
+      loop: true,
+      spaceBetween: 0,
+      autoHeight: false,
+      autoplay: {
+        delay: 1,
+        disableOnInteraction: false
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: '2',
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: '3',
+          spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: '5',
+          spaceBetween: 0,
+        },
+
+      },
+
+    });
+  </script>
+  <script type="text/javascript">
+    function numbersonly(myfield, e, dec) {
+      var key;
+      var keychar;
+      if (window.event)
+        key = window.event.keyCode;
+      else if (e)
+        key = e.which;
+      else
+        return true;
+      keychar = String.fromCharCode(key);
+      // control keys
+      if ((key == null) || (key == 0) || (key == 8) ||
+        (key == 9) || (key == 13) || (key == 27))
+        return true;
+      // numbers
+      else if ((("0123456789").indexOf(keychar) > -1))
+        return true;
+      // decimal point jump
+      else if (dec && (keychar == ".")) {
+        myfield.form.elements[dec].focus();
+        return false;
+      }
+      else
+        return false;
+    }
+  </script>
+  <!-- Validate demo form  -->
+     <script>
+	
+
+		function stateHandle() 
+		{
+		   if($("#name").val()=="")
+			{
+				$("#btnSubmit").addClass("disabled");
+				 
+			} 
+			else 
+			{
+				$("#btnSubmit").removeClass("disabled");
+			}
+		}
+        $("#request_demo_form").validate({
+            rules: {
+                name: "required",
+                phone: "required",
+				email: "required",
+                
+            },
+            messages: {
+                name: "Enter Name",
+                phone: "Enter Phone",
+				email: "Enter Email Id",
+                
+            },
+            submitHandler: function(form) {
+                //return false;
+                event.preventDefault();
+                $this = $(form).find('#sendFeedbackInfo_2');
+                $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+                var data_json = {
+                    name: $("#request_demo_form #name").val(),
+                    phone: $("#request_demo_form #phone").val(),
+                    email: $("#request_demo_form #email").val(),
+                    businessCategory: $('input[name="business_category"]:checked').val(),
+                    source: window.location.href,
+                    // source: "landing-https://dotpe.in/landing-ecomm.html?utm_source=google&utm_medium=cpc&utm_campaign=Ecomm_Search_Generic_em&utm_term=free%20website%20builder",
+                    tncCheck: true
+                };
+                $.ajax({
+                    type: "post",
+                    url: "curl.php",
+                    data:  data_json,
+                    cache: false,
+                    success: function(res) {
+
+                        // Success message
+                        console.log(res);
+
+						$('#requestDemoModal').modal('hide');
+						
+                         $('#thankyouModal').modal('show');
+                            // console.log(res.status);
+                            //Swal.fire('Thank you for Contacting!', '', 'success');
+                        
+                        //$(form).trigger("reset");
+								setTimeout(function() {
+                             $('#thankyouModal').modal('hide');
+$(form).trigger("reset");							 // Re-enable submit button when AJAX call is complete
+                        }, 5000);						
+                    },
+                    error: function(err) {
+                        // alert(err);
+                        console.log(err);
+						Swal.fire('Try again!', '', 'error');
+                        
+                        //clear all fields
+                         $(form).trigger("reset");
+                    },
+                    complete: function() {
+                        setTimeout(function() {
+                            $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+                        }, 1000);
+                    }
+                });
+            },
+            invalidHandler: function(event, validator) {
+                // 'this' refers to the form
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                    var message = errors == 1 ?
+                        'You missed 1 field. It has been highlighted' :
+                        'You missed ' + errors + ' fields. They have been highlighted';
+                    $("div.error span").html(message);
+                    $("div.error").show();
+                } else {
+                    $("div.error").hide();
+                }
+            }
+        });
+		
+		function callpopup()
+		{
+				var phoneno=$("#txtPhoneno").val();
+				localStorage.setItem('Phone', phoneno);
+				var PhoneNo = localStorage.getItem('Phone');
+				if (PhoneNo == null || PhoneNo == "null") {
+		
+				}
+				else
+				{
+				var phoneno=parseInt(PhoneNo);
+				
+				$('input[name="phone"]').val(phoneno);
+				
+				
+				}
+				$('#requestDemoModal').modal('show');
+				$("#txtPhoneno").val('');
+				return false;
+		}
+		
+     </script> 
+</body>
+
+</html>

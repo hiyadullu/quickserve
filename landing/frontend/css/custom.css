@@ -1,0 +1,8931 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body.inter-family {
+    font-family: 'Inter', sans-serif;
+}
+/* html,body{
+    scroll-behavior: smooth;
+} */
+.domain-page-banner {
+    background: #3A394A;
+    padding: 235px 0 90px 0;
+    text-align: center;
+}
+a.site_url {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+a.site_url span {
+    color: #006AFF;
+}
+.domain_banner_cnt .para span {
+    opacity: 0.47;
+}
+.domain-page-banner .banner-img {
+    margin-top: 80px;
+}
+.domain_banner_cnt .title {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-size: 90px;
+}
+section.domain-business {
+    padding: 80px 0;
+}
+.domain-heading h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+.domain-heading {
+    max-width: 575px;
+    margin-bottom: 90px;
+}
+.domain-box h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 17px 0;
+}
+.domain-box {
+    margin-bottom: 50px;
+}
+.domain-business-btn .get-started-btn {
+    margin-left: 0;
+}
+.dotpe-domain-section {
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/domain-page/dotpe-domain.png) center center no-repeat;
+    background-size: cover;
+}
+.dotpe-domain-section:before {
+    position: absolute;
+    content: "";
+    background: rgba(0, 0, 0, 0.69);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.dotpe-domain-txt h2 {
+    max-width: 900px;
+    margin: 0px auto 40px;
+    font-size: 65px;
+    color: #fff;
+    font-weight: 700;
+}
+.sale_domain_headin {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+.sale_domain_headin h5 {
+    color: #929292;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+}
+.sale_domain_headin p {
+    font-size: 30px;
+    font-weight: 600;
+    opacity: 0.48;
+}
+.sale_domain_pera {
+    margin: 20px 0 35px 0;
+}
+.sale_box h5 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sale_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    min-height: 150px;
+}
+.domain_sale_boxes .col-md-4{
+    border: 1px solid #ccc;
+}
+.domain_sale_boxes .col-md-4.br-0 {
+    border-right: 0;
+}
+.domain_sale_boxes .col-md-4.bt-0 {
+    border-top: 0;
+}
+.sale_box img {
+    max-height: 75px;
+    max-width: 110px;
+    transition: 0.4s;
+}
+.sale_box:hover img {
+    transform: scale(1.2);
+}
+.footer.custom-footer {
+    border-top: 1px solid #1e1e1e;
+}
+img.on_mobile_img {
+    display: none;
+}
+.domain-page-banner .banner-img img {
+    max-width: 100%;
+    transition: 0.4s;
+}
+.domain-page-banner .banner-img img:hover {
+    transform: scale(1.04);
+}
+a.site_url:hover,
+a.site_url:hover span {
+    color: #0056b3;
+}
+/* theme page css start */
+.s_theme_page .title {
+    max-width: 1050px;
+}
+.s_theme_page {
+    background: linear-gradient(71.94deg, rgba(27, 2, 46, 0.94) 10.54%, rgba(16, 0, 63, 0.95) 41.85%, #655093 66.78%, #52378C 92.21%);
+}
+.need-theme-section .domain-heading {
+    max-width: 100%;
+    text-align: center;
+}
+.need-theme-btn {
+    margin-top: 25px;
+}
+.featured-theme-section .domain-heading {
+    max-width: 100%;
+    text-align: center;
+}
+.way-section {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/theme-page/way-banner.png) center center no-repeat;
+    background-size: cover;
+    min-height: 1150px;
+    /* animation: fade-in-scale-down 8s  infinite ease-out ; */
+}
+/* @keyframes fade-in-scale-down{
+    0%{
+      opacity:1;
+      -webkit-transform:scale(1);
+      -ms-transform:scale(1);
+      transform:scale(1)
+    }
+
+    50%{
+      opacity:1;
+      -webkit-transform:scale(1.06);
+      -ms-transform:scale(1.06);
+      transform:scale(1.06)
+    }
+    
+    100%{
+      opacity:1;
+      -webkit-transform:scale(1);
+      -ms-transform:scale(1);
+      transform:scale(1);
+    }
+  } */
+.way-section .dotpe-domain-txt h2 {
+    margin: 0px auto 20px;
+}
+.way-section .dotpe-domain-txt p {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+}
+.way-section:before {
+    display: none;
+}
+.theme-page-categorie-section {
+    padding: 80px 0 0;
+}
+.s_build_grow_form {
+    padding: 80px 0;
+}
+.theme-page-categorie-section .carousel-inner .text-block {
+    position: relative;
+}
+.theme-page-categorie-section .business-categories-inner {
+    padding: 10px 0 20px 0;
+}
+.theme-page-categorie-section .carousel-indicators {
+    margin-bottom: 50px;
+}
+.theme-page-categorie-section .business-categories-inner .image-block {
+    margin-top: 50px;
+}
+/* theme page css end */
+li.submenu_hover {
+    overflow: unset !important;
+}
+
+.submenu_hover ul.sub-menuz {
+    left: 100%;
+    z-index: 99999;
+    position: absolute;
+    border-radius: 0;
+    border-left: 2px solid #f1f1f1;
+    box-shadow: none;
+    width: 250px;
+    height: 505px;
+    box-shadow: rgb(0 0 0 / 15%) 5px 7px 14px -4px;
+}
+ul.sub-menuz:after {
+    display: none;
+}
+.submenu_body {
+    padding-left: 20px;
+}
+.mobile_menu_dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    font-size: 15px;
+    color: #000000;
+    font-weight: 500;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 7px;
+}
+.menu_relative {
+    position: relative;
+    width: 100%;
+    border: none;
+    padding: 0;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 10px;
+    background: none;
+    border-radius: 0;
+    padding-left: 20px;
+}
+.dropdown-menu.menu_relative a {
+    font-size: 15px;
+    color: #000000;
+    font-weight: 500;
+    padding: 15px 0;
+    border-bottom: 1px solid #efecec;
+}
+.dropdown-menu.menu_relative a:last-child {
+    border: none;
+}
+.dropdown-menu.menu_relative a:last-child {
+    margin-bottom: 10px;
+}
+.mobile_menu_dropdown:hover {
+    color: #000000;
+}
+li a.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
+.dropdown-menu a.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.45;
+  }
+li a.disabled span{
+    opacity: 0.45;
+  }
+li a.disabled p{
+    opacity: 0.45;
+  }
+  .sub-menuz li a {
+    padding: 18px;
+    line-height: normal;
+    /* padding-left: 0; */
+    padding-bottom: 14px;
+    padding-right: 10px;
+}
+
+.sub-menuz li a{
+    border-bottom: 1px solid #f1f1f1;
+}
+
+/* ul.sub-menuz {
+    padding-left: 15px;
+} */
+ul.sub-menu.s-sub-menu {
+    border-radius: 0;
+    /* padding-left: 16px; */
+}
+.menu .sub-menu .sub-menuz li a .menu-txt {
+    width: 100%;
+}
+.s-sub-menu li a{
+    border-bottom: 1px solid #f1f1f1;
+    margin-left: 20px;
+}
+ul.sub-menu.s-sub-menu li:hover {
+    background: #f7f7f7;
+}
+/* ul.sub-menu.s-sub-menu li a {
+    padding-left: 5px;
+} */
+.menu .sub-menu.s-sub-menu li .menu-txt {
+    width: 100%;
+}
+.menu.s-menu ul li a:hover, .menu ul li:hover>a {
+    background: none;
+    color: none;
+}
+.menu.s-menu  li a {
+    transition: none;
+}
+.menu ul {
+    border-radius: 0;
+}
+/* zoho-form start */
+.custom-zoho-form {
+    max-width: 750px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: 40px auto !important;
+    padding: 30px;
+    box-shadow: 0 3px 15px #ccc;
+}
+.custom-zoho-form .zcwf_title {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+.custom-zoho-form .zcwf_button.custom_zoho_btns {
+    width: 100%;
+    border-radius: 100px;
+    padding: 1rem 0;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #007bff;
+    border-color: #007bff;
+    display: inline-block;
+    max-width: 100%;
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: 'Gilroy';
+}
+.custom-zoho-form .zcwf_privacy {
+    background-color: #F5F5F5;
+    padding: 1rem 2rem 1rem 1rem !important;
+    border-radius: 4px;
+    /* margin: 2.5rem 0 0; */
+}
+.policy_txt {
+    font-size: 13px;
+    line-height: 20px;
+    opacity: 64%;
+    margin-left: 0.2rem;
+    font-family: 'Gilroy';
+}
+.custom_input_form .zcwf_col_fld input,
+.zcwf_lblTopBottom .custom_input_form .zcwf_col_fld input[type=text],
+.custom_input_form .zcwf_col_fld select {
+    width: 100% !important;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 12px !important;
+    border-color: #00000021 ;
+    border: 1px solid #00000021 !important;
+    height: 50px;
+    display: block;
+    padding: 0.375rem 0.75rem;
+}
+.custom_input_form .zcwf_col_fld input:focus,
+.custom_input_form .zcwf_col_fld select:focus {
+    border: none;
+    outline: none;
+}
+.custom_input_form {
+    margin-bottom: 15px;
+}
+.custom_input_form .zcwf_row {
+    margin: 0 !important;
+}
+.custom_input_form .zcwf_row .zcwf_col_fld {
+    width: 100%;
+    float: none !important;
+    padding: 0;
+    margin: 0;
+}
+.custom_input_form .zcwf_col_lab {
+    font-size: 16px;
+    font-weight: 600;
+    /* opacity: 80%; */
+}
+.custom-zoho-form .zcwf_privacy .dIB.zcwf_privacy_txt {
+    padding-top: 0;
+}
+.custom_input_form .zcwf_col_fld select {
+    color: #757575;
+}
+/* 15 march */
+.hide_form_style {
+    margin-bottom: 0;
+}
+
+.hide_form_style  .zcwf_row {
+    margin-bottom: 15px !important;
+}
+.zcwf_lblTopBottom .custom_input_form .zcwf_col_fld textarea {
+    width: 100% !important;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 12px;
+    border: 1px solid #00000021 !important;
+    height: 75px;
+    display: block;
+    padding: 0.375rem 0.75rem;
+}
+.zcwf_title.zoho_main_title {
+    margin-bottom: 5px;
+}
+.zcwf_title.zoho_sub_title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600 !important;
+}
+/* zoho-form end */ 
+/* 12 june 2023 */
+.restaurant-page-banner {
+    /* padding: 210px 0 90px 0; */
+    padding: 180px 0 90px 0;
+    text-align: center;
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/restaurant-bg.png) center center no-repeat;
+    background-size: cover;
+}
+.landing-logo {
+    margin-top: 35px;
+    text-align: center;
+    z-index: 1;
+    position: sticky;
+}
+.restaurant_banner_cnt .para {
+    color: #000;
+    position: relative;
+    max-width: 490px;
+    margin: auto;
+    margin-bottom: 35px;
+}
+.restaurant_banner_cnt .para img {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+}
+.restaurant_banner_cnt .title {
+    font-size: 60px;
+    color: #000;
+    margin: auto;
+}
+.restaurant_banner_cnt .title span {
+    background: linear-gradient(94.39deg, rgba(19, 53, 222, 0.68) 20.3%, #FD8484 83.68%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.restaurant_banner_cnt .para:before {
+    position: absolute;
+    bottom: -12px;
+    content: "";
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/baner-txt-line.png) center center no-repeat;
+    width: 120px;
+    height: 17px;
+    left: 13px;
+}
+.restaurant_banner_cnt .get-started-btn {
+    border-radius: 8px;
+       width: 100% !important;
+    max-width: 250px;
+    margin-top: 35px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.restaurant-page-banner .banner-img img {
+    display: initial;
+    max-width: 100%;
+    max-width: 900px;
+    width: 100%;
+}
+.restaurant-page-banner .banner-img {
+     margin-top: 70px;
+}
+.award-heading {
+    color: #171717;
+    text-align: center;
+    opacity: 0.7;
+    margin-bottom: 45px;
+}
+
+.award-heading h4 {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.award-heading p {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.star-awrd {
+    text-align: center;
+    color: #141414;
+    display: flex;
+    align-items: center;
+}
+
+.star-awrd img {
+    display: initial;
+    margin-bottom: 15px;
+}
+
+.star-awrd h5 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.star-awrd p {
+    font-size: 16px;
+    font-weight: 500;
+}
+.award-border {
+    position: relative;
+    background: linear-gradient(to left, #6F81E0, #FD8484);
+    border-radius: 30px;
+    padding: 50px 50px 34px;
+    z-index: 1;
+    max-width: 830px;
+    margin: auto;
+}
+/* .award-border:before {
+    background: #fff;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    content: "";
+    z-index: -1;
+    display: block;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    border-radius: 27px;
+} */
+.award-border:before {
+    background: #fff;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    content: "";
+    z-index: -1;
+    display: block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 29px;
+}
+.restaurant-heading{
+    padding-top: 135px;
+    padding-bottom: 0px;
+}
+.restaurant-brand {
+    /* padding: 45px 70px; */
+    padding: 45px 90px;
+    padding-top: 0;
+}
+section.restaurant-brand {
+    /* background: linear-gradient(to right, #F8F9FE , #EAF2FD , #E9EBF8); */
+    overflow: hidden;
+}
+.second-rista-crousal {
+    margin-top: 65px;
+}
+
+section.restaurant-brand .owl-nav, section.restaurant-brand .owl-dots {
+    display: none;
+}
+.restaurant-brand  .item img {
+    max-height: 75px;
+    max-width: 115px;
+    filter: none !important;
+    margin: auto;
+    object-fit: contain;
+    width: auto;
+}
+
+.restaurant-brand .item .trusted_resti_img img {
+    max-width: inherit;
+    max-height: inherit;
+    object-fit: inherit;
+}
+
+.trusted_resti_img {
+    height: 107px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.trusted_resti_img:after {
+    position: absolute;
+    left: 0;
+    bottom: 32%;
+    background: #D2D9F6;
+    height: 38px;
+    content: "";
+    width: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.restaurant-brand  .owl-item {
+    margin: auto !important;
+    max-width: 200px;
+    width: 100% !important;
+    /* border-left: 2px solid #D6E3FC; */
+}
+.restaurant-brand .owl-item:first-child {
+    border: none !important;
+}
+section.rista-serve-section {
+    padding: 80px 0;
+}
+.serve-heading h3 {
+    font-weight: 700;
+    font-size: 42px;
+}
+.serve-heading h3 span {
+        background: linear-gradient(138deg, rgba(19, 53, 222, 0.88) 20.3%, #FD8484 83.68%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.serve-heading h4 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.serve-crousal ol.carousel-indicators {
+    display: inline-flex;
+    justify-content: flex-start;
+        border-radius: 24px;
+}
+
+.serve-crousal {
+    margin-top: 53px;
+}
+.serve-crousal .carousel-indicators li.active span {
+    color: #fff;
+    background: #000000;
+    border-radius: 16px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgb(253 253 253 / 25%);
+}
+/* .serve-crousal .carousel-indicators li span {
+    font-size: 20px;
+} */
+/* .serve-crousal span.carousel-control-prev-icon {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/arrow.png) center center no-repeat;
+    background-size: cover;
+    width: 48px;
+    height: 48px;
+} */
+/* .serve-crousal .carousel-control-next-icon, 
+.serve-crousal .carousel-control-prev-icon{
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/arrow.png) center center no-repeat;
+    background-size: cover;
+    width: 48px;
+    height: 48px;
+} */
+/* .serve-crousal .carousel-control-next-icon{
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/arrow-next.png) center center no-repeat;
+    background-size: cover;
+    width: 48px;
+    height: 48px;
+} */
+
+.serve-crousal .carousel-control-prev-icon{
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/arrow.png) center center no-repeat;
+    background-size: cover;
+    width: 48px;
+    height: 48px;
+}
+/* .serve-crousal .carousel-control-next-icon:hover, .serve-crousal .carousel-control-prev-icon:hover {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/arrow-blue.png) center center no-repeat;
+    background-size: cover;
+} */
+.carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
+    opacity: 1;
+}
+/* .serve-crousal .carousel-control-next-icon{
+    transform: rotate(180deg);
+} */
+.carousel-control-next, .carousel-control-prev {
+    opacity: 1;
+}
+.dot-icon a {
+    background: #D9D9D9;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 10px 5px;
+    border-radius: 100%;
+}
+.dot-icon {
+    margin-top: 50px;
+}
+.slider-arrow a {
+    justify-content: end;
+    display: inline-flex;
+    width: 48%;
+}
+
+.slider-arrow {
+    max-width: 120px;
+    margin-left: auto;
+    top: -18px;
+}
+
+
+
+span.sr-only {
+    display: none;
+}
+.server-left-cnt h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    /* max-width: 640px; */
+        max-width: 490px;
+}
+.serve-crousal .carousel-inner {
+    width: 100%;
+}
+.server-cnt-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+.scb-cnt {
+    max-width: calc(100% - 74px);
+}
+
+.scb-icon {
+    width: 48px;
+    margin-right: 26px;
+}
+.scb-icon img {
+    max-width: 100%;
+}
+.scb-cnt h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.scb-cnt p {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #3E3E3E;
+}
+.server-cnt-box {
+    margin-bottom: 40px;
+}
+
+.server-cnt-box:last-child {
+    margin-bottom: 0;
+}
+.server-right-img img {
+    max-width: 100%;
+}
+/* 13 june */
+.custom-container {
+    /* max-width: 1370px; */
+    max-width: 1366px;
+    margin: auto;
+    position: relative;
+    /* right: -110px; */
+        width: 100%;
+    /* padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto; */
+}
+.restaurant-brand .custom-container {
+    overflow: hidden;
+}
+/* .rista-serve-section .carousel-indicators {
+    width: 50%;
+}
+.server-right-img {
+    position: absolute;
+    right: 0;
+}
+.server-left-cnt {
+    padding-left: 310px;
+}
+.serve-crousal ol.carousel-indicators {
+    margin-left: 310px;
+}
+.serve-heading {
+    margin-left: 310px;
+} */
+.server-right-img {
+    position: relative;
+}
+/* .server-right-img {
+    left: 70px;
+} */
+.rista-need .server-right-img {
+    right: 70px;
+    left: auto;
+}
+
+
+.serve-crousal .carousel-inner.change-crousal-overflow {
+    overflow: initial;
+}
+.server-right-img img {
+    max-width: 100%;
+    /* margin-left: auto; */
+    /* max-height: 520px;
+    max-width: 600px;
+    width: 100%;
+    height: 100%; */
+    /* height: 480px; */
+    height: 465px;
+    width: 730px;
+    object-fit: cover;
+    object-position: left;
+    overflow: initial;
+}
+.rista-need .server-right-img img{
+    object-position: right;
+}
+.server-left-cnt {
+    max-width: 550px;
+}
+.rista-need .server-right-img img {
+    
+    margin-left: initial;
+}
+.serve-crousal .custom-info-slider ol.carousel-indicators {
+    /* width: 55%; */
+    width: auto;
+}
+.serve-crousal .custom-info-slider.rista-info-slider ol.carousel-indicators {
+    /* width: 75%; */
+    width: auto;
+}
+/* .rista-info-slider .server-right-img {
+    right: 0;
+    left: -250px;
+} */
+.custom-blue-btn {
+    background: #006AFF;
+    color: #fff;
+    padding: 17px 30px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 22px;
+}
+.custom-blue-btn:hover {
+    background: #000000;
+    color: #fff;
+}
+
+.need-plan-btn {
+    margin-top: 50px;
+}
+.need-cnt-box p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #545454;
+    min-height: 90px;
+}
+.need-cnt-box li {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+}
+.need-cnt-box ul {
+    margin-top: 42px;
+}
+ul.need-list {
+    list-style: none;
+    padding-left: 0;
+    min-height: 170px;
+}
+ul.need-list li i {
+    margin-right: 10px;
+    color: #006aff;
+}
+.slider-arrow-second {
+    margin-right: auto;
+}
+section.command-business {
+    /* padding: 100px 0; */
+    padding: 30px 70px;
+    text-align: center;
+    /* background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/pos-system.jpg) center center no-repeat; */
+    background: #000;
+    /* background-size: cover; */
+    height: 660px;
+    display: flex;
+    align-items: center;
+    /* background-attachment: fixed; */
+    position: relative;
+    background-position-x: -99px;
+}
+section.command-business:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: black;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.ud-pera {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.ud-head {
+    background: linear-gradient(155deg, #1332CB -2.44%, #FD8484 77.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-size: 60px;
+    line-height: 71px;
+    font-weight: 700;
+}
+.ud-cnt {
+    text-align: left;
+}
+.order-box-img img {
+    max-width: 100%;
+}
+section.order-section {
+    padding: 100px 180px;
+}
+.order-box {
+    padding: 0 70px;
+    position: relative;
+    padding-right: 60px;
+}
+.order-box-txt h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+.order-box-txt p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    opacity: 0.6;
+}
+.order-box-img {
+    min-height: 280px;
+    margin-bottom: 10px;
+}
+.order-box:before {
+    position: absolute;
+    content: "";
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/box-before.svg) center center no-repeat;
+    height: 98%;
+    width: 70px;
+    left: 0;
+    top: 0;
+}
+section.pos-section {
+    background-image: linear-gradient(115deg, #F8F9FE , #EAF2FD ,#F8F9FE, #FDE2F4);
+    padding: 70px 70px;
+}
+.fluid-bg {
+    background: #fff;
+    padding: 60px 40px;
+}
+.pos-img img {
+    max-width: 100%;
+    margin: auto;
+}
+.pos-heding h3 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 7px;
+}
+
+.pos-heding h2 {
+    font-size: 42px;
+    font-weight: bold;
+}
+/* .pos-pera p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0;
+    line-height: 28px;
+} */
+.pos-pera p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+    line-height: 24px;
+    max-width: 469px;
+    margin-left: auto;
+    margin-top: 5px;
+}
+
+.pos-pera {
+    margin-left: 130px;
+}
+.pos-img {
+    margin-top: 100px;
+}
+/* 14 june  */
+.pos-heding h2 span {
+    background: linear-gradient(138deg, rgba(19, 53, 222, 0.88) 20.3%, #FD8484 83.68%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.ecosystem-heading {
+    text-align: center;
+}
+.ecosystem-heading h2 {
+    font-size: 42px;
+    font-weight: bold;
+}
+.ecosystem-heading p {
+    font-size: 28px;
+    font-weight: 400;
+}
+.ecosystem-heading p span {
+    background: linear-gradient(21deg, #1332CB -2.44%, #FD8484 77.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-size: 42px;
+    font-weight: 700;
+}
+.ecosystem-section {
+    padding: 100px 0;
+}
+/* .ecosystem-img img {
+    margin: auto;
+    max-width: 100%;
+} */
+.ecosystem-img img {
+    margin: auto;
+    max-width: 100%;
+    /* max-width: 1350px; */
+    margin-top: -205px;
+    margin-bottom: -232px;
+}
+
+.ecosystem-img {
+    margin-top: 50px;
+}
+img.mobile-image {
+    display: none;
+}
+.discover-section {
+    padding: 100px 180px;
+    background: #181818;
+}
+.discover-section .ecosystem-heading h2 {
+    color: #ffff;
+}
+.discover-grid img {
+    width: 90px;
+    height: 90px;
+    display: block;
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.discover-grid {
+    text-align: center;
+    padding: 20px;
+}
+.discover-grid h4 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.discover-grid p {
+    font-size: 21px;
+    color: #fff;
+    opacity: 0.7;
+    line-height: 28px;
+}
+.discover-box-section {
+    margin-top: 90px;
+}
+/* .discover-section .ecosystem-heading h2 span {
+    background: linear-gradient(160.07deg, #1332CB -2.44%, #FD8484 77.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+} */
+.performance-section {
+    background-image: linear-gradient(to right, #F8F9FE , #EAF2FD , #E9EBF8);
+    padding: 100px 50px;
+}
+/* .performance-box-section {
+    margin-top: 50px;
+    background: #ffffff;
+    padding: 75px;
+    box-shadow: 3px  3px 8px -5px #ccc;
+    padding-bottom: 0;
+} */
+.performance-box-section {
+    margin-top: 50px;
+    /* background: #FFFAFA; */
+    background: #ffffff;
+    padding: 75px;
+    /* box-shadow: 3px  3px 8px -5px #ccc; */
+    padding-bottom: 0;
+    max-width: 1376px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+/* .performance-box-section:before {
+    position: absolute;
+    content: "";
+    background: #ffffff;
+    width: 107%;
+    height: 100%;
+    left: -47px;
+    top: 0;
+    z-index: -1;
+} */
+.performance-box-nbg {
+    background: white;
+    max-width: 1590px;
+    margin: auto;
+}
+.perform-heading h3 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.perform-heading h3 span {
+    background: linear-gradient(160.07deg, #1332CB -2.44%, #FD8484 77.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.perform-msg p {
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: 400;
+    position: relative;
+}
+
+.perform-msg {
+    margin: 60px 0;
+    position: relative;
+    padding-left: 46px;
+    /* height: 200px; */
+    height: 175px;
+    display: flex;
+    align-items: top;
+}
+.perform-msg p:before {
+    position: absolute;
+    content: "";
+    left: -45px;
+    top: 0;
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/comma.png) center center no-repeat;
+    width: 33px;
+    height: 28px;
+    background-size: contain;
+}
+.nl-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 56px;
+}
+
+
+.nl-box .scb-cnt h5 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.nl-box .scb-cnt p {
+    font-size: 24px;
+    color: #000;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.perform-yr p {
+    color: #6A6A6A;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.perform-yr a {
+    font-size: 16px;
+    color: #006AFF;
+    font-weight: 500;
+}
+.perform-right-img {
+    max-width: 480px;
+    margin-left: auto;
+}
+
+.perform-right-img img {
+    max-width: 100%;
+}
+.perform-left-cnt {
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.perform-right-mobile{
+    display: none;
+}
+/* .form-img-heading {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/form-bg.jpg) center center no-repeat;
+    background-size: cover;
+    height: 970px;
+} */
+.form-img-heading {
+    /* background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/form-bg.jpg) center bottom no-repeat; */
+    /* background-size: cover; */
+    height: 770px;
+}
+section.rista-form-section {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    /* background: #171717; */
+    background: linear-gradient(to right, #171717 0%, #171717 60%, #ffffff 60%, #ffffff 100%);
+}
+.white-bg {
+    background: #fff;
+}
+.form-img-heading h3 {
+    color: #fff;
+    /* padding: 100px 90px 0; */
+    padding: 100px 60px 0;
+    font-size: 56px;
+    font-weight: bold;
+    max-width: 754px;
+    margin: auto;
+}
+.form-img-heading h3 span {
+    /* background: linear-gradient(76deg, #1332CB -2.44%, #FD8484 77.28%); */
+    background: linear-gradient(125deg, #1332CB -.44%, #FD8484 100.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.form-form {
+    padding: 100px;
+    padding-right: 0;
+}
+.form-hp h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.form-hp p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.form-form form {
+    margin-top: 25px;
+}
+.form-form form .form-control {
+    border-radius: 8px;
+    height: 58px;
+}
+
+.form-form form .form-control:focus {
+    box-shadow: none;
+    border: 2px solid #000;
+}
+.form-grid {
+    position: relative;
+}
+
+.form-grid span {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+.form-grid .form-control {
+    padding-left: 60px;
+}
+.code-grid {
+    position: relative;
+}
+
+.code-grid:after {
+    position: absolute;
+    content: "";
+    background: #ccc;
+    height: 58px;
+    width: 1px;
+    left: 46px;
+}
+.form-form form p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    opacity: 0.6;
+}
+.form-form form .custom-blue-btn {
+    width: 100%;
+}
+section.page-footer-faq.rista-faq {
+    background: #fff;
+}
+.rista-faq .main-title {
+    color: #000000  !important;
+    font-size: 42px;
+    margin: 0 auto 60px;
+}
+.rista-faq .faq-accordion .card-header a {
+    color: #000000;
+    font-weight: 600;
+}
+.rista-faq .faq-accordion .card .card-header {
+    background-color: #ffffff;
+}
+.rista-faq .faq-accordion .card .card-body {
+    background-color: #ffffff;
+    padding: 1rem;
+}
+.rista-faq .faq-accordion .card .card-body p {
+    color: #000000;
+}
+.rista-faq  .faq-accordion .card-header .faq_acco_icon img {
+    width: 19px;
+    filter: brightness(0);
+}
+.rista-faq  .faq-accordion .card-header .faq_acco_icon {
+    top: 27px;
+}
+.faq-accordion .card .card-header {
+    border-top: 1.5px solid #ccc;
+}
+header.main-header.rista-header .navbar-nav .nav-item .nav-link {
+    color: #000000;
+}
+header.main-header.rista-header {
+    border-bottom: 1px solid #e1e1e1;
+}
+.main-header.rista-header  .navbar-brand img {
+    filter: brightness(0);
+}
+.order-box-txt {
+    min-height: 118px;
+}
+.server-mobile-heading{
+    display: none;
+}
+.server-mobile-heading h4 {
+    font-size: 26px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.server-mobile-heading h4 img {
+    display: inline-block;
+    width: 43px;
+    max-width: 100%;
+    margin-right: 10px;
+}
+
+.server-mobile-heading {
+    text-align: left;
+    margin-bottom: 30px;
+}
+.mobile-read{
+    display: none;
+}
+span.acc-bold img {
+    display: inline-block;
+    width: 35px;
+    max-width: 100%;
+    margin-right: 10px;
+}
+span.acc-bold {
+    font-size: 24px;
+    font-weight: 600;
+    display: inline-block;
+}
+.faq-accordion .server-right-img {
+    position: relative;
+    right: 0;
+}
+.faq-accordion .server-right-img img {
+    width: auto;
+    max-width: 100%;
+}
+.rista-need .rista-faq{
+    display: none;
+}
+.discover-mobile{
+    display: none;
+}
+a.acc-btn {
+    color: #006AFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #006AFF;
+    border-radius: 8px;
+    text-align: center;
+    padding: 13px 20px;
+    display: inline-block;
+}
+/* a.acc-btn:hover {
+    color: #fff;
+    border: 2px solid #006AFF;
+    background: #006AFF;
+    
+} */
+.dot-icon a:hover {
+    background: #000000;
+}
+
+.slider-arrow2 a 
+ span {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/arrow2.png) left top no-repeat;
+    height: 45px;
+    width: 45px;
+    background-size: cover;
+}
+.slider-arrow2 a span:hover {
+    background-position: left -45px;
+}
+.slider-arrow2 a span img {
+    visibility: hidden;
+    height: 48px;
+    width: 48px;
+}
+
+/* .slider-arrow2 a span:hover {
+    background-position: left -48px;
+} */
+
+.slider-arrow2 a span.carousel-control-next-iconn {
+    transform: rotate(180deg);
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/arrow-next.png) left top no-repeat;
+    background-size: cover;
+}
+/* .order-box-img img:after {
+    position: absolute;
+    content: "";
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/order1.svg) center center no-repeat;
+    width: 48px;
+    height: 48px;
+} */
+.order-box-img img {
+    position: relative;
+}
+
+.order-box-img {
+    position: relative;
+}
+.order-box-img:after {
+    position: absolute;
+    content: "";
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/order1.svg) center center no-repeat;
+    width: 48px;
+    height: 48px;
+    bottom: 34px;
+    left: -3px;
+    background-size: cover;
+}
+.order-box-img.ob-2:after {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/order2.svg) center center no-repeat;
+    background-size: cover;
+}
+.order-box-img.ob-3:after {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/order3.svg) center center no-repeat;
+    background-size: cover;
+}
+.order-box-img.ob-3 img {
+    padding-top: 40px;
+}
+.dot-icon a.active {
+    background: #000000;
+}
+.rista-need .server-right-img img {
+    max-height: 445px;
+    max-width: 600px;
+    width: 100%;
+    /* overflow: initial; */
+}
+.discover-mobile .dot-icon a.active {
+    background: #705893;
+}
+.mobile-view{
+    display: none;
+}
+.carousel-item {
+    transition: 0.6s all ease  ;
+}
+.resta-carousel .owl-stage {
+    display: flex;
+    align-items: center;
+}
+.rista-need .rista-faq a.btn.btn-link .faq_acco_icon {
+    transform: rotate(45deg);
+}
+.rista-need .rista-faq a.btn.btn-link.collapsed .faq_acco_icon {
+    transform: rotate(0deg);
+}
+.collapse.showw {
+    display: block;
+}
+.plus-minus{
+    transform: rotate(45deg) !important;
+}
+section.rista-serve-section.rista-need {
+    padding-top: 50px;
+}
+.dot-icon{
+    visibility: hidden;
+}
+.nedd-crousal {
+    max-height: 500px;
+    min-height: 500px;
+}
+.carousel-indicators li span {
+    padding: 0 1.3rem;
+}
+.carousel-indicators {
+    box-shadow: 4px 4px 12px 4px rgba(197, 197, 197, 0.25) inset;
+}
+.carousel-indicators {
+    margin: 0 auto 4.5rem;
+}
+.ud-cnt-img img {
+    max-width: 100%;
+}
+section.command-business {
+    padding: 00px 80px;
+    height: auto;
+}
+.ud-cnt {
+    text-align: left;
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/screen-bg.png) right bottom no-repeat;
+    background-size: contain;
+    min-height: 750px;
+    display: flex;
+    align-items: center;
+}
+.ud-cnt-txt {
+    max-width: 530px;
+}
+section.command-business {
+    background: linear-gradient(to right, #000000, #191919);
+}
+.discover-section .ecosystem-heading h2 span {
+    /* background: linear-gradient(160.07deg, #1332CB -2.44%, #FD8484 77.28%); */
+    background: linear-gradient(86.08deg, rgb(45, 59, 196) -0.05%, rgb(237, 128, 137) 102.11%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.form-img-heading img {
+    max-width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    /* display: flex;
+    align-items: center; */
+    position: absolute;
+    bottom: 0;
+}
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+    background: #A6A6A6;
+    width: 10px;
+    height: 10px;
+    margin: 7px;
+    border-radius: 100%;
+}
+.discover-carousel-slider .owl-dots {
+    margin-top: 75px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+button.owl-dot.active {
+    background: #fff;
+    border: 1px solid #fff;
+    padding: 5px !important;
+    position: relative;
+    border-radius: 100%;
+}
+
+button.owl-dot.active:before {
+    position: absolute;
+    content: "";
+    /* background: #fff; */
+    width: 16px;
+    height: 16px;
+    display: block;
+    top: -3px;
+    left: -3px;
+    z-index: -1;
+    border: 1px solid #fff;
+    border-radius: 100%;
+}
+.discover-carousel-slider .item {
+    margin-left: -28px;
+}
+.row.margin-none {
+    margin: 0;
+}
+.perform-heading {
+    max-width: 570px;
+}
+.cost-pera p {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+section.restaurant-page-banner {
+    z-index: 0;
+}
+.need-cnt-box li img {
+    margin-right: 12px;
+}
+.request-content .form-hp p {
+    color: #6F6F6F;
+    line-height: 24px;
+    max-width: 396px;
+}
+.request-content .form-hp p span {
+    color: #474747;
+    font-weight: 500;
+}
+.request-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.request-content{
+    display: none;
+}
+
+
+/* 12 july  */
+.header_btn_rounded {
+    border-radius: 6px !important;
+    padding: 25px 20px !important;
+}
+.rista-header-inline {
+    justify-content: space-between;
+}
+.rista-header-inline a.top-get-started-btn {
+    border-radius: 6px !important;
+    padding: 25px 20px !important;
+    background: #006AFF !important;
+    color: #fff !important;
+}
+header.main-header.rista-header {
+    border-bottom: none;
+}
+.nr_restaurant_banner_cnt {
+    text-align: left;
+}
+.nr_restaurant_banner_cnt p.para {
+    margin-right: auto;
+    margin-left: initial;
+}
+.nr_restaurant_banner_cnt .para:before {
+    width: 130px;
+    left: 0;
+}
+.nr_restaurant_banner_cnt .title {
+    font-size: 44px;
+}
+p.nr_restaurant_banner_pera {
+    font-size: 16px;
+    color: #424242;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+.nr_restaurant_banner_cnt a.get-started-btn {
+    margin-left: inherit;
+    font-size: 18px;
+    border-radius: 6px;
+    max-width: 192px;
+    letter-spacing: normal;
+}
+.restaurant-page-banner.rista-page-banner .banner-img {
+    margin-top: 0px;
+}
+/* .main-header.rista-header .navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 15px;
+} */
+.custom-container {
+    max-width: 1200px;
+}
+section.restaurant-page-banner.rista-page-banner {
+    padding-top: 232px;
+    padding-bottom: 210px;
+}
+section.restaurant-page-banner.rista-page-banner {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/new-resta-page/rista-banner-bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+.nr-star-award-section .custom-container {
+    max-width: 1065px;
+    background: #fff;
+    margin-top: -90px;
+    border-radius: 14px;
+    padding: 47px 105px;
+    box-shadow: 4px 4px 8px 4px rgba(223, 223, 223, 0.25);
+}
+.col-md-6.col-6.second-award-margin:nth-child(2) .star-awrd {
+    justify-content: end;
+}
+.nr-star-award-section .star-awrd img {
+    max-width: 74px;
+    width: 100%;
+    margin-right: 16px;
+}
+/* .nr-star-award-section .star-awrd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.star-awrd-hp  h5 {
+    font-weight: 600;
+    font-size: 24px;
+    color: #141414;
+}
+.star-awrd-hp {
+    text-align: left;
+}
+.star-awrd-hp  p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #141414;
+}
+.nr-leading-brands {
+    padding-top: 119px;
+}
+section.rista-serve-section.rista-need.nr-rista-need {
+    padding-top: 140px;
+}
+.nr-rista-need .serve-heading {
+    text-align: center;
+}
+.nr-rista-need .serve-crousal .custom-info-slider ol.carousel-indicators {
+    justify-content: space-between;
+    width: 100% !important;
+    box-shadow: inset 0px 3px 10px 0px rgb(121 121 121 / 25%);
+    background: #FDFDFD;
+}
+.rista-need.nr-rista-need .server-right-img {
+    right: auto;
+    left: auto;
+}
+.nr-rista-need .need-cnt-box li {
+    align-items: baseline;
+    line-height: 30px;
+}
+.nr-rista-need .server-left-cnt {
+    max-width: 490px;
+    margin-left: auto;
+}
+.nr-rista-need .slider-arrow {
+    top: 0;
+    margin: auto;
+    margin-top: 15px;
+}
+.nr-rista-need .dot-icon {
+    display: none;
+}
+.nr-rista-need .serve-heading h3 {
+    font-weight: bold;
+}
+.delightful-section .serve-heading h3 {
+    font-weight: bold;
+}
+.delightful-section .serve-heading {
+    text-align: center;
+}
+section.delightful-section {
+    padding-top: 70px;
+    padding-bottom: 107px;
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/new-resta-page/delight-bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.delight-box {
+    box-shadow: 0px 4px 12px -8px rgba(0, 0, 0, 0.10);
+    border-radius: 19px;
+    padding: 24px;
+    background: #fff;
+        padding-top: 85px;
+}
+
+.delight-image img {
+    max-width: 80px;
+}
+
+.delight-image {
+    background: #E0E5FF;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+    margin-bottom: 28px;
+    position: absolute;
+    top: -61px;
+    left: 0;
+    right: 0;
+}
+.delight-heading h3 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+.delight-heading {
+    margin-bottom: 30px;
+}
+.delight-list p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+}
+.delight-list ul {
+    margin-top: 40px;
+    list-style: none;
+    padding: 0;
+}
+.delight-list ul li {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    line-height: 30px;
+    margin-bottom: 19px;
+    font-size: 16px;
+}
+
+.delight-list ul li img {
+    margin-right: 15px;
+    max-width: 24px;
+    width: 100%;
+    max-height: 23px;
+}
+.delight-box-margin {
+    margin-top: 125px;
+}
+.delight-image.color-2 {
+    background: #FFD8E9;
+}
+.delight-image.color-3 {
+    background: #FFD8D8;
+}
+a.delight_btnn {
+    background: #006AFF;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px 20px;
+    display: inline-block;
+    border-radius: 6px;
+}
+.delight-btn-margin {
+    text-align: center;
+    margin-top: 90px;
+}
+/* .restaurant-page-banner .banner-img.nr_banner-img img {
+    width: 635px;
+} */
+.nr-command-business .ud-cnt {
+    background-size: cover;
+    min-height: 562px;
+    background-position-y: -30px;
+}
+.nr-command-business .ud-head {
+    line-height: 74px;
+    font-weight: bold;
+}
+.ndf-img-txt img {
+    max-width: 47px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.ndf-img-txt span {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+}
+.ndf-img-txt p {
+    margin-top: 12px;
+    color: rgba(0, 0 ,0, 0.6);
+    font-weight: 500;
+}
+.ndf-image img {
+    max-width: 100%;
+    margin-top: 40px;
+}
+.ndf-box {
+    padding: 33px;
+    padding-top: 0;
+    padding-bottom: 18px;
+}
+section.ndf-section {
+    padding-top: 44.44px;
+    padding-bottom: 70px;
+}
+.ndf-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 245px;
+}
+.ndf-box.ndf-box-p1 {
+    padding-left: 15px;
+    padding-right: 55px;
+}
+.ndf-box.ndf-box-p3 {
+    padding-right: 10px;
+    padding-left: 55px;
+}
+.nr-pos-section .pos-heding h2 {
+    line-height: 58px;
+}
+.nr-pos-section  .pos-heding h3 {
+    font-weight: 400;
+}
+.nr-pos-section .pos-heding p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    margin-top: 60px;
+    max-width: 484px;
+}
+.nr-pos-section .pos-img {
+    margin-top: 0;
+    width: 670px;
+    height: 278px;
+    position: relative;
+    left: -50px;
+}
+.nr-pos-section .pos-heding {
+    max-width: 530px;
+}
+.nr-pos-section .fluid-bg {
+    padding: 120px 40px;
+}
+a.acc-btn {
+    font-size: 18px;
+    border-radius: 6px;
+}
+.ecosystem-heading {
+    z-index: 1;
+    position: relative;
+}
+.discover-btn {
+    text-align: center;
+    max-width: 159px;
+    background: linear-gradient(86.08deg, rgb(45, 59, 196) -0.05%, rgb(237, 128, 137) 102.11%);
+    border-radius: 6px;
+    padding: 2px;
+    margin: auto;
+    margin-top: 57px;
+}
+
+.discover-btn a {
+    padding: 13px 25px;
+    display: inline-block;
+    background: #181818;
+    border-radius: 6px;
+    width: 100%;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+}
+.nr-rista-form-section .form-img-heading h3 {
+    font-size: 44px;
+    max-width: 630px;
+    text-align: center;
+}
+.perform-grid {
+    background: #fff;
+    box-shadow: 8px 8px 8px 0px rgb(232 232 232 / 47%);
+    margin: 20px;
+    padding: 0 80px;
+}
+/* .custom-containerr {
+    padding-left: 241px;
+} */
+.performance-carousel-slider .story-container {
+    background: #fff;
+    /* padding: 30px; */
+    box-shadow: 8px 8px 8px rgba(232, 232, 232, 0.47);
+    max-width: 1200px;
+        padding-top: 19.21px;
+        /* height: 447px; */
+}
+.performance-carousel-slider .perform-right-img {
+    max-width: 290px;
+    margin-right: 70px;
+    position: relative;
+    top: 8px;
+}
+.performance-carousel-slider .perform-left-cnt {
+    margin-left: 30px;
+}
+.discover-section {
+    z-index: 1;
+    position: relative;
+}
+.performance-carousel-slider .owl-stage-outer {
+    overflow: inherit;
+}
+.performance-section {
+    overflow: hidden;
+}
+.ecosystem-heading p span {
+    font-size: inherit !important;
+}
+.perform-msg p {
+    font-size: 24px;
+    line-height: 38px;
+    text-align: left;
+    font-weight: 600;
+}
+.scb-cnt {
+    text-align: left;
+}
+.scb-icon img {
+    width: auto !important;
+}
+.perform-yr p {
+    text-align: left;
+    margin-bottom: 39px;
+}
+.scb-icon {
+    width: 38px;
+    margin-right: 9px;
+}
+.nl-box {
+    align-items: end;
+}
+.performance-carousel-slider {
+    margin-top: 64px;
+}
+.performance-carousel-slider .owl-nav {
+    margin-top: 7%;
+}
+.performance-carousel-slider .owl-nav button {
+    width: 45px !important;
+    height: 45px !important;
+    background: transparent !important;
+    border: 1px solid #A9ACB1 !important;
+}
+.performance-carousel-slider .owl-nav button span {
+    font-size: 28px;
+    position: relative;
+    top: -1px;
+}
+.performance-carousel-slider button.disabled span {
+    color: #A9ACB1;
+}
+.performance-carousel-slider .owl-nav button:focus {
+    outline: 0;
+}
+.nr-rista-form-section .form-form {
+    padding: 70px 80px;
+    /* padding-right: 0; */
+    padding-top: 30px;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+.nr-rista-form-section .form-img-heading {
+    height: 740px;
+}
+/* .main-header.rista-header  .navbar {
+    max-width: 1260px;
+    margin: auto;
+}
+header.main-header.rista-header.sticky-nav  .navbar {
+    max-width: 1260px;
+    margin: auto;
+    left: 0;
+    right: 0;
+} */
+.main-header.rista-header .navbar {
+    max-width: 1260px;
+    margin: auto;
+}
+.main-header.rista-header.sticky-nav .navbar {
+    max-width: 100%;
+    margin: auto;
+}
+.main-header.rista-header .top-fixed-navbar .navbar {
+    top: -7px;
+}
+.main-header.rista-header.sticky-nav .top-fixed-navbar .navbar {
+    top: 0;
+}
+section.pos-section.nr-pos-section {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/new-resta-page/device-bg.PNG) center center no-repeat;
+    background-size: cover;
+}
+.domain-heading h1 {
+    font-weight: bold;
+}
+.mobile-banner-img {
+    display: none;
+}
+.mobile-perform-right-mobile{
+    display: none;
+}
+.discover-btn.md-btn {
+    display: none;
+}
+.owl-carousel .owl-nav button i {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.owl-carousel .owl-nav button.disabled i {
+    color: #A6A6A6;
+}
+header.main-header.rista-header .navbar-brand img {
+    width: 125px;
+}
+.col-md-6.col-6.second-award-margin:nth-child(1) {
+    max-width: 45%;
+    flex: 0 0 45%;
+}
+.col-md-6.col-6.second-award-margin:nth-child(2) {
+    position: relative;
+    left: 0%;
+    max-width: 55%;
+    flex: 0 0 55%;
+}
+.nr-star-award-section .star-awrd img {
+    margin-bottom: 0;
+}
+.star-awrd-hp  p {
+    margin-bottom: 0;
+}
+.domain-heading {
+    margin-bottom: 58px;
+}
+section.rista-serve-section.rista-need.nr-rista-need {
+    padding-top: 104px;
+}
+.nr-rista-need .serve-heading h3 {
+    margin-bottom: 10px;
+}
+.carousel-indicators li span {
+    font-weight: 500;
+}
+.delight-list p span {
+    white-space: nowrap;
+}
+.delight-heading {
+    margin-bottom: 45px;
+}
+.nr-rista-need .slider-arrow a span {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/arrow-next.png) center center no-repeat;
+    background-size: cover;
+}
+.nr-rista-need .slider-arrow a.disabled span{
+background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/arrow.png) center center no-repeat;
+    background-size: cover;
+}
+
+/* a.submit_form.disabled {
+    pointer-events: none;
+} */
+a.submit_form button {
+    border: none;
+}
+a.submit_form.disabled button {
+    background: rgba(0, 106, 255, 0.4) !important;
+    border: none;
+}
+
+.slider-arrow-secondd a span {
+    width: 45px !important;
+    height: 45px !important;
+    background: transparent !important;
+    border: 1px solid #A9ACB1 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.slider-arrow-secondd a span i {
+    font-size: 24px;
+    font-weight: 500;
+    color: #212529;
+}
+.slider-arrow-secondd a.disabled span i {
+    color: #A6A6A6;
+}
+.form-form form .form-control.error {
+    border-color: red;
+}
+label.error {
+    margin-bottom: 0;
+}
+
+
+/* change-modal css */
+
+/* waba landing page start  */
+.waba-banner {
+    background: #020308;
+    padding-bottom: 85px !important;
+}
+.waba_banner_cnt .title {
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 700;
+    margin-bottom: 27px;
+    letter-spacing: -1px;
+    /* background: linear-gradient(91deg, #596AFF 0%, #C277E5 22.92%, #FF4ECD 41.67%, #FFA15C 82.29%); */
+    background: linear-gradient(91deg, #596AFF 25%, #C277E5 31.92%, #FF4ECD 37.67%, #FFA15C 70.29%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.waba_banner_cnt .para {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    line-height: normal;
+    margin-bottom: 39px;
+    border-radius: 10px;
+    background: linear-gradient(91deg, rgba(89, 106, 255, 0.10) 0%, rgba(194, 119, 229, 0.10) 22.92%, rgba(255, 78, 205, 0.10) 41.67%, rgba(255, 161, 92, 0.10) 82.29%);
+    display: inline-block;
+    padding: 3px 12px;
+    position: relative;
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/waba-page/new-images/return-bg.png) center center no-repeat;
+    background-size: cover;
+}
+.banner_cnt_space {
+    padding: 0;
+}
+.waba_banner_cnt .get-started-btn {
+    border-radius: 28px;
+    padding: 14px 28px;
+    width: 100%;
+    max-width: 240px;
+    font-size: 22px;
+}
+.domain-page-banner .banner-img.waba-banner-img {
+    margin-top: 0;
+}
+.restaurant-heading.waba-leading-brands {
+    padding-top: 112px;
+}
+.waba-txt-gradient {
+    background: linear-gradient(90deg, #4C64E5 0%, #FD8484 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.waba-communicate-section {
+    padding-top: 83px;
+    padding-bottom: 70px;
+        overflow: hidden;
+}
+.waba-heading {
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 48px;
+}
+.waba-comon-heading {
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 65px;
+        letter-spacing: -1px;
+}
+.communicate-image-box {
+    width: 640px;
+    height: 644px;
+    background: #F7F9FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: -28px;
+}
+.communicate-content h3 {
+    color: #000;
+    font-family: Gilroy;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+        margin-bottom: 20px;
+}
+.communicate-content p {
+    color: rgb(62 62 62 / 80%);
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+.communicate-icon-image img {
+    max-width: 48px;
+}
+.communicate-content {
+    position: relative;
+    padding-left: 30px;
+}
+.communicate-icon-image {
+    position: absolute;
+    left: -40px;
+    top: 10px;
+}
+.waba-communicate-section .waba-heading {
+    margin-bottom: 88px;
+}
+.industry-section {
+    padding-top: 112px;
+    padding-bottom: 112px;
+}
+.industry-img {
+    max-width: 360px;
+    max-height: 388px;
+    position: relative;
+}
+/* .industry-grid {
+    max-width: 310px;
+} */
+.industry-grid {
+    max-width: 346px;
+}
+
+.industry-img img {
+    max-width: 100% ;
+    width: auto !important;
+        max-height: 285px;
+}
+.industry-second-img {
+    position: absolute;
+    bottom: -10px;
+    right: -18px;
+}
+.industry-cnt h4 {
+    color: #000;
+    font-family: Gilroy;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+        margin-bottom: 9px;
+}
+.industry-cnt p {
+    color: rgba(0, 0, 0, 0.60);
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: -0.5px;
+}
+
+.industry-cnt {
+    margin-top: 32px;
+}
+.for-nav-btn.owl-carousel .owl-nav button.owl-next, .for-nav-btn.owl-carousel .owl-nav button.owl-prev {
+    background: 0 0;
+    height: auto;
+    margin: initial;
+    border-radius: 100%;
+    width: auto;
+}
+.for-nav-btn.owl-carousel button.owl-dot {
+    background: #EBEBEB ;
+}
+.for-nav-btn.owl-carousel button.owl-dot.active {
+    background: #000000 ;
+}
+.for-nav-btn .owl-nav button {
+    border: 1px solid #BDBDBD !important;
+    width: 48px !important;
+    height: 48px !important;
+    margin-left: 16px !important;
+}
+.for-nav-btn .owl-nav {
+    position: relative;
+    margin-left: auto;
+    max-width: 128px;
+    top: 36px;
+}
+
+.for-nav-btn .owl-dots {
+    position: relative;
+    top: -3px;
+        display: inline-block;
+}
+.marketing-img {
+    width: 352px;
+    height: 240px;
+    border-radius: 10px;
+    border: 1px solid #EAF1F6;
+    background: #F7F9FC;
+    padding: 21px 26px;
+}
+.marketing-box .industry-cnt {
+    margin-top: 28px;
+}
+.marketing-box {
+    margin-bottom: 50px;
+}
+.marketing-cnt h4 {
+    color: #000;
+font-family: Gilroy;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+    margin-bottom: 9px;
+}
+.marketing-cnt p {
+    color: #000;
+font-family: Gilroy;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+    max-width: 345px;
+}
+.marketing-cnt {
+    margin-top: 28px;
+}
+.elevate-txt h2 {
+    background: linear-gradient(112deg, #FFEF5E 0%, #FF9696 20.39%, #FF5AE5 61.35%, #854BFF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px;
+    letter-spacing: -1px;
+}
+.elevate-btn a {
+    font-size: 22px;
+    color: #020308;
+    font-weight: 600;
+    background: #FCFDFF;
+    padding: 14px 28px;
+    display: inline-block;
+    border-radius: 8px;
+}
+.elevate-btn {
+    text-align: center;
+    margin-top: 40px;
+}
+section.elevate-section {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/waba-page/eveluate-bg.jpg) center center no-repeat;
+    padding: 144px 0;
+    background-size: cover;
+}
+.elevate-txt {
+    max-width: 870px;
+    margin: auto;
+}
+section.whyus-section {
+    padding-top: 140px;
+    padding-bottom: 68px;
+}
+.wy-grid-cnt h4 {
+    color: #000;
+    font-family: Gilroy;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.wy-grid-cnt p {
+    color: #000;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+.wy-grid-img {
+    margin-bottom: 32px;
+}
+.wy-grid-img img {
+    max-width: 72px;
+}
+.wy-grid {
+    min-height: 353px;
+    border-radius: 12px;
+    border: 1px solid #E7EEF3;
+    background: #FFF;
+    padding: 28px 28px 12px;
+}
+.wy-grid:hover {
+    background: #f7f9fc;
+}
+.people-section {
+    padding-top: 60px;
+    padding-bottom: 135px;
+}
+.people-grid img {
+    max-width: 100%;
+    width: auto !important;
+}
+.people-say-image img {
+    border-radius: 12px;
+    border: 1px solid #E7EEF3;
+}
+.people-say-image {
+    width: 321px;
+    height: 332px;
+    margin-left: auto;
+    margin-right: 25px;
+    position: relative;
+    z-index: 1;
+}
+.people-say-image:before {
+    position: absolute;
+    content: "";
+    background: #E6EAF8;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    border-radius: 12px;
+    transform: rotate(8deg);
+}
+.people-txt h5 {
+    color: #000;
+    font-family: Gilroy;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 12px;
+}
+.people-txt p {
+    color: #000;
+    font-family: Gilroy;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+.people-deg h4 {
+    color: #000;
+    font-family: Gilroy;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+}
+.people-deg p {
+    color: #000;
+    font-family: Gilroy;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 0;
+}
+.people-deg {
+    margin-top: 36px;
+}
+.people-txt {
+    margin-top: 30px;
+}
+.comma-icon img {
+    max-width: 56px;
+}
+.people-say-content {
+    max-width: 500px;
+    padding: 6px 0;
+    min-height: 375px;
+}
+.for-nav-btn.owl-carousel .owl-nav button:focus {
+    outline: 0;
+}
+/* waba new  */
+.waba-banner-img img:hover {
+    transform: none !important;
+}
+.domain-page-banner .banner-img.waba-banner-img {
+    margin-top: 58px;
+}
+.waba_banner_cnt .title img {
+    display: inline;
+}
+.waba-comon-heading span {
+    background: linear-gradient(91deg, #596AFF 0%, #C277E5 22.92%, #FF4ECD 41.67%, #FFA15C 82.29%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.indusry-box {
+    margin-top: 24px;
+}
+.industry-btn a {
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: 1px solid #2F80ED;
+    padding: 14px 28px;
+    border-radius: 48px;
+    display: inline-block;
+    color:  #2F80ED;
+}
+.industry-btn a:hover {
+    color:  #2F80ED;
+}
+
+.industry-btn a i {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    top: 1px;
+}
+.industry-btn {
+    text-align: center;
+    margin-top: 73px;
+}
+.get-boxes {
+    min-height: 580px;
+    border-radius: 20px;
+    position: relative;
+    padding: 64px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+        margin-bottom: 48px;
+}
+.get-boxes:last-child {
+    margin-bottom: 0;
+}
+
+.get-boxes:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(360deg, #B7FFE5 0%, #00A3FF 100%);
+    opacity: 0.06;
+    border-radius: 20px;
+    left: 0;
+    top: 0;
+}
+.get-boxes.get-pink-bg:before {
+    background: linear-gradient(360deg, #FFB7EF 0%, #5200FF 100%);
+}
+.get-boxes.get-blue-bg:before {
+    background: linear-gradient(360deg, #7572FF 0%, #90BDFF 100%);
+}
+.get-boxes.get-light-green-bg:before {
+    background: linear-gradient(180deg, #E9FF60 0%, #24FF00 100%);
+}
+.get-boxes.get-dark-green-bg:before {
+    background: linear-gradient(180deg, #ABF0C6 0%, #FFECA9 100%);
+    opacity: 0.10;
+}
+.get-content h4 {
+    color: #1F6890;
+    font-family: Gilroy;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 72px;
+    letter-spacing: -2px;
+
+}
+
+.get-content h4 span {
+    font-weight: 700;
+}
+.get-content p {
+    color: #1F6890;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    opacity: 0.8;
+}
+.get-image {
+    max-width: 450px;
+    margin-left: auto;
+}
+.get-section .waba-heading {
+    margin-bottom: 124px;
+}
+.get-image img {
+    max-width: 100%;
+}
+.get-pink-bg .get-content h4, .get-pink-bg .get-content p {
+    color: #672C8A;
+}
+.get-blue-bg .get-content h4, .get-blue-bg .get-content p {
+    color: #2B2B99;
+}
+.get-light-green-bg .get-content h4, .get-light-green-bg .get-content p {
+    color: #86C03D;
+}
+.get-dark-green-bg .get-content h4, .get-dark-green-bg .get-content p {
+    color: #0F541C;
+}
+.marketing-box li {
+    margin-right: 10px;
+    display: inline-flex;
+    padding: 10px 20px 10px 10px;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid #E1E5EA;
+    margin-bottom: 35px;
+    margin-left: 10px;
+}
+.marketing-box li img {
+    max-width: 60px;
+    margin-right: 20px;
+}
+section.marketing-section {
+    padding-top: 136px;
+}
+.marketing-box li  span {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: normal;
+    background: linear-gradient(90deg, #69D8FF 0%, #9CA0FF 21.59%, #FF85ED 46.97%, #FF8497 72.34%, #FFB38E 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+        letter-spacing: -1px;
+}
+.marketing-box ul {
+    text-align: center;
+    padding: 0;
+}
+.marketing-section .waba-heading {
+    margin-bottom: 64px;
+}
+.marketing-btn a {
+    border-radius: 28px;
+    background: #006AFF;
+    color: #FFF;
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 14px 28px;
+    display: inline-block;
+}
+.marketing-btn {
+    text-align: center;
+}
+.waba-leading-brands .domain-heading {
+    margin-bottom: 60px;
+}
+
+.nr-rista-form-section.waba-form .form-img-heading h3 {
+    max-width: 100%;
+    font-family: Gilroy;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px;
+    background: linear-gradient(91deg, #596AFF 0%, #C277E5 22.92%, #FF4ECD 41.67%, #FFA15C 82.29%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 70px 40px  0 0px;
+    text-align: left;
+}
+section.rista-form-section.waba-form .col-md-5.white-bg.rista-form-right {
+    right: 0;
+    max-width: 41.666667%;
+}
+section.rista-form-section.waba-form {
+    border-top: none;
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/waba-page/new-images/formbg.png) center center no-repeat;
+        background-size: cover;
+}
+section.rista-form-section.waba-form .form-img-heading {
+    height: 730px;
+}
+
+
+.marketing-box li {
+    position: relative;
+    cursor: pointer;
+}
+.marketing-hover {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+.marketing-hover img {
+    max-width: 352px !important;
+    /* padding: 20px; */
+    border-radius: 10px;
+    /* border: 1px solid #EAF1F6; */
+    /* background: #FFF; */
+    /* box-shadow: 0px 3px 8px 0px rgba(180, 192, 212, 0.20); */
+    margin-right: 0;
+}
+.marketing-box li:hover .marketing-hover {
+    display: block;
+}
+
+
+
+.table-borderless tbody+tbody, .table-borderless td, .table-borderless th, .table-borderless thead th {
+    border: 0;
+}
+tr.plan-heading td {
+    color: #1F2F42;
+    font-size: 24px  !important;
+    font-weight: 700;
+}
+tr.plan-heading td .plan-price {
+    font-size: 32px;
+    font-weight: 500;
+    display: block;
+        margin-top: 20px;
+}
+tr.plan-heading td .pr-mnt {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.7;
+}
+.pricing-table table tbody tr td {
+    color: #1F2F42;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+        padding: 14px 28px;
+            width: 300px
+}
+.pricing-table table tbody tr td:first-child {
+    font-weight: 600;
+}
+.pricing-table table tbody tr td:nth-child(4) {
+background: #E7FFF9;
+}
+.disable-btn {
+    border-radius: 8px;
+    background: #29AD8C;
+    width: 184px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px;
+    color: #fff;
+        pointer-events: none;
+}
+.disable-btn img {
+    margin-right: 8px;
+}
+.valdity-small-txt {
+    color: #FFA101;
+    font-family: Gilroy;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    /* display: inline-flex;
+    align-items: baseline; */
+        white-space: nowrap;
+}
+.valdity-small-txt img {
+    position: relative;
+    top: -1px;
+    margin-right: 4px;
+}
+span.chatbot-txt {
+    font-size: 15px;
+    line-height: 22px;
+    max-width: 180px;
+    display: inline-block;
+}
+.plantable-section {
+    padding-bottom: 78px;
+}
+.enterprise-btn a {
+    color: #FFF;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 28px;
+    background: #006AFF;
+    padding: 14px 28px;
+    display: inline-flex;
+}
+.enterprise-text h3 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: normal;
+        margin-bottom: 16px;
+}
+.enterprise-text h3 span {
+    background: linear-gradient(91deg, #596AFF 0%, #C277E5 22.92%, #FF4ECD 41.67%, #FFA15C 82.29%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: normal;
+}
+.enterprise-text h5 {
+    color: #1F2F42;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+    opacity: 0.7;
+        margin-bottom: 32px
+}
+.enterprise-text h5 span {
+    font-size: 14px;
+    opacity: 0.7;
+}
+.enterprise-text h4 {
+    color: #1F2F42;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+        display: inline-flex;
+    align-items: center;
+}
+.enterprise-text h4 img {
+    margin-left: 12px;
+    display: inline;
+}
+.enterprise-box {
+    padding: 36px;
+    background: #fff;
+    border-radius: 16px;
+    position: relative;
+    /* z-index: 1; */
+}
+.enterprise-box:before {
+    position: absolute;
+    content: "";
+    background: linear-gradient(91deg, #596AFF 0%, #C277E5 22.92%, #FF4ECD 41.67%, #FFA15C 82.29%);
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    top: -1px;
+    left: -1px;
+    z-index: -1;
+    border-radius: 16px;
+}
+.enterprise-section {
+    padding-bottom: 136px;
+}
+.enterprise-btn {
+    text-align: right;
+}
+
+.custom-industry-modal {
+    z-index: 9999;
+    margin-top: 90px;
+}
+.custom-industry-modal .modal-dialog{
+    max-width: 1200px;
+}
+.custom-industry-modal .modal-content {
+    border-radius: 24px;
+    border: none;
+}
+.custom-industry-modal .industry-grid {
+    margin-bottom: 80px;
+}
+.custom-industry-modal  .modal-header {
+    top: -50px;
+    position: relative;
+    border: none;
+}
+.custom-industry-modal .close {
+    opacity: 1;
+}
+.col-md-4.col-sm-6:last-child .industry-grid {
+    margin-bottom: 0;
+}
+.waba-leading-brands .domain-heading h1 {
+    font-size: 52px;
+}
+.waba-menu-btn a.top-get-started-btn {
+    color: #fff !important;
+    border-color: #fff !important;
+}
+.menu-and-btn {
+    padding-right: 38px;
+}
+.waba-page .top-bar.top-bar-mobile {
+    padding-top: 54px;
+}
+.marketing-list-btn {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+}
+.pricing-table table tbody tr td img {
+    display: inline-block;
+}
+.table-pc-version{
+    display: block;
+}
+.table-mobile-version{
+    display: none;
+}
+.sb-margin-bottom select.form-control {
+    border-radius: 8px;
+    height: 58px !important;
+    border: 1px solid #d7d7d7;
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/waba-page/new-images/down-arrow.png) no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* appearance: none; */
+    /* background-size: contain; */
+    background-position: right .75rem center;
+}
+.col-md-7.rista-form-left {
+    position: relative;
+    left: -160px;
+}
+/* waba landing page end  */
+.pricing-table table tbody tr td a[data-toggle="tooltip"] {
+    display: none;
+}
+.thankYouModal .modal-dialog {
+    max-width: 1089px;
+    max-height: 692px;
+}
+.thankYouModal .modal-body h2 {
+    color: #000;
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.08px;
+    margin-bottom: 14px;
+}
+.thankYouModal .modal-body p {
+    margin-bottom: 48px;
+    color: #000;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.22px;
+}
+.thankYouModal .go-home-btn {
+    float: none;
+}
+.thankYouModal .modal-body {
+    text-align: center;
+}
+.thankYouModal .modal-body {
+    padding-top: 141px;
+    padding-bottom: 189px;
+}
+.thankYouModal .modal-body img {
+    max-width: 96.667px;
+    max-height: 96.667px;
+    margin: auto;
+    margin-bottom: 42.33px;
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+.waba-page .get-started-fixed a {
+    padding: 0.7rem 1.5rem;
+}
+}
+@media (min-width: 1200px){
+.waba-page .container {
+    /* max-width: 1170px; */
+     max-width: 1252px;
+}
+}
+@media (max-width:1880px){
+    /* .server-right-img {
+    right: -165px;
+}
+.rista-info-slider .server-right-img {
+    left: -165px;
+} */
+section.pos-section {
+    padding: 50px 50px;
+}
+.discover-section {
+    padding: 100px 150px;
+}
+.performance-section {
+    padding: 100px 50px;
+}
+section.order-section {
+    padding: 100px 150px;
+}
+.slider-arrow2 a span img {
+    height: 45px;
+    width: 45px;
+}
+}
+@media (max-width:1700px){
+    /* .server-right-img {
+    right: -115px;
+}
+.rista-info-slider .server-right-img {
+    left: -115px;
+} */
+section.pos-section {
+    padding: 50px 50px;
+}
+.discover-section {
+    padding: 100px 100px;
+}
+.performance-section {
+    padding: 100px 50px;
+}
+section.order-section {
+    padding: 100px 100px;
+}
+.col-md-7.rista-form-left {
+    left: -115px;
+}
+}
+@media (max-width:1600px){
+    .domain-page-banner {
+        padding: 215px 0 90px 0;
+    }
+    a.site_url {
+        font-size: 34px;
+    }
+    .domain_banner_cnt .title {
+        max-width: 650px;
+        margin: 0 auto 25px;
+        font-size: 70px;
+    }
+    .domain_banner_cnt .para {
+        font-size: 23px;
+    }
+    .domain-page-banner .banner-img {
+        margin-top: 65px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    section.domain-business {
+        padding: 70px 0;
+    }
+    .domain-heading h1 {
+        font-size: 48px;
+    }
+    .domain-heading {
+        max-width: 555px;
+        margin-bottom: 55px;
+    }
+    .domain-box {
+        margin-bottom: 45px;
+    }
+    .domain-box img {
+        max-width: 25px;
+    }
+    .domain-box h4 {
+        font-size: 17px;
+    }
+    .dotpe-domain-section {
+        padding: 95px 0;
+    }
+    .dotpe-domain-txt h2 {
+        font-size: 60px;
+    }
+    .sale_domain_headin {
+        max-width: 600px;
+    }
+    .sale_domain_headin p {
+        font-size: 26px;
+    }
+    .sale_domain_pera {
+        margin: 15px 0 30px 0;
+    }
+    .sale_box img {
+        max-height: 70px;
+        max-width: 95px;
+    }
+    .sale_box {
+        min-height: 140px;
+    }
+    .custom_faq_section {
+        padding: 70px 0;
+    }
+    .custom_faq_section .main-title {
+        font-size: 52px;
+    }
+    .custom_faq_section .faq-accordion .card-header a {
+        font-size: 23px;
+    }
+    .custom_faq_section .faq-accordion .card-header a img {
+        max-width: 22px;
+    }
+    .custom_faq_section .faq-accordion .card-header .faq_acco_icon {
+        top: 30px;
+    }
+    /* theme page css start */
+    .s_theme_page .title {
+        max-width: 870px;
+    }
+    .way-section {
+        min-height: 1000px;
+        padding: 75px 0;
+    }
+    .theme-page-categorie-section {
+        padding: 70px 0 0;
+    }
+    .theme-page-categorie-section h1.main-title {
+        width: 70%;
+        font-size: 48px;
+        line-height: normal;
+        margin: 0 auto 60px;
+    }
+    .theme-page-categorie-section .carousel-inner .text-block h2 {
+        margin-bottom: 28px;
+        font-size: 30px;
+    }
+    .theme-page-categorie-section .carousel-indicators {
+        margin-bottom: 40px;
+    }
+    .theme-page-categorie-section .business-categories-inner .image-block {
+        margin-top: 45px;
+    }
+    .s_build_grow_form {
+        padding: 70px 0;
+    }
+    .s_build_grow_form .main-title {
+        font-size: 48px;
+        line-height: normal;
+    }
+    .grow-your-business .para {
+        font-size: 26px;
+        line-height: 34px;
+    }
+    /* theme page css end */
+    /* .custom-zoho-form .zcwf_title {
+        font-size: 30px;
+        margin-bottom: 23px;
+    } */
+    .custom-zoho-form .zcwf_button.custom_zoho_btns {
+        padding: 0.9rem 0;
+    }
+    /* 14 june  */
+    /* .server-right-img img {
+    width: auto;
+    max-width: 100%;
+} */
+/* .server-right-img {
+    right: 0;
+}
+.rista-info-slider .server-right-img {
+    left: 0;
+} */
+.restaurant_banner_cnt .title {
+    font-size: 56px;
+}
+.ud-head {
+    font-size: 60px;
+    line-height: 64px;
+}
+.discover-grid h4 {
+    font-size: 22px;
+}
+.discover-grid p {
+    font-size: 19px;
+}
+.perform-heading h3 {
+    font-size: 38px;
+}
+.form-img-heading h3 {
+    font-size: 52px;
+}
+section.rista-serve-section.rista-need {
+    padding-top: 20px;
+}
+.serve-heading h3 {
+    font-size: 40px;
+}
+.ud-pera {
+    font-size: 30px;
+}
+section.command-business {
+    background-size: contain;
+    /* height: 500px; */
+    /* background-position: bottom right; */
+        background-position-x: 0px;
+}
+section.order-section {
+    padding: 80px 30px;
+}
+section.pos-section {
+    padding: 50px 42px;
+}
+.discover-section {
+    padding: 80px 40px;
+}
+.performance-section {
+    padding: 80px 40px;
+}
+.ecosystem-section {
+    padding: 80px 30px;
+}
+.slider-arrow2 a 
+ span {
+    height: 45px;
+    background-size: cover;
+}
+.nr_restaurant_banner_cnt .title {
+    font-size: 44px;
+}
+.col-md-7.rista-form-left {
+    left: -100px;
+}
+}
+.request-content  .form-form img {
+    max-width: 70px;
+    margin-bottom: 20px;
+}
+@media (max-width:1550px){
+    .way-section {
+        min-height: 950px;
+        padding: 70px 0;
+    }
+    .col-md-7.rista-form-left {
+    left: -83px;
+}
+}
+@media (max-width:1500px){
+    .way-section {
+        min-height: 920px;
+    }
+    .col-md-7.rista-form-left {
+    left: -69px;
+}
+}
+@media (max-width:1450px){
+    .way-section {
+        min-height: 890px;
+    }
+    .col-md-7.rista-form-left {
+    left: -60px;
+}
+}
+@media (max-width:1399px){
+    .domain-page-banner {
+        padding: 200px 0 85px 0;
+    }
+    a.site_url {
+        font-size: 30px;
+    }
+    .domain_banner_cnt .title {
+        max-width: 560px;
+        margin: 0 auto 23px;
+        font-size: 60px;
+    }
+    .domain_banner_cnt .para {
+        font-size: 22px;
+        margin-bottom: 42px;
+    }
+    .domain-page-banner .banner-img {
+        margin-top: 60px;
+        max-width: 900px;
+    }
+    section.domain-business {
+        padding: 65px 0;
+    }
+    .domain-heading h1 {
+        font-size: 44px;
+    }
+    .domain-heading {
+        max-width: 500px;
+        margin-bottom: 45px;
+    }
+    .domain-box img {
+        max-width: 23px;
+    }
+    .domain-box {
+        margin-bottom: 40px;
+    }
+    .dotpe-domain-section {
+        padding: 90px 0;
+    }
+    .dotpe-domain-txt h2 {
+        font-size: 54px;
+        max-width: 700px;
+    }
+    .domain-heading h1 {
+    font-size: 42px;
+}
+    .sale_domain_headin p {
+        font-size: 24px;
+    }
+    .sale_box {
+        min-height: 130px;
+    }
+    .custom_faq_section {
+        padding: 65px 0;
+    }
+    .custom_faq_section .main-title {
+        font-size: 48px;
+    }
+    .custom_faq_section .faq-accordion .card-header a {
+        font-size: 22px;
+    }
+    .custom_faq_section .faq-accordion .card-header a img {
+        max-width: 20px;
+    }
+     /* theme page css start */
+    .s_theme_page .title {
+        max-width: 940px;
+    }
+    .need-theme-section .get-started-btn-arrow {
+        font-size: 18px;
+    }
+    .way-section {
+        padding: 68px 0;
+    }
+    .way-section .dotpe-domain-txt p {
+        font-size: 23px;
+    }
+    .theme-page-categorie-section {
+        padding: 65px 0 0;
+    }
+    .theme-page-categorie-section h1.main-title {
+        width: 55%;
+        font-size: 40px;
+        margin: 0 auto 55px;
+    }
+    .s_build_grow_form .para {
+        font-size: 25px;
+        line-height: 33px;
+        margin-top: 28px;
+    }
+    .way-section {
+        min-height: 870px;
+    }
+    .way-section .dotpe-domain-txt h2 {
+        margin: 0px auto 18px;
+    }
+    .theme-page-categorie-section .carousel-inner .text-block h2 {
+        margin-bottom: 26px;
+        font-size: 28px;
+    }
+    .s_build_grow_form {
+        padding: 65px 0;
+    }
+    .s_build_grow_form .main-title {
+        font-size: 42px;
+        line-height: normal;
+    }
+     /* theme page css end */
+     /* .custom-zoho-form .zcwf_title {
+        font-size: 28px;
+    } */
+    .zcwf_title.zoho_main_title {
+        font-size: 30px;
+    }
+    .custom-zoho-form .zcwf_button.custom_zoho_btns {
+        padding: 0.9rem 0;
+    }
+    /* 14 june  */
+    .restaurant_banner_cnt .title {
+    font-size: 60px;
+}
+section.rista-serve-section {
+    padding: 70px 90px;
+}
+.serve-heading h3 {
+    font-size: 42px;
+}
+.serve-heading h4 {
+    font-size: 28px;
+}
+.serve-crousal .custom-info-slider ol.carousel-indicators {
+    width: auto  !important;
+}
+.server-left-cnt h3 {
+    font-size: 28px;
+    margin-bottom: 32px;
+    line-height: 36px;
+}
+.serve-crousal .carousel-indicators li span {
+    font-size: 16px;
+    padding: 0 10px;
+}
+.ud-head {
+    /* font-size: 52px; */
+    /* line-height: 60px; */
+}
+.ud-pera {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+section.order-section {
+    padding: 70px 70px;
+}
+.need-plan-btn {
+    margin-top: 60px;
+}
+/* .order-box:before {
+    display: none;
+} */
+/* .order-box {
+    padding: 0 00px;
+} */
+.pos-heding h3 {
+    font-size: 28px;
+}
+.pos-heding h2 {
+    font-size: 42px;
+}
+.pos-pera {
+    margin-left: 0px;
+}
+/* .pos-pera p {
+    font-size: 17px;
+    line-height: 26px;
+} */
+.ecosystem-section {
+    padding: 70px 90px;
+}
+.ecosystem-heading h2 {
+    font-size: 42px;
+}
+/* .ecosystem-heading p {
+    font-size: 28px;
+} */
+.ecosystem-heading p span {
+    font-size: 42px;
+}
+.ecosystem-img {
+    margin-top: 20px;
+}
+.discover-section {
+    padding: 70px 90px;
+}
+.discover-box-section {
+    margin-top: 50px;
+}
+.discover-grid h4 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.discover-grid p {
+    font-size: 21px;
+    font-weight: 300;
+}
+.performance-section {
+    padding: 70px 90px;
+}
+.performance-box-section {
+    margin-top: 40px;
+    padding: 55px;
+    padding-bottom: 0;
+}
+.perform-heading h3 {
+    font-size: 40px;
+    max-width: 490px;
+}
+/* .perform-msg p {
+    font-size: 22px;
+    line-height: 30px;
+    
+} */
+.perform-msg {
+    margin: 50px 0;
+    margin-bottom: 0;
+}
+.nl-box .scb-cnt h5 {
+    font-size: 24px;
+}
+.nl-box .scb-cnt p {
+    font-size: 24px;
+}
+.form-img-heading h3 {
+    font-size: 56px;
+}
+.form-hp h3 {
+    font-size: 30px;
+}
+.form-form form p {
+    font-size: 14px;
+    line-height: 25px;
+    margin-top: 48px;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+/* .form-img-heading {
+    height: 690px;
+} */
+.form-img-heading h3 {
+    padding: 75px 150px 0;
+}
+.dot-icon {
+    margin-top: 30px;
+}
+.slider-arrow span img {
+    max-width: 45px;
+}
+/* .form-form {
+    padding: 50px 30px;
+    padding-right: 30px;
+} */
+.form-form {
+    padding: 50px 50px;
+    padding-right: 70px;
+        padding-right: 80px !important;
+}
+.form-img-heading h3 {
+    padding: 70px 60px 0;
+    text-align: left;
+    /* max-width: 680px; */
+    padding-right: 90px;
+    padding-left: 25px;
+}
+/* .order-box-img {
+    min-height: 363px;
+} */
+.order-box-img.ob-3 img {
+    padding-top: 57px;
+}
+.ud-cnt {
+    min-height: 700px;
+}
+.order-box:before {
+    height: 100%;
+    top: -50px;
+}
+.order-box-img:after {
+    bottom: 0px;
+    top: 178px;
+}
+.order-box-txt {
+    min-height: 118px;
+    position: relative;
+    top: -44px;
+}
+.nr-pos-section .fluid-bg {
+    padding-bottom: 55.8px;
+}
+.nr_restaurant_banner_cnt .title {
+    font-size: 44px;
+}
+.restaurant_banner_cnt .para {
+    margin-bottom: 27px;
+}
+p.nr_restaurant_banner_pera {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+.restaurant-page-banner .banner-img.nr_banner-img img {
+    width: 596.16px;
+    height: 350.17px;
+    position: relative;
+    left: 10px;
+}
+.performance-carousel-slider .story-container {
+    height: 447px;
+}
+.delight-heading {
+    margin-bottom: 31.66px;
+}
+}
+@media (min-width:481px) and (max-width:1399px){
+    .owl-stage-outer.move-slide {
+    margin-left: 98px;
+}
+}
+@media (min-width:1366px) and (max-width:1399px){
+    .nr-rista-form-section .form-form {
+    padding-right: 0 !important;
+}
+}
+@media (max-width:1366px){
+   .server-right-img {
+    right: -115px;
+}
+.server-right-img {
+    right: -50px;
+    /* margin-top: 70px; */
+}
+section.rista-serve-section {
+    overflow: hidden;
+}
+.rista-info-slider .server-right-img {
+    /* left: -95px; */
+    left: -110px;
+    margin-top: 0;
+}
+.order-box-img.ob-3 img {
+    padding-top: 65px;
+}
+.rista-need .server-right-img img {
+    /* max-height: 413px; */
+    max-height: 397px;
+    max-width: 515px;
+    width: 100%;
+}
+.nr-rista-need .server-left-cnt {
+    max-width: 515px;
+    height: 338px;
+}
+.need-cnt-box li {
+    margin-bottom: 10px;
+}
+.need-cnt-box ul {
+    margin-top: 0;
+    min-height: 140px;
+}
+.restaurant-brand  .item img {
+    max-height: 70px;
+    max-width: 105px;
+}
+.second-rista-crousal {
+    margin-top: 52px;
+}
+.rista-need .server-left-cnt {
+    margin-left: auto;
+}
+.carousel-inner.change-crousal-overflow.nedd-crousal {
+    max-height: 450px;
+    min-height: 450px;
+}
+.ud-cnt {
+    min-height: 660px;
+}
+section.command-business {
+    background-position-x: 0px !important;
+}
+
+
+
+/* new rista page  */
+/* .restaurant-page-banner .banner-img.nr_banner-img img {
+    width: 100%;
+} */
+.restaurant_banner_cnt .title {
+    font-size: 44px;
+}
+section.restaurant-page-banner.rista-page-banner {
+    padding-bottom: 205px;
+}
+.domain-heading {
+    margin-bottom: 58px;
+}
+.nr-leading-brands {
+    padding-top: 110px;
+}
+section.rista-serve-section.rista-need.nr-rista-need {
+    padding-top: 104px;
+}
+.nr-rista-need .serve-crousal .custom-info-slider ol.carousel-indicators {
+    box-shadow: inset 0px 3px 10px 0px rgb(121 121 121 / 25%);
+}
+.nr-rista-need .slider-arrow {
+    margin-top: 10px;
+}
+.delight-btn-margin {
+    margin-top: 75px;
+}
+.nr-command-business .ud-cnt {
+    background-size: contain;
+    min-height: 460px;
+    background-position-y: 0;
+}
+section.command-business {
+    padding: 00px 90px;
+}
+.ndf-image {
+    height: 202px;
+    width: 268px;
+}
+.ecosystem-img img {
+    margin-top: -145px;
+}
+.performance-section {
+    padding: 80px 90px;
+    padding-top: 120px;
+    padding-top: 90px;
+}
+.performance-carousel-slider .owl-stage {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.perform-left-cnt {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* .nr-rista-form-section .form-img-heading {
+    height: 700px;
+} */
+.nr-rista-form-section .form-img-heading {
+    height: 730px;
+    width: 690px;
+}
+.col-md-5.white-bg.rista-form-right {
+    position: absolute;
+    right: -83px;
+    max-width: 624px;
+    /* height: 100%; */
+    bottom: 0;
+    top: 0;
+}
+section.rista-form-section.waba-form .form-form {
+    padding: 30px 0px 70px 50px !important;
+}
+section.rista-form-section.waba-form .form-img-heading {
+    height: 700px;
+}
+.form-img-heading img {
+    max-width: 111%;
+    left: -77px;
+}
+.col-md-7.rista-form-left {
+    left: 0;
+}
+}
+@media (max-width:1342px){
+.order-box-img {
+    min-height: 353px;
+}
+.order-box-img.ob-3 img {
+    padding-top: 57px;
+}
+.order-box-txt {
+    top: -79px;
+}
+.order-box {
+    overflow: hidden;
+}
+.order-box:before {
+    top: -75px;
+}
+.order-box-txt {
+    top: -104px;
+}
+.order-box {
+    padding: 0px 15px 0 70px;
+    padding-right: 0px;
+}
+.order-box-img:after {
+    top: 187px;
+}
+section.order-section .custom-container {
+    margin-left: -10px;
+}
+.nr-pos-section .pos-img {
+    width: 660px;
+    left: -60px;
+}
+.form-img-heading img {
+    max-width: 111%;
+    left: -73px;
+}
+}
+@media (max-width:1313px){
+    .serve-crousal .carousel-indicators li span {
+    font-size: 15px;
+}
+}
+@media (max-width:1300px){
+    .way-section {
+        min-height: 820px;
+    }
+    .order-box-img {
+    min-height: 340px;
+}
+.nr-pos-section .pos-img {
+    width: auto;
+    left: 0;
+}
+.col-md-5.white-bg.rista-form-right {
+    position: relative;
+    right: 0;
+    max-width: 100%;
+    /* height: 100%; */
+}
+.nr-rista-form-section .form-form {
+    padding-right: 0 !important;
+    padding-left: 50px;
+}
+.communicate-image-box {
+    width: auto;
+    height: auto;
+    padding: 75px 50px;
+}
+.communicate-img img {
+    max-width: 100%;
+}
+/* waba new */
+.waba-comon-heading {
+    font-size: 48px;
+    line-height: 56px;
+}
+.get-content h4 {
+    font-size: 56px;
+    line-height: 65px;
+}
+.get-boxes {
+    min-height: 560px;
+}
+.marketing-box li  span {
+    font-size: 32px;
+}
+section.rista-form-section.waba-form .form-img-heading {
+    height: auto;
+}
+.form-img-heading img {
+    max-width: 106%;
+    left: -35px;
+}
+}
+@media (max-width:1280px){
+ .order-box-txt {
+    top: -93px;
+}
+.restaurant-page-banner .banner-img.nr_banner-img img {
+    width: 100%;
+    height: auto;
+}
+.nr-rista-form-section .form-form {
+    padding: 70px 65px;
+        padding-right: 35px !important;
+        padding-bottom: 0;
+}
+.nr-rista-form-section .form-img-heading {
+    /* height: auto; */
+    width: auto;
+}
+.discover-grid p {
+    font-size: 18px;
+}
+.discover-grid h4 {
+    font-size: 20px;
+}
+.perform-msg p {
+    font-size: 23px;
+}
+.form-form form .form-control {
+    height: 48px;
+}
+.sb-margin-bottom select.form-control {
+    height: 48px !important;
+}
+.code-grid:after {
+    height: 48px;
+}
+.form-grid span {
+    top: 15px;
+}
+.nr-rista-form-section .form-img-heading {
+    height: 710px;
+}
+}
+@media (max-width:1260px){
+    .way-section {
+        min-height: 820px;
+    }
+    .order-box-img {
+    min-height: 340px;
+    margin-bottom: 10px;
+}
+.order-box-img {
+    min-height: 330px;
+}
+}
+@media (min-width:1200px) and (max-width:1230px){
+    .carousel-indicators li span {
+    padding: 0 1.1rem;
+}
+section.delightful-section, section.ndf-section, section.restaurant-page-banner.rista-page-banner {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+}
+@media (max-width:1199px){
+    .domain-page-banner {
+        padding: 190px 0 80px 0;
+    }
+    a.site_url {
+        font-size: 28px;
+    }
+    .domain_banner_cnt .title {
+        max-width: 500px;
+        margin: 0 auto 20px;
+        font-size: 56px;
+    }
+    .domain_banner_cnt .para {
+        font-size: 21px;
+        margin-bottom: 36px;
+        font-weight: 500;
+    }
+    .domain-page-banner .banner-img {
+        max-width: 800px;
+    }
+    section.domain-business {
+        padding: 60px 0;
+    }
+    .domain-heading h1 {
+        font-size: 37px;
+    }
+    .domain-heading {
+        max-width: 430px;
+        margin-bottom: 40px;
+    }
+    .dotpe-domain-section {
+        padding: 85px 0;
+    }
+    .dotpe-domain-txt h2 {
+        font-size: 50px;
+    }
+    .sale_domain_headin {
+        max-width: 500px;
+    }
+    .sale_domain_headin p {
+        font-size: 23px;
+    }
+    .sale_box {
+        min-height: 120px;
+    }
+    .sale_box img {
+        max-height: 60px;
+        max-width: 85px;
+    }
+    .custom_faq_section {
+        padding: 60px 0;
+    }
+    .custom_faq_section .main-title {
+        font-size: 46px;
+        margin: 0 auto 60px;
+    }
+    .custom_faq_section .faq-accordion .card-header a {
+        font-size: 21px;
+    }
+    .custom_faq_section .faq-accordion .card-header a img {
+        max-width: 18px;
+    }
+     /* theme page css start */
+    .s_theme_page .title {
+        max-width: 700px;
+    }
+    .way-section {
+        padding: 63px 0;
+        min-height: 790px;
+    }
+    .way-section .dotpe-domain-txt p {
+        font-size: 22px;
+    }
+    .theme-page-categorie-section {
+        padding: 60px 0 0;
+    }
+    .theme-page-categorie-section h1.main-title {
+        width: 60% !important;
+        font-size: 37px;
+        margin: 0 auto 50px;
+    }
+    .theme-page-categorie-section .carousel-inner .text-block h2 {
+        margin-bottom: 25px;
+        font-size: 27px;
+    }
+    .theme-page-categorie-section .get-started-btn-arrow {
+        font-size: 18px;
+    }
+    .s_build_grow_form {
+        padding: 60px 0;
+    }
+    .s_build_grow_form .main-title {
+        font-size: 37px;
+    }
+    .s_build_grow_form .para {
+        font-size: 23px;
+        line-height: 30px;
+        margin-top: 25px;
+    }
+    .s_build_grow_form .form-block.mt-5 {
+        margin-top: 40px !important;
+    }
+     /* theme page css end */
+     /* .custom-zoho-form .zcwf_title {
+        font-size: 26px;
+        margin-bottom: 18px;
+    } */
+    .zcwf_title.zoho_main_title {
+        font-size: 28px;
+        margin-bottom: 3px;
+    }
+    .zcwf_title.zoho_sub_title {
+        font-size: 17px;
+    }
+    .custom-zoho-form .zcwf_button.custom_zoho_btns {
+        padding: 0.8rem 0;
+    }
+    .restaurant_banner_cnt .title {
+    font-size: 44px;
+    line-height: 52px;
+}
+.restaurant-page-banner {
+    padding: 180px 0 90px 0;
+}
+.award-heading p {
+    font-size: 17px;
+}
+.award-heading {
+    margin-bottom: 30px;
+}
+.restaurant-heading {
+    padding-top: 90px;
+}
+section.rista-serve-section {
+    padding: 55px 80px;
+}
+.serve-heading h4 {
+    font-size: 22px;
+}
+.serve-heading h3 {
+    font-size: 34px;
+}
+/* .serve-crousal .carousel-indicators li span {
+    font-size: 18px !important;
+} */
+.serve-crousal .custom-info-slider ol.carousel-indicators {
+    margin-bottom: 50px;
+}
+.scb-cnt h4 {
+    font-size: 19px;
+}
+.server-cnt-box {
+    margin-bottom: 20px;
+}
+.need-cnt-box p {
+    font-size: 17px;
+}
+.rista-need .server-left-cnt h3 {
+    margin-bottom: 25px;
+}
+.need-cnt-box ul {
+    margin-top: 40px;
+}
+/* .serve-crousal .carousel-control-next-icon, .serve-crousal .carousel-control-prev-icon {
+    width: 45px;
+    height: 45px;
+} */
+/* section.command-business {
+    height: 430px;
+} */
+.ud-pera {
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+.ud-head {
+    font-size: 46px;
+    line-height: 52px;
+}
+.order-box-txt h4 {
+    font-size: 19px;
+        margin-bottom: 15px;
+}
+section.order-section {
+    padding: 60px 40px 50px;
+}
+.pos-heding h3 {
+    font-size: 22px;
+}
+.pos-heding h2 {
+    font-size: 32px;
+}
+.fluid-bg {
+    padding: 40px;
+}
+/* .pos-pera p {
+    font-size: 16px;
+    line-height: 24px;
+} */
+.pos-img {
+    margin-top: 35px;
+}
+.ecosystem-section {
+    padding: 55px 40px;
+}
+.ecosystem-heading p {
+    font-size: 22px;
+}
+.ecosystem-heading p span {
+    font-size: 32px;
+}
+.leading-brands .domain-heading h1 {
+    font-size: 36px;
+}
+.ecosystem-heading h2 {
+    font-size: 36px;
+}
+.ecosystem-img {
+    margin-top: 10px;
+}
+.discover-section {
+    padding: 55px 40px 45px;
+}
+.discover-grid img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
+}
+.discover-grid h4 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+.discover-grid p {
+    font-size: 17px;
+    line-height: 23px;
+}
+.performance-section {
+    padding: 55px 40px;
+}
+.performance-box-section {
+    margin-top: 35px;
+    padding: 40px;
+    padding-bottom: 0;
+}
+.perform-heading h3 {
+    font-size: 30px;
+}
+.perform-msg {
+    margin: 40px 0;
+    padding-left: 40px;
+}
+.perform-msg:before {
+    width: 28px;
+    height: 23px;
+}
+.perform-msg p {
+    font-size: 18px;
+    line-height: 26px;
+}
+.nl-box .scb-icon img {
+    max-height: 70px;
+}
+.nl-box .scb-icon {
+    width: 35px;
+    margin-right: 25px;
+}
+.nl-box .scb-cnt h5, .nl-box .scb-cnt p {
+    font-size: 20px;
+}
+.nl-box {
+    margin-bottom: 40px;
+}
+.perform-right-img {
+    max-width: 390px;
+}
+.form-img-heading h3 {
+    font-size: 38px;
+}
+.form-img-heading h3 {
+    padding: 75px 20px 0;
+    text-align: center;
+}
+.form-img-heading {
+    height: 655px;
+}
+.form-form form p {
+    font-size: 14px;
+}
+.order-box-img {
+    min-height: 255px;
+}
+.order-box-img {
+    min-height: 320px;
+}
+/* .restaurant-brand  .owl-item {
+    border-left: 1px solid #D6E3FC;
+} */
+.restaurant-brand  .item img {
+    max-height: 65px;
+    max-width: 100px;
+}
+.ud-cnt {
+    min-height: 590px;
+}
+.order-box:before {
+    top: -66px;
+}
+.order-box-txt {
+    top: -78px;
+}
+.perform-msg {
+    height: 150px;
+}
+
+
+/* new rista page  */
+.custom-container {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.page-static-banner .para {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+.restaurant_banner_cnt .title {
+    font-size: 40px;
+    line-height: 48px;
+}
+p.nr_restaurant_banner_pera {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+section.restaurant-page-banner.rista-page-banner {
+    padding-bottom: 184px;
+}
+.star-awrd-hp  h5 {
+    font-size: 22px;
+}
+.star-awrd-hp  p {
+    font-size: 17px;
+}
+section.rista-serve-section.rista-need.nr-rista-need {
+    padding-top: 85px;
+}
+.restaurant-brand {
+    padding: 45px 0px;
+}
+section.rista-serve-section {
+    padding: 55px 0px;
+}
+.rista-need .server-right-img img {
+    max-height: 415px;
+    max-width: 535px;
+}
+.main-header .top-fixed-navbar .navbar {
+    padding: 0.75rem 2.5rem;
+}
+.delight-heading h3 {
+    font-size: 19px;
+}
+.delight-list p {
+    font-size: 16px;
+}
+.delight-heading {
+    margin-bottom: 25px;
+}
+.delight-list ul {
+    margin-top: 25px;
+}
+.nr-command-business .ud-head {
+    line-height: 56px;
+}
+.nr-command-business .ud-cnt {
+    background-size: contain;
+    min-height: 409px;
+    background-position-y: 0;
+    background-position-x: 330px;
+}
+section.command-business {
+    padding: 00px 0px;
+}
+.ndf-box.ndf-box-p1 {
+    padding-right: 20px;
+}
+.ndf-box.ndf-box-p3 {
+    padding-left: 20px;
+}
+.nr-rista-form-section .form-img-heading h3 {
+    font-size: 42px;
+    max-width: 530px;
+    text-align: center;
+}
+.nr-rista-form-section .form-form {
+    padding: 50px 45px;
+    padding-right: 10px !important;
+    padding-bottom: 0;
+}
+
+
+
+.delight-box {
+    padding: 24px 15px;
+    padding-top: 85px;
+}
+.delight-image {
+    width: 110px;
+    height: 110px;
+    top: -56px;
+}
+.nr-pos-section .pos-heding h2 {
+    line-height: 38px;
+}
+.nr-pos-section .fluid-bg {
+    padding: 100px 0;
+}
+.nr-pos-section .pos-img {
+    height: auto;
+}
+.nr-pos-section .pos-heding p {
+    margin-top: 40px;
+}
+.nr-pos-section .fluid-bg {
+    padding-bottom: 75px;
+}
+.form-hp h3 {
+    font-size: 26px;
+}
+.form-form form p {
+    margin-top: 30px;
+}
+.rista-need .server-right-img img {
+    max-width: 100% ;
+    height: auto;
+    width: auto;
+    max-height: 397px;
+    max-width: 515px;
+}
+.need-plan-btn {
+    margin-top: 40px;
+}
+.need-cnt-box ul {
+    margin-top: 30px;
+}
+section.star-award-section.nr-star-award-section {
+    padding: 0 50px;
+}
+.nr-star-award-section .custom-container {
+    padding: 47px 70px;
+}
+.nr-rista-form-section .form-img-heading {
+    height: 685px;
+}
+/* waba page  */
+.waba_banner_cnt .title {
+    font-size: 44px;
+    line-height: 50px;
+}
+.page-static-banner .para {
+    font-size: 20px;
+}
+.waba_banner_cnt .get-started-btn {
+    padding: 12px 28px;
+    font-size: 20px;
+    height: 52px;
+}
+.waba-communicate-section {
+    padding-top: 45px;
+}
+.waba-communicate-section .waba-heading {
+    margin-bottom: 80px;
+}
+.communicate-image-box {
+    padding: 60px 35px;
+}
+.industry-section {
+    padding-top: 45px;
+}
+.communicate-content h3 {
+    font-size: 24px;
+    line-height: 34px;
+}
+.waba-comon-heading {
+    font-size: 40px;
+    line-height: 48px;
+}
+.industry-grid {
+    max-width: initial;
+}
+.industry-img {
+    max-width: initial;
+    max-height: initial;
+}
+/* .industry-cnt h4 {
+    font-size: 20px;
+    line-height: 28px;
+} */
+.industry-cnt p {
+    font-size: 16px;
+}
+.for-nav-btn .owl-nav button {
+    width: 45px !important;
+    height: 45px !important;
+}
+/* .industry-section {
+    padding-bottom: 90px;
+} */
+.marketing-img {
+    width: initial;
+    height: initial;
+    padding: 18px 18px;
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+}
+.marketing-cnt h4 {
+    color: #000;
+    font-family: Gilroy;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 9px;
+}
+.marketing-bg img {
+    max-width: 100%;
+}
+.marketing-cnt p {
+    font-size: 16px;
+    line-height: 25px;
+}
+.marketing-box {
+    margin-bottom: 50px;
+}
+section.marketing-section {
+    padding-bottom: 0px;
+}
+section.elevate-section {
+    padding: 110px 0;
+}
+.elevate-txt h2 {
+    font-size: 36px;
+    line-height: 46px;
+}
+.elevate-btn a {
+    font-size: 20px;
+}
+section.whyus-section {
+    padding-top: 112px;
+}
+.wy-grid {
+    min-height: 375px;
+    padding: 23px 23px 10px;
+}
+.wy-grid-cnt h4 {
+    font-size: 20px;
+    min-height: 50px;
+}
+.wy-grid-img img {
+    max-width: 62px;
+}
+.wy-grid-img {
+    margin-bottom: 22px;
+}
+.people-section {
+    padding-top: 22px;
+    padding-bottom: 90px;
+}
+.communicate-icon-image img {
+    max-width: 44px;
+}
+.communicate-icon-image {
+    left: -30px;
+}
+/* waba new  */
+.waba_banner_cnt .para {
+    margin-bottom: 39px;
+}
+.industry-img img {
+    max-height: 235px;
+}
+.get-boxes {
+    padding: 38px;
+    margin-bottom: 45px;
+}
+.get-content h4 {
+    font-size: 48px;
+    line-height: 56px;
+}
+.marketing-box li  span {
+    font-size: 28px;
+}
+.marketing-box li img {
+    max-width: 46px;
+}
+.waba-heading {
+    margin-bottom: 40px;
+}
+.industry-btn {
+    margin-top: 60px;
+}
+.get-section .waba-heading {
+    margin-bottom: 64px;
+}
+.get-boxes {
+    min-height: 420px;
+}
+section.marketing-section {
+    padding-top:112px;
+}
+.waba_banner_cnt .title img {
+    max-height: 50px;
+}
+
+.plantable-section {
+    padding-bottom: 65px;
+}
+.enterprise-text h3 span {
+    font-size: 30px;
+}
+.enterprise-text h3 {
+    font-size: 24px;
+}
+.enterprise-box {
+    padding: 20px;
+}
+.enterprise-btn a {
+    font-size: 18px;
+    padding: 14px 28px;
+}
+.enterprise-text h5 {
+    margin-bottom: 25px;
+}
+.pricing-table table tbody tr td {
+    padding: 10px 20px;
+    white-space: nowrap;
+    width: auto;
+}
+tr.plan-heading td {
+    font-size: 18px  !important;
+}
+tr.plan-heading td .plan-price {
+    font-size: 26px;
+    margin-top: 9px;
+}
+.enterprise-section {
+    padding-bottom: 100px;
+}
+.custom-industry-modal .industry-grid {
+    margin-bottom: 50px;
+}
+.form-img-heading img {
+    max-width: 108%;
+    left: -41px;
+}
+}
+@media (max-width:1150px){
+.order-box-img {
+    min-height: 310px;
+}
+.order-box-img.ob-3 img {
+    padding-top: 50px;
+}
+.discover-grid {
+    padding: 5px;
+}
+.serve-crousal .carousel-indicators li span {
+    font-size: 14px !important;
+}
+.order-box:before {
+    top: -48px;
+}
+.order-box-txt {
+    top: -58px;
+}
+.order-box-img:after {
+    top: 167px;
+}
+.ud-cnt {
+    min-height: 560px;
+}
+.nr-command-business .ud-cnt {
+    background-position-x: right;
+}
+.ndf-img-txt span {
+    font-size: 18px;
+}
+}
+@media (max-width:1100px){
+    .way-section {
+        min-height: 700px;
+    }
+    .order-box-img {
+    min-height: 230px;
+}
+.order-box-img {
+    min-height: auto;
+    margin-bottom: 50px;
+}
+.order-box-img:after {
+    bottom: -30px;
+}
+.order-box-img.ob-3 img {
+    padding-top: 28px;
+    padding-bottom: 10px;
+}
+.order-box-txt {
+    top: 20px;
+}
+.order-box:before {
+    top: -20px;
+}
+.order-box {
+    overflow: inherit;
+}
+.ud-cnt {
+    min-height: 515px;
+}
+.ndf-img-txt span {
+    font-size: 16px;
+}
+.ndf-image {
+    height: 152px;
+    width: 228px;
+}
+}
+@media (max-width:1045px){
+ .order-box-txt {
+    top: 30px;
+}
+}
+@media (max-width:1024px){
+    .carousel-inner.change-crousal-overflow.nedd-crousal {
+    max-height: 460px;
+    min-height: 460px;
+}
+.ud-cnt {
+    min-height: 484px;
+}
+.serve-crousal .carousel-indicators li span {
+    font-size: 13.5px !important;
+}
+}
+@media (max-width:991px){
+    .domain-page-banner {
+        padding: 180px 0 75px 0;
+    }
+    a.site_url {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+    .domain_banner_cnt .title {
+        max-width: 450px;
+        font-size: 52px;
+    }
+    .domain-page-banner .banner-img {
+        margin-top: 50px;
+        max-width: 550px;
+    }
+    section.domain-business {
+        padding: 55px 0;
+    }
+    .domain-heading h1 {
+        font-size: 34px;
+    }
+    .domain-heading {
+        max-width: 380px;
+        margin-bottom: 35px;
+    }
+    .domain-box {
+        margin-bottom: 35px;
+    }
+    .domain-box h4 {
+        font-size: 16px;
+    }
+    .dotpe-domain-section {
+        padding: 80px 0;
+    }
+    .dotpe-domain-txt h2 {
+        font-size: 46px;
+    }
+    .sale_domain_headin {
+        max-width: 480px;
+    }
+    .sale_domain_headin p {
+        font-size: 22px;
+    }
+    .sale_box {
+        padding: 10px;
+        min-height: 105px;
+    }
+    .sale_box img {
+        max-height: 58px;
+        max-width: 80px;
+    }
+    .custom_faq_section {
+        padding: 55px 0;
+    }
+    .custom_faq_section .main-title {
+        font-size: 44px;
+        margin: 0 auto 50px;
+    }
+    .custom_faq_section .faq-accordion .card-header a {
+        font-size: 20px;
+    }
+    .custom_faq_section .faq-accordion .card-header a img {
+        max-width: 16px;
+    }
+    .custom_faq_section .faq-accordion .card .card-body p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+     /* theme page css start */
+    .s_theme_page .title {
+        max-width: 620px;
+    }
+    .need-theme-section .get-started-btn-arrow {
+        font-size: 17px;
+    }
+    .need-theme-section .domain-box, .featured-theme-section .domain-box {
+        margin-bottom: 30px;
+    }
+    .way-section {
+        padding: 60px 0;
+        min-height: 650px;
+    }
+    .way-section .dotpe-domain-txt h2 {
+        margin: 0px auto 15px;
+    }
+    .way-section .dotpe-domain-txt p {
+        font-size: 21px;
+    }
+    .theme-page-categorie-section {
+        padding: 55px 0 0 !important;
+    }
+    .theme-page-categorie-section h1.main-title {
+        width: 72% !important;
+        font-size: 34px;
+        margin: 0 auto 45px;
+    }
+    .theme-page-categorie-section .carousel-inner .text-block h2 {
+        margin-bottom: 23px;
+        font-size: 25px;
+    }
+    .theme-page-categorie-section .business-categories-inner {
+        padding: 10px 0 18px 0;
+    }
+    .s_build_grow_form .main-title {
+        font-size: 34px;
+    }
+    .s_build_grow_form .para {
+        font-size: 22px;
+        line-height: 28px;
+        margin-top: 15px;
+        width: 80% !important;
+    }
+    .s_build_grow_form {
+        padding: 55px 0;
+    }
+     /* theme page css end */
+     .custom-zoho-form .zcwf_button.custom_zoho_btns {
+        padding: 0.7rem 0;
+    }
+    .restaurant_banner_cnt .title {
+    font-size: 36px;
+    line-height: 46px;
+}
+.restaurant_banner_cnt .para {
+    max-width: 430px;
+    margin-bottom: 25px;
+}
+.restaurant_banner_cnt .para:before {
+    width: 100px;
+    background-size: contain;
+}
+.restaurant_banner_cnt .para img {
+    top: 3px;
+    max-width: 65px;
+}
+.restaurant_banner_cnt .get-started-btn {
+    height: 50px;
+}
+.restaurant-page-banner {
+    padding: 180px 0 59px 0;
+}
+.award-border {
+    padding: 40px 50px 30px;
+}
+.restaurant-heading {
+    padding-top: 85px;
+}
+.leading-brands .domain-heading h1 {
+    font-size: 32px;
+}
+.restaurant-brand  .item img {
+    max-height: 55px;
+    max-width: 90px;
+}
+section.rista-serve-section {
+    padding: 50px 30px;
+}
+.serve-heading h4 {
+    font-size: 21px;
+}
+.serve-heading h3 {
+    font-size: 32px;
+}
+.server-right-img {
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 25px;
+        right: 0;
+
+}
+.rista-info-slider .server-right-img {
+    left: 0;
+}
+/* .serve-crousal .custom-info-slider {
+    text-align: center;
+} */
+.server-cnt-box {
+    text-align: left;
+}
+.serve-heading {
+    text-align: center;
+}
+.serve-crousal .carousel-indicators li span {
+    font-size: 14px !important;
+}
+.server-left-cnt h3 {
+    font-size: 22px;
+}
+.scb-cnt h4 {
+    font-size: 18px;
+}
+.serve-crousal .carousel-control-next-icon, .serve-crousal .carousel-control-prev-icon {
+    width: 40px;
+    height: 40px;
+}
+.need-cnt-box p {
+    font-size: 16px;
+}
+.rista-need .server-left-cnt h3 {
+    margin-bottom: 15px;
+}
+.need-cnt-box li {
+    font-size: 16px;
+}
+.custom-blue-btn {
+    padding: 15px 30px;
+}
+.dot-icon {
+    visibility: hidden;
+}
+.slider-arrow {
+    margin-right: auto;
+}
+.ud-pera {
+    font-size: 20px;
+    font-weight: 600;
+}
+/* .ud-head {
+    font-size: 34px;
+    line-height: 40px;
+} */
+/* section.command-business {
+    height: 280px;
+} */
+.order-box-img {
+    min-height: 205px;
+}
+section.order-section {
+    padding: 50px 30px 30px;
+}
+.order-box-txt {
+    min-height: auto;
+}
+.order-box-txt h4 {
+    font-size: 18px;
+}
+.pos-heding {
+    text-align: center;
+}
+.pos-pera {
+    text-align: center;
+    margin-top: 10px;
+}
+section.rista-serve-section.rista-need {
+    padding-top: 0;
+}
+.pos-heding h3 {
+    font-size: 20px;
+}
+.ecosystem-section {
+    padding: 50px 30px;
+}
+.ecosystem-heading h2 {
+    font-size: 32px;
+}
+.ecosystem-heading p {
+    font-size: 20px;
+}
+.ecosystem-heading p span {
+    font-size: 24px;
+}
+.discover-grid img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+}
+.discover-grid h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.discover-grid p {
+    font-size: 14px;
+    line-height: 21px;
+}
+.discover-box-section {
+    margin-top: 30px;
+}
+.discover-section {
+    padding: 50px 30px 40px;
+}
+.performance-section {
+    padding: 50px 30px;
+}
+section.pos-section {
+    padding: 50px 30px;
+}
+.performance-box-section {
+    margin-top: 30px;
+    padding: 32px;
+    padding-bottom: 0;
+}
+.perform-heading h3 {
+    font-size: 20px;
+}
+.perform-msg:before {
+    width: 23px;
+    height: 20px;
+}
+.perform-msg {
+    margin: 30px 0;
+    padding-left: 36px;
+}
+.perform-msg p {
+    font-size: 16px;
+    line-height: 23px;
+}
+.nl-box .scb-icon img {
+    max-height: 65px;
+}
+.nl-box .scb-cnt h5, .nl-box .scb-cnt p {
+    font-size: 18px;
+}
+.nl-box .scb-icon {
+    width: 26px;
+    margin-right: 25px;
+}
+.perform-left-cnt {
+    margin-top: 20px;
+}
+.slider-arrow span img {
+    max-width: 40px;
+}
+.form-img-heading h3 {
+    padding: 50px 40px 0;
+}
+.form-img-heading h3 {
+    font-size: 32px;
+}
+.form-form {
+    padding: 50px 15px;
+    padding-right: 0;
+}
+.form-hp h3 {
+    font-size: 23px;
+        margin-bottom: 10px;
+}
+.form-hp p {
+    font-size: 15px;
+}
+.form-form form {
+    margin-top: 20px;
+}
+.form-form form .form-control {
+    height: 48px;
+    font-size: 14px;
+}
+.form-grid span {
+    top: 16px;
+    font-size: 14px;
+}
+.code-grid:after {
+    height: 48px;
+}
+.form-form form p {
+    line-height: 20px;
+}
+.form-img-heading {
+    height: 600px;
+}
+.order-box-img.ob-3 img {
+    padding-top: 45px;
+}
+/* .server-left-cnt h3 {
+    margin: auto;
+} */
+.need-cnt-box p {
+    min-height: auto;
+}
+.slider-arrow2 a 
+ span {
+    height: 45px;
+    background-size: cover;
+}
+.slider-arrow2 a span:hover {
+    background-position: left -40px;
+}
+section.command-business {
+    padding: 0px 30px;
+}
+.server-left-cnt {
+    max-width: initial;
+}
+.server-right-img img {
+    width: auto;
+    height: auto;
+}
+.rista-need .server-right-img img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+.carousel-inner.change-crousal-overflow.nedd-crousal {
+    max-height: none;
+    min-height: none;
+}
+.order-box-img:after {
+    top: 138px;
+}
+.order-box-txt {
+    top: -36px;
+}
+.order-box:before {
+    height: 290px;
+}
+.ud-cnt-txt {
+    max-width: 430px;
+}
+
+
+/* new rista page  */
+
+.page-static-banner .para {
+    font-size: 19px;
+    margin-bottom: 35px;
+}
+.restaurant_banner_cnt .title {
+    font-size: 30px;
+    line-height: 38px;
+}
+.nr_restaurant_banner_cnt a.get-started-btn {
+    font-size: 17px;
+    max-width: 186px;
+    height: 46px;
+        margin-top: 30px;
+}
+section.star-award-section.nr-star-award-section {
+    padding: 0 40px;
+}
+section.rista-serve-section.rista-need.nr-rista-need {
+    padding: 0;
+    padding-top: 55px;
+    padding-bottom: 40px;
+}
+.nr-rista-need .server-right-img img {
+    margin: auto;
+}
+.nr-rista-need .server-left-cnt {
+    margin-left: inherit;
+    max-width: 500px;
+    margin: auto;
+}
+.need-plan-btn {
+    margin-top: 30px;
+    text-align: center;
+}
+.nr-rista-need .slider-arrow {
+    margin-top: 50px;
+}
+.delight-heading h3 {
+    font-size: 18px;
+}
+.delight-list ul li {
+    line-height: 23px;
+}
+.delight-btn-margin {
+    margin-top: 60px;
+}
+section.delightful-section {
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+.delight-image img {
+    max-width: 60px;
+}
+.delight-image {
+    width: 100px;
+    height: 100px;
+}
+.nr-command-business .ud-cnt {
+    background-position-x: right;
+}
+.ndf-box.ndf-box-p1 {
+    padding: 15px 10px;
+}
+.ndf-box.ndf-box-p3 {
+    padding: 15px 10px;
+}
+.ndf-box {
+    padding: 15px 10px;
+}
+.ndf-img-txt span {
+    font-size: 16px;
+}
+.nr-pos-section .pos-heding {
+    margin: auto;
+    margin-bottom: 60px;
+}
+.nr-pos-section .pos-heding p {
+    margin: auto;
+    margin-top: 20px;
+}
+.nr-pos-section .fluid-bg {
+    padding: 60px 40px;
+}
+.ecosystem-img img {
+    margin-top: -115px;
+    margin-bottom: -172px;
+}
+.discover-btn {
+    margin-top: 30px;
+}
+
+.perform-msg {
+    height: auto;
+    margin-top: 46px;
+}
+.nl-box .scb-icon {
+    margin-right: 13px;
+}
+.ecosystem-heading p {
+    font-size: 14px;
+}
+.performance-carousel-slider .owl-nav {
+    margin-top: 40px;
+}
+.nr-rista-form-section .form-img-heading h3 {
+    font-size: 32px;
+}
+.nr-rista-form-section .custom-blue-btn {
+    padding: 10px 30px;
+    font-size: 18px;
+}
+.nr-rista-form-section .form-img-heading {
+    height: 580px;
+}
+
+
+.nr-star-award-section .custom-container {
+    padding: 40px 60px;
+}
+.nr-star-award-section .star-awrd img {
+    max-width: 68px;
+}
+.star-awrd-hp  h5 {
+    font-size: 20px;
+}
+.star-awrd-hp  p {
+    font-size: 16px;
+}
+.serve-crousal {
+    margin-top: 35px;
+}
+.nr-rista-need .slider-arrow {
+    margin-top: 20px;
+        max-width: 110px;
+}
+.nr-rista-need .slider-arrow {
+    left: -10px;
+}
+.nr-rista-form-section .form-img-heading h3 {
+    font-size: 27px;
+}
+/* waba page  */
+.waba_banner_cnt .title {
+    font-size: 40px;
+    line-height: 46px;
+}
+.domain-page-banner .banner-img.waba-banner-img {
+    /* margin-top: 10px; */
+     max-width: 700px;
+}
+.page-static-banner .para {
+    font-size: 18px;
+}
+.waba_banner_cnt .get-started-btn {
+    padding: 12px 28px;
+    font-size: 18px;
+    height: 51px;
+}
+.waba-banner {
+    padding-bottom: 80px !important;
+}
+.waba-leading-brands {
+    padding-top: 70px;
+}
+.waba-leading-crousals {
+    padding: 0px 0;
+}
+.waba-communicate-section {
+    padding-top: 40px;
+}
+.communicate-content h3 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 15px;
+}
+.communicate-icon-image img {
+    max-width: 40px;
+}
+.communicate-icon-image {
+    left: -25px;
+    top: 8px;
+}
+.communicate-content p {
+    font-size: 16px;
+    line-height: 26px;
+}
+.communicate-image-box {
+    padding: 40px 15px;
+}
+.waba-communicate-section .waba-heading {
+    margin-bottom: 50px;
+}
+.industry-section {
+    padding-top: 112px;
+}
+.waba-comon-heading {
+    font-size: 36px;
+    line-height: 44px;
+}
+.industry-img {
+    max-width: 304px;
+}
+/* .industry-cnt h4 {
+    font-size: 19px;
+    line-height: 26px;
+} */
+.for-nav-btn .owl-nav button {
+    width: 42px !important;
+    height: 42px !important;
+}
+/* .industry-section {
+    padding-bottom: 70px;
+} */
+.marketing-img {
+    min-height: 180px;
+}
+.marketing-cnt h4 {
+     font-size: 19px;
+    line-height: 26px;
+}
+.marketing-box {
+    margin-bottom: 25px;
+}
+/* section.marketing-section {
+    padding-bottom: 30px;
+} */
+section.elevate-section {
+    padding: 80px 0;
+}
+.elevate-txt h2 {
+    font-size: 32px;
+    line-height: 40px;
+}
+.elevate-btn {
+    margin-top: 30px;
+}
+.elevate-btn a {
+    font-size: 18px;
+}
+/* section.whyus-section {
+    padding-top: 70px;
+} */
+.wy-grid-cnt h4 {
+    font-size: 18px;
+    min-height: 45px;
+}
+.wy-grid {
+    min-height: 445px;
+    padding: 18px 18px 10px;
+}
+.people-section {
+    padding-top: 0;
+}
+.people-say-image {
+    width: auto;
+    height: auto;
+}
+.comma-icon img {
+    max-width: 35px;
+}
+.people-txt {
+    margin-top: 18px;
+}
+.people-txt h5 {
+    font-size: 18px;
+    line-height: 24px;
+}
+.people-txt p {
+    font-size: 18px;
+    line-height: 25px;
+}
+.people-deg h4 {
+    font-size: 24px;
+    line-height: 24px;
+}
+.people-deg p {
+    font-size: 18px;
+    line-height: 26px;
+}
+.people-section {
+    padding-bottom: 112px;
+}
+.people-deg {
+    margin-top: 30px;
+}
+.people-say-content {
+    min-height: 315px;
+}
+/* waba new  */
+.indusry-box {
+    margin-top: 10px;
+}
+.industry-img img {
+    max-height: 170px;
+}
+.industry-btn {
+    margin-top: 40px;
+}
+.get-content h4 {
+    font-size: 34px;
+    line-height: 40px;
+}
+.get-boxes {
+    padding: 30px 24px;
+    margin-bottom: 40px;
+}
+.get-boxes {
+    min-height: auto;
+}
+/* section.marketing-section {
+    padding-top: 70px;
+} */
+.get-section .waba-heading {
+    margin-bottom: 50px;
+}
+.marketing-box li  span {
+    font-size: 22px;
+}
+.marketing-box li img {
+    max-width: 35px;
+    /* margin-right: 10px; */
+}
+.marketing-box li {
+    margin-right: 5px;
+    margin-bottom: 25px;
+    margin-left: 5px;
+        display: flex;
+}
+.marketing-btn a {
+    font-size: 18px;
+    padding: 12px 28px;
+}
+.get-content p {
+    font-size: 17px;
+    line-height: 22px;
+}
+.nr-rista-form-section.waba-form .form-img-heading h3 {
+    font-size: 37px;
+    line-height: 52px;
+}
+
+.enterprise-text {
+    text-align: left;
+}
+.enterprise-text h3 span {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.enterprise-btn {
+    text-align: left;
+    margin-top: 30px;
+}
+.pricing-table table tbody tr td {
+    font-size: 15px;
+}
+tr.plan-heading td .plan-price {
+    font-size: 22px;
+    margin-top: 5px;
+}
+span.chatbot-txt {
+    font-size: 16px;
+    margin-top: 5px;
+}
+.pricing-table table tbody tr td {
+    padding: 10px 15px;
+}
+.disable-btn {
+    width: 150px;
+}
+.enterprise-section {
+    padding-bottom: 112px;
+}
+.enterprise-text h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    line-height: 26px;
+}
+.enterprise-text h5 {
+    font-size: 15px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #E1E5EA;
+    padding-bottom: 20px;
+}
+.enterprise-text h4 {
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 0px;
+}
+.enterprise-box {
+    padding: 24px 24px 24px;
+}
+.marketing-box li:hover .marketing-hover {
+    display: none;
+}
+.marketing-hover {
+    position: relative;
+    top: 0;
+    margin-top: 25px;
+        width: 100%;
+}
+.marketing-box li {
+    flex-direction: column;
+    position: relative;
+}
+.marketing-box li:after {
+    position: absolute;
+    content: "";
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/waba-page/down-arrow.png) no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    right: 12px;
+    top: 17px;
+}
+.leading-brands.waba-leading-brands .domain-heading h1 {
+    font-size: 34px;
+}
+.for-nav-btn .owl-nav {
+    top: 32px;
+}
+span.hcomma {
+    display: none !important;
+}
+}
+@media (max-width:950px){
+    .order-box-img:after {
+    top: 125px;
+}
+.ud-head {
+    font-size: 42px;
+    line-height: 47px;
+}
+.ndf-img-txt img {
+    display: block;
+    margin-bottom: 4px;
+}
+.nr-rista-form-section .form-form {
+    padding: 50px 28px;
+    padding-right: 0px !important;
+    padding-bottom: 0;
+}
+}
+@media (max-width:900px){
+    .way-section {
+        min-height: 590px;
+    }
+}
+@media (max-width:800px){
+    .order-box-img {
+    min-height: 165px;
+}
+.order-box-txt {
+    top: 0;
+}
+}
+@media (max-width:767px){
+    .domain-page-banner {
+        padding: 270px 0 70px 0;
+    }
+    a.site_url {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+    .domain_banner_cnt .title {
+        max-width: 430px;
+        font-size: 46px;
+    }
+    .domain_banner_cnt .para {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    .domain-page-banner .banner-img {
+        margin-top: 45px;
+        max-width: 490px;
+    }
+    section.domain-business {
+        padding: 50px 0;
+        text-align: center;
+    }
+    .domain-heading h1 {
+        font-size: 30px;
+    }
+    .domain-box {
+        margin-bottom: 24px;
+        box-shadow: 0  0 10px #ccc;
+        padding: 20px;
+        min-height: 208px;
+        border-radius: 4px;
+    }
+    .domain-heading {
+        margin-bottom: 35px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .only-767 {
+        min-height: auto;
+    }
+    .domain-box img {
+        max-width: 25px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .domain-business-btn .get-started-btn {
+        margin-left: auto;
+    }
+    .dotpe-domain-section {
+        padding: 75px 0;
+    }
+    .dotpe-domain-txt h2 {
+        font-size: 40px;
+        max-width: 500px;   
+    }
+    .sale_domain_headin h5 {
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+    }
+    .domain-heading h1 {
+        font-size: 28px;
+    }
+    .sale_domain_headin {
+        max-width: 360px;
+    }
+    .sale_domain_headin p {
+        font-size: 20px;
+    }
+    .sale_domain_pera {
+        margin: 13px 0 25px 0;
+    }
+
+
+    .domain_sale_boxes {
+        margin: 0 20px;
+        width: calc(100% - 40px);
+    }
+    .domain_sale_boxes .col-md-4.bt-0 {
+        border-top: 1px solid #ccc;
+    }
+    .domain_sale_boxes .col-md-4.br-0 {
+        border-right: 1px solid #ccc;
+    }
+    .domain_sale_boxes .col-md-4.col-sm-6:nth-child(even) {
+        border-left: 0;
+    }
+    .domain_sale_boxes .col-md-4.col-sm-6:nth-child(1),
+    .domain_sale_boxes .col-md-4.col-sm-6:nth-child(2),
+    .domain_sale_boxes .col-md-4.col-sm-6:nth-child(3),
+    .domain_sale_boxes .col-md-4.col-sm-6:nth-child(4) {
+        border-bottom: 0;
+    }
+    .custom_faq_section {
+        padding: 50px 0 30px 0;
+    }
+    .custom_faq_section .main-title {
+        font-size: 42px;
+        margin: 0 auto 44px;
+    }
+    .custom_faq_section .faq-accordion .card-header a {
+        font-size: 19px;
+    }
+    .custom_faq_section .faq-accordion .card-header a img {
+        max-width: 15px;
+    }
+    .footer.custom-footer {
+        padding-top: 50px;
+        text-align: left;
+    }
+    /* theme page css start */
+    .s_theme_page .title {
+        max-width: 470px;
+    }
+    .s_theme_page .title br {
+        display: none;
+    }
+    .need-theme-section .domain-box {
+        min-height: 220px;
+    }
+    .need-theme-section .domain-box.only-767 {
+        min-height: auto;
+        margin-bottom: 0;
+    }
+    section.featured-theme-section {
+        padding: 50px 0 30px 0;
+    }
+    .way-section {
+        padding: 55px 0;
+        min-height: 500px;
+    }
+    .way-section .dotpe-domain-txt p {
+        font-size: 20px;
+    }
+    .theme-page-categorie-section {
+        padding: 50px 0 0 !important;
+    }
+    .theme-page-categorie-section h1.main-title {
+        width: 440px !important;
+        font-size: 28px;
+        margin: 0 auto 38px;
+    }
+    .theme-page-categorie-section .carousel-indicators {
+        margin-bottom: 30px;
+    }
+    .theme-page-categorie-section .carousel-inner .text-block h2 {
+        margin-bottom: 20px;
+        font-size: 22px;
+        width: 100%;
+    }
+    .theme-page-categorie-section .carousel-inner .text-block {
+        max-width: 50%;
+    }
+    .theme-page-categorie-section .business-categories-inner .image-block {
+        margin-top: 35px;
+    }
+    .s_build_grow_form {
+        padding: 50px 0;
+    }
+    .s_build_grow_form .main-title {
+        font-size: 28px;
+        max-width: 45% !important;
+        margin-bottom: 0 !important;
+    }
+    .s_build_grow_form .para {
+        font-size: 20px;
+        width: 70% !important;
+    }
+    .s_build_grow_form .form-block.mt-5 {
+        margin-top: 24px !important;
+    }
+    /* theme page css end */
+    /* .custom-zoho-form .zcwf_title {
+        font-size:24px;
+    } */
+    .zcwf_title.zoho_main_title {
+        font-size: 26px;
+        margin-bottom: 0px;
+    }
+    .zcwf_title.zoho_sub_title {
+        font-size: 16px;
+    }
+    .restaurant-page-banner {
+    padding: 170px 0 60px 0;
+}
+.restaurant_banner_cnt .para {
+    max-width: 380px;
+}
+.restaurant_banner_cnt .para:before {
+    width: 90px;
+}
+.restaurant-page-banner .banner-img {
+    
+    max-width: 530px;
+    margin: auto;
+    margin-top: 50px;
+}
+.restaurant_banner_cnt .get-started-btn {
+    margin-top: 35px;
+}
+.award-heading h4 {
+    font-size: 26px;
+    font-weight: 800;
+    background: linear-gradient(79.28deg, rgb(91, 112, 231) 8.43%, rgb(253, 132, 132) 94%);;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.award-heading p {
+    font-size: 18px;
+    line-height: 26px;
+}
+section.restaurant-brand {
+    background: #fff;
+}
+/* section.rista-serve-section {
+    background: linear-gradient(to right, #F8F9FE , #EAF2FD , #E9EBF8);
+} */
+section.rista-serve-section {
+    background: linear-gradient(150deg, #F3F6FE, #F9EDF8, #F0F0FA, #F3E7F6);
+}
+.serve-heading h4 {
+    font-size: 23px;
+}
+.fine-dine-crousal .change-crousal-overflow .carousel-item {
+    display: block;
+    background: #fff;
+    margin-bottom: 40px;
+    border-radius: 30px;
+    box-shadow: 0 0 27px -18px #ccc;
+    padding: 40px;
+}
+.fine-dine-crousal ol.carousel-indicators {
+    display: none;
+}
+.resta-carousel.owl-carousel .owl-item .item {
+    margin: 0 50px;
+}
+.restaurant-brand {
+    padding: 15px;
+    padding-bottom: 50px;
+}
+.server-mobile-heading{
+    display: block;
+}
+.server-left-cnt h3 {
+    font-size: 24px;
+    text-align: left;
+}
+.server-left-cnt {
+    margin-top: 25px;
+}
+.read_btn {
+    border-top: 1px solid rgba(227, 227, 227, 0.38);
+    margin-top: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.read_btn a {
+    font-size: 18px;
+    font-weight: 600;
+}
+.mobile-read{
+    display: block;
+}
+.fine-dine-crousal .slider-arrow {
+    display: none;
+}
+.fine-dine-crousal .change-crousal-overflow .carousel-item:last-child {
+    margin-bottom: 0;
+}
+.fine-dine-crousal .dot-icon {
+    display: none;
+}
+section.rista-serve-section.rista-need {
+    padding: 50px 30px;
+    background: #fff;
+}
+.rista-info-slider  {
+    display: none;
+}
+.rista-need .rista-faq{
+    display: block;
+}
+.rista-need .faq-accordion .card .card-header {
+    border-top: 2px solid #F7F7F7;
+}
+
+.need-acc-btn {
+    display: table;
+    margin: auto;
+    margin-top: 20px;
+}
+/* .ud-cnt {
+    padding-left: 20px;
+} */
+.ud-head {
+    font-size: 30px;
+    line-height: 36px;
+}
+.order-box {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 60px;
+}
+.order-box-txt h4 {
+    font-size: 24px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+.order-box-txt p {
+    font-size: 20px;
+}
+.order-box-txt {
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 46px;
+}
+.order-box-txt:before {
+    position: absolute;
+    content: "";
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/restaurant-page/star-img.svg) left top no-repeat;
+    height: 57px;
+    width: 34px;
+    background-size: contain;
+    left: 0;
+    top: 0;
+}
+.order-box-img {
+    min-height: auto;
+    max-width: 400px;
+    margin: auto;
+}
+img.mobile-image {
+    display: block;
+}
+img.pc-image {
+    display: none;
+}
+.discover-crousal .dot-icon {
+    visibility: visible;
+}
+.discover-pc{
+    display: none;
+}
+.discover-mobile {
+    display: block;
+}
+.discover-grid img {
+    /* margin: auto; */
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+/* .performance-section .dot-icon {
+    visibility: visible;
+} */
+.performance-section .slider-arrow {
+    margin-right: 0;
+}
+.perform-left-cnt {
+    text-align: center;
+}
+.perform-heading h3 {
+    font-size: 28px;
+}
+.perform-right-mobile {
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 30px;
+}
+.perform-right-mobile img {
+    max-width: 100%;
+}
+.nl-box {
+    flex-direction: column-reverse;
+}
+.perform-msg {
+    margin: 40px 0;
+    padding: 0 28px;
+}
+.perform-msg p {
+    font-size: 20px;
+    line-height: 28px;
+    opacity: 0.7;
+}
+.nl-box .scb-cnt h5, .nl-box .scb-cnt p {
+    font-size: 22px;
+}
+.scb-cnt {
+    margin-bottom: 25px;
+}
+.nl-box .scb-icon img {
+    max-height: 90px;
+    min-height: 46px;
+    object-fit: contain;
+}
+.perform-right-img {
+    display: none;
+}
+.performance-box-section {
+    padding: 30px;
+}
+.perform-yr p {
+    font-size: 18px;
+}
+.perform-yr a {
+    font-size: 20px;
+}
+.form-img-heading {
+    height: 615px;
+}
+.form-form form .custom-blue-btn {
+    max-width: 230px;
+    max-width: 100%;
+    margin: auto;
+    display: table;
+}
+.form-hp h3 {
+    font-size: 28px;
+}
+.form-hp p {
+    font-size: 14px;
+}
+.form-form {
+    text-align: center;
+}
+.form-form form p {
+    font-size: 16px;
+}
+.form-hp {
+    margin-bottom: 35px;
+}
+.scb-cnt h4 {
+    margin-top: 15px;
+}
+.server-cnt-box {
+    margin-bottom: 8px;
+}
+.seam-pera, .seam-pera2, .seam-pera3{
+    display: none;
+}
+section.rista-form-section {
+    background: #171717;
+}
+.order-box-img.ob-3 img {
+    padding-top: 0;
+}
+section.command-business {
+    background-position-x: 0;
+}
+.mobile-view{
+    display: block;
+    margin-bottom: 30px !important;
+}
+.pc-view{
+    display: none;
+}
+.need-cnt-box li {
+    display: flex;
+}
+.discover-grid h4 {
+    font-size: 24px;
+}
+.discover-grid p {
+    font-size: 18px;
+}
+.restaurant-brand  .owl-item {
+    max-width: 150px;
+}
+.restaurant-brand  .item img {
+    max-height: 50px;
+    max-width: 80px;
+}
+.resta-carousel.owl-carousel .owl-item .item {
+    margin: 0 35px;
+}
+.second-rista-crousal {
+    margin-top: 50px;
+}
+.restaurant-brand  .owl-item {
+    border-left: none;
+}
+.slider-arrow2 a span:hover {
+    background-position: left 0px;
+}
+.order-box:before {
+    display: none;
+}
+.order-box {
+    padding: 0;
+}
+.discover-grid img {
+    margin-left: inherit;
+    width: 95px !important;
+    height: 95px;
+    margin-bottom: 50px;
+}
+.discover-carousel-slider {
+    margin-top: 72px;
+}
+.discover-section .ecosystem-heading {
+    text-align: left;
+}
+/* .discover-grid {
+    text-align: left;
+    max-width: 270px;
+    background: rgba(35, 35, 35, 0.20);
+    border-radius: 18px;
+    padding: 45px 20px;
+    border: 1px solid rgba(47, 60, 121, 0.30);
+    height: 317px;
+    width: 291px;
+} */
+.discover-grid {
+       margin-right: 22px;
+
+    text-align: left;
+    max-width: 100%;
+    background: rgba(35, 35, 35, 0.20);
+    /* opacity: 0.2; */
+    border-radius: 18px;
+    padding: 45px 20px;
+    border: 1px solid rgba(47, 60, 121, 0.30);
+    height: 317px;
+    /* width: 291px; */
+}
+.ud-cnt-txt {
+    max-width: 310px;
+}
+.ud-head {
+    font-size: 38px;
+    line-height: 42px;
+}
+.ud-cnt {
+    min-height: 380px;
+}
+.form-img-heading img {
+    position: relative;
+}
+.form-img-heading {
+    height: auto;
+}
+.request-content {
+    justify-content: center;
+}
+.request-content .form-form {
+
+    margin-bottom: 0;
+
+}
+.request-content  .form-form img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* new rista page  */
+.rista-header .header_btn_rounded {
+    padding: 6px 20px !important;
+    height: auto;
+    font-size: 16px;
+    margin-top: 0;
+}
+.d-nonee {
+    display: none;
+}
+.main-header.rista-header .navbar {
+    background: none;
+    border: none;
+}
+.main-header.rista-header .navbar {
+    margin: auto;
+    display: table;
+    text-align: center;
+}
+header.main-header.rista-header.sticky-nav .d-nonee {
+    display: table;
+}
+header.main-header.rista-header.sticky-nav .navbar {
+    background: #fff;
+    /* border: 1px solid #ccc; */
+    display: flex;
+        box-shadow: 0 2px 8px rgb(0 0 0 / 16%);
+}
+.restaurant_banner_cnt .para {
+    max-width: 400px;
+    margin-left: auto !important;
+    margin-bottom: 30px;
+}
+.restaurant_banner_cnt .title {
+    font-size: 32px;
+}
+p.nr_restaurant_banner_pera {
+    text-align: center;
+}
+.nr_restaurant_banner_cnt a.get-started-btn {
+    margin: auto;
+}
+.mobile-banner-img {
+    display: block;
+}
+.mobile-banner-img {
+    max-width: 450px;
+    margin: auto;
+    margin-top: 40px;
+}
+.mobile-banner-img img {
+    max-width: 100%;
+}
+.banner-img.nr_banner-img {
+    display: none;
+}
+.nr-star-award-section .custom-container {
+    background: none;
+    box-shadow: none;
+}
+.star-awrd-hp  h5 {
+    font-size: 18px;
+}
+.star-awrd-hp  p {
+    font-size: 16px;
+}
+.star-awrd-hp {
+    text-align: center;
+}
+.star-awrd {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    flex-direction: column;
+        box-shadow: 4px 4px 8px 4px rgba(223, 223, 223, 0.25);
+}
+.nr-star-award-section .star-awrd img {
+    max-width: 65px;
+    margin-right: 0;
+    margin-bottom: 17px;
+}
+.star-awrd-hp  p {
+    max-width: 195px;
+    margin: auto;
+}
+.nr-star-award-section .custom-container {
+    margin-top: -135px;
+}
+section.restaurant-page-banner.rista-page-banner {
+    padding-bottom: 165px;
+}
+p.nr_restaurant_banner_pera {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.delight-box {
+    margin-bottom: 30px;
+    text-align: left;
+    box-shadow: 0px 0px 32px -12px rgba(0, 0, 0, 0.25);
+    padding: 35px;
+}
+.delight-heading h3 {
+    font-size: 24px;
+    text-align: left;
+}
+.delight-list p {
+    font-size: 18px;
+    text-align: left;
+}
+.delight-list ul li {
+    margin-bottom: 25px;
+}
+.delight-image {
+    margin-left: initial;
+}
+.nr-command-business .ud-head {
+    line-height: 38px;
+    font-size: 30px;
+}
+.nr-command-business .ud-cnt {
+    min-height: 315px;
+}
+.ndf-image {
+    height: auto;
+}
+.ndf-img-txt span {
+    font-size: 18px;
+    position: relative;
+}
+.ndf-img-txt p {
+    font-size: 14px;
+}
+.ndf-box {
+    margin-bottom: 28px;
+}
+.ndf-image img {
+    margin-top: 20px;
+}
+.ndf-image {
+    max-width: 400px;
+    margin: auto;
+}
+.ndf-img-txt img {
+    display: none;
+}
+.ndf-img-txt span:before {
+    position: absolute;
+    content: "";
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/new-resta-page/mobile-arrow.svg) left top no-repeat;
+    width: 100px;
+    height: 40px;
+    background-size: contain;
+    left: -87px;
+    top: -10px;
+}
+.ndf-img-txt {
+    padding-left: 35px;
+}
+.nr-pos-section .pos-heding p {
+    margin-top: 25px;
+    color: #666666;
+    font-weight: 400;
+}
+.nr-pos-section .pos-heding {
+    margin-bottom: 40px;
+}
+a.acc-btn {
+    background: #006AFF;
+    color: #fff;
+}
+.ecosystem-section .ecosystem-heading p {
+    font-size: 16px;
+}
+.ecosystem-img img {
+    margin-top: -365px;
+    margin-bottom: -432px;
+}
+.discover-section {
+    padding: 75px 30px 75px;
+}
+.nl-box {
+    align-items: center;
+}
+.scb-cnt {
+    text-align: center;
+}
+.performance-carousel-slider .perform-left-cnt {
+    margin-left: 0;
+}
+.perform-msg p {
+    text-align: center;
+}
+.perform-yr p {
+    text-align: center;
+}
+.nl-box {
+    margin-bottom: 17px;
+}
+.perform-left-cnt {
+    padding-bottom: 30px;
+}
+.mobile-perform-right-mobile{
+    display: block;
+}
+.perform-right-mobile {
+    display: none;
+}
+.mobile-perform-right-mobile {
+    max-width: 220px;
+    margin: auto;
+    margin-bottom: 23px;
+}
+.perform-msg {
+    margin-bottom: 20px;
+}
+.perform-msg p:before {
+    left: -33px;
+    top: -3px;
+}
+.nr-rista-form-section .custom-container {
+    padding-left: 0;
+    padding-right: 0;
+}
+.nr-rista-form-section .form-form {
+    padding: 50px 40px !important;
+    padding-right: 40px;
+}
+.ecosystem-section {
+    padding: 50px 00px;
+    overflow: hidden;
+}
+.ecosystem-section .custom-container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.rista-header .header_btn_rounded {
+    padding: 7px 20px !important;
+    background: #006aff !important;
+    color: #fff !important;
+}
+.discover-btn.md-btn {
+    display: block;
+}
+.performance-carousel-slider .story-container {
+    height: auto;
+}
+.nr-rista-form-section .form-img-heading {
+    width: auto;
+        height: auto;
+}
+.nr-rista-need .server-left-cnt {
+    height: auto;
+}
+.delight-image {
+    position: relative;
+    top: 0;
+}
+.delight-box-margin {
+    margin-top: 55px;
+}
+section.restaurant-page-banner.rista-page-banner {
+    padding-top: 150px;
+}
+.main-header.rista-header .navbar {
+    position: relative;
+}
+header.main-header.rista-header.sticky-nav .navbar {
+    position: fixed;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.col-md-6.col-6.second-award-margin:nth-child(1) {
+    max-width: 50%;
+    flex: 0 0 50%;
+}
+.col-md-6.col-6.second-award-margin:nth-child(2) {
+    max-width: 50%;
+    flex: 0 0 50%;
+}
+.nr-star-award-section .custom-container {
+    padding: 40px 0px;
+    padding-bottom: 0;
+}
+.star-awrd-hp  p {
+    max-width: 280px;
+}
+
+.star-awrd-hp p span{
+    display: block;
+}
+span.comma-txt {
+    display: none !important;
+}
+.ecosystem-img img {
+    margin-top: -445px;
+    margin-bottom: -472px;
+}
+.nr-rista-form-section .form-img-heading h3 {
+    max-width: 390px;
+}
+section.command-business {
+    padding: 0px 0px;
+}
+.discover-section {
+    padding: 75px 0px 75px;
+}
+.nr-rista-form-section .form-form {
+    padding: 50px 25px !important;
+}
+section.performance-section .custom-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.form-group label.error {
+    text-align: left;
+    display: block;
+}
+/* waba page  */
+.waba_banner_cnt .title {
+    font-size: 36px;
+    line-height: 41px;
+}
+.waba_banner_cnt .get-started-btn {
+    height: 49px;
+}
+/* .domain-page-banner .banner-img.waba-banner-img {
+    margin-top: 15px;
+} */
+.waba-leading-brands {
+    padding-top: 60px;
+}
+.waba-leading-crousals {
+    padding: 0 0px;
+}
+.communicate-content {
+    max-width: 695px;
+    /* text-align: center; */
+    margin: auto;
+}
+.communicate-icon-image img {
+    max-width: 35px;
+}
+.communicate-icon-image {
+    left: 0;
+    top: -4px;
+}
+.communicate-content {
+    padding-left: 50px;
+}
+.communicate-img {
+    max-width: 400px;
+    margin: auto;
+}
+.communicate-image-box {
+    max-width: 510px;
+    margin: auto;
+    right: 0;
+    padding: 50px 40px;
+        margin-top: 20px;
+}
+.waba-communicate-section {
+    padding-bottom: 60px;
+}
+.industry-img {
+    max-width: 300px;
+}
+/* .industry-section {
+    padding-bottom: 60px;
+} */
+.waba-leading-crousals .custom-container {
+    padding-left: 0;
+    padding-right: 0;
+}
+/* section.marketing-section {
+    padding-bottom: 20px;
+} */
+section.elevate-section {
+    padding: 70px 0;
+}
+/* section.whyus-section {
+    padding-top: 60px;
+} */
+.wy-grid {
+    min-height: auto;
+    margin-bottom: 30px;
+}
+.wy-grid-cnt h4 {
+    min-height: 30px;
+}
+section.whyus-section {
+    padding-bottom: 0px;
+}
+.people-say-content {
+    max-width: 100%;
+    min-height: auto;
+}
+.people-say-content {
+    text-align: center;
+}
+.comma-icon img {
+    margin: auto;
+}
+.people-say-image {
+    max-width: 320px;
+    margin: auto;
+}
+.people-say-image img {
+    margin: 20px 0;
+}
+.people-say-content {
+    margin-top: 30px;
+}
+/* .people-section {
+    padding-bottom: 65px;
+} */
+.marketing-section .waba-comon-heading br {
+    display: none;
+}
+/* waba new  */
+.domain-page-banner .banner-img.waba-banner-img {
+    max-width: 530px;
+}
+.waba-comon-heading {
+    font-size: 32px;
+    line-height: 40px;
+}
+.industry-img img {
+    max-height: initial;
+}
+.industry-grid {
+    margin-bottom: 40px;
+}
+.industry-btn {
+    margin-top: 10px;
+}
+.get-content {
+    text-align: center;
+}
+.get-image {
+    margin-right: auto;
+    margin-top: 30px;
+}
+.get-content h4 {
+    font-size: 32px;
+}
+/* section.marketing-section {
+    padding-top: 60px;
+} */
+.marketing-section .waba-heading {
+    margin-bottom: 42px;
+}
+/* .marketing-box li  span {
+    font-size: 21px;
+} */
+/* .marketing-box li img {
+    max-width: 32px;
+} */
+section.rista-form-section.waba-form .col-md-7.rista-form-left {
+    background: url(https://cdn.dotpe.in/dotpe-website-live/images/waba-page/new-images/waba-form-bg.jpg) center top no-repeat;
+     padding: 0;
+}
+section.rista-form-section.waba-form {
+    background: none;
+       
+}
+.nr-rista-form-section.waba-form .form-img-heading h3 {
+    font-size: 32px;
+    line-height: 43px;
+    padding-left: 0;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    padding-right: 0;
+}
+section.rista-form-section.waba-form .col-md-5.white-bg.rista-form-right {
+    max-width: 100%;
+}
+section.rista-form-section.waba-form .form-form {
+    padding: 50px 0 !important;
+    padding-top: 112px !important;
+}
+/* section.rista-form-section.waba-form .form-img-heading {
+    padding: 0 15px;
+} */
+tr.plan-heading td .plan-price {
+    font-size: 20px;
+    margin-top: 3px;
+}
+tr.plan-heading td {
+    font-size: 17px  !important;
+}
+.plantable-section {
+    padding-bottom: 55px;
+}
+/* .enterprise-text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 32px;
+} */
+/* .enterprise-section {
+    padding-bottom: 80px;
+} */
+.custom-industry-modal .industry-grid {
+    margin-bottom: 40px;
+}
+.waba-page .top-bar.top-bar-mobile {
+    padding-top: 1rem;
+}
+.trusted_resti_img:after {
+   display: none;
+}
+.col-md-4:last-child .wy-grid {
+    margin-bottom: 0;
+}
+.people-section {
+    padding-top: 112px;
+}
+/* section.rista-form-section.waba-form .form-img-heading {
+    overflow: hidden;
+} */
+.form-img-heading img {
+    max-width: 100%;
+    left: 0;
+}
+}
+@media (max-width:589px){
+    .domain-box {
+        min-height: 228px;
+    }
+    .only-767 {
+        min-height: auto;
+    }
+    .for-nav-btn .owl-nav button {
+    width: 35px !important;
+    height: 35px !important;
+}
+.for-nav-btn .owl-nav {
+    max-width: 109px;
+}
+
+}
+@media (max-width:576px){
+    .domain_sale_boxes .col-md-4.col-sm-6:nth-child(even) {
+        border-left: 1px solid #ccc;
+    }
+    .domain_sale_boxes .col-md-4.col-sm-6:nth-child(6) {
+        border-top: none;
+    }
+    img.on_pc_img {
+        display: none;
+    }
+    img.on_mobile_img {
+        display: block;
+    }
+    .domain-page-banner {
+        padding: 250px 0 00px 0;
+    }
+    .domain-page-banner .banner-img {
+        max-width: 287px;
+    }
+    a.site_url {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+    .domain_banner_cnt .title {
+        max-width: 320px;
+        font-size: 36px;
+    }
+    .domain_banner_cnt .para {
+        font-size: 18px;
+        margin-bottom: 26px;
+    }
+    section.domain-business {
+        padding: 45px 0;
+    }
+    .domain-heading h1 {
+        font-size: 24px;
+    }
+    .domain-box h4 {
+        font-size: 19px;
+    }
+    .domain-box {
+        min-height: auto;
+        box-shadow: none;
+        padding: 5px 25px;
+        margin-bottom: 20px;
+    }
+    .dotpe-domain-txt h2 {
+        font-size: 32px;
+        max-width: 310px;
+    }
+    .dotpe-domain-section {
+        padding: 75px 26px;
+    }
+    .dotpe-domain-section {
+        padding: 220px 0;
+        background: url(https://cdn.dotpe.in/dotpe-website-live/images/domain-page/dotpe-mobile-domain.png) center center no-repeat;
+        background-size: cover;
+    }
+    .dotpe-domain-section:before {
+        opacity: 0.45;
+    }
+    .sale_domain_headin h5 {
+        font-size: 14px;
+    }
+    .sale_domain_headin p {
+        font-size: 17px;
+        opacity: 1;
+        font-weight: 500;
+    }
+    span.mobile-hide {
+        display: none;
+    }
+    span.font-big {
+        font-size: 30px;
+        font-weight: 700;
+        display: block;
+        margin-top: 10px;
+    }
+    .custom_faq_section {
+        padding: 45px 0 30px 0;
+    }
+    .custom_faq_section .faq-accordion .card-header a {
+        font-size: 17px;
+    }
+    .custom_faq_section .main-title {
+        font-size: 38px;
+        margin: 0 auto 40px;
+    }
+    .custom_faq_section .faq-accordion .card-header a img {
+        max-width: 13px;
+    }
+    .footer.custom-footer .copyright,
+    .footer.custom-footer .mobile-footer-direct-links {
+        text-align: center;
+    }
+     /* theme page css start */
+ .s_theme_page {
+    /* padding: 210px 20px 45px 20px; */
+    padding: 160px 20px 45px 20px;
+}
+    .s_theme_page img.on_pc_img {
+        display: block;
+    }
+    .s_theme_page .banner-img {
+        max-width: 380px;
+    }
+    .s_theme_page .title {
+        max-width: 450px;
+    }
+    .need-theme-section .domain-box {
+        min-height: auto;
+    }
+    .way-section {
+        background: url(https://cdn.dotpe.in/dotpe-website-live/images/theme-page/way-banner.png) center center no-repeat;
+        padding: 45px 25px;
+        min-height: 515px;
+        background-size: cover;
+    }
+    .way-section .dotpe-domain-txt p {
+        font-size: 17px;
+        max-width: 270px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mobile-mb-disable .col-md-4:last-child .domain-box {
+        margin-bottom: 0;
+    }
+    .theme-page-categorie-section {
+        padding: 45px 0 0 !important;
+    }
+    .theme-page-categorie-section h1.main-title {
+        max-width: 370px;
+        font-size: 24px;
+        margin: 0 auto 30px;
+        width: 100% !important;
+    }
+    .theme-page-categorie-section .carousel-inner .text-block h2 {
+        font-size: 20px;
+    }
+    .theme-page-categorie-section .carousel-inner .text-block {
+        max-width: 100%;
+    }
+    .theme-page-categorie-section .carousel-indicators {
+        margin-bottom: 25px;
+    }
+    .theme-page-categorie-section .business-categories-inner .image-block {
+        margin-top: 25px;
+    }
+    .s_build_grow_form {
+        padding: 45px 30px;
+    }
+    .s_build_grow_form .main-title {
+        font-size: 24px;
+        max-width: 300px !important;
+    }
+    .s_build_grow_form .para {
+        font-size: 18px;
+        width: 100% !important;
+    }
+    /* theme page css end */
+    /* .custom-zoho-form .zcwf_title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    } */
+    .restaurant_banner_cnt .title {
+    font-size: 32px;
+    line-height: 40px;
+}
+.award-heading h4 {
+    font-size: 24px;
+}
+.award-heading p {
+    font-size: 16px;
+    line-height: 24px;
+}
+.leading-brands .domain-heading h1 {
+    font-size: 28px;
+}
+.serve-heading h3 {
+    font-size: 28px;
+}
+.serve-heading h4 {
+    font-size: 21px;
+}
+.server-mobile-heading h4 {
+    font-size: 22px;
+}
+.server-mobile-heading h4 img {
+    width: 34px;
+}
+.fine-dine-crousal .change-crousal-overflow .carousel-item {
+    padding: 30px;
+}
+.server-left-cnt h3 {
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+/* .scb-cnt {
+    margin-bottom: 0;
+} */
+span.acc-bold {
+    font-size: 21px;
+}
+.server-left-cnt h3 {
+    font-size: 21px;
+}
+.server-left-cnt {
+    margin-top: 15px;
+    /* display: NONE; */
+}
+.faq-accordion .card .card-body p {
+    font-size: 17px;
+}
+.ud-head {
+    font-size: 26px;
+    line-height: 30px;
+}
+.ud-pera {
+    font-size: 18px;
+}
+section.command-business {
+    /* height: 250px; */
+    padding: 0px 30px;
+}
+.order-box-txt h4 {
+    font-size: 22px;
+}
+.order-box-txt p {
+    font-size: 19px;
+}
+.pos-heding h2 {
+    font-size: 26px;
+}
+.pos-heding h3 {
+    font-size: 18px;
+}
+.ecosystem-heading h2 {
+    font-size: 26px;
+}
+.ecosystem-heading p {
+    font-size: 18px;
+}
+.ecosystem-heading p span {
+    font-size: 28px;
+}
+.perform-heading h3 {
+    font-size: 28px;
+}
+.perform-left-cnt {
+    margin-top: 0;
+}
+.perform-msg p {
+    font-size: 18px;
+    line-height: 27px;
+}
+.nl-box .scb-cnt h5, .nl-box .scb-cnt p {
+    font-size: 20px;
+}
+.perform-msg {
+    margin: 30px 0;
+    margin-bottom: 15px;
+}
+.perform-yr p {
+    font-size: 16px;
+}
+.perform-yr a {
+    font-size: 18px;
+}
+.form-img-heading h3 {
+    font-size: 30px;
+}
+section.star-award-section {
+    padding: 0 30px;
+}
+.award-border {
+    padding: 40px 20px 30px;
+}
+.restaurant-heading {
+    padding-top: 50px;
+}
+section.command-business {
+    background-position-x: -260px !important;
+}
+section.command-business {
+    /* height: 312px; */
+    background-size: cover;
+}
+.form-form form .form-control {
+    height: 48px;
+}
+.form-grid span {
+    top: 17px;
+}
+.code-grid:after {
+    height: 48px;
+}
+.serve-crousal {
+    margin-top: 37px;
+}
+.discover-section .ecosystem-heading h2 {
+    font-size: 30px;
+}
+.discover-section .ecosystem-heading h2 span {
+    background: linear-gradient(170deg, #1332CB -2.44%, #FD8484 100.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.restaurant-brand  .item img {
+    max-height: 46px;
+    max-width: 75px;
+}
+.resta-carousel.owl-carousel .owl-item .item {
+    margin: 0 22px;
+}
+.order-box-img {
+    max-width: 230px;
+}
+.discover-mobile  .carousel-item {
+    position: relative;
+    max-width: 280px;
+    /* margin: auto; */
+}
+.ud-cnt {
+    min-height: 300px;
+}
+.pos-pera {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+.discover-section .ecosystem-heading {
+    text-align: left;
+}
+.need-plan-btn {
+    margin-top: 55px;
+}
+/* .discover-grid img {
+    width: 100px !important;
+    height: 100px;
+    margin-bottom: 50px;
+} */
+.performance-section {
+    padding-top: 60px;
+}
+.performance-section .ecosystem-heading {
+    padding-bottom: 15px;
+}
+.perform-msg {
+    min-height: 100px;
+    height: auto;
+}
+.perform-msg p:before {
+    left: -20px;
+    top: 0;
+    width: 27px;
+    height: 26px;
+}
+.form-img-heading img {
+    margin-top: 50px;
+}
+.white-bg {
+    padding: 0 20px;
+}
+.form-form {
+    padding: 50px 0;
+    padding-right: 0;
+}
+.form-img-heading img {
+    position: relative;
+}
+.s_theme_page {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.ud-pera {
+    font-size: 24px;
+    margin-bottom: 7px;
+}
+.col-md-12.for-mobile-sameless {
+    padding: 0;
+}
+/* section.restaurant-page-banner.rista-page-banner {
+    padding-top: 245px;
+} */
+.main-header.rista-header .navbar {
+    margin-top: 18px;
+}
+.main-header .navbar-brand img {
+    width: 120px;
+}
+.page-static-banner .para {
+    font-size: 18px;
+}
+.restaurant_banner_cnt .para {
+    max-width: 380px;
+}
+/* new rista pge  */
+.custom-container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.nr-star-award-section .custom-container {
+    padding: 0;
+}
+.nr-star-award-section .custom-container {
+    margin-top: -100px;
+}
+.star-awrd-hp  h5 {
+    font-size: 15px;
+}
+.star-awrd-hp  p {
+    font-size: 13px;
+    max-width: 155px;
+}
+.restaurant-heading {
+    padding-top: 75px;
+}
+.domain-heading {
+    margin-bottom: 56px;
+}
+.nr-command-business .ud-cnt {
+    min-height: 240px;
+}
+.ud-pera {
+    font-size: 15px;
+}
+.nr-command-business .ud-head {
+    line-height: 28px;
+    font-size: 18px;
+}
+.ud-cnt-txt {
+    max-width: 210px;
+}
+.ndf-image {
+    max-width: 350px;
+}
+.ndf-box {
+    margin-bottom: 20px;
+}
+.pos-heding h2 {
+    font-size: 28px;
+}
+.ecosystem-heading h2 {
+    font-size: 28px;
+}
+.perform-msg p:before {
+    left: -27px;
+}
+.nl-box .scb-cnt h5, .nl-box .scb-cnt p {
+    font-size: 16px;
+}
+section.restaurant-brand .row .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.perform-left-cnt {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.perform-msg p {
+    letter-spacing: -1px;
+}
+.scb-cnt p {
+    white-space: nowrap;
+}
+section.star-award-section.nr-star-award-section {
+    padding: 0 30px;
+}
+section.star-award-section.nr-star-award-section .col-md-6.col-6.second-award-margin:nth-child(1) {
+    padding-left: 10px;
+    padding-right: 5px;
+}
+section.star-award-section.nr-star-award-section .col-md-6.col-6.second-award-margin:nth-child(2) {
+    padding-left: 5px;
+    padding-right: 10px;
+}
+.star-awrd-hp  p {
+    max-width: 230px;
+}
+.need-cnt-box ul {
+    min-height: auto;
+}
+.star-awrd {
+    padding: 20px 10px;
+}
+/* waba page  */
+.industry-img {
+    max-width: 380px;
+    margin: auto;
+}
+.industry-second-img {
+    max-width: 150px;
+}
+.waba-comon-heading {
+    font-size: 30px;
+    line-height: 34px;
+}
+/* .industry-cnt h4 {
+    font-size: 18px;
+    line-height: 24px;
+} */
+.marketing-img {
+    min-height: auto;
+}
+.marketing-cnt h4 {
+    font-size: 18px;
+    line-height: 24px;
+}
+.elevate-txt h2 {
+    font-size: 28px;
+    line-height: 34px;
+}
+section.elevate-section {
+    padding: 60px 0;
+}
+.people-say-image {
+    max-width: 260px;
+}
+.people-section .waba-heading {
+    margin-bottom: 30px;
+}
+.people-say-content {
+    margin-top: 5px;
+}
+.people-txt {
+    margin-top: 10px;
+}
+/* waba new  */
+.waba_banner_cnt .title {
+    font-size: 32px;
+    line-height: 42px;
+}
+.waba_banner_cnt .title img {
+    max-height: 38px;
+}
+.domain-page-banner .banner-img.waba-banner-img {
+    max-width: 430px;
+}
+.industry-grid {
+    text-align: center;
+}
+.industry-btn {
+    margin-top: 0;
+}
+.get-content h4 {
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: normal;
+    margin-bottom: 0.8rem;
+}
+.get-content h4 span {
+    display: block;
+}
+.get-image {
+    max-width: 380px;
+    margin-top: 15px;
+}
+/* .marketing-box li  span {
+    font-size: 19px;
+} */
+    /* .marketing-box li img {
+        max-width: 26px;
+    } */
+.marketing-box li {
+    border-radius: 12px;
+}
+.nr-rista-form-section.waba-form .form-img-heading h3 {
+    font-size: 28px;
+    line-height: 36px;
+        padding-top: 50px;
+}
+
+
+/* mobile table css  */
+.for-mobile-table tr.plan-heading td {
+    font-size: 22px  !important;
+}
+.for-mobile-table tr.plan-heading td .plan-price {
+    font-size: 32px;
+    margin-top: 12px;
+        margin-bottom: 6px;
+}
+.for-mobile-table tr.plan-heading td .pr-mnt {
+    border-bottom: 1px solid #E1E5EA;
+    padding-bottom: 18px;
+    display: block;
+}
+.pricing-table table.for-mobile-table tbody tr td:first-child {
+    font-size: 16px;
+        padding: 10px 0;
+
+}
+.pricing-table table.for-mobile-table tbody tr td {
+    font-size: 16px;
+}
+.for-mobile-table .disable-btn {
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #448DF4;
+    position: relative;
+    top: 2px;
+    left: 12px;
+}
+.table-pc-version{
+    display: none;
+}
+.table-mobile-version{
+    display: block;
+}
+ul.nav.nav-pills.mobile-tab-pills {
+    border-radius: 36.5px;
+    background: #FCFCFC;
+    box-shadow: 4px 4px 12px 4px rgba(197, 197, 197, 0.25) inset;
+        padding: 5px;
+        margin-bottom: 32px;
+}
+
+.nav-pills.mobile-tab-pills .nav-link {
+    display: block;
+    padding: .5rem 0.8rem;
+    color: #1F2F42;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+}
+.nav-pills.mobile-tab-pills .nav-link.active, .nav-pills.mobile-tab-pills .show>.nav-link {
+   
+    border-radius: 27.5px;
+    background: #000;
+    box-shadow: 4px 4px 12px 0px rgba(121, 121, 121, 0.25);
+    padding: 8px 10px;
+     color: #fff;
+}
+.for-mobile-table span.chatbot-txt {
+    white-space: normal;
+}
+.custom-industry-modal .modal-header img {
+    filter: brightness(0);
+}
+.custom-industry-modal  .modal-header {
+    top: 0;
+}
+.custom-industry-modal .modal-dialog {
+    margin: 0;
+}
+.marketing-hover img {
+    max-width: 100% !important;
+}
+.for-nav-btn .owl-nav {
+    top: 29px;
+}
+}
+@media (max-width:480px){
+.perform-msg p:before {
+    left: -8px;
+    top: -1px;
+    width: 20px;
+    height: 23px;
+}
+    a.site_url {
+        font-size: 20px;
+    }
+    .domain_banner_cnt .title {
+        max-width: 310px;
+        font-size: 34px;
+    }
+    .domain_banner_cnt .para {
+        line-height: 26px;
+    }
+    .domain-page-banner .banner-img {
+        max-width: 265px;
+    }
+    .dotpe-domain-section {
+        padding: 200px 0;
+    }
+    .dotpe-domain-txt h2 {
+        font-size: 30px;
+        max-width: 300px;
+    }
+    .custom_faq_section .faq-accordion .card-header a {
+        font-size: 15px;
+        padding: 1.5rem 2px;
+    }
+    .custom_faq_section .faq-accordion .card-header a img {
+        max-width: 11px;
+    }
+    .custom_faq_section .faq-accordion .card .card-body p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .custom_faq_section .faq-accordion .card .card-body {
+        padding: 2px;
+    }
+    .custom_faq_section .main-title {
+        font-size: 34px;
+        margin: 0 auto 35px;
+    }
+    .domain-box {
+        margin-bottom: 15px;
+    }
+    .s_theme_page .banner-img {
+        max-width: 340px;
+    }
+    .domain-box h4 {
+        max-width: 240px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* theme page css start */
+    .domain_banner_cnt .title {
+        max-width: 315px;
+    }
+    .s_theme_page .para {
+        /* max-width: 300px; */
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .restaurant_banner_cnt .para img {
+    max-width: 50px;
+}
+.page-static-banner .para {
+    font-size: 16px;
+}
+    .way-section {
+        padding: 40px 25px;
+    }
+    .way-section .dotpe-domain-txt p {
+        font-size: 16px;
+        max-width: 270px;
+    }
+    .theme-page-categorie-section .carousel-inner .text-block h2 {
+        font-size: 18px;
+    }
+    .theme-page-categorie-section .get-started-btn-arrow,
+    .need-theme-section .get-started-btn-arrow {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .need-theme-section .get-started-btn-arrow .arrow-right {
+        display: inherit;
+        position: relative;
+        top: -1px;
+        left: -5px;
+    }
+    .theme-page-categorie-section .get-started-btn-arrow .arrow-right img,
+    .need-theme-section .get-started-btn-arrow .arrow-right img {
+        max-width: 18px;
+    }
+    .s_build_grow_form .para {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .s_build_grow_form {
+        padding: 45px 5px;
+    }
+    /* theme page css end */
+
+.restaurant_banner_cnt .title {
+    font-size: 32px;
+    line-height: 42px;
+}
+.restaurant-page-banner, section.star-award-section, .restaurant-heading, section.rista-serve-section, section.rista-serve-section.rista-need, section.command-business, section.order-section, section.pos-section {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.award-border {
+    padding: 10px 20px 20px;
+    width: 346px;
+    height: 233px;
+}
+.award-heading p {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+.award-heading h4 {
+    font-size: 18px;
+}
+.star-awrd h5 {
+    font-size: 14px;
+}
+.star-awrd p {
+    font-size: 12px;
+    max-width: 125px;
+    margin: auto;
+}
+.leading-brands .domain-heading h1 {
+    font-size: 28px;
+}
+.serve-heading h3 {
+    font-size: 30px;
+}
+.serve-heading h4 {
+    font-size: 16px;
+}
+.serve-heading h4 {
+    margin-bottom: 8px;
+}
+.server-mobile-heading h4 {
+    font-size: 18px;
+}
+.server-mobile-heading h4 img {
+    width: 30px;
+}
+.server-left-cnt h3 {
+    font-size: 18px;
+    line-height: 25px;
+}
+.scb-cnt h4 {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.scb-icon {
+    width: 40px;
+    margin-right: 10px;
+}
+.scb-icon img {
+    max-width: 36px;
+}
+.read_btn a {
+    font-size: 14px;
+    font-weight: 500;
+}
+.scb-cnt p {
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+.scb-cnt {
+    margin-bottom: 10px;
+}
+/* .restaurant_banner_cnt .para:before {
+    display: none;
+} */
+.restaurant_banner_cnt .para {
+    margin-bottom: 18px;
+}
+span.acc-bold {
+    font-size: 18px;
+}
+span.acc-bold img {
+    width: 30px;
+}
+.rista-need .rista-faq  .faq-accordion .card-header .faq_acco_icon img {
+    width: 14px;
+}
+.faq-accordion .card .card-body p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.need-cnt-box ul {
+    margin-top: 25px;
+}
+ul.need-list li {
+    display: flex;
+}
+.ud-pera {
+    font-size: 15px;
+    font-weight: 400;
+}
+.ud-cnt {
+    padding-left: 0;
+}
+.ud-head {
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 900;
+}
+section.command-business {
+    /* height: 195px; */
+    background-size: cover;
+}
+.order-box-txt:before {
+    width: 30px;
+}
+.order-box-txt h4 {
+    font-size: 18px;
+}
+.order-box-txt p {
+    font-size: 14px;
+}
+.order-box-txt {
+    margin-bottom: 15px;
+}
+.order-box {
+    margin-bottom: 65px;
+}
+.pos-heding h3 {
+    font-size: 16px;
+}
+.pos-heding h2 {
+    font-size: 28px;
+}
+.pos-pera p {
+    font-size: 14px;
+    line-height: 22px;
+    color: #666666;
+}
+.ecosystem-heading h2 {
+    font-size: 24px;
+}
+.ecosystem-section {
+    padding: 40px 15px;
+}
+.discover-section {
+    padding: 40px 20px 35px;
+    padding-top: 60px;
+}
+.ecosystem-heading p {
+    font-size: 16px;
+}
+.performance-section {
+    padding: 40px 20px;
+}
+.perform-heading h3 {
+    font-size: 22px;
+}
+.perform-yr p {
+    font-size: 12px;
+}
+.perform-yr a {
+    font-size: 16px;
+}
+.form-img-heading h3 {
+    font-size: 30px;
+}
+.form-img-heading h3 {
+    padding: 35px 0px 0;
+}
+.form-img-heading {
+    height: auto;
+    background-size: contain;
+}
+.form-form form p {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+section.command-business {
+    /* height: 222px; */
+    background-size: contain;
+    background-position-x: 0px !important;
+}
+.ud-cnt-txt {
+    max-width: 150px;
+    margin-top: -34px;
+}
+.fluid-bg {
+    padding: 45px 20px;
+}
+.discover-section .ecosystem-heading h2 {
+    font-size: 30px;
+}
+.discover-grid h4 {
+    font-size: 24px;
+}
+.performance-box-section {
+    padding: 30px 14px;
+    padding-top: 43px;
+}
+.resta-carousel.owl-carousel .owl-item .item {
+    margin: 0 18px;
+}
+.award-border .col-md-6.col-6 {
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.perform-heading h3 {
+    font-size: 28px;
+}
+.perform-right-mobile {
+    /* max-width: 175px; */
+    margin-top: 23px;
+    border-bottom: 1px solid #F4F4F4;
+}
+.perform-right-mobile img {
+    max-width: 175px;
+    margin: auto;
+}
+.perform-msg p {
+    font-size: 14px;
+    line-height: 22px;
+}
+.nl-box .scb-cnt h5, .nl-box .scb-cnt p {
+    font-size: 16px;
+}
+.nl-box .scb-cnt h5 {
+    margin-bottom: 3px;
+    font-weight: 500;
+}
+.nl-box {
+    margin-bottom: 8px;
+}
+.restaurant-brand {
+    /* padding: 20px; */
+    padding: 0px;
+    padding-bottom: 68px;
+}
+.nl-box .scb-icon img {
+    max-height: 45px;
+    min-height: 45px;
+    object-fit: contain;
+    margin-top: 20px;
+}
+.ud-cnt {
+    min-height: 260px;
+    background-size: cover;
+}
+.form-form form .custom-blue-btn {
+    max-width: 100% !important;
+    padding: 12px 15px;
+    font-size: 16px;
+}
+span.acc-bold {
+    font-weight: 700;
+}
+.rista-faq .faq-accordion .card-header a {
+    padding: 1.2rem 1rem;
+}
+section.rista-serve-section.rista-need {
+    padding-bottom: 90px;
+}
+.order-box-txt h4 {
+    margin-bottom: 4px;
+}
+section.pos-section {
+    padding-top: 25px;
+}
+.need-plan-btn .custom-blue-btn {
+    font-size: 16px;
+}
+.ecosystem-img {
+    margin-top: 10px;
+    padding: 20px 0 33px 0;
+}
+.restaurant_banner_cnt .get-started-btn {
+    margin-top: 35px;
+    font-size: 18px;
+    letter-spacing: inherit;
+    max-width: 200px;
+}
+section.star-award-section {
+    padding: 0 5px;
+}
+.discover-grid img {
+    width: 82px !important;
+    height: 82px;
+}
+.col-md-12.award-pzero {
+    padding: 0;
+}
+.star-awrd img {
+    max-width: 40px;
+}
+.award-border {
+    border-radius: 19px;
+}
+.award-border:before {
+    border-radius: 19px;
+}
+.award-heading {
+    margin-bottom: 18px;
+}
+.second-award-margin {
+    margin-left: -9px;
+}
+.fine-dine-crousal .change-crousal-overflow .carousel-item {
+    padding: 12px 12px 22px;
+}
+.flex-cntr .scb-cnt h4 {
+    white-space: normal;
+}
+.flex-cntr  .scb-cnt h4 {
+    margin-top: 0;
+    line-height: 24px;
+}
+.col-md-12.heading-padding {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+.perform-left-cnt {
+    padding-left: 0;
+    padding-right: 0;
+}
+.perform-msg {
+    padding: 0 10px;
+}
+.form-img-heading img {
+    margin-top: 40px;
+}
+.white-bg {
+    padding: 0 16px;
+}
+.landing-logo {
+    margin-top: 30px;
+    z-index: 1;
+    position: sticky;
+}
+section.restaurant-page-banner {
+    z-index: 0;
+}
+.ecosystem-img img {
+    margin-top: -272px;
+    margin-bottom: -285px;
+}
+.performance-box-section {
+    margin-top: 10px;
+}
+/* new rista page  */
+.page-static-banner .para {
+    font-size: 17.43px;
+}
+.restaurant_banner_cnt .para img {
+    max-width: 60px;
+}
+p.nr_restaurant_banner_pera {
+    font-size: 14px;
+    font-weight: 400;
+    /* white-space: nowrap; */
+    margin-left: -5px;
+}
+p.nr_restaurant_banner_pera span {
+    display: block;
+    font-weight: 500;
+}
+.s_theme_page .para {
+    max-width: 350px;
+}
+.nr-star-award-section .star-awrd img {
+    max-width: 40px;
+}
+.star-awrd h5 {
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+.star-awrd p {
+    font-size: 9px;
+    max-width: 145px;
+}
+.star-awrd {
+    padding: 20px 10px;
+}
+.nr-star-award-section .custom-container {
+    margin-top: -72px;
+}
+section.restaurant-page-banner.rista-page-banner {
+    padding-bottom: 108px;
+}
+.second-award-margin {
+    margin-left: 0;
+}
+.rista-header .header_btn_rounded {
+    font-size: 14px !important;
+        padding: 5px 17px !important;
+}
+.restaurant_banner_cnt .para {
+    margin-bottom: 27px;
+}
+section.star-award-section.nr-star-award-section .second-award-margin {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.main-header .navbar-brand img {
+    width: 105px;
+}
+.custom-container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* section.restaurant-page-banner.rista-page-banner {
+    padding-top: 238px;
+} */
+.rista-page-banner .col-md-6 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.restaurant_banner_cnt .para img {
+    max-width: 42px;
+}
+section.star-award-section.nr-star-award-section {
+    padding: 0 22px;
+}
+section.rista-serve-section.rista-need.nr-rista-need .serve-heading h4 {
+    font-size: 18px;
+    max-width: 300px;
+    margin: auto;
+}
+.nr-rista-need .serve-heading h3 {
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 10px;
+
+}
+a.acc-btn.rista_acc_btnn {
+    background: transparent;
+    color: #006AFF;
+}
+.delightful-section .serve-heading h3 {
+    margin-bottom: 10px;
+}
+.delightful-section .serve-heading h3 span {
+    display: block;
+}
+.delight-image img {
+    max-width: 50px;
+}
+.delight-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+.delight-heading {
+    margin-bottom: 17px;
+}
+.delight-box {
+    padding: 33px 28px;
+    margin: 0;
+    margin-bottom: 28px;
+    /* width: 365px;
+    height: 406px; */
+}
+.row.m-btn {
+    display: none;
+}
+section.delightful-section {
+    padding-bottom: 34px;
+}
+.nr-command-business .ud-head {
+    line-height: 25px;
+}
+.nr-command-business .ud-cnt {
+    min-height: 179px;
+}
+.ud-cnt-txt {
+    margin-top: 0px;
+}
+.ndf-img-txt p {
+    margin-top: 5px;
+}
+.ndf-img-txt span:before {
+    height: 28px;
+    left: -65px;
+    top: -3px;
+}
+.ndf-img-txt {
+    padding-left: 38px;
+}
+.ndf-image img {
+    margin-top: 10px;
+}
+.ndf-image {
+    max-width: 215px;
+}
+.ndf-box {
+    margin-bottom: 21px;
+}
+section.ndf-section {
+    padding-bottom: 40px;
+        padding-top: 28px;
+}
+.nr-pos-section .pos-heding h2 {
+    line-height: 35px;
+}
+.nr-pos-section .fluid-bg {
+    padding: 30px 8px;
+}
+.fluid-bgg .col-lg-6.col-md-12 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+section.pos-section.nr-pos-section {
+    padding-left: 11px;
+    padding-right: 11px;
+}
+.nr-pos-section .pos-heding p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 28px;
+    max-width: 303px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nr-pos-section .pos-heding h2 {
+        /* white-space: nowrap; */
+
+    word-spacing: -2px;
+}
+.nr-pos-section .fluid-bg {
+    padding: 30px 0px;
+    padding-bottom: 50px;
+}
+.need-plan-btn {
+    margin-top: 35px;
+}
+.pos-img img {
+    max-width: 100%;
+}
+.ecosystem-heading h2 {
+    font-size: 28px;
+}
+.ecosystem-heading p span {
+    font-size: 28px !important;
+}
+.ecosystem-img img {
+    margin-top: -249px;
+    margin-bottom: -298px;
+}
+.discover-section .ecosystem-heading h2 {
+    text-align: center;
+}
+.discover-mobile {
+    padding-left: 0px;
+}
+.discover-carousel-slider .owl-dots {
+    margin-top: 40px;
+}
+.performance-section .ecosystem-heading p {
+    font-size: 18px;
+}
+section.performance-section .col-md-12 {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.performance-carousel-slider {
+    margin-top: 10px;
+}
+.ecosystem-heading p span {
+    font-size: 18px !important;
+    font-weight: 600;
+}
+.performance-section .ecosystem-heading p {
+    font-weight: 600;
+}
+/* .performance-carousel-slider .owl-item {
+    max-width: 345px;
+    width: 100% !important;
+    margin-right: 11px !important;
+} */
+.mobile-perform-right-mobile {
+    max-width: 175px;
+    margin-bottom: 20px;
+}
+.perform-msg {
+    min-height: 130px;
+}
+.performance-section .ecosystem-heading .perform-yr p {
+    font-size: 12px;
+    font-weight: 400;
+}
+.performance-section .ecosystem-heading p {
+    font-size: 16px;
+        font-weight: 400;
+}
+.performance-carousel-slider .owl-nav {
+    margin-top: 17.22px;
+}
+.performance-carousel-slider .owl-nav button {
+    width: 40px !important;
+    height: 40px !important;
+}
+.performance-section {
+    padding-bottom: 25px;
+}
+.nr-rista-form-section .form-img-heading h3 {
+    font-size: 28px;
+}
+.nr-rista-form-section .form-img-heading {
+    height: auto;
+}
+.form-hp h3 {
+    font-weight: 800;
+}
+.nr-rista-form-section .form-form {
+    padding: 50px 5px;
+    padding-right: 5px;
+}
+.white-bg {
+    padding: 0 9px;
+}
+.form-form form {
+    padding: 0 9px;
+}
+/* .nr_restaurant_banner_cnt p.para {
+    white-space: nowrap;
+} */
+header.main-header.rista-header a.navbar-brand {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.main-header.rista-header .navbar {
+    margin-top: 31px;
+    padding-top: 0;
+}
+.mobile-banner-img {
+    margin-top: 39px;
+}
+.col-md-6.col-6.second-award-margin:nth-child(2) {
+    left: 0;
+}
+section.restaurant-page-banner.rista-page-banner .custom-container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.restaurant_banner_cnt .title {
+    letter-spacing: -1.5px;
+}
+p.nr_restaurant_banner_pera {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+/* .nr-star-award-section .star-awrd {
+    width: 175px;
+    height: 121px;
+} */
+.nr-star-award-section .star-awrd img {
+    margin-bottom: 13px;
+}
+header.main-header.rista-header .navbar-brand img {
+    width: 114px;
+}
+.star-awrd p span {
+    display: block;
+    line-height: 15px;
+}
+.restaurant-heading {
+    padding-top: 64px;
+}
+section.rista-serve-section.rista-need.nr-rista-need {
+    padding-top: 0;
+}
+span.comma-txt {
+    display: none !important;
+}
+section.rista-serve-section.rista-need.nr-rista-need {
+    padding-bottom: 68px;
+}
+.need-acc-btn {
+    margin-top: 36px;
+}
+section.delightful-section {
+    padding-top: 0;
+}
+section.delightful-section {
+    padding-bottom: 20px;
+}
+section.command-business .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+.ndf-box.ndf-box-p1 {
+    padding-top: 0;
+}
+.nr-pos-section .pos-img {
+    height: auto;
+}
+.discover-btn {
+    margin-top: 56px;
+}
+.discover-carousel-slider .owl-dots {
+    margin-bottom: 0;
+}
+.discover-section {
+    padding-bottom: 55px;
+}
+.nr-rista-form-section .form-form {
+    padding: 40.17px 0px !important;
+}
+.discover-section {
+    padding: 40px 15px 35px;
+    padding-bottom: 75px;
+}
+.performance-section {
+    padding: 42px 15px;
+    padding-bottom: 30px;
+}
+.performance-carousel-slider .story-container {
+    padding-top: 15px;
+}
+.perform-msg p:before {
+    top: -14px;
+    left: 4px;
+}
+.performance-section .ecosystem-heading p {
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 1;
+    line-height: 24px;
+    max-width: 290px;
+    margin: auto;
+}
+/* .performance-carousel-slider .owl-item .item{
+    height: 555px;
+} */
+.nr-rista-form-section .form-img-heading h3 {
+    max-width: 325px;
+}
+.form-form form p {
+    margin-top: 23px;
+}
+a#schedule_demo_form_btn {
+    margin-top: 52px !important;
+    display: block;
+}
+.form-hp p {
+    font-size: 14px;
+    max-width: 290px;
+    margin: auto;
+    margin-top: 16px;
+    margin-bottom: 31px;
+}
+header.main-header.rista-header.sticky-nav .navbar-brand img {
+    width: 83px;
+}
+.perform-msg p {
+    font-weight: 500 !important;
+    /* max-width: 237px !important; */
+}
+
+.perform-msg {
+    max-width: 262px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.perform-msg p:before {
+    top: -16px;
+    left: -16px;
+}
+/* waba page  */
+.waba_banner_cnt .title {
+    font-size: 28px;
+    line-height: 36px;
+}
+/* .waba-banner {
+    padding-left: 15px;
+    padding-right: 15px;
+} */
+.waba_banner_cnt .para {
+    font-size: 16px;
+}
+.waba_banner_cnt .get-started-btn {
+    font-size: 16px;
+    height: 48px;
+        max-width: 210px;
+}
+/* .waba-leading-brands {
+    padding-top: 55px;
+} */
+.waba-leading-crousals {
+    padding: 0px;
+}
+.waba-communicate-section {
+    padding-top: 55px;
+}
+.communicate-content h3 {
+    font-size: 19px;
+    line-height: 26px;
+}
+.waba-communicate-section {
+    padding-bottom: 55px;
+}
+.industry-img {
+    max-width: 95%;
+}
+
+.people-deg h4 {
+    font-size: 22px;
+    line-height: 22px;
+}
+.people-txt p {
+    font-size: 17px;
+    line-height: 24px;
+}
+.people-txt h5 {
+    font-size: 17px;
+    line-height: 24px;
+}
+.people-deg p {
+    font-size: 17px;
+    line-height: 24px;
+}
+.marketing-cnt p {
+    max-width: 100%;
+}
+/* section.marketing-section {
+    padding-bottom: 10px;
+} */
+.elevate-btn a {
+    font-size: 16px;
+}
+.waba_banner_cnt .title img {
+    max-height: 34px;
+}
+/* waba new  */
+/* .domain-page-banner .banner-img.waba-banner-img {
+    max-width: 360px;
+} */
+.waba-banner {
+    padding-bottom: 60px !important;
+}
+.industry-img img {
+    margin: auto;
+}
+.waba-heading {
+    margin-bottom: 35px;
+}
+/* .get-content h4 {
+    font-size: 22px;
+    line-height: 30px;
+} */
+.get-image {
+    max-width: 350px;
+}
+.get-boxes {
+    margin-bottom: 30px;
+}
+/* .waba-comon-heading {
+    font-size: 26px;
+    line-height: 32px;
+} */
+/* .marketing-box li  span {
+    font-size: 18px;
+} */
+/* section.whyus-section {
+    padding-top: 50px;
+} */
+.get-content p {
+    font-size: 15px;
+    /* line-height: 26px; */
+}
+.marketing-btn a {
+    font-size: 16px;
+}
+.waba_banner_cnt .para {
+    background-size: contain;
+}
+
+/* .enterprise-text h3 span {
+    font-size: 26px;
+} */
+/* .enterprise-text h3 {
+    font-size: 18px;
+    line-height: 28px;
+} */
+/* .enterprise-text h5 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}   */
+/* .enterprise-text h4 {
+    font-size: 16px;
+}  */
+.enterprise-text h4 img {
+    max-width: 16px;
+    margin-left: 2px;
+    position: relative;
+    top: 0;
+    display: inline;
+}
+.enterprise-text h4 {
+    display: inline;
+}
+.plantable-section {
+    padding-bottom: 45px;
+}
+/* .enterprise-section {
+    padding-bottom: 65px;
+} */
+.waba_banner_cnt .get-started-btn {
+    letter-spacing: 0px;
+}
+.plantable-section .waba-heading {
+    text-align: left;
+}
+
+.plantable-section .waba-heading br {
+    display: none;
+}
+}
+@media (max-width:459px){
+.industry-second-img {
+    max-width: 100%;
+}
+}
+@media (max-width:420px){
+.ud-cnt {
+    min-height: 210px;
+}
+.nr-rista-form-section.waba-form .form-img-heading h3 {
+    font-size: 24px;
+    line-height: 32px;
+}
+}
+@media (max-width:390px){
+p.nr_restaurant_banner_pera {
+    letter-spacing: -0.5px;
+}
+.nr_restaurant_banner_cnt p.para {
+    letter-spacing: -0.5px;
+}
+.rista-faq .faq-accordion .card-header a {
+    padding: 1rem 0.8rem;
+}
+.delight-list p {
+    letter-spacing: -0.5px;
+}
+.nr-pos-section .pos-heding h2 {
+    letter-spacing: -0.7px;
+}
+.discover-grid {
+    padding: 43px 18px;
+}
+.performance-section .ecosystem-heading p {
+    margin-top: 0;
+    font-weight: 300;
+    font-size: 16px;
+}
+.perform-msg {
+    margin-bottom: 42.66px;
+}
+.perform-msg {
+    min-height: auto;
+}
+.mobile-perform-right-mobile {
+    margin-bottom: 8.18px;
+}
+/* waba page  */
+.waba_banner_cnt .para {
+    line-height: 22px;
+}
+.waba-leading-brands {
+    padding-top: 50px;
+}
+.waba-communicate-section {
+    padding-bottom: 50px;
+}
+.communicate-content h3 {
+    font-size: 18px;
+    line-height: 24px;
+}
+/* section.marketing-section {
+    padding-bottom: 10px;
+} */
+/* section.whyus-section {
+    padding-top: 50px;
+} */
+.wy-grid-img img {
+    max-width: 56px;
+}
+section.whyus-section {
+    padding-bottom: 0px;
+}
+/* .people-say-image {
+    max-width: 290px;
+} */
+/* .people-say-content {
+    margin-top: 25px;
+} */
+.people-txt h5 {
+    font-size: 16px;
+    line-height: 23px;
+}
+.people-txt p {
+    font-size: 16px;
+    line-height: 23px;
+}
+.comma-icon img {
+    max-width: 30px;
+}
+.people-deg h4 {
+    font-size: 20px;
+    line-height: 20px;
+}
+.people-deg p {
+    font-size: 16px;
+    line-height: 23px;
+}
+.people-section {
+    padding-bottom: 55px;
+}
+/* waba new  */
+.waba_banner_cnt .title {
+    font-size: 25px;
+    line-height: 33px;
+        margin-bottom: 22px;
+}
+.waba_banner_cnt .title img {
+    max-height: 30px;
+}
+.page-static-banner .para {
+    margin-bottom: 28px;
+}
+/* .domain-page-banner .banner-img.waba-banner-img {
+    max-width: 300px;
+} */
+.leading-brands .domain-heading h1 {
+    font-size: 24px;
+}
+.waba-leading-brands .domain-heading {
+    margin-bottom: 40px;
+}
+/* .industry-section {
+    padding-top: 50px;
+} */
+/* .waba-comon-heading {
+    font-size: 24px;
+    line-height: normal;
+} */
+.indusry-box {
+    margin-top: 0;
+}
+.industry-cnt {
+    margin-top: 25px;
+}
+/* .industry-section {
+    padding-bottom: 50px;
+} */
+.get-section .waba-heading {
+    margin-bottom: 40px;
+}
+/* .get-boxes {
+    padding: 20px 11px;
+} */
+/* .get-content h4 {
+    font-size: 21px;
+} */
+.marketing-box li {
+    display: flex;
+    margin-bottom: 18px;
+}
+.marketing-box {
+    margin-bottom: 35px;
+}
+.for-nav-btn .owl-nav {
+    top: 28px;
+}
+}
+@media (max-width:375px){
+.ud-cnt {
+    min-height: 218px;
+}
+
+}
+.get-started-fixed a {
+    border-radius: 8px;
+    width: 100%;
+}
+
+
+@media (min-width: 320px) and (max-width: 767px){
+.rista-bottom-btn {
+    display: none !important;
+}
+}
+@media (min-width: 768px) and (max-width: 862px){
+.navbar-nav.waba-menu .nav-item .nav-link {
+    font-size: 14px;
+}
+}
+
+
+
+/************************************ BOBBY THANK YOU PAGE CSS *******************************************************/
+.thank-logo{
+    width: 139px;
+    height: auto;
+}
+.thanku-header {
+	padding: 20px 45px;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12);
+	position: sticky;
+	top: 0;
+	z-index: 3;
+	background: #fff;
+}
+.sec-1-add {
+	display: flex;
+	justify-content: center;
+	margin-top: -30px;
+}
+.sec-1-add h3 {
+	align-items: center;
+	display: flex;
+	font-size: 28px;
+	font-weight: 700;
+}
+.thank-ban-btn {
+	color: #2F80ED;
+	border: 1px solid #2F80ED;
+	font-size: 16px;
+	border-radius: 50px;
+	margin-left: 45px;
+	padding: 10px 30px;
+	text-decoration: none !important;
+	z-index: 1;
+}
+.thank-ban-btn i {
+	margin-right: 5px;
+}
+.thanku-sec-1 {
+	padding: 60px 0;
+	background: #F9FAFB;
+}
+.thank-check {
+	width: 50px;
+	height: 50px;
+	margin-right: 15px;
+}
+.add-pera p{
+    text-align: center;
+}
+.add-pera p {
+	color: black;
+	font-size: 18px;
+	font-family: Gilroy;
+	font-weight: 400;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+.add-pera {
+	margin-top: 20px;
+}
+
+.thanku-heading {
+	text-align: center;
+	margin-bottom: 0px;
+	color: black;
+	font-size: 52px;
+	font-family: Gilroy;
+	font-weight: 700;
+	word-wrap: break-word;
+}
+.thanku-colour-head {
+	letter-spacing: 0px;
+	text-align: center;
+	background: linear-gradient(90.03deg, #596AFF 20%, #C277E5 30%, #FF4ECD 43.51%, #FFA15C 79.73%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-size: 52px;
+	font-family: Gilroy;
+	font-weight: 700;
+	word-wrap: break-word;
+}
+
+
+
+.thank-ban-btn-1 {
+	color: #2F80ED;
+	border: 1px solid #2F80ED;
+	border-radius: 50px;
+	padding: 13px 27px;
+	text-decoration: none !important;
+	font-size: 16px;
+	font-family: Gilroy;
+	font-weight: 500;
+	line-height: 21px;
+	word-wrap: break-word;
+	float: left;
+	display: flex;
+}
+.thank-ban-btn-1 i{
+	margin-left: 5px;
+}
+.sec-3-img-1 {
+	width: 460px;
+	position: relative;
+	z-index: 0;
+	height: 389px;
+	float: right;
+}
+.add-pera a {
+	color: black;
+	font-size: 18px;
+	font-family: Gilroy;
+	font-weight: 600;
+	line-height: 24px;
+	word-wrap: break-word;
+}
+.sec-3-img-2 {
+	width: 172px;
+	height: auto;
+	position: absolute;
+	right: -15px;
+	z-index: 1;
+	bottom: 105px;
+	height: 176.99px;
+}
+.thanku-sec-3-content {
+	padding: 125px 118px 125px 0;
+}
+.thanku-sec-3-content-1 {
+	padding: 125px 0 125px 93.32px;
+}
+.sec-3-img-1-1 {
+	width: 520px;
+	float: left;
+	height: 424px;
+}
+.thanku-sec-3-content p {
+	margin: 12px 0 48px;
+	color: #000;
+	opacity: 0.80;
+	color: black;
+	font-size: 18px;
+	font-family: 'Gilroy';
+	font-weight: 400;
+	line-height: 30px;
+	word-wrap: break-word"";
+	float: left;
+}
+.thanku-sec-3-content-1 p {
+	float: left;
+	margin: 10px 0 50px;
+	text-align: left;
+	opacity: 0.80;
+	color: black;
+	font-size: 18px;
+	font-family: Gilroy;
+	font-weight: 400;
+	line-height: 30px;
+	word-wrap: break-word;
+}
+.thanku-sec-2{
+    padding: 50px 0 0 0;
+}
+.thanku-sec-3{
+    padding: 50px 0;
+}
+.thanku-sec-3-show{
+    display: none;
+}
+.add-pera span {
+	display: block;
+}
+.thanku-sec-3-content h3 {
+	color: black;
+	font-size: 32px;
+	font-family: Gilroy !important;
+	font-weight: 600;
+	word-wrap: break-word;
+}
+.thanku-sec-3-content-1 h3 {
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 38.18px;
+}
+
+@media (max-width: 1200px){
+    .thanku-sec-3-content {
+        padding: 90px 100px 90px 0;
+    }
+    .thanku-sec-3-content-1 {
+        padding: 70px 0 70px 100px;
+    }
+}
+
+@media (max-width: 991px){
+    .thanku-sec-3-content {
+        padding: 45px 50px 45px 0;
+    }
+    .thanku-sec-3-content-1 {
+        padding: 5px 0 5px 50px;
+    }
+
+}
+
+
+@media (max-width: 767px){
+    
+    .sec-1-add {
+        display: block;
+        text-align: center;
+        margin-top: 40px;
+    }
+    .sec-1-add h3{
+        display: block;
+    }
+    .thanku-sec-1 {
+        padding: 30px 0 50px;
+    }
+    .thank-check {
+        width: 60px;
+        height: 60px;
+        margin-right: 0;
+    }
+    .thanku-heading {
+        font-size: 24px;
+        line-height: 29.02px;
+    }
+    .thanku-colour-head {
+        font-size: 24px;
+        line-height: 33.02px;
+    }
+    .sec-3-img-1 {
+        width: 100%;
+        height: auto;
+    }
+    .sec-3-img-1-1 {
+        width: 100%;
+        float: left;
+        height: auto;
+    }
+    .thanku-sec-3-show{
+        display: block;
+    }
+    .thanku-sec-3-hide{
+        display: none;
+    }
+    .thanku-sec-3-content {
+        padding: 40px 0 0 0;
+        text-align: center;
+    }
+    .thanku-sec-3-content-1 {
+        padding: 40px 0 0 0;
+        text-align: center;
+    }
+    .thanku-header {
+        padding: 20px 0;
+    }
+    .thank-ban-btn {
+        margin-left: 15px;
+        font-size: 13px;
+        padding: 8px 14px 10px;
+    }
+    .add-pera span {
+        display: inline;
+    }
+    .thank-logo {
+        width: 77.2px;
+        height: auto;
+    }
+    .thank-ban-btn i {
+        margin-right: 0;
+    }
+    .sec-3-img-2 {
+        width: 150px;
+        height: auto;
+        bottom: 15px;
+    }
+   
+
+}
+

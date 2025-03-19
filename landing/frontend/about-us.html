@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DotPe</title>
+    <!-- Bootstrap CSS -->
+    <link rel="icon" href="https://dotpe.in/images/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">        
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">  
+    <style>
+        .wrapper {
+            margin: 0 auto;
+        }
+        .trigger {
+            position: absolute;
+        }
+        .trigger--one {
+            left: 0;
+        }
+        .scene {
+            position: absolute;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .scene--active {
+            position: fixed;
+        }
+        .scene--ended {
+            position: absolute;
+            bottom: 0;
+            top: auto;
+        }
+        .horizontal-scroll-section {
+            position: relative;
+            min-height: 100vh;
+            opacity: 0;
+            transition: 0.2s opacity;
+        }
+        .horizontal-scroll-section img {
+            display: block;
+            max-height: 80%;
+            width: auto;
+        }
+        .horizontal-scroll-section--init {
+            opacity: 1;
+        }
+        .horizontal-scroll-section__content {
+            display: flex;
+            align-items: center;
+        }
+        .horizontal-scroll-section__content-wrapper {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s ease; 
+            -webkit-transition: all 0.3s ease; 
+        }
+        .horizontal-scroll-section__content-section {
+            position: relative;
+            text-align: center;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '252044877677861');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=252044877677861&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3583418351980744');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3583418351980744&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1942611432784053');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1942611432784053&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P2H6MMKK');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '262561675315476');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height=“1” width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=262561675315476&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNGSBYFQ5S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-ZNGSBYFQ5S');
+      gtag('config', 'AW-417289495');
+    </script>
+</head>
+
+<body>
+    
+    <header class="main-header">
+        <!--Nav fixed top--> 
+        <div class="top-fixed-navbar d-none d-md-block">
+            <nav class="navbar navbar-expand-md nav-v1 top-bar">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://dotpe.in/images/dotpe-black-logo-svg.svg" class="img-fluid" alt="dotpe-logo">
+                </a>
+
+                <div class="mr-auto ml-auto" id="navMenu">
+                    <ul class="navbar-nav mr-auto ml-auto mobile-menu menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us.html#">Business Types</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="f-b-page.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://dotpe.in/images/food-beverage-icon.png" class="img-fluid" alt="food-beverage">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Food & Beverage Industry <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                                <span class="info-txt">Tools for front of house, back of house, and everything in between.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="retail.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://dotpe.in/images/retail-icon.png" class="img-fluid" alt="retail">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Retail <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                                <span class="info-txt">All the retail tools you need from offline to online, in-store & online.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://dotpe.in/images/services-icon.png" class="img-fluid" alt="services">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Services & Others <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                                <span class="info-txt">Solutions for health, repair & other service professionals.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us.html#">Company</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="about-us.html#">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">    
+                                                <img src="https://dotpe.in/images/about-us-icon.png" class="img-fluid" alt="about-us">                                              
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">About DotPe <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html#">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">                                                    
+                                                <img src="https://dotpe.in/images/careers-icon.png" class="img-fluid" alt="careers">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Careers <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html#">
+                                        <div class="d-flex">
+                                            <div class="menu-icon"> 
+                                                <img src="https://dotpe.in/images/blog-icon.png" class="img-fluid" alt="blog">                                                   
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Blogs <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html#">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">                                                    
+                                                <img src="https://dotpe.in/images/press-media-icon.png" class="img-fluid" alt="press-media">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Press & Media <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html#">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">                                                    
+                                                <img src="https://dotpe.in/images/contact-us-icon.png" class="img-fluid" alt="contact-us">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Contact Us <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div> 
+
+                <div class="d-none d-md-block">
+                    <a href="about-us.html#" class="top-get-started-btn d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#requestDemoModal">Request Demo</a>
+                </div>
+            </nav>
+        </div>  
+       
+        <nav class="navbar navbar-expand-md nav-v1 top-bar top-bar-mobile">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="https://dotpe.in/images/dotpe-white-logo-svg.svg" class="img-fluid" alt="dotpe-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenuMobile"
+                aria-controls="navMenuMobile" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <img src="https://dotpe.in/images/menu-black.png" class="m-auto" alt="menu">
+                </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenuMobile">
+                <div class="d-none d-md-block mr-auto ml-auto">
+                    <ul class="navbar-nav mr-auto ml-auto mobile-menu menu">
+                        <!-- <li class="nav-item active">
+                            <a class="nav-link" href="#">Products</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us.html#">Business Types</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="f-b-page.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://dotpe.in/images/food-beverage-icon.png" class="img-fluid" alt="food-beverage">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Food & Beverage Industry <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                                <span class="info-txt">Tools for front of house, back of house, and everything in between.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="retail.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://dotpe.in/images/retail-icon.png" class="img-fluid" alt="retail">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Retail <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                                <span class="info-txt">All the retail tools you need from offline to online, in-store & online.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://dotpe.in/images/services-icon.png" class="img-fluid" alt="services">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Services & Others <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                                <span class="info-txt">Solutions for health, repair & other service professionals.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us.html#">Company</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="about-us.html#">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">    
+                                                <img src="https://dotpe.in/images/about-us-icon.png" class="img-fluid" alt="about-us">                                              
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">About DotPe <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html#">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">                                                    
+                                                <img src="https://dotpe.in/images/careers-icon.png" class="img-fluid" alt="careers">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Careers <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html#">
+                                        <div class="d-flex">
+                                            <div class="menu-icon"> 
+                                                <img src="https://dotpe.in/images/blog-icon.png" class="img-fluid" alt="blog">                                                   
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Blogs <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html#">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">                                                    
+                                                <img src="https://dotpe.in/images/press-media-icon.png" class="img-fluid" alt="press-media">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Press & Media <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about-us.html#">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">                                                    
+                                                <img src="https://dotpe.in/images/contact-us-icon.png" class="img-fluid" alt="contact-us">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Contact Us <span class="icon"><img src="https://dotpe.in/images/right-arrow-white-image.svg" class="img-fluid" alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div> 
+
+                <div class="d-block d-md-none mr-auto ml-auto mobile-menu-panel">
+                    <div class="panel-group footer-panel-group" id="faq-accordion" role="tablist" aria-multiselectable="true">
+                        <!-- <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="menu_item_1">
+                                <div class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#faq-accordion" href="#menuCollapseOne" aria-expanded="true" aria-controls="menuCollapseOne">                                    
+                                        Product
+                                        <i class="faq-more-less fa fa-plus" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="menuCollapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="menu_item_1">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="menu-item">
+                                                <div class="header d-flex justify-content-between align-items-center">
+                                                    <p class="title m-0">Online Store</p>
+                                                    <a href="#" class="link">Page in development</a>
+                                                </div>
+                                                <div class="info-txt text-left">
+                                                    <p>Make every aspect of eCommerce easier for you and your customers.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="menu-item">
+                                                <div class="header d-flex justify-content-between align-items-center">
+                                                    <p class="title m-0">Point of Sale</p>
+                                                    <a href="#" class="link">Page in development</a>
+                                                </div>
+                                                <div class="info-txt text-left">
+                                                    <p>All the retail tools you need from offline to online, in-store & online.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="menu-item">
+                                                <div class="header d-flex justify-content-between align-items-center">
+                                                    <p class="title m-0">Marketing</p>
+                                                    <a href="#" class="link">Page in development</a>
+                                                </div>
+                                                <div class="info-txt text-left">
+                                                    <p>Make every aspect of eCommerce easier for you and you customers.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="menu-item">
+                                                <div class="header d-flex justify-content-between align-items-center">
+                                                    <p class="title m-0">Deliveries/Logistics</p>
+                                                    <a href="#" class="link">Page in development</a>
+                                                </div>
+                                                <div class="info-txt text-left">
+                                                    <p>Make every aspect of eCommerce easier for you and your customers.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="menu-item">
+                                                <div class="header d-flex justify-content-between align-items-center">
+                                                    <p class="title m-0">Payments</p>
+                                                    <a href="#" class="link">Page in development</a>
+                                                </div>
+                                                <div class="info-txt text-left">
+                                                    <p>All the retail tools you need from offline to online, in-store & online.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="menu-item">
+                                                <div class="header d-flex justify-content-between align-items-center">
+                                                    <p class="title m-0">In-Store Solutions</p>
+                                                    <a href="#" class="link">Page in development</a>
+                                                </div>
+                                                <div class="info-txt text-left">
+                                                    <p>Make every aspect of eCommerce easier for you and your customers.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="menu-item">
+                                                <div class="header d-flex justify-content-between align-items-center">
+                                                    <p class="title m-0">Marketplace Integration</p>
+                                                    <a href="#" class="link">Page in development</a>
+                                                </div>
+                                                <div class="info-txt text-left">
+                                                    <p>Make every aspect of eCommerce easier for you and your customers.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="menu_item_2">
+                                <div class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#faq-accordion" href="about-us.html#menuCollapseTwo" aria-expanded="true" aria-controls="menuCollapseTwo">                                    
+                                        Business Types
+                                        <i class="faq-more-less fa fa-plus" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="menuCollapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="menu_item_2">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="f-b-page.html">
+                                                <div class="menu-item">
+                                                    <div class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Food & Beverage Industry</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>Tools for front of house, back of house, and everything in between.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="retail.html">
+                                                <div class="menu-item">
+                                                    <div class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Retail</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>All the retail tools you need from offline to online, in-store & online.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="services.html">
+                                                <div class="menu-item">
+                                                    <div class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Services & Others</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>Solutions for health, repair & other service professionals.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default border-0">
+                            <div class="panel-heading" role="tab" id="menu_item_3">
+                                <div class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#faq-accordion" href="about-us.html#menuCollapseThree" aria-expanded="true" aria-controls="menuCollapseThree">                                    
+                                        Company
+                                        <i class="faq-more-less fa fa-plus" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="menuCollapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="menu_item_3">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="about-us.html#">
+                                                <div class="menu-item">
+                                                    <div class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">About DotPe</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>Tools for front of house, back of house, and everything in between.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="about-us.html#">
+                                                <div class="menu-item">
+                                                    <div class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Careers</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>All the retail tools you need from offline to online, in-store & online.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="about-us.html#">
+                                                <div class="menu-item">
+                                                    <div class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Blogs</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>Solutions for health, repair & other service professionals.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="about-us.html#">
+                                                <div class="menu-item">
+                                                    <div class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Press & Media</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>All the retail tools you need from offline to online, in-store & online.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="about-us.html#">
+                                                <div class="menu-item">
+                                                    <div class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Contact Us</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>Solutions for health, repair & other service professionals.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- panel-group -->
+                </div> 
+                
+                <div class="d-none d-md-block" style="opacity: 0;">
+                    <a href="about-us.html#" class="top-get-started-btn d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#requestDemoModal">Request Demo</a>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    <div class="about-hero-section-wrap overflow-x-hidden">
+        <div class="d-flex justify-content-center flex-column about-hero-section">
+            <div class="wrap-text">
+                <p class="small-heading wow fadeInDown">About Us</p>
+                <h1 class="title wow fadeInUp">Sometimes all it takes is a moment to bring about a revolution.</h1>
+            </div>
+            <div class="about-marquee-wrap">
+                <div class="marquee-image-wrap">
+                    <div class="marquee-img image-block-1">
+                        <img class="object-cover w-100 h-100" src="https://dotpe.in/images/about-us-img/new-hero-section-image-1-240622.jpg" alt="">
+                    </div>
+                    <div class="d-block marquee-img image-block-2">
+                        <img class="object-cover w-100 h-100" src="https://dotpe.in/images/about-us-img/new-hero-section-image-2-240622.jpg" alt="">
+                    </div>
+                    <div class="d-block marquee-img image-block-3">
+                        <img class="object-cover w-100 h-100" src="https://dotpe.in/images/about-us-img/new-hero-section-image-3-240622.jpg" alt="">
+                    </div>
+                    <div class="d-block marquee-img image-block-4">
+                        <img class="object-cover w-100 h-100" src="https://dotpe.in/images/about-us-img/new-hero-section-image-3-240622.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="dotpe-story">
+        <div class="container-fluid">
+            <div class="story-inner-block">
+                <h1 class="text-white title xs-w-100 wow fadeInDown">The DotPe story is no less. Three friends, meeting for coffee</h1>
+                <p class="text-white xs-w-100 para wow fadeInUp">seems like a normal day. Except, this wasn’t just a regular catch up. It was here where an idea was born. Digitally enabling F&B businesses with a simple technology like a QR code. There’s been no looking back since. What started as a QR based mobile ordering experience or restaurants soon turned into an end to end digital solution for all kinds & sizes of businesses.</p>
+
+                <!-- <div class="story-carousel owl-carousel owl-theme mt-5">
+                    <div class="item">
+                        <div class="story-carousel-item xs-w-100">
+                            <img class="w-100 h-100" src="./images/about-us-img/slide-1.png" alt="slider">
+                        </div>                        
+                    </div>
+                    <div class="item">
+                        <div class="story-carousel-item xs-w-100">
+                            <img class="w-100 h-100" src="./images/about-us-img/slide-2.png" alt="slider">
+                        </div>                        
+                    </div>
+                    <div class="item">
+                        <div class="story-carousel-item xs-w-100">
+                            <img class="w-100 h-100" src="./images/about-us-img/slide-3.png" alt="slider">
+                        </div>                        
+                    </div>
+                    <div class="item">
+                        <div class="story-carousel-item xs-w-100">
+                            <img class="w-100 h-100" src="./images/about-us-img/slide-4.png" alt="slider">
+                        </div>                        
+                    </div>
+                    <div class="item">
+                        <div class="story-carousel-item xs-w-100">
+                            <img class="w-100 h-100" src="./images/about-us-img/slide-5.png" alt="slider">
+                        </div>                        
+                    </div>
+                    <div class="item">
+                        <div class="story-carousel-item xs-w-100">
+                            <img class="w-100 h-100" src="./images/about-us-img/slide-6.png" alt="slider">
+                        </div>                        
+                    </div>
+                </div> -->
+
+                <div class="horizontal-scroll-section" style="padding: 7rem 0;">
+                    <div class="scene" style="overflow: hidden">
+                        <div class="horizontal-scroll-section__content-wrapper wrapper">
+                            <div class="horizontal-scroll-section__content-section">
+                                <img src="https://dotpe.in/images/about-us-img/slide-1.jpg" class="horizontal-scroll-section__image-one" alt="">
+                            </div>
+                            <div class="horizontal-scroll-section__content-section">
+                                <img src="https://dotpe.in/images/about-us-img/slide-2.jpg" class="horizontal-scroll-section__image-one" alt="">
+                            </div>
+                            <div class="horizontal-scroll-section__content-section">
+                                <img src="https://dotpe.in/images/about-us-img/slide-3.jpg" class="horizontal-scroll-section__image-one" alt="">
+                            </div>
+                            <div class="horizontal-scroll-section__content-section">
+                                <img src="https://dotpe.in/images/about-us-img/slide-4.jpg" class="horizontal-scroll-section__image-one" alt="">
+                            </div>
+                            <div class="horizontal-scroll-section__content-section">
+                                <img src="https://dotpe.in/images/about-us-img/slide-5.jpg" class="horizontal-scroll-section__image-one" alt="">
+                            </div>
+                            <div class="horizontal-scroll-section__content-section">
+                                <img src="https://dotpe.in/images/about-us-img/slide-6.jpg" class="horizontal-scroll-section__image-one" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>            
+        </div>
+    </section>
+
+    <section class="flexible-business-solutions">
+        <div class="container">
+            <h1 class="title wow fadeInDown">Flexible business solutions for</h1>
+            <h1 class="gredient-text wow fadeInUp">omni-channel selling</h1>
+            <div class="solutions-img mt-5">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-3 col-md-3">
+                        <img src="https://dotpe.in/images/about-us-img/mobile-img.png" class="img-fluid ml-auto mr-auto" alt="">
+                        <div class="toggle-info-block toggle-op-1">
+                            <div class="toggle-info-text toggle-op-card-1 hidden">                                
+                                <h4>Payments</h4>
+                                <p>Accept payments quickly, easily & securely. Let shoppers pay their way with multiple payment options.</p>
+                                <a href="about-us.html#" class="know-more-btn">Know More <span class="icon-right"><img src="https://dotpe.in/images/right-arrow-11.svg" alt=""></span></a>
+                            </div>
+                            <div class="toggle-info-button">
+                                <span class="plus-btn"><i class="fa-rotate fa fa-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8">
+                        <img src="https://dotpe.in/images/about-us-img/laptop-img.png" class="img-fluid ml-auto mr-auto" alt="">
+                        <div class="toggle-info-block toggle-op-2">
+                            <div class="toggle-info-text toggle-op-card-2 hidden">                                
+                                <h4>POS</h4>
+                                <p>Sync your in-store and online business with the industry’s leading Point of Sale.</p>
+                                <a href="about-us.html#" class="know-more-btn">Know More <span class="icon-right"><img src="https://dotpe.in/images/right-arrow-11.svg" alt=""></span></a>
+                            </div>
+                            <div class="toggle-info-button">
+                                <span class="plus-btn"><i class="fa-rotate fa fa-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <img src="https://dotpe.in/images/about-us-img/online-store-img.png" class="img-fluid ml-auto mr-auto" alt="">
+                    <div class="toggle-info-block toggle-op-3">
+                        <div class="toggle-info-text toggle-op-card-3 hidden">                                
+                            <h4>POS</h4>
+                            <p>Sync your in-store and online business with the industry’s leading Point of Sale.</p>
+                            <a href="about-us.html#" class="know-more-btn">Know More <span class="icon-right"><img src="https://dotpe.in/images/right-arrow-11.svg" alt=""></span></a>
+                        </div>
+                        <div class="toggle-info-button">
+                            <span class="plus-btn"><i class="fa-rotate fa fa-plus" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="market-products">
+        <div class="container-fluid p-0">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="left-block-img">
+                    <img src="https://dotpe.in/images/about-us-img/market-product-left-img.jpg" class="img-fluid" alt="">
+                    <div class="market-product-info">
+                        <div class="toggle-info-block toggle-op-4">
+                            <div class="toggle-info-text toggle-op-card-4 hidden">                                
+                                <h4>POS</h4>
+                                <p>Sync your in-store and online business with the industry’s leading Point of Sale.</p>
+                                <a href="about-us.html#" class="know-more-btn">Know More <span class="icon-right"><img src="https://dotpe.in/images/right-arrow-11.svg" alt=""></span></a>
+                            </div>
+                            <div class="toggle-info-button">
+                                <span class="plus-btn"><i class="fa-rotate fa fa-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="right-block-img">
+                    <img src="https://dotpe.in/images/about-us-img/market-product-right-img.jpg" class="img-fluid" alt="">
+                    <div class="right-marketing-toggle-top">
+                        <div class="toggle-info-block toggle-op-5">
+                            <div class="toggle-info-text toggle-op-card-5 hidden">                                
+                                <h4>POS</h4>
+                                <p>Sync your in-store and online business with the industry’s leading Point of Sale.</p>
+                                <a href="about-us.html#" class="know-more-btn">Know More <span class="icon-right"><img src="https://dotpe.in/images/right-arrow-11.svg" alt=""></span></a>
+                            </div>
+                            <div class="toggle-info-button">
+                                <span class="plus-btn"><i class="fa-rotate fa fa-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right-marketing-toggle-bottom">
+                        <div class="toggle-info-block toggle-op-6">
+                            <div class="toggle-info-text toggle-op-card-6 hidden">                                
+                                <h4>POS</h4>
+                                <p>Sync your in-store and online business with the industry’s leading Point of Sale.</p>
+                                <a href="about-us.html#" class="know-more-btn">Know More <span class="icon-right"><img src="https://dotpe.in/images/right-arrow-11.svg" alt=""></span></a>
+                            </div>
+                            <div class="toggle-info-button">
+                                <span class="plus-btn"><i class="fa-rotate fa fa-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <section class="size-of-businesses">
+        <div class="container">
+            <h1 class="text-white title wow fadeInDown">Fuelling India’s economic growth by enabling participation by all types & sizes of businesses.</h1>
+            <div class="d-flex flex-column mb-5">
+                <div class="types-block wow fadeInLeft">                    
+                    <h1 class="type-heading gredi-text-1"><span class="count-num">30</span>mn</h1>
+                    <h2 class="type-para">Transactions</h2>
+                </div>
+                <div class="types-block wow fadeInLeft" data-wow-delay="0.2s">
+                    <h1 class="type-heading gredi-text-2"><span class="count-num">8</span>mn</h1>
+                    <h2 class="type-para">Merchants</h2>
+                </div>
+                <div class="types-block wow fadeInLeft" data-wow-delay="0.4s">
+                    <h1 class="type-heading gredi-text-3"><span class="count-num">100</span>+</h1>
+                    <h2 class="type-para">Integrations</h2>
+                </div>
+                <div class="types-block wow fadeInLeft" data-wow-delay="0.6s">
+                    <h1 class="type-heading gredi-text-4"><span class="count-num">80</span>mn</h1>
+                    <h2 class="type-para">Catalog Items</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="business-text-block">
+                <h2>
+                    <span id="typed2"></span>
+                    <span class="cursor"></span>
+                </h2>
+                <!-- <h2 class="text-white wow fadeInDown">We are on a mission to democratise technology and digitise merchants.</h2> -->
+                <h1 class="text-white wow fadeInUp" data-wow-delay="0.2s">there is a huge opportunity in front of us. we are building a transparent, meaningful, & customer-centric business & helping our merchants do the same.</h1>
+                <a href="about-us.html#" class="get-started wow fadeInUp" data-wow-delay="0.4s">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="grow-your-business about-grow-your-business">
+        <div class="container">
+            <h1 class="main-title mb-4 text-center w-50 xs-w-100 wow fadeInDown">Build and grow your business with DotPe.</h1>
+            <p class="para ml-auto mr-auto w-70 xs-w-100 wow fadeInUp">Get all the tools you need to take your business to the next level & join the millions of merchants using DotPe.</p>
+        </div>
+        <div class="form-block mt-5 d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+            <div class="form-body">
+                <form class="form-inline">
+                    <div class="form-group">                      
+                        <input type="text" class="form-control" placeholder="Enter your mobile number">
+                    </div>
+                    <button type="submit" class="btn btn-primary request-callback-btn">Request Callback</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-footer-faq">
+        <div class="container">
+            <h1 class="main-title text-center text-white">FAQ's</h1>
+
+            <div id="faq_accordion" class="faq-accordion">
+                <div class="card">
+                    <div class="card-header" id="faq_item_1">
+                        <h5 class="mb-0">
+                            <a class="btn btn-link" data-toggle="collapse" data-target="#faq_collapse_1" aria-expanded="false" aria-controls="faq_collapse_1">
+                                Is DotPe right for my business?
+                                <div class="faq_acco_icon">
+                                    <img src="https://dotpe.in/images/plus-icon.png" alt="plus">
+                                </div>
+                            </a>
+                        </h5>
+                    </div>
+              
+                    <div id="faq_collapse_1" class="collapse" aria-labelledby="faq_item_1" data-parent="#faq_accordion">
+                        <div class="card-body">
+                            <p>DotPe's ecosystem is tailored to meet the needs of companies of all sizes and types. With integrations with all popular online sales channels, in-store billing, inventory management, and reporting and analytics, businesses can streamline operations. Moreover, we assist businesses in building online ecommerce stores as well as marketing and CRM systems.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <div class="card-header" id="faq_item_2">
+                        <h5 class="mb-0">
+                            <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq_collapse_2" aria-expanded="false" aria-controls="faq_collapse_2">
+                                How to connect with DotPe?
+                                <div class="faq_acco_icon">
+                                    <img src="https://dotpe.in/images/plus-icon.png" alt="plus">
+                                </div>
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="faq_collapse_2" class="collapse" aria-labelledby="faq_item_2" data-parent="#faq_accordion">
+                        <div class="card-body">
+                            <p>Interested in a free demo? Click <a href="landing.html@utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=dotpe-pr-search-brand-em&amp;utm_content=dotpe&amp;utm_term=dotpe" target="_blank">here</a> to request it. Our tech expert will contact you shortly to schedule a custom demo for your business.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card border-0">
+                    <div class="card-header" id="faq_item_3">
+                        <h5 class="mb-0">
+                            <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq_collapse_3" aria-expanded="false" aria-controls="collapseThree">
+                                How much does the product cost?
+                                <div class="faq_acco_icon">
+                                    <img src="https://dotpe.in/images/plus-icon.png" alt="plus">
+                                </div>
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="faq_collapse_3" class="collapse" aria-labelledby="faq_item_3" data-parent="#faq_accordion">
+                        <div class="card-body">
+                            <p>The pricing of our products depends on your needs. To find out the pricing for your restaurant, please contact us <a href="landing.html@utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=dotpe-pr-search-brand-em&amp;utm_content=dotpe&amp;utm_term=dotpe" target="_blank">here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-list-part d-none d-sm-block">
+                <div class="row">
+                    <div class="col-lg-7 col-sm-8">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="footer-list">
+                                    <div class="list-item-header d-flex align-items-center justify-content-start">
+                                        <p class="title">Online Store</p>
+                                    </div>
+                                    <div class="list-item-wrap">
+                                        <ul class="list-unstyled">
+                                            <li>Catalog</li>
+                                            <li>Orders & Payments</li>
+                                            <li>eCommerce Website</li>
+                                            <li>Store Management</li>
+                                            <li>Delivery</li>
+                                            <li>Marketing Tools</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="footer-list">
+                                    <div class="list-item-header d-flex align-items-center justify-content-start">
+                                        <p class="title">Point of Sale</p>
+                                    </div>
+                                    <div class="list-item-wrap">
+                                        <ul class="list-unstyled">
+                                            <li>Restaurant POS</li>
+                                            <li>All New Retail POS</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-4">
+                                <div class="footer-list">
+                                    <div class="list-item-header d-flex align-items-center justify-content-start">
+                                        <p class="title">In-Store Digital Ordering</p>
+                                    </div>
+                                    <div class="list-item-wrap">
+                                        <ul class="list-unstyled">
+                                            <li>QR based Ordering</li>
+                                            <li>Digital Menu</li>
+                                            <li>Digital Receipt</li>
+                                            <li>Loyalty</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-sm-4">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="footer-list">
+                                    <div class="list-item-header d-flex align-items-center justify-content-start">
+                                        <p class="title">Business</p>
+                                    </div>
+                                    <div class="list-item-wrap">
+                                        <ul class="list-unstyled">
+                                            <li><a href="f-b-page.html">Food & Beverages</a></li>
+                                            <li><a href="retail.html">Retail</a></li>
+                                            <li><a href="services.html">Services</a></li>                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="footer-list">
+                                    <div class="list-item-header d-flex align-items-center justify-content-start">
+                                        <p class="title">DotPe</p>
+                                    </div>
+                                    <div class="list-item-wrap">
+                                        <ul class="list-unstyled">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li>About Us</li>
+                                            <li>Careers</li>
+                                            <li>Resources</li>
+                                            <li>Contact Us</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="mobile-footer-menu footer-list-part d-block d-sm-none m-0">
+                <nav class="navbar navbar-expand-lg">                                        
+                    <div class="navbar-collapse m-0" id="navbarNavDropdown">
+                        <ul class="navbar-nav">                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="about-us.html#" id="mobile_link_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Online Store
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="mobile_link_1">
+                                    <a class="dropdown-item" href="about-us.html#">Catalog</a>
+                                    <a class="dropdown-item" href="about-us.html#">Orders & Payments</a>
+                                    <a class="dropdown-item" href="about-us.html#">eCommerce Website</a>
+                                    <a class="dropdown-item" href="about-us.html#">Store Management</a>
+                                    <a class="dropdown-item" href="about-us.html#">Delivery</a>
+                                    <a class="dropdown-item" href="about-us.html#">Marketing Tools</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="about-us.html#" id="mobile_link_2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Point of Sale
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="mobile_link_2">
+                                    <a class="dropdown-item" href="about-us.html#">Restaurant POS</a>
+                                    <a class="dropdown-item" href="about-us.html#">All New Retail POS</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="about-us.html#" id="mobile_link_3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    In-Store Digital Ordering
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="mobile_link_3">
+                                    <a class="dropdown-item" href="about-us.html#">QR based Ordering</a>
+                                    <a class="dropdown-item" href="about-us.html#">Digital Menu</a>
+                                    <a class="dropdown-item" href="about-us.html#">Digital Receipt</a>
+                                    <a class="dropdown-item" href="about-us.html#">Loyalty</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="about-us.html#" id="mobile_link_4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Business
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="mobile_link_4">
+                                    <a class="dropdown-item" href="f-b-page.html">Food & Beverages</a>
+                                    <a class="dropdown-item" href="retail.html">Retail</a>
+                                    <a class="dropdown-item" href="services.html">Services</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="social-media d-flex w-100 justify-content-center align-items-center">                   
+                    <a href="about-us.html#" class="mr-3">
+                        <img src="https://dotpe.in/images/social-icon-3-24-nov-2021.png" class="img-fluid" alt="facebook">
+                    </a>
+                    <a href="about-us.html#" class="mr-3">
+                        <img src="https://dotpe.in/images/social-icon-2-24-nov-2021.png" class="img-fluid" alt="twitter">
+                    </a>
+                    <a href="about-us.html#" class="mr-3">
+                        <img src="https://dotpe.in/images/social-icon-1-24-nov-2021.png" class="img-fluid" alt="instagram">
+                    </a>
+                    <a href="about-us.html#" class="mr-3">
+                        <img src="https://dotpe.in/images/social-icon-4-24-nov-2021.png" class="img-fluid" alt="linkedin">
+                    </a>
+                </div>
+                <div class="copyright mt-3">
+                    <p>© DotPe, All rights reserved</p>
+                </div>
+                <div class="mobile-footer-direct-links mt-4">
+                    <ul class="list-unstyled p-0 m-0">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html#">About Us</a></li>
+                        <li><a href="about-us.html#">Careers</a></li>
+                        <li><a href="about-us.html#">Resources</a></li>
+                        <li><a href="about-us.html#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-block d-none d-sm-block">
+            <div class="container">
+                <div class="footer-bottom d-flex justify-content-between">
+                    <div class="footer-logo d-block">
+                        <a href="index.html"><img src="https://dotpe.in/images/dotpe-white-logo-svg.svg" class="img-fluid" alt="dotpe-logo"></a>
+                    </div>
+                    <div class="social-media d-flex justify-content-around align-items-center">  
+                        <a href="https://twitter.com/DotPe_India" class="mr-3">
+                            <img src="https://dotpe.in/images/social-icon-2-24-nov-2021.png" class="img-fluid" alt="twitter">
+                        </a>
+                        <a href="https://www.instagram.com/dotpe_india/" class="mr-3">
+                            <img src="https://dotpe.in/images/social-icon-1-24-nov-2021.png" class="img-fluid" alt="instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/company/dotpein/mycompany/?viewAsMember=true" class="mr-3">
+                            <img src="https://dotpe.in/images/social-icon-4-24-nov-2021.png" class="img-fluid" alt="linkedin">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="copyright mt-3">
+                    <p>© DotPe, All rights reserved</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <div class="get-started-fixed d-block d-sm-none">
+        <a href="about-us.html#" data-toggle="modal" data-target="#requestDemoModal">Get Started</a>
+    </div>    
+
+
+    <!-- Optional JavaScript -->
+    <script src="js/jquery-1-11.min.js"></script>   
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/scrollspy.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.countup.js"></script>
+    <script src="js/typingEffect.js"></script>
+    <script src="js/horizontal-scroll.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        //Counter
+        $('.count-num').countUp();
+    </script>
+
+    <script>
+        $(".toggle-info-button .plus-btn").click(function(){
+            $(this).toggleClass('open');
+            //alert('okey');
+        })
+
+        $('.toggle-op-1 .toggle-info-button .plus-btn').click(function(){
+            //$('.toggle-op-card-1').addClass('show').removeClass('hidden');
+            $(".toggle-op-card-1").toggleClass('hidden');
+        });
+        $('.toggle-op-2 .toggle-info-button .plus-btn').click(function(){
+            //$('.toggle-op-card-1').addClass('show').removeClass('hidden');
+            $(".toggle-op-card-2").toggleClass('hidden');
+        });
+        $('.toggle-op-3 .toggle-info-button .plus-btn').click(function(){
+            //$('.toggle-op-card-1').addClass('show').removeClass('hidden');
+            $(".toggle-op-card-3").toggleClass('hidden');
+        });
+        $('.toggle-op-4 .toggle-info-button .plus-btn').click(function(){
+            //$('.toggle-op-card-1').addClass('show').removeClass('hidden');
+            $(".toggle-op-card-4").toggleClass('hidden');
+        });
+        $('.toggle-op-5 .toggle-info-button .plus-btn').click(function(){
+            //$('.toggle-op-card-1').addClass('show').removeClass('hidden');
+            $(".toggle-op-card-5").toggleClass('hidden');
+        });
+        $('.toggle-op-6 .toggle-info-button .plus-btn').click(function(){
+            //$('.toggle-op-card-1').addClass('show').removeClass('hidden');
+            $(".toggle-op-card-6").toggleClass('hidden');
+        });
+    </script>
+
+    <script>
+        $("#typed2").typing({
+            strings: ['We are on a mission to democratise technology and digitise merchants.'],
+            eraseDelay: 10,
+            typeDelay: 70,
+            stringStartDelay: 1000,
+            color: 'white',
+            typingColor: 'black',
+            typingOpacity: '0.1',
+            loopCount: 3,
+            cursorBlink: false,
+            cursorChar: '<small>_</small>',
+            fade: true
+        });
+    </script>   
+    
+    <script>
+        $(window).bind('scroll', function () {
+            if ($(window).scrollTop() > 200) {
+                $('.main-header').addClass('sticky-nav');
+            } else {
+                $('.main-header').removeClass('sticky-nav');
+            }
+        });    
+    </script>
+</body>
+
+</html>
