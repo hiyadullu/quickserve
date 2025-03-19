@@ -1,0 +1,111 @@
+#restaurant-category {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  background: transparent;
+  margin-bottom: 30px;
+}
+.dropdown-parent {
+  width: 100%;
+  position: relative;
+}
+/* Input styling */
+
+.dropdown-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 12px;
+  font-family: "Work Sans", sans-serif;
+  height: 48px;
+}
+
+/* .input__active {
+  border-color: var(--colorAccent);
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+} */
+
+.dd-input__placeholder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.dd-placeholder {
+  color: #6D757D;
+  margin: 0 !important;
+}
+
+.dropdown-input:hover {
+  cursor: pointer;
+}
+
+.placeholder {
+  color: var(--colorPlaceholder);
+}
+
+.dd-input__selected {
+  color: #fff;
+}
+
+/* Dropdown styling */
+
+.dd-structure {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-height: 220px;
+  overflow: scroll;
+  background-color: white;
+  box-shadow: 0px 4px 12px #0000001F;
+  padding: 20px 12px 0px;
+  border-radius: 8px;
+  margin-top: 10px;
+  width: 100%;
+  z-index: 111;
+  text-align: left;
+}
+
+.dd-structure > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.dd-structure > div:hover {
+  background-color: var(--colorAccent);
+  color: white;
+  cursor: pointer;
+}
+
+.dd-structure > div > h5 {
+  color: #070E1D;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.dd-structure > div > p {
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--colorPlaceholder);
+}
+
+.hide {
+  display: none;
+}

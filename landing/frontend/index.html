@@ -1,0 +1,2326 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="https://cdn.dotpe.in/dotpe-website-live/images/favicon-32x32.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>DotPe</title>
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://dotpe.in/css/ace-responsive-menu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        label.error {
+            color: red;
+            padding: 5px 0px;
+            font-size: 14px;
+        }
+        .form-control.error {
+             border-color: red;
+        }
+
+        /*popup design change*/
+
+        .request-demo-modal .modal-dialog {
+            max-width: 1089px;
+        }
+
+        .reqmodal_nwmain {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+        .reqmodal_nwmain .reqmode_left {
+            max-width: 45%;
+            flex: 0 0 45%;
+            max-width: 474px;
+        }
+
+        .reqmodal_nwmain .reqmode_right {
+            flex: 0 0 55%;
+            max-width: 55%;
+            padding: 0 46px 0 58px;
+        }
+
+        .reqmode_infos {
+            background: #1B2D46;
+            color: #fff;
+            border-radius: 15px 0 0 15px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            align-content: center;
+            padding: 0 54px;
+            position: relative;
+            z-index: 1;
+            left: -1px;
+            /*border-left: solid 1px #1B2D46;*/
+        }
+
+        .reqmode_infos h3 {
+            margin-bottom: 0;
+            font-family: 'Gilroy';
+            font-size: 35px;
+            font-style: normal;
+            font-weight: bolder;
+            line-height: 40px;
+        }
+
+        .reqmode_infos p {
+            color: #fff;
+            opacity: 0.6;
+            margin: 19px 0 0 0;
+            font-family: 'Gilroy';
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+        }
+
+        .reqmode_infos .req_logo {
+            position: absolute;
+            bottom: 56px;
+        }
+
+        .reqmode_infos .req_logo img {
+            filter: brightness(0.5) invert(1);
+            width: 136px;
+        }
+
+        .request-demo-modal .modal-header p {
+            margin: 30px 0 30px 0;
+            color: #000;
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.22px;
+            max-width: 430px;
+        }
+
+        .request-demo-modal .modal-header .modal-title {
+            font-weight: bold;
+            margin-top: 40px;
+        }
+
+        .reqmode_right .modal-header h2.modal-title {
+            font-size: 36px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -1.08px;
+            line-height: normal;
+        }
+
+        .reqmode_right .modal-header {
+            padding: 0;
+        }
+
+        .reqmode_right .modal-body {
+            padding: 0;
+        }
+
+        .request-demo-modal .tc-check {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 4px;
+            margin: 0.5rem 0 4.5rem;
+            color: #000;
+        }
+
+        .request-demo-modal .tc-check label {
+            opacity: 1;
+            margin-left: 0.2rem;
+            color: #000;
+            font-family: 'Gilroy';
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+        }
+
+        .form-submit-btn {
+            text-align: right;
+            padding: 0 0 56px 0;
+        }
+
+        .request-demo-modal .req-demo-btn {
+            width: auto;
+            border-radius: 100px;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .modal-header button.close {
+            position: absolute;
+            right: -41px;
+            top: 15px;
+            background: #565656;
+            width: 46px;
+            height: 46px;
+            opacity: 1;
+            border-radius: 100%;
+            color: #fff !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-header button.close img {
+            filter: brightness(0) invert(1);
+        }
+
+        .request-demo-modal .modal-content {
+            border-radius: 32px !important;
+        }
+
+        .request-demo-modal .input-field {
+            height: 59px !important;
+            color: #727272;
+            font-family: 'Gilroy';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .request-demo-modal .input-field::placeholder {
+            color: #727272;
+        }
+
+        .phone-field-modal {
+            position: relative;
+        }
+
+        span.phone-code-field {
+            position: absolute;
+            top: 21px;
+            left: 18px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .phone-field-modal input.form-control.input-field {
+            padding-left: 65px;
+        }
+
+        span.phone-code-field:after {
+            position: absolute;
+            height: 59px;
+            width: 1px;
+            background: #00000021;
+            content: "";
+            top: -21px;
+            right: -18px;
+        }
+
+        /* .modal-content {
+            border: 1px solid #000;
+        } */
+
+        .reqmode_infos.reqmode-next {
+            background: #0D781E;
+        }
+
+        .check_logo img {
+            max-width: 100%;
+        }
+
+        .check_logo {
+            max-width: 151px;
+            margin: auto;
+            margin-bottom: 9px;
+        }
+
+        .select-form-content label {
+            color: #000;
+            font-family: 'Gilroy';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 15px;
+        }
+
+        .select-form-content label span {
+            color: #F00;
+        }
+
+        .reqmode_text_div {
+            min-height: 692px;
+        }
+
+        form.form-height {
+            position: relative;
+            /* min-height: 482px; */
+            min-height: 498px;
+        }
+
+        .form-submit-btn.form-hbtn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .pc-show {
+            display: block;
+        }
+
+        .mobile-show {
+            display: none;
+        }
+
+        .pere-dot {
+            display: none;
+        }
+
+        .more-pera {
+            display: none;
+        }
+
+        .less-pera {
+            display: none;
+        }
+
+        .request-demo-modal .reqmode_next_div select.input-field {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: transparent;
+            background-image: url("https://cdn.dotpe.in/dotpe-website-live/images/form-arrw.svg");
+            background-repeat: no-repeat;
+            background-position-x: 98%;
+            background-position-y: 24px;
+        }
+
+        .sb-margin-bottom {
+            margin-bottom: 30px;
+        }
+
+        label.error {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            padding-top: 1px;
+        }
+
+        @media (max-width:1199px) {
+            .reqmode_infos {
+                padding: 0 30px;
+            }
+
+            .reqmode_infos h3 {
+                font-size: 33px;
+                font-weight: 600;
+                line-height: 38px;
+            }
+
+            .reqmode_right .modal-header h2.modal-title {
+                font-size: 32px;
+            }
+
+            .request-demo-modal .modal-header p {
+                margin: 25px 0 25px 0;
+                font-size: 20px;
+                line-height: 26px;
+                max-width: 430px;
+            }
+
+            .reqmodal_nwmain .reqmode_right {
+                padding: 0 30px 0 30px;
+            }
+
+            form.form-height {
+                min-height: 513px;
+            }
+
+            .request-demo-modal .req-demo-btn {
+                padding: 12px 24px;
+                font-size: 17px;
+            }
+
+            .request-demo-modal .input-field {
+                height: 50px !important;
+            }
+
+            span.phone-code-field {
+                top: 17px;
+            }
+
+            span.phone-code-field:after {
+                height: 50px;
+                top: -17px;
+            }
+
+            .check_logo {
+                max-width: 130px;
+            }
+
+            form.form-height {
+                min-height: 538px;
+            }
+
+            .request-demo-modal .reqmode_next_div select.input-field {
+                background-position-y: 20px;
+            }
+        }
+
+        @media (max-width:991px) {
+            .reqmode_infos h3 {
+                font-size: 26px;
+                line-height: 32px;
+            }
+
+            .reqmode_infos p {
+                font-size: 20px;
+                line-height: 26px;
+            }
+
+            .reqmode_infos .req_logo img {
+                width: 120px;
+            }
+
+            .reqmode_right .modal-header h2.modal-title {
+                font-size: 28px;
+            }
+
+            .request-demo-modal .modal-header p {
+                margin: 15px 0 20px 0;
+                font-size: 18px;
+                line-height: 24px;
+            }
+
+            .request-demo-modal .input-field {
+                height: 46px !important;
+                font-size: 15px;
+            }
+
+            span.phone-code-field {
+                top: 15px;
+            }
+
+            span.phone-code-field:after {
+                height: 46px;
+                top: -15px;
+            }
+
+            .modal-header button.close {
+                width: 43px;
+                height: 43px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .check_logo {
+                max-width: 115px;
+            }
+
+            .request-demo-modal .reqmode_next_div select.input-field {
+                background-position-x: 97%;
+                background-position-y: 18px;
+            }
+
+        }
+
+        @media (max-width:767px) {
+            .reqmode_left {
+                display: none;
+            }
+
+            .reqmodal_nwmain .reqmode_right {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .reqmode_text_div {
+                min-height: auto;
+            }
+
+            form.form-height {
+                min-height: auto;
+            }
+
+            .request-demo-modal .modal-dialog {
+                height: auto !important;
+                max-width: 550px;
+                margin: auto;
+                margin-top: 50px;
+                overflow: hidden;
+            }
+
+            .pc-show {
+                display: none;
+            }
+
+            .mobile-show {
+                display: block;
+            }
+
+            .modal-header button.close {
+                position: relative;
+                right: -6px;
+                top: 17px;
+                background: transparent;
+            }
+
+            .modal-header button.close img {
+                filter: none;
+            }
+
+            .modal-header button.close {
+                width: auto;
+                height: auto;
+            }
+
+            .reqmode_right .modal-header h2.modal-title {
+                font-size: 26px;
+                letter-spacing: -0.78px;
+            }
+
+            .reqmodal_nwmain .reqmode_right {
+                padding: 0 24px 32px 24px;
+            }
+
+            .request-demo-modal .modal-header p {
+                font-size: 16px;
+                line-height: 20px;
+                color: rgba(0, 0, 0, 0.60);
+                letter-spacing: -0.16px;
+            }
+
+            .request-demo-modal .input-field {
+                height: 51px !important;
+                font-size: 16px;
+            }
+
+            span.phone-code-field:after {
+                height: 51px;
+                top: -17px;
+            }
+
+            span.phone-code-field {
+                top: 17px;
+            }
+
+            .pere-dot {
+                display: inline-block;
+            }
+
+            span.full-pera {
+                display: none;
+            }
+
+            .more-pera {
+                display: inline-block;
+                color: #000;
+                font-weight: 600;
+            }
+
+            .less-pera {
+                /* display: inline-block; */
+                color: #000;
+                font-weight: 600;
+            }
+
+            .form-submit-btn.form-hbtn {
+                box-shadow: none;
+                display: grid;
+            }
+
+            form.form-height .form-content {
+                height: auto;
+            }
+
+            .reqmode_text_div {
+                min-height: 592px;
+            }
+
+            .request-demo-modal .modal-content {
+                border-radius: 24px !important;
+            }
+
+            form.form-height {
+                min-height: 466px;
+            }
+
+            .select-form-content label {
+                font-size: 16px;
+            }
+
+            .reqmode_next_div .modal-header:before {
+                position: absolute;
+                content: "";
+                background: #0D781E;
+                z-index: -1;
+                width: 110%;
+                height: 100%;
+                left: -24px;
+                border-radius: 22px 25px 0px 0px;
+            }
+
+            .reqmode_next_div .modal-header {
+                z-index: 1;
+                position: relative;
+            }
+
+            .reqmode_next_div .modal-body {
+                margin-top: 28px;
+            }
+
+            .reqmode_right .reqmode_next_div .modal-header h2.modal-title {
+                color: #FFF;
+            }
+
+            .request-demo-modal .reqmode_next_div .modal-header p {
+                color: rgba(255, 255, 255, 0.60);
+            }
+
+            .reqmode_next_div .modal-header button.close img {
+                filter: brightness(0) invert(1);
+                opacity: 1;
+            }
+
+            .request-demo-modal .reqmode_next_div select.input-field {
+                background-position-y: 20px;
+                background-position-x: 96%;
+            }
+
+            .sb-margin-bottom {
+                margin-bottom: 28px;
+            }
+        }
+
+        @media (max-width:576px) {
+            .request-demo-modal .modal-dialog {
+                max-width: 420px;
+            }
+
+            .reqmode_next_div .modal-header:before {
+                width: 114%;
+                left: -24px;
+            }
+
+            .request-demo-modal .reqmode_next_div select.input-field {
+                background-position-y: 21px;
+            }
+        }
+
+        @media (max-width:480px) {
+            .request-demo-modal .modal-dialog {
+                max-width: 360px;
+                margin-top: 10px;
+            }
+
+            .request-demo-modal .modal-header p {
+                max-width: 290px;
+                font-weight: 500;
+                -webkit-text-stroke: .2px;
+                letter-spacing: normal;
+            }
+
+            .reqmode_right .modal-header {
+                display: inline-block;
+            }
+
+            .modal-header button.close {
+                position: absolute;
+                right: 18px;
+                top: 17px;
+            }
+
+
+            form.form-height {
+                min-height: 446px;
+            }
+
+            .reqmode_next_div .modal-header:before {
+                width: 124%;
+                left: -24px;
+            }
+
+            .reqmode_next_div form.form-height {
+                min-height: 387px;
+            }
+
+            .reqmode_next_div .modal-header button.close {
+                right: -26px;
+            }
+
+            .modal.res-mob-modal {
+                padding-right: 0 !important;
+            }
+
+            .reqmode_right .reqmode_next_div .modal-header h2.modal-title {
+                max-width: 290px;
+            }
+
+            .request-demo-modal .tc-check label {
+                letter-spacing: -0.4px;
+            }
+        }
+
+        .thankYouModal .modal-dialog {
+    max-width: 1089px;
+    max-height: 692px;
+}
+.thankYouModal .modal-body h2 {
+    color: #000;
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.08px;
+    margin-bottom: 14px;
+}
+.thankYouModal .modal-body p {
+    margin-bottom: 48px;
+    color: #000;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.22px;
+}
+.thankYouModal .go-home-btn {
+    float: none;
+}
+.thankYouModal .modal-body {
+    text-align: center;
+}
+.thankYouModal .modal-body {
+    padding-top: 141px;
+    padding-bottom: 189px;
+}
+.thankYouModal .modal-body img {
+    max-width: 96.667px;
+    max-height: 96.667px;
+    margin: auto;
+    margin-bottom: 42.33px;
+}
+    </style>
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '252044877677861');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=252044877677861&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3583418351980744');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3583418351980744&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1942611432784053');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1942611432784053&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P2H6MMKK');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2H6MMKK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="main-header">
+        <!--Nav fixed top-->
+        <div class="top-fixed-navbar d-none d-md-block">
+            <nav class="navbar navbar-expand-md nav-v1 top-bar">
+                <!-- <a class="navbar-brand" href="index.html">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/dotpe-black-logo-svg.svg" class="img-fluid" alt="dotpe-logo">
+                </a> -->
+
+                <div class="mr-auto ml-auto" id="navMenu">
+                    <ul class="navbar-nav mr-auto ml-auto mobile-menu menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#">Business Types</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="f-b-page.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/food-beverage-icon.png" class="img-fluid"
+                                                    alt="food-beverage">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Food & Beverage Industry <span class="icon"><img
+                                                            src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-white-image.svg" class="img-fluid"
+                                                            alt="right-arrow"></span></span>
+                                                <span class="info-txt">Tools for front of house, back of house, and
+                                                    everything in between.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="retail.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/retail-icon.png" class="img-fluid" alt="retail">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Retail <span class="icon"><img
+                                                            src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-white-image.svg" class="img-fluid"
+                                                            alt="right-arrow"></span></span>
+                                                <span class="info-txt">All the retail tools you need from offline to
+                                                    online, in-store & online.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/services-icon.png" class="img-fluid" alt="services">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Services & Others <span class="icon"><img
+                                                            src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-white-image.svg" class="img-fluid"
+                                                            alt="right-arrow"></span></span>
+                                                <span class="info-txt">Solutions for health, repair & other service
+                                                    professionals.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#">Company</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="press-media.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/press-media-icon.png" class="img-fluid"
+                                                    alt="press-media">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Press & Media <span class="icon"><img
+                                                            src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-white-image.svg" class="img-fluid"
+                                                            alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d-none d-md-block">
+                    <a href="index.html#" class="top-get-started-btn d-flex justify-content-center align-items-center"
+                        data-toggle="modal" data-target="#requestDemoModalNew">Request Demo</a>
+                </div>
+            </nav>
+        </div>
+
+        <nav class="navbar navbar-expand-md nav-v1 top-bar top-bar-mobile">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenuMobile"
+                aria-controls="navMenuMobile" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/menu-black.png" class="m-auto" alt="menu">
+                </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenuMobile">
+                <div class="d-none d-md-block mr-auto ml-auto">
+                    <ul class="navbar-nav mr-auto ml-auto mobile-menu menu">
+                        <!-- <li class="nav-item active">
+                            <a class="nav-link" href="#">Products</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#">Business Types</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="f-b-page.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/food-beverage-icon.png" class="img-fluid"
+                                                    alt="food-beverage">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Food & Beverage Industry <span class="icon"><img
+                                                            src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-white-image.svg" class="img-fluid"
+                                                            alt="right-arrow"></span></span>
+                                                <span class="info-txt">Tools for front of house, back of house, and
+                                                    everything in between.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="retail.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/retail-icon.png" class="img-fluid" alt="retail">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Retail <span class="icon"><img
+                                                            src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-white-image.svg" class="img-fluid"
+                                                            alt="right-arrow"></span></span>
+                                                <span class="info-txt">All the retail tools you need from offline to
+                                                    online, in-store & online.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/services-icon.png" class="img-fluid" alt="services">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Services & Others <span class="icon"><img
+                                                            src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-white-image.svg" class="img-fluid"
+                                                            alt="right-arrow"></span></span>
+                                                <span class="info-txt">Solutions for health, repair & other service
+                                                    professionals.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#">Company</a>
+                            <ul class="sub-menu">
+
+                                <li>
+                                    <a href="press-media.html">
+                                        <div class="d-flex">
+                                            <div class="menu-icon">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/press-media-icon.png" class="img-fluid"
+                                                    alt="press-media">
+                                            </div>
+                                            <div class="menu-txt">
+                                                <span class="title">Press & Media <span class="icon"><img
+                                                            src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-white-image.svg" class="img-fluid"
+                                                            alt="right-arrow"></span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d-block d-md-none mr-auto ml-auto mobile-menu-panel">
+                    <div class="panel-group footer-panel-group" id="faq-accordion" role="tablist"
+                        aria-multiselectable="true">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="menu_item_2">
+                                <div class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#faq-accordion"
+                                        href="index.html#menuCollapseTwo" aria-expanded="true" aria-controls="menuCollapseTwo">
+                                        Business Types
+                                        <i class="faq-more-less fa fa-plus" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="menuCollapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="menu_item_2">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="f-b-page.html">
+                                                <div class="menu-item">
+                                                    <div
+                                                        class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Food & Beverage Industry</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>Tools for front of house, back of house, and everything in
+                                                            between.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="retail.html">
+                                                <div class="menu-item">
+                                                    <div
+                                                        class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Retail</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>All the retail tools you need from offline to online,
+                                                            in-store & online.</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="services.html">
+                                                <div class="menu-item">
+                                                    <div
+                                                        class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Services & Others</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+                                                        <p>Solutions for health, repair & other service professionals.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default border-0">
+                            <div class="panel-heading" role="tab" id="menu_item_3">
+                                <div class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#faq-accordion"
+                                        href="index.html#menuCollapseThree" aria-expanded="true"
+                                        aria-controls="menuCollapseThree">
+                                        Company
+                                        <i class="faq-more-less fa fa-plus" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="menuCollapseThree" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="menu_item_3">
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="press-media.html">
+                                                <div class="menu-item">
+                                                    <div
+                                                        class="header d-flex justify-content-between align-items-center">
+                                                        <p class="title m-0">Press & Media</p>
+                                                    </div>
+                                                    <div class="info-txt text-left">
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- panel-group -->
+                </div>
+
+                <div class="d-none d-md-block" style="opacity: 0;">
+                    <a href="index.html#" class="top-get-started-btn d-flex justify-content-center align-items-center"
+                        data-toggle="modal" data-target="#requestDemoModalNew">Request Demo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section-wrap up-hero-section-wrap overflow-x-hidden w-100 mt-header_height_135">
+        <canvas id="gradient-canvas" class="w-100 h-1250 up-1350 position-absolute"></canvas>
+        <div class="hero-section d-flex flex-column">
+            <div class="wh-marketing d-none">
+                <p class="m-0">Acquire more business with DotPe POS. <a href="index.html#" class="learn-more-link">Learn More</a>
+                </p>
+            </div>
+            <div class="change-wrap-text updated-index-wrap-text">
+                <h1>Power your<br> Food Joint with Quick Serve</h1>
+            </div>
+            <div class="index-hero-features">
+                <ul class="list-unstyled">
+                    <li>Point of Sale</li>
+                    <li>Online Store</li>
+                    <li>QR Solution</li>
+                    <li>Inventory Management</li>
+                    <li>Payment Integration</li>
+                    <li>Delivery Integration</li>
+                </ul>
+            </div>
+            <a href="index.html#" class="get-started-btn" data-toggle="modal" data-target="#requestDemoModalNew">Get Started</a>
+            <div class="d-flex justify-content-center mr-auto ml-auto">
+                <div class="hero-img-block gap-40 d-flex position-absolute">
+                    <div class="img-sec overflow-hidden img_block_id_1">
+                        <img src="IMAGES/WhatsApp Image 2024-12-18 at 18.35.56_46fc2bfa.jpg"
+                            class="img-fluid h-100 w-100 object-cover" alt="hero-img">
+                    </div>
+                    <div class="img-sec overflow-hidden img_block_id_2">
+                        <img src="https://cdn.dotpe.in/dotpe-website-live/images/new-hero-section-image-2-240622.jpg"
+                            class="img-fluid h-100 w-100 object-cover" alt="hero-img">
+                    </div>
+                    <div class="img-sec overflow-hidden img_block_id_3">
+                        <img src="https://cdn.dotpe.in/dotpe-website-live/images/new-hero-section-image-3-240622.jpg"
+                            class="img-fluid h-100 w-100 object-cover" alt="hero-img">
+                    </div>
+                    <div class="img-sec overflow-hidden img_block_id_4">
+                        <img src="https://cdn.dotpe.in/dotpe-website-live/images/new-hero-section-image-4-240622.jpg"
+                            class="img-fluid h-100 w-100 object-cover" alt="hero-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="business-solutions-sec">
+        <div class="container">
+            <h1 class="wow fadeInUp" data-wow-delay="0.2s">Flexible <span>business solutions</span> for omni-channel
+                selling</h1>
+            <div class="business-selling-categories d-flex justify-content-center flex-wrap ml-auto mr-auto">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.2s">
+                        <div class="business-solution-list-item cursor-pointer">
+                            <a href="f-b-page.html" class="block-link">
+                                <div class="solution-list-text">
+                                    <h2 class="wow fadeInDown" data-wow-duration="0.3s" data-wow-delay="0.4s">POS</h2>
+                                    <p class="wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.6s">Sync your
+                                        in-store and online business with the industry's leading Point of Sale.</p>
+                                    <a href="f-b-page.html" class="know-more-btn wow fadeInLeft"
+                                        data-wow-duration="0.3s" data-wow-delay="0.8s">Know More <span
+                                            class="icon-right"><img src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-1.png"
+                                                alt="right-arrow"></span></a>
+                                </div>
+                            </a>
+                            <a href="f-b-page.html">
+                                <div class="solution-list-img">
+                                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/pos-image-business-solution-240622.jpg" class="img-fluid"
+                                        alt="pos">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.4s">
+                        <div class="business-solution-list-item cursor-pointer">
+                            <a href="retail.html" class="block-link">
+                                <div class="solution-list-text">
+                                    <h2 class="wow fadeInDown" data-wow-duration="0.3s" data-wow-delay="0.6s">Online
+                                        Store</h2>
+                                    <p class="wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.8s">Go digital in
+                                        minutes with your own e-commerce website.</p>
+                                    <a href="retail.html" class="know-more-btn wow fadeInLeft"
+                                        data-wow-duration="0.3s" data-wow-delay="0.8s">Know More <span
+                                            class="icon-right"><img src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-1.png"
+                                                alt="right-arrow"></span></a>
+                                </div>
+                            </a>
+                            <a href="retail.html">
+                                <div class="solution-list-img">
+                                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/home/online-store-image-business-solution.jpg" class="img-fluid"
+                                        alt="online-store">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.2s">
+                        <div class="business-solution-list-item cursor-pointer">
+                            <a href="f-b-page.html" class="block-link">
+                                <div class="solution-list-text">
+                                    <h2 class="wow fadeInDown" data-wow-duration="0.3s" data-wow-delay="0.4s">QR
+                                        Solutions</h2>
+                                    <p class="wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.6s">Provide a
+                                        contactless ordering experience, accept payments &amp; more with your store's QR
+                                        code.</p>
+                                    <a href="f-b-page.html" class="know-more-btn wow fadeInLeft"
+                                        data-wow-duration="0.3s" data-wow-delay="0.8s">Know More <span
+                                            class="icon-right"><img src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-1.png"
+                                                alt="right-arrow"></span></a>
+                                </div>
+                            </a>
+                            <a href="f-b-page.html">
+                                <div class="solution-list-img">
+                                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/qr-solutions-image-business-solution-240622.jpg"
+                                        class="img-fluid" alt="qr-solution">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.4s">
+                        <div class="business-solution-list-item cursor-pointer">
+                            <a href="f-b-page.html" class="block-link">
+                                <div class="solution-list-text">
+                                    <h2 class="wow fadeInDown" data-wow-duration="0.3s" data-wow-delay="0.6s">
+                                        Marketplace Integrations</h2>
+                                    <p class="wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.8s">Create a
+                                        centralised command for your business with our best-in class marketplace
+                                        integrations.</p>
+                                    <a href="f-b-page.html" class="know-more-btn wow fadeInLeft"
+                                        data-wow-duration="0.3s" data-wow-delay="0.8s">Know More <span
+                                            class="icon-right"><img src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-1.png"
+                                                alt="right-arrow"></span></a>
+                                </div>
+                            </a>
+                            <a href="f-b-page.html">
+                                <div class="solution-list-img">
+                                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/home/marketplace-integration.webp" class="img-fluid"
+                                        alt="market-place">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.2s">
+                        <div class="business-solution-list-item cursor-pointer">
+                            <a href="f-b-page.html" class="block-link">
+                                <div class="solution-list-text">
+                                    <h2 class="wow fadeInDown" data-wow-duration="0.3s" data-wow-delay="0.4s">Payments
+                                    </h2>
+                                    <p class="wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.6s">Accept
+                                        payments quickly, easily &amp; securely. Let shoppers pay their way with
+                                        multiple payment options.</p>
+                                    <a href="f-b-page.html" class="know-more-btn wow fadeInLeft"
+                                        data-wow-duration="0.3s" data-wow-delay="0.8s">Know More <span
+                                            class="icon-right"><img src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-1.png"
+                                                alt="right-arrow"></span></a>
+                                </div>
+                            </a>
+                            <a href="f-b-page.html">
+                                <div class="solution-list-img">
+                                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/payments-image-business-solution-240622.jpg" class="img-fluid"
+                                        alt="payments">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.4s">
+                        <div class="business-solution-list-item cursor-pointer">
+                            <a href="f-b-page.html" class="block-link">
+                                <div class="solution-list-text">
+                                    <h2 class="wow fadeInDown" data-wow-duration="0.3s" data-wow-delay="0.6s">Delivery
+                                    </h2>
+                                    <p class="wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.8s">Smartly
+                                        manage all your deliveries with our seamless 3rd party integrations.</p>
+                                    <a href="f-b-page.html" class="know-more-btn wow fadeInLeft"
+                                        data-wow-duration="0.3s" data-wow-delay="0.8s">Know More <span
+                                            class="icon-right"><img src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-1.png"
+                                                alt="right-arrow"></span></a>
+                                </div>
+                            </a>
+                            <a href="f-b-page.html">
+                                <div class="solution-list-img">
+                                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/delivery-image-business-solution-240622.jpg" class="img-fluid"
+                                        alt="delivery">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="explore-categories overflow-hidden">
+        <div class="container-fluid p-0">
+            <div class="title wow fadeInDown index-updated-title" data-wow-duration="0.3s" data-wow-delay="0.2s">
+                <span>Ecosystem to sell</span> everything through Quick Serve  
+            </div>
+            <div class="d-none d-sm-block">
+                <div class="categories-list-block d-flex flex-row justify-content-between">
+                    <ul class="category-list list-unstyled">
+                        <li class="explore-category-list-item item-1 wow fadeInLeft" data-hover="true"
+                            data-wow-duration="0.3s" data-wow-delay="0.2s">
+                            <h2 class="d-flex align-items-center flex-row">Food &amp; Beverage <img
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-grey-image-270522.svg" alt="right-arrow"></h2>
+                            <p>Tools that connect the front of house with the back of house and integrate everything
+                                that you need to run your restaurant into one dashboard.</p>
+                            <a href="f-b-page.html" class="btn btn-primary know-more-btn">Know More</a>
+                        </li>
+                        <li class="explore-category-list-item item-2 wow fadeInLeft" data-hover="false"
+                            data-wow-duration="0.3s" data-wow-delay="0.4s">
+                            <h2 class="d-flex align-items-center  flex-row">Retail <img
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-grey-image-270522.svg" alt="right-arrow"></h2>
+                            <p>Everything you need to build and run your e-commerce website with tools like inventory
+                                management, marketing and more.</p>
+                            <a href="retail.html" class="btn btn-primary know-more-btn">Know More</a>
+                        </li>
+                        <li class="explore-category-list-item item-3 wow fadeInLeft" data-hover="false"
+                            data-wow-duration="0.3s" data-wow-delay="0.6s">
+                            <h2 class="d-flex align-items-center flex-row">Services & Others <img
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/right-arrow-grey-image-270522.svg" alt="right-arrow"></h2>
+                            <p>All the tools you need to deliver the best customer service with features like ePOS and
+                                CRM. Flexible for any use case.</p>
+                            <a href="services.html" class="btn btn-primary know-more-btn">Know More</a>
+                        </li>
+                    </ul>
+
+                    <div class="categories-img-main">
+                        <div class="categories-image-block category-list-1-panel" data-active="true">
+                            <div class="top-img">
+                                <img loading="lazy" class="object-cover h-400 w-100" data-wow-delay="0.2s"
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/latest-fnb-image-1-240622.jpg" alt="food-beverage">
+                            </div>
+                            <div class="bottom-img pt-3 d-flex flex-wrap">
+                                <img class="img-fluid object-cover part-one-image" data-wow-delay="0.4s"
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/latest-fnb-image-2-240622.jpg" alt="food-beverage">
+                                <img class="img-fluid object-cover part-two-image" data-wow-delay="0.6s"
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/latest-fnb-image-3-240622.jpg" alt="food-beverage">
+                            </div>
+                        </div>
+
+                        <div class="categories-image-block category-list-2-panel" data-active="false">
+                            <div class="top-img">
+                                <img loading="lazy" class="object-cover h-400 w-100" data-wow-delay="0.2s"
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/latest-retail-image-1-240622.jpg" alt="retail">
+                            </div>
+                            <div class="bottom-img pt-3 d-flex flex-wrap">
+                                <img class="img-fluid object-cover part-one-image" data-wow-delay="0.4s"
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/latest-retail-image-2-240622.jpg" alt="retail">
+                                <img class="img-fluid object-cover part-two-image" data-wow-delay="0.6s"
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/home/retail-img-3.jpg" alt="retail">
+                            </div>
+                        </div>
+
+                        <div class="categories-image-block category-list-3-panel" data-active="false">
+                            <div class="top-img">
+                                <img loading="lazy" class="object-cover h-400 w-100" data-wow-delay="0.2s"
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/home/services-img-1.jpg" alt="services">
+                            </div>
+                            <div class="bottom-img pt-3 d-flex flex-wrap">
+                                <img class="img-fluid object-cover part-one-image" data-wow-delay="0.4s"
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/latest-services-image-2-240622.jpg" alt="services">
+                                <img class="img-fluid object-cover part-two-image" data-wow-delay="0.6s"
+                                    src="https://cdn.dotpe.in/dotpe-website-live/images/latest-services-image-3-240622.jpg" alt="services">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-accordion d-block d-sm-none">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                            href="index.html#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <i class="more-less fa fa-plus" aria-hidden="true"></i>
+                                            Food & Beverage
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
+                                    aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <p class="txt">Tools that connect the front of house with the back of house and
+                                            integrate everything that you need to run your restaurant into one
+                                            dashboard.</p>
+                                        <p class="mt-3"><a href="f-b-page.html"
+                                                class="btn btn-primary know-more-btn">Know More</a></p>
+                                        <div class="accordion-img-block mt-5 mb-4">
+                                            <div class="top-image mb-3">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/latest-fnb-image-1-240622.jpg"
+                                                    class="img-fluid rounded-l-xl" alt="food-beverage">
+                                            </div>
+                                            <div class="bottom-image d-flex flex-row">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/latest-fnb-image-2-240622.jpg"
+                                                    class="img-fluid part-1-image rounded-xl" alt="food-beverage">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/latest-fnb-image-3-240622.jpg"
+                                                    class="img-fluid part-2-image rounded-xl" alt="food-beverage">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse"
+                                            data-parent="#accordion" href="index.html#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            <i class="more-less fa fa-plus" aria-hidden="true"></i>
+                                            Retail
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                    aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        <p class="txt">Everything you need to build and run your e-commerce website with
+                                            tools like inventory management, marketing and more.</p>
+                                        <p class="mt-3"><a href="retail.html"
+                                                class="btn btn-primary know-more-btn">Know More</a></p>
+                                        <div class="accordion-img-block mt-5 mb-4">
+                                            <div class="top-image mb-3">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/latest-retail-image-1-240622.jpg"
+                                                    class="img-fluid rounded-l-xl" alt="retail">
+                                            </div>
+                                            <div class="bottom-image d-flex flex-row">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/latest-retail-image-2-240622.jpg"
+                                                    class="img-fluid part-1-image rounded-xl" alt="retail">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/home/retail-img-3.jpg"
+                                                    class="img-fluid part-2-image rounded-xl" alt="retail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse"
+                                            data-parent="#accordion" href="index.html#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            <i class="more-less fa fa-plus" aria-hidden="true"></i>
+                                            Services & Others
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                    aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <p class="txt">All the tools you need to deliver the best customer service with
+                                            features like ePOS and CRM. Flexible for any use case.</p>
+                                        <p class="mt-3"><a href="services.html"
+                                                class="btn btn-primary know-more-btn">Know More</a></p>
+                                        <div class="accordion-img-block mt-5 mb-4">
+                                            <div class="top-image mb-3">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/home/services-img-1.jpg"
+                                                    class="img-fluid rounded-l-xl" alt="services">
+                                            </div>
+                                            <div class="bottom-image d-flex flex-row">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/latest-services-image-2-240622.jpg"
+                                                    class="img-fluid part-1-image rounded-xl" alt="services">
+                                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/latest-services-image-3-240622.jpg"
+                                                    class="img-fluid part-2-image rounded-xl" alt="services">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- panel-group -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="work-all-types-section overflow-x-hidden w-100 ml-auto mr-auto d-none d-sm-block">
+        <div class="panel orangeWrapper ">
+            <div class="work-all-types-container orange index-v2-orange py-5">
+                <div class="work-all-section-txt">
+                    <p>Quick Serve works for all types, sizes & formats of businesses.</p>
+                </div>
+                <img src="https://cdn.dotpe.in/dotpe-website-live/images/Scroll-Images-01.webp" class="img-fluid" alt="format-business">
+            </div>
+        </div>
+    </section>
+
+    <section class="work-all-types-mobile d-block d-sm-none">
+        <img src="https://cdn.dotpe.in/dotpe-website-live/images/work-all-types-mobile.png" class="img-fluid" alt="work-all-types">
+    </section>
+
+    <!-- <section class="forward-thinking-partners-sec text-center">
+        <div class="container">
+            <p class="xs:leading-18 xs:text-24 text-54 font-gilroy_extrabold text-black m-0">
+                <span class="animated-text font-gilroy_extrabold linear-wipe">75lacs<span class="xs:text-80 text-180">+</span></span>
+                <br>
+                <br> Forward-thinking partners
+            </p>
+        </div>
+    </section> -->
+
+    <section class="forward-thinking-partners-sec text-center">
+        <div class="container-fluid pl-0 pr-0">
+            <div class="text-center">
+                <img src="https://cdn.dotpe.in/dotpe-website-live/images/clip-text-img.svg" class="img-desktop d-none d-sm-block" width="100%" alt="">
+                <img src="https://cdn.dotpe.in/dotpe-website-live/images/clip-text-img-mobile.svg" class="img-mobile img-fluid d-block d-sm-none" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="slider-section index-carousel-slider">
+        <div class="container-fluid pl-0 pr-0">
+            <h1 class="title">Moments with our Founders</h1>
+            <div class="nonloop owl-carousel">
+                <div class="item">
+                    <div class="slider-item">
+                        <div class="row align-items-center">
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="slider-info">
+                                    <h2 class="heading-text wow fadeInLeft" data-wow-duration="0.3s"
+                                        data-wow-delay="0.2s">Divit Rastogi </h2>
+                                    <h3 class="wow fadeInLeft" data-wow-duration="0.3s" data-wow-delay="0.4s">Student at VIT Bhopal University/ Co Founder of Quick serve  </h3>
+                                    <p class="wow fadeInLeft" data-wow-duration="0.3s" data-wow-delay="0.6s">“That's what she said ”</p>
+                                </div>
+                            </div>
+                            <div class="profile-img wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.8s">
+                                <img loading="lazy" src="IMAGES/Divit.jpg"
+                                    alt="profile-img" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="slider-item">
+                        <div class="row align-items-center">
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="slider-info">
+                                    <h2 class="heading-text">Farooque Azam </h2>
+                                    <h3>Student at VIT Bhopal University/ Co Founder of Quick serve</h3>
+                                    <p>“Blah Blah Kanye,drake ”</p>
+                                </div>
+                            </div>
+                            <div class="profile-img">
+                                <img loading="lazy" src="IMAGES/farooque.jpg"
+                                    alt="profile-img" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="slider-item">
+                        <div class="row align-items-center">
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="slider-info">
+                                    <h2 class="heading-text">Hiya Dullu</h2>
+                                    <h3>Student at VIT Bhopal University/ Co Founder of Quick serve</h3>
+                                    <p>“text text text”</p>
+                                </div>
+                            </div>
+                            <div class="profile-img">
+                                <img src="IMAGES/sakshi and hiya.jpg"
+                                    class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+                <div class="item">
+                    <div class="slider-item">
+                        <div class="row align-items-center">
+                            <div class="col-sm-8 col-lg-8">
+                                <div class="slider-info">
+                                    <h2 class="heading-text">Dakshish Abrol</h2>
+                                    <h3>Student at VIT Bhopal University/ Co Founder of Quick serve</h3>
+                                    <p>“My name is dakshish and i'm not a terrorist?”</p>
+                                </div>
+                            </div>
+                            <div class="profile-img">
+                                <img src="IMAGES/dak better.jpg"
+                                    class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="merchant-logo-section">
+        <div class="container">
+            <h1 class="wow fadeInDown" data-wow-duration="0.6s" data-wow-delay="0.2s">Empowering lacs of businesses,
+                Enabling millions of transactions</h1>
+            <div class="merchant-carousel section-padding owl-carousel mt-5">
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-design-image-8-final-020622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-design-image-9-final-020622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-design-image-10-final-020622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-design-image-11-final-020622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-design-image-12-final-020622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-design-image-13-final-020622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-design-image-14-final-020622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-design-image-15-final-020622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-1-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-2-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-3-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-4-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-5-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-6-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-7-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-8-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-9-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-10-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-11-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-12-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-13-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-14-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-15-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-16-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-17-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-logo-design-image-18-150622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-design-image-6-final-020622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+                <div class="single-logo wow zoomIn">
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/homepage-design-image-7-final-020622.jpg" class="img-fluid" alt="merchant-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="grow-your-business">
+        <div class="container">
+            <h1 class="main-title mb-4 text-center w-50 xs-w-100 wow fadeInDown">Build and grow your business with
+                Quick Serve.</h1>
+            <p class="para ml-auto mr-auto w-70 xs-w-100 wow fadeInUp">Get all the tools you need to take your business
+                to the next level & join the millions of merchants using Quick Serve.</p>
+        </div>
+        <div class="form-block mt-5 d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+            <div class="form-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtPhoneno" placeholder="Enter your mobile number">
+                    </div>
+                    <button type="submit" class="btn btn-primary request-callback-btn"
+                        onclick="return callpopup();">Request Callback</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-list-part d-none d-sm-block">
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-5 col-sm-4">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="footer-list">
+                                    <div class="list-item-header d-flex align-items-center justify-content-start">
+                                        <p class="title">Business</p>
+                                    </div>
+                                    <div class="list-item-wrap">
+                                        <ul class="list-unstyled">
+                                            <li><a href="f-b-page.html">Food & Beverages</a></li>
+                                            <li><a href="retail.html">Retail</a></li>
+                                            <li><a href="services.html">Services</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="footer-list">
+                                    <div class="list-item-header d-flex align-items-center justify-content-start">
+                                        <p class="title">Quick Serve</p>
+                                    </div>
+                                    <div class="list-item-wrap">
+                                        <ul class="list-unstyled">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="press-media.html">Press and Media</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-footer-menu footer-list-part d-block d-sm-none m-0">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="navbar-collapse m-0" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="index.html#" id="mobile_link_4" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Business
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="mobile_link_4">
+                                    <a class="dropdown-item" href="f-b-page.html">Food & Beverages</a>
+                                    <a class="dropdown-item" href="retail.html">Retail</a>
+                                    <a class="dropdown-item" href="services.html">Services</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="index.html#" id="mobile_link_4" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    DotPe
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="mobile_link_4">
+                                    <a class="dropdown-item" href="index.html">Home</a>
+                                    <a class="dropdown-item" href="press-media.html">Press and Media</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="social-media d-flex w-100 justify-content-center align-items-center">
+                    <a href="https://twitter.com/DotPe_India" class="mr-3">
+                        <img src="https://cdn.dotpe.in/dotpe-website-live/images/social-icon-2-24-nov-2021.png" class="img-fluid" alt="twitter">
+                    </a>
+                    <a href="https://www.instagram.com/dotpe_india/" class="mr-3">
+                        <img src="https://cdn.dotpe.in/dotpe-website-live/images/social-icon-1-24-nov-2021.png" class="img-fluid" alt="instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/company/dotpein/mycompany/?viewAsMember=true" class="mr-3">
+                        <img src="https://cdn.dotpe.in/dotpe-website-live/images/social-icon-4-24-nov-2021.png" class="img-fluid" alt="linkedin">
+                    </a>
+                </div>
+                <div class="tc-pp-links tc-pp-links-mobile mb-5 mr-0">
+                    <ul class="p-0 m-0 d-flex justify-content-between py-3">
+                        <li><a href="https://dotpe.in/merchantacquistiontandc.html">Terms & Conditions</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom-block d-none d-sm-block">
+            <div class="container">
+                <div class="footer-bottom d-flex justify-content-between">
+                    <div class="footer-logo d-block">
+                        
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="tc-pp-links">
+                            <ul class="p-0 m-0">
+                                <li><a href="https://dotpe.in/merchantacquistiontandc.html">Terms & Conditions</a></li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="social-media d-flex justify-content-around align-items-center">
+                            <a href="https://twitter.com/DotPe_India" class="mr-3">
+                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/social-icon-2-24-nov-2021.png" class="img-fluid" alt="twitter">
+                            </a>
+                            <a href="https://www.instagram.com/dotpe_india/" class="mr-3">
+                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/social-icon-1-24-nov-2021.png" class="img-fluid" alt="instagram">
+                            </a>
+                            <a href="https://www.linkedin.com/company/dotpein/mycompany/?viewAsMember=true"
+                                class="mr-3">
+                                <img src="https://cdn.dotpe.in/dotpe-website-live/images/social-icon-4-24-nov-2021.png" class="img-fluid" alt="linkedin">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="copyright mt-3">
+                    <p>© Quick Serve, All rights reserved</p>
+                </div>
+
+            </div>
+        </div>
+
+
+    </footer>
+
+    <!-- Request Modal -->
+    <div class="modal fade request-demo-modal res-mob-modal" id="requestDemoModalNew" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+
+            <div class="modal-content">
+
+                <div class="reqmodal_nwmain">
+                    <div class="reqmode_left">
+                        <div class="reqmode_infos" id="divbeforesecond">
+                            <h3>You are taking a right step for your business.</h3>
+                            <p>Trusted by 75 lakh+ businesses in india</p>
+                            <div class="req_logo"><img src="https://cdn.dotpe.in/dotpe-website-live/images/dotpe-black-logo-svg.svg"></div>
+                        </div>
+                        <div class="reqmode_infos reqmode-next text-center d-none" id="divaftersecond">
+                            <div class="check_logo"><img src="https://cdn.dotpe.in/dotpe-website-live/images/success-check.svg"></div>
+                            <p>You have successfully scheduled a call with us.</p>
+                            <div class="req_logo"><img src="https://cdn.dotpe.in/dotpe-website-live/images/dotpe-black-logo-svg.svg"></div>
+                        </div>
+                    </div>
+
+                    <div class="reqmode_right">
+                        <div class="reqmode_text_div " id="divfirst">
+                            <div class="modal-header">
+                                <div>
+                                    <h2 class="modal-title">Setup Free Demo</h2>
+                                    <!-- <p>With our Product Specialist</p> -->
+                                    <p>Fill in the details & Our product specialist will reach out to you</p>
+                                </div>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <!-- <img src="https://cdn.dotpe.in/dotpe-website-live/images/close-16x16.png" class="img-fluid" alt="close"> -->
+                                    <img class="pc-show" src="https://cdn.dotpe.in/dotpe-website-live/images/close-cross.png" class="img-fluid" alt="close">
+                                    <img class="mobile-show" src="https://cdn.dotpe.in/dotpe-website-live/images/mobile-close-cross.png" class="img-fluid"
+                                        alt="close">
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="request_demo_form" class="form-height">
+                                    <div class="form-content">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <input type="text" class="form-control input-field" id="name"
+                                                    name="name" onchange="stateHandle();" placeholder="Your Name *">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12 col-sm-12 phone-field-modal">
+                                                <span class="phone-code-field">+91</span>
+                                                <input type="text" class="form-control input-field" id="phone"
+                                                    name="phone" onchange="stateHandle();"
+                                                    placeholder="Mobile Number *">
+                                            </div>
+                                            <div class="form-group col-md-12 col-sm-12">
+                                                <input type="email" class="form-control input-field" id="email"
+                                                    name="email" placeholder="Email Address">
+                                            </div>
+                                        </div>
+
+                                        <!-- <h5 class="sub-title">Select Business Category</h5>
+                                        <div class="form-inline">
+                                            <div class="form-check form-radio">
+                                                <input class="form-check-input" type="radio" name="business_category"
+                                                    id="exampleRadios1" value="Fashion & Accessories" checked>
+                                                <label class="form-check-label" for="exampleRadios1">
+                                                    Fashion & Accessories
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-radio">
+                                                <input class="form-check-input" type="radio" name="business_category"
+                                                    id="exampleRadios2" value="Electronics">
+                                                <label class="form-check-label" for="exampleRadios2">
+                                                    Electronics
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-radio">
+                                                <input class="form-check-input" type="radio" name="business_category"
+                                                    id="exampleRadios3" value="Home Decor & Furnishing">
+                                                <label class="form-check-label" for="exampleRadios3">
+                                                    Home Decor & Furnishing
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-radio">
+                                                <input class="form-check-input" type="radio" name="business_category"
+                                                    id="exampleRadios4" value="Arts and Handicrafts">
+                                                <label class="form-check-label" for="exampleRadios4">
+                                                    Arts and Handicrafts
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-radio">
+                                                <input class="form-check-input" type="radio" name="business_category"
+                                                    id="exampleRadios5" value="Health & Wellness">
+                                                <label class="form-check-label" for="exampleRadios5">
+                                                    Health & Wellness
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-radio">
+                                                <input class="form-check-input" type="radio" name="business_category"
+                                                    id="exampleRadios6" value="Food and Beverage">
+                                                <label class="form-check-label" for="exampleRadios6">
+                                                    Food and Beverage
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-radio">
+                                                <input class="form-check-input" type="radio" name="business_category"
+                                                    id="exampleRadios7" value="Supermarket & Groceries">
+                                                <label class="form-check-label" for="exampleRadios7">
+                                                    Supermarket & Groceries
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-radio">
+                                                <input class="form-check-input" type="radio" name="business_category"
+                                                    id="exampleRadios8" value="Other">
+                                                <label class="form-check-label" for="exampleRadios8">
+                                                    Other
+                                                </label>
+                                            </div>
+                                        </div> -->
+                                        <div class="tc-check">
+                                            <div class="form-check pl-0">
+                                                <!--<input type="checkbox"
+                                                    onclick="$(this).attr('value', this.checked ? 1 : 0)" value="1"
+                                                    class="form-check-input" id="tc_condition_check" checked>-->
+                                                <label class="form-check-label" for="tc_condition_check">By clicking
+                                                    On Continue I hereby provide my consent to receive emails,
+                                                    phone calls, messages and other communications from <span
+                                                        class="pere-dot">...</span><span class="full-pera">Dotpe to
+                                                        understand
+                                                        about Dotpe's services, offerings, promotions and other related
+                                                        information.</span> <a class="more-pera"
+                                                        href="javascript:void(0)">Read More</a> <a class="less-pera"
+                                                        href="javascript:void(0)">Read Less</a></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-submit-btn form-hbtn">
+                                        <button type="submit" class="btn btn-primary req-demo-btn">Continue</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="reqmode_text_div reqmode_next_div" id="divsecond" style="display:none">
+                            <div class="modal-header">
+                                <div>
+                                    <h2 class="modal-title">Our team will reach out to you in next few minutes </h2>
+                                    <!-- <p>With our Product Specialist</p> -->
+                                    <p>Meanwhile tell us more about your business.</p>
+                                </div>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <!-- <img src="https://cdn.dotpe.in/dotpe-website-live/images/close-16x16.png" class="img-fluid" alt="close"> -->
+                                    <img class="pc-show" src="https://cdn.dotpe.in/dotpe-website-live/images/close-cross.png" class="img-fluid" alt="close">
+                                    <img class="mobile-show" src="https://cdn.dotpe.in/dotpe-website-live/images/mobile-close-cross.png" class="img-fluid"
+                                        alt="close">
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="category_form" class="form-height">
+                                    <div class="form-content select-form-content">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12 sb-margin-bottom">
+                                                <label>Select a business category </label>
+                                                <select class="form-control input-field" id="business_category"
+                                                    name="business_category">
+                                                    <option value="0">Select your business category</option>
+                                                    <option value="Food and beverage">Food and beverage</option>
+                                                    <option value="Clothing and accessories">Clothing and accessories</option>
+                                                    <option value="Bakery">Bakery
+                                                    </option>
+                                                    <option value="Salon">Salon
+                                                    </option>
+                                                    <option value="Home Decor and furnishing">Home Decor and furnishing
+                                                    </option>
+                                                    <option value="eCommerce">eCommerce
+                                                    </option>
+                                                    <option value="Services">Services
+                                                    </option>
+                                                    
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label>Select your role in this business.</label>
+                                                <select class="form-control input-field" name="role" id="role">
+                                                    <option value="0">Select your role</option>
+                                                    <option value="Owner">Owner</option>
+                                                    <option value="Store Manager">Store Manager</option>
+                                                    <option value="Accounts">Accounts</option>
+                                                    <option value="Sales">Sales</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <div class="form-submit-btn form-hbtn">
+                                        <button type="" class="btn btn-primary req-demo-btn">Done</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Thankyou Modal -->
+    <div class="modal fade thankYouModal" id="thankyouModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    
+                    <img src="https://cdn.dotpe.in/dotpe-website-live/images/thanku-check.svg"/>
+                    <h2>We have received your information!</h2>
+                    <p>Our team will reach out to you on your mobile number <span>+91
+                        9876789089</span></p>
+                    <button type="button" class="btn btn-primary go-home-btn" data-dismiss="modal" aria-label="Close">Return 
+                        to Website</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="get-started-fixed d-block d-sm-nonee">
+        <a href="index.html#" data-toggle="modal" data-target="#requestDemoModalNew">Get Started</a>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="js/jquery-1-11.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/stripe-gradient.js"></script>
+    <script src="js/scrollspy.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src='js/gsap-latest-beta.min.js'></script>
+    <script src='js/ScrollTrigger.min.js'></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".orangeWrapper",
+                pinSpacing: true,
+                start: "50% 50%",
+                scrub: true,
+                pin: true,
+                end: "+=200%",
+            }
+        }).fromTo(".orange", {
+            scale: 1.7
+        },
+            {
+                scale: 1
+            }).to(".work-all-section-txt", {
+                opacity: 0.0,
+                duration: 0.2
+            }, 0);      
+    </script>
+
+    <script>
+        function toggleIcon(e) {
+            $(e.target)
+                .prev('.panel-heading')
+                .find(".more-less")
+                .toggleClass('fa-plus fa-minus');
+        }
+        $('.panel-group').on('hidden.bs.collapse', toggleIcon);
+        $('.panel-group').on('shown.bs.collapse', toggleIcon);
+    </script>
+
+    <script>
+        $(window).bind('scroll', function (e) {
+            if ($(window).scrollTop() > 200) {
+                $('.main-header').addClass('sticky-nav');
+            } else {
+                $('.main-header').removeClass('sticky-nav');
+            }
+        });  
+    </script>
+    <!-- Validate demo form  -->
+    <script>
+        jQuery.validator.addMethod('check_phone',
+		function(value, element) {
+			return this.optional(element) || /^[0-9]{10}$/i.test(value);
+		},
+		'Enter valid phone number'
+	);
+	jQuery.validator.addMethod(
+		'letters',
+		function(value, element) {
+			return this.optional(element) || /^[a-zA-Z\s]+$/i.test(value);
+		},
+		'Letters only please'
+	);
+        function stateHandle() {
+            if ($("#name").val() == "") {
+                $("#btnSubmit").addClass("disabled");
+            }
+            else {
+                $("#btnSubmit").removeClass("disabled");
+            }
+        }
+        var return_id_business_category = "";
+        $("#request_demo_form").validate({
+            rules: {
+                name: "required",
+                phone: {
+				required: true,
+				check_phone: true,
+
+			},
+                
+                email: "required",
+
+            },
+            messages: {
+                name: "Enter Name",
+                phone: "Enter Mobile Number",
+                email: "Enter Email Id",
+
+            },
+            submitHandler: function (form) {
+                //return false;
+                event.preventDefault();
+                $this = $(form).find('#sendFeedbackInfo_2');
+                $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+                var data_json = {
+                    name: $("#request_demo_form #name").val(),
+                    phone: $("#request_demo_form #phone").val(),
+                    email: $("#request_demo_form #email").val(),
+                    businessCategory: $('input[name="business_category"]:checked').val(),
+                    source: window.location.href,
+                    // source: "landing-https://dotpe.in/landing-ecomm.html?utm_source=google&utm_medium=cpc&utm_campaign=Ecomm_Search_Generic_em&utm_term=free%20website%20builder",
+                    tncCheck: true
+                };
+                $.ajax({
+                    type: "post",
+                    url: "curllead.php",
+                    data: data_json,
+                    cache: false,
+                    success: function (res) {
+                        var res_json = JSON.parse(res);
+                        console.log(res_json);
+                        // Success message
+                        if (res != "") {
+                            return_id_business_category = res_json.id;
+                            $("#divfirst").hide();
+                            $("#divsecond").show();
+                        }
+                        $('#divaftersecond').removeClass("d-none");
+                        $('#divsecond').removeClass("d-none");
+                        $('#divbeforesecond').addClass("d-none");
+                        $('#divfirst').addClass("d-none");
+
+
+                        //$('#requestDemoModalNew').modal('hide');
+
+                        //$('#thankyouModal').modal('show');
+                        // console.log(res.status);
+                        //Swal.fire('Thank you for Contacting!', '', 'success');
+
+                        //$(form).trigger("reset");
+                        setTimeout(function () {
+                            // $('#thankyouModal').modal('hide');
+                            $(form).trigger("reset");							 // Re-enable submit button when AJAX call is complete
+                        }, 5000);
+                    },
+                    error: function (err) {
+                        // alert(err);
+                        console.log(err);
+                        Swal.fire('Try again!', '', 'error');
+
+                        //clear all fields
+                        $(form).trigger("reset");
+                    },
+                    complete: function () {
+                        setTimeout(function () {
+                            $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+                        }, 1000);
+                    }
+                });
+            },
+            invalidHandler: function (event, validator) {
+                // 'this' refers to the form
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                    var message = errors == 1 ?
+                        'You missed 1 field. It has been highlighted' :
+                        'You missed ' + errors + ' fields. They have been highlighted';
+                    $("div.error span").html(message);
+                    $("div.error").show();
+                } else {
+                    $("div.error").hide();
+                }
+            }
+        });
+        $("#category_form").validate({
+            rules: {
+            },
+            messages: {
+            },
+            submitHandler: function (form) {
+                //return false;
+                event.preventDefault();
+                $this = $(form).find('#sendFeedbackInfo_2');
+                $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+                var data_json = {
+                    id: return_id_business_category,
+                    businessCategory: $('#business_category').find(":selected").val(),
+                    role: $('#role').find(":selected").val(),
+                };
+                console.log(data_json);
+                $.ajax({
+                    type: "post",
+                    url: "curl2.php",
+                    data: data_json,
+                    cache: false,
+                    success: function (res) {
+                        console.log(res);
+                        // Success message
+                       // if (res != "") {
+                            $("#requestDemoModalNew").modal('hide');
+                            $("#thankyouModal").show();
+                              $('#thankyouModal').modal('show');
+                              $('#thankyouModal p span').text("+91 "+$("#requestDemoModalNew #phone").val());
+                              $('.top-get-started-btn').attr('data-target','#thankyouModal');
+                             
+                           
+                             
+                        //}
+
+                    },
+                    error: function (err) {
+                        // alert(err);
+                        console.log(err);
+                        Swal.fire('Try again!', '', 'error');
+
+                        //clear all fields
+                        $(form).trigger("reset");
+                    },
+                    complete: function () {
+                        setTimeout(function () {
+                            $('#thankyouModal h2').text('Your Request is already submitted');
+                            $('.top-get-started-btn').attr('data-target','#thankyouModal');
+                           // $('.top-get-started-btn d-flex justify-content-center align-items-center').each(function() {
+                                     //$(this).data('target', '#thankyouModal');
+                            //});
+                            $("#thankyouModal").show();
+                              $('#thankyouModal').modal('show');
+                              $('#thankyouModal h2').text('Your Request is already submitted');
+                            $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+                        }, 3000);
+                    }
+                });
+            },
+            invalidHandler: function (event, validator) {
+                // 'this' refers to the form
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                    var message = errors == 1 ?
+                        'You missed 1 field. It has been highlighted' :
+                        'You missed ' + errors + ' fields. They have been highlighted';
+                    $("div.error span").html(message);
+                    $("div.error").show();
+                } else {
+                    $("div.error").hide();
+                }
+            }
+        });
+
+
+        function callpopup() {
+            var phoneno = $("#txtPhoneno").val();
+            localStorage.setItem('Phone', phoneno);
+            var PhoneNo = localStorage.getItem('Phone');
+            if (PhoneNo == null || PhoneNo == "null") {
+
+            }
+            else {
+                var phoneno = parseInt(PhoneNo);
+
+                $('input[name="phone"]').val(phoneno);
+
+
+            }
+            $('#requestDemoModalNew').modal('show');
+            $("#txtPhoneno").val('');
+            return false;
+        }
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".more-pera").click(function () {
+                $(this).hide();
+                $(".pere-dot").hide();
+                $(".full-pera").show();
+                $(".less-pera").show();
+            });
+            $(".less-pera").click(function () {
+                $(this).hide();
+                $(".full-pera").hide();
+                $(".pere-dot").show();
+                $(".more-pera").show();
+            });
+        });
+    </script>
+</body>
+
+</html>
