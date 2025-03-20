@@ -23,7 +23,7 @@
         <p id="error-message" style="color: red;"></p>
     </div>
 
-    <!-- <script type="module" src="script.js">
+    <script type="module" src="script.js">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
         import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
     
@@ -62,11 +62,14 @@
                         document.getElementById("error-message").innerText = signupError.message;
                     }
                 } else {
-                    document.getElementById("error-message").innerText = error.message;
+                    document.getElementById('error-message').textContent = data.error;
                 }
+            } catch (err) {
+                console.error(err);
+                document.getElementById('error-message').textContent = 'Server error';
             }
         });
-    </script> -->
+    </script>
     
 
 </body>
