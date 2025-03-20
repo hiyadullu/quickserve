@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Serve Restaurant</title>
+    <style>
+        /* Define color palette */
+        :root {
+            --peach: #EDAFB8; /* Updated to peach */
+            --light-peach: #F7E1D7;
+            --beige: #DEDBD2;
+            --sage: #B0C4B1;
+            --charcoal: #4A5759;
+        }
+
+        body {
+            background-color: var(--light-peach);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            display: flex;
+            background-color: var(--beige);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .left-section {
+            background-color: var(--peach);
+            width: 200px; /* Adjust width as needed */
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            clip-path: circle(60% at left center); /* Ensures a perfect half-circle */
+        }
+
+        .right-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: var(--charcoal);
+            margin: 0;
+        }
+
+        p {
+            font-size: 16px;
+            color: var(--sage);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--peach);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 24px;
+            color: var(--light-peach);
+        }
+
+        /* Decorative stars */
+        .decor {
+            position: absolute;
+            top: 50px;
+            left: 80%;
+            color: var(--charcoal);
+            font-size: 20px;
+            transform: rotate(45deg);
+        }
+
+        .bottom-decor {
+            margin-top: 20px;
+            font-size: 20px;
+            color: var(--peach);
+        }
+
+        /* Additional styling to match your reference */
+        .pattern-bg {
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Adding a subtle pattern */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        /* Order method styles */
+        .order-method {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .order-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .order-method h2 {
+            margin-bottom: 30px;
+            color: #7c9c30;
+            font-size: 1.8rem;
+        }
+
+        .order-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        button {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 1px;
+            background-color: var(--peach); /* Set button background to peach */
+            color: white; /* Set button text color to white */
+        }
+
+        button:hover {
+            background-color: #d69a8a; /* Darker peach on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Menu styles */
+        .menu {
+            display: none;
+            margin-top: 40px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(124,156,48,0.2);
+        }
+
+        .menu-header h2 {
+            color: #000000;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .veg-toggle {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #000000;
+            font-weight: 500;
+        }
+
+        /* Toggle Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #7c9c30;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #7c9c30;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .section-title {
+            color: #7c9c30;
+            margin: 40px 0 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #7c9c30;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .menu-item h3 {
+            margin-bottom: 12px;
+            color: #000000;
+            font-size: 1.3rem;
+        }
+
+        .menu-item p {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .menu-item .price {
+            font-weight: bold;
+            color: #7c9c30;
+            font-size: 1.1rem;
+        }
+
+        .menu-item .item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .veg-icon {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #7c9c30;
+            border-radius: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .veg-icon::before {
+            content: "•";
+            color: #7c9c30;
+            font-size: 16px;
+        }
+
+        .non-veg-icon {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000000;
+            border-radius: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .non-veg-icon::before {
+            content: "•";
+            color: #000000;
+            font-size: 16px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background-color: #000000;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quantity-btn:hover {
+            background-color: #7c9c30;
+            transform: scale(1.05);
+        }
+
+        .quantity {
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .order-summary {
+            display: none;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            margin-top: 40px;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            width: 80%; /* Make the cart smaller */
+        }
+
+        .order-summary:hover {
+            opacity: 1;
+        }
+
+        .order-summary h3 {
+            color: #7c9c30;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.5rem;
+        }
+
+        .order-detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .cart-item-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cart-item-quantity {
+            background-color: #7c9c30;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .order-total {
+            font-weight: bold;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 1.1rem;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popover {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-10px); }
+            80% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Item added animation */
+        .item-added {
+            animation: popover 0.4s ease-in-out;
+        }
+
+        /* Delivery button animation */
+        .delivery-animation {
+            animation: bounce 0.6s ease-in-out;
+        }
+
+        /* Cart notification bubble */
+        .cart-notification {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background-color: #7c9c30;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .cart-notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="decor">✦✦✦✦</div>
+        </div>
+        <div class="right-section">
+            <div class="icon">⛩</div>
+            <h1>QuickServe</h1>
+            <p>Elegance Served Quickly</p>
+            <div class="bottom-decor">✦✦✦✦</div>
+        </div>
+    </div>
+    <div class="pattern-bg"></div>
+
+    <div class="order-method" id="orderMethod">
+        <h2>How would you like to receive your order?</h2>
+        <div class="order-buttons">
+            <button class="primary-button" onclick="selectOrderMethod('pickup')">Pickup</button>
+            <button class="primary-button" id="deliveryButton" onclick="selectOrderMethod('delivery')">Delivery</button>
+        </div>
+    </div>
+
+    <div class="menu" id="menuSection">
+        <div class="menu-header">
+            <h2>Our Menu</h2>
+            <div class="veg-toggle">
+                <span>Pure Veg</span>
+                <label class="switch">
+                    <input type="checkbox" id="vegToggle" onclick="toggleVegOnly()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        
+        <h3 class="section-title">Best Sellers</h3>
+        <div class="menu-items" id="bestSellers">
+            <div class="menu-item" data-veg="false">
+                <h3>Classic Burger</h3>
+                <p>Juicy beef patty with lettuce, tomato, and our secret sauce</p>
+                <div class="item-footer">
+                    <span class="price">$12.99</span>
+                    <div class="non-veg-icon"></div>
+                    <div class="quantity-control">
+                        <div class="quantity-btn" onclick="decrementItem('Classic Burger', 12.99)">-</div>
+                        <div class="quantity" id="qty-Classic-Burger">0</div>
+                        <div class="quantity-btn" onclick="incrementItem('Classic Burger', 12.99)">+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item" data-veg="true">
+                <h3>Mushroom Risotto</h3>
+                <p>Creamy Arborio rice with wild mushrooms and parmesan</p>
+                <div class="item-footer">
+                    <span class="price">$14.99</span>
+                    <div class="veg-icon"></div>
+                    <div class="quantity-control">
+                        <div class="quantity-btn" onclick="decrementItem('Mushroom Risotto', 14.99)">-</div>
+                        <div class="quantity" id="qty-Mushroom-Risotto">0</div>
+                        <div class="quantity-btn" onclick="incrementItem('Mushroom Risotto', 14.99)">+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item" data-veg="false">
+                <h3>Chicken Alfredo</h3>
+                <p>Fettuccine pasta with grilled chicken in creamy alfredo sauce</p>
+                <div class="item-footer">
+                    <span class="price">$16.99</span>
+                    <div class="non-veg-icon"></div>
+                    <div class="quantity-control">
+                        <div class="quantity-btn" onclick="decrementItem('Chicken Alfredo', 16.99)">-</div>
+                        <div class="quantity" id="qty-Chicken-Alfredo">0</div>
+                        <div class="quantity-btn" onclick="incrementItem('Chicken Alfredo', 16.99)">+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h3 class="section-title">Food</h3>
+        <div class="menu-items" id="food">
+            <div class="menu-item" data-veg="false">
+                <h3>Grilled Salmon</h3>
+                <p>Atlantic salmon with lemon butter sauce and seasonal vegetables</p>
+                <div class="item-footer">
+                    <span class="price">$18.99</span>
+                    <div class="non-veg-icon"></div>
+                    <div class="quantity-control">
+                        <div class="quantity-btn" onclick="decrementItem('Grilled Salmon', 18.99)">-</div>
+                        <div class="quantity" id="qty-Grilled-Salmon">0</div>
+                        <div class="quantity-btn" onclick="incrementItem('Grilled Salmon', 18.99)">+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item" data-veg="true">
+                <h3>Margherita Pizza</h3>
+                <p>Classic pizza with tomato sauce, mozzarella, and fresh basil</p>
+                <div class="item-footer">
+                    <span class="price">$15.99</span>
+                    <div class="veg-icon"></div>
+                    <div class="quantity-control">
+                        <div class="quantity-btn" onclick="decrementItem('Margherita Pizza', 15.99)">-</div>
+                        <div class="quantity" id="qty-Margherita-Pizza">0</div>
+                        <div class="quantity-btn" onclick="incrementItem('Margherita Pizza', 15.99)">+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item" data-veg="true">
+                <h3>Garden Salad</h3>
+                <p>Fresh mixed greens, cherry tomatoes, cucumber, and balsamic vinaigrette</p>
+                <div class="item-footer">
+                    <span class="price">$9.99</span>
+                    <div class="veg-icon"></div>
+                    <div class="quantity-control">
+                        <div class="quantity-btn" onclick="decrementItem('Garden Salad', 9.99)">-</div>
+                        <div class="quantity" id="qty-Garden-Salad">0</div>
+                        <div class="quantity-btn" onclick="incrementItem('Garden Salad', 9.99)">+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item" data-veg="false">
+                <h3>Beef Steak</h3>
+                <p>Premium cut steak with roasted potatoes and grilled vegetables</p>
+                <div class="item-footer">
+                    <span class="price">$24.99</span>
+                    <div class="non-veg-icon"></div>
+                    <div class="quantity-control">
+                        <div class="quantity-btn" onclick="decrementItem('Beef Steak', 24.99)">-</div>
+                        <div class="quantity" id="qty-Beef-Steak">0</div>
+                        <div class="quantity-btn" onclick="incrementItem('Beef Steak', 24.99)">+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h3 class="section-title">Desserts</h3>
+        <div class="menu-items" id="desserts">
+            <div class="menu-item" data-veg="true">
+                <h3>Chocolate Lava Cake</h3>
+                <p>Warm chocolate cake with a molten center, served with vanilla ice cream</p>
+                <div class="item-footer">
+                    <span class="price">$8.99</span>
+                    <div class="veg-icon"></div>
+                    <div class="quantity-control">
+                        <div class="quantity-btn" onclick="decrementItem('Chocolate Lava Cake', 8.99)">-</div>
+                        <div class="quantity" id="qty-Chocolate-Lava-Cake">0</div>
+                        <div class="quantity-btn" onclick="incrementItem('Chocolate Lava Cake', 8.99)">+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item" data-veg="true">
+                <h3>Tiramisu</h3>
+                <p>Classic Italian dessert with coffee-soaked ladyfingers and mascarpone cream</p>
+                <div class="item-footer">
+                    <span class="price">$7.99</span>
+                    <div class="veg-icon"></div>
+                    <div class="quantity-control">
+                        <div class="quantity-btn" onclick="decrementItem('Tiramisu', 7.99)">-</div>
+                        <div class="quantity" id="qty-Tiramisu">0</div>
+                        <div class="quantity-btn" onclick="incrementItem('Tiramisu', 7.99)">+</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item" data-veg="true">
+                <h3>New York Cheesecake</h3>
+                <p>Creamy cheesecake with graham cracker crust and berry compote</p>
+                <div class="item-footer">
+                    <span class="price">$6.99</span>
+                    <div class="veg-icon"></div>
+                    <div class="quantity-control">
+                        <div class="quantity-btn" onclick="decrementItem('New York Cheesecake', 6.99)">-</div>
+                        <div class="quantity" id="qty-New-York-Cheesecake">0</div>
+                        <div class="quantity-btn" onclick="incrementItem('New York Cheesecake', 6.99)">+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-summary" id="orderSummary">
+        <h3>Your Order</h3>
+        <div id="orderItems"></div>
+        <div class="order-detail order-total">
+            <span>Total:</span>
+            <span id="orderTotal">$0.00</span>
+        </div>
+        <button class="primary-button" style="margin-top: 20px; width: 100%;" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <div class="cart-notification" id="cartNotification">Item added to cart!</div>
+
+    <script>
+        // Store cart items and order method
+        let cart = {};
+        let orderMethod = "";
+        let vegOnly = false;
+
+        function selectOrderMethod(method) {
+            orderMethod = method;
+
+            // Special animation for delivery button
+            if (method === 'delivery') {
+                const deliveryButton = document.getElementById('deliveryButton');
+                deliveryButton.classList.add('delivery-animation');
+
+                // Remove animation class after it completes
+                setTimeout(() => {
+                    deliveryButton.classList.remove('delivery-animation');
+                }, 600);
+            }
+
+            // Hide order method section with fade out
+            const orderMethodSection = document.getElementById('orderMethod');
+            orderMethodSection.style.opacity = '0';
+            orderMethodSection.style.transform = 'translateY(-20px)';
+
+            setTimeout(() => {
+                orderMethodSection.style.display = 'none';
+
+                // Show menu and order summary with animations
+                const menuSection = document.getElementById('menuSection');
+                const orderSummary = document.getElementById('orderSummary');
+
+                menuSection.style.display = 'block';
+                orderSummary.style.display = 'block';
+
+                // Trigger animations
+                setTimeout(() => {
+                    orderSummary.style.opacity = '0.95';
+                    orderSummary.style.transform = 'translateY(0)';
+                }, 100);
+            }, 300);
+
+            // Set order method in summary
+            updateOrderSummary();
+        }
+
+        function toggleVegOnly() {
+            vegOnly = document.getElementById('vegToggle').checked;
+
+            // Filter menu items with animation
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => {
+                if (vegOnly && item.getAttribute('data-veg') === 'false') {
+                    item.style.opacity = '0';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                } else {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                    }, 10);
+                }
+            });
+        }
+
+        function incrementItem(itemName, price) {
+            // Get current item count element
+            const itemId = itemName.replace(/\s+/g, '-');
+            const qtyElement = document.getElementById(`qty-${itemId}`);
+
+            // Find the menu item element
+            const menuItems = document.querySelectorAll('.menu-item');
+            let menuItem;
+            menuItems.forEach(item => {
+                if (item.querySelector('h3').textContent === itemName) {
+                    menuItem = item;
+                }
+            });
+
+            // Update cart data structure
+            if (!cart[itemName]) {
+                cart[itemName] = {
+                    name: itemName,
+                    price: price,
+                    quantity: 0
+                };
+            }
+
+            cart[itemName].quantity += 1;
+            qtyElement.textContent = cart[itemName].quantity;
+
+            // Apply popover animation to the menu item
+            if (menuItem) {
+                menuItem.classList.add('item-added');
+                setTimeout(() => {
+                    menuItem.classList.remove('item-added');
+                }, 400);
+            }
+
+            // Show notification
+            showCartNotification(itemName);
+
+            // Update cart display with flash effect
+            updateOrderSummary();
+            flashCartEffect();
+        }
+
+        function decrementItem(itemName, price) {
+            // Skip if item not in cart or at zero
+            if (!cart[itemName] || cart[itemName].quantity <= 0) return;
+
+            // Get current item count element
+            const itemId = itemName.replace(/\s+/g, '-');
+            const qtyElement = document.getElementById(`qty-${itemId}`);
+
+            // Update cart
+            cart[itemName].quantity -= 1;
+            qtyElement.textContent = cart[itemName].quantity;
+
+            // Remove item if quantity is zero
+            if (cart[itemName].quantity === 0) {
+                delete cart[itemName];
+            }
+
+            // Update cart display with flash effect
+            updateOrderSummary();
+            flashCartEffect();
+        }
+
+        function flashCartEffect() {
+            const orderSummary = document.getElementById('orderSummary');
+            orderSummary.style.boxShadow = '0 4px 25px rgba(124,156,48,0.4)';
+            setTimeout(() => {
+                orderSummary.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            }, 300);
+        }
+
+        function showCartNotification(itemName) {
+            const notification = document.getElementById('cartNotification');
+            notification.textContent = `${itemName} added to cart!`;
+            notification.classList.add('show');
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000);
+        }
+
+        function updateOrderSummary() {
+            const orderItemsDiv = document.getElementById('orderItems');
+            const orderTotalSpan = document.getElementById('orderTotal');
+
+            // Start with order method
+            let html = `<div class="order-detail">
+                <span>Order Method:</span>
+                <span>${orderMethod === 'pickup' ? 'Pickup' : 'Delivery'}</span>
+            </div>`;
+
+            // Add items to summary
+            let total = 0;
+
+            for (const itemName in cart) {
+                const item = cart[itemName];
+                if (item.quantity > 0) {
+                    html += `<div class="cart-item">
+                        <div class="cart-item-name">
+                            <div class="cart-item-quantity">${item.quantity}</div>
+                            <span>${item.name}</span>
+                        </div>
+                        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>`;
+                    total += item.price * item.quantity;
+                }
+            }
+
+            orderItemsDiv.innerHTML = html;
+            orderTotalSpan.textContent = `$${total.toFixed(2)}`;
+        }
+
+        function placeOrder() {
+            const itemCount = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+
+            if (itemCount === 0) {
+                alert('Please add items to your cart before placing an order.');
+                return;
+            }
+
+            alert('Thank you for your order! Your food will be prepared shortly.');
+
+            // Reset cart and update display
+            cart = {};
+
+            // Reset all quantity displays to zero
+            const allQuantityElements = document.querySelectorAll('.quantity');
+            allQuantityElements.forEach(el => {
+                el.textContent = '0';
+            });
+
+            updateOrderSummary();
+        }
+    </script>
+</body>
+</html>
