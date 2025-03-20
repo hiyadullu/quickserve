@@ -2,7 +2,7 @@
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #000000, #0a0a0a, #353535 ,#ffcb0e);
+    background: linear-gradient(135deg, #000000, #0a0a0a, #353535 ,#c4c4c1);
     background-size: 200% 200%;
     animation: gradientBG 10s ease infinite;
     display: flex;
