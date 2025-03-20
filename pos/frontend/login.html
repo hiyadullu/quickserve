@@ -23,53 +23,7 @@
         <p id="error-message" style="color: red;"></p>
     </div>
 
-    <script type="module" src="script.js">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
-    
-        const firebaseConfig = {
-            apiKey: "AIzaSyBVFj9t148VrP3hzhIPq-dklPTtgzTDjhs",
-            authDomain: "quickserve-14b25.firebaseapp.com",
-            projectId: "quickserve-14b25",
-            storageBucket: "quickserve-14b25.appspot.com",
-            messagingSenderId: "624553281030",
-            appId: "1:624553281030:web:4d886c6b5b45b57d702587",
-            measurementId: "G-JXX6BYD78K"
-        };
-    
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-    
-        document.getElementById("loginForm").addEventListener("submit", async (event) => {
-            event.preventDefault();
-    
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-    
-            try {
-                // Try signing in the user
-                await signInWithEmailAndPassword(auth, email, password);
-                alert("Login successful!");
-                window.location.href = "dashboard.html";
-            } catch (error) {
-                if (error.code === "auth/user-not-found") {
-                    // If user not found, create an account
-                    try {
-                        await createUserWithEmailAndPassword(auth, email, password);
-                        alert("Account created successfully!");
-                        window.location.href = "dashboard.html";
-                    } catch (signupError) {
-                        document.getElementById("error-message").innerText = signupError.message;
-                    }
-                } else {
-                    document.getElementById('error-message').textContent = data.error;
-                }
-            } catch (err) {
-                console.error(err);
-                document.getElementById('error-message').textContent = 'Server error';
-            }
-        });
-    </script>
+
     
 
 </body>
