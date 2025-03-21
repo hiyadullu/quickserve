@@ -17,7 +17,7 @@ function scrollIntoForm() {
     left: 0,
     behavior: "smooth",
   });
-  gtag('event', 'Request demo (scroll)', { 'event_category': 'Demo scroll', 'event_label': 'dotpe.in' });
+  gtag('event', 'Request demo (scroll)', { 'event_category': 'Demo scroll', 'event_label': 'quickserve.in' });
 }
 
 

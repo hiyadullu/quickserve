@@ -1,0 +1,147 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-roboto">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="bg-gray-800 text-white w-64 space-y-6 py-7 px-2 fixed h-full">
+            <div class="text-2xl font-semibold text-center">QuickServe</div>
+            <nav>
+                <a href="/dashboard/" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="/dashboard/queries" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-box"></i> User Queries
+                </a>
+                <a href="/dashboard/restaurants" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-users"></i> Restaurants
+                </a>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-chart-line"></i> Analytics
+                </a>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-cogs"></i> Settings
+                </a>
+                <a href="/auth/logout" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                <a href="/auth/add" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white">
+                    <i class="fas fa-sign-out-alt"></i> Add Admin
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-10 ml-64 overflow-y-auto">
+            <h1 class="text-3xl font-semibold mb-6">Dashboard</h1>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-box text-blue-500 text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h2 class="text-lg font-semibold">Total Orders</h2>
+                            <p class="text-gray-600 text-xl">1,234</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-dollar-sign text-green-500 text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h2 class="text-lg font-semibold">Revenue</h2>
+                            <p class="text-gray-600 text-xl">$12,345</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-yellow-500 text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h2 class="text-lg font-semibold">New Restaurants</h2>
+                            <p class="text-gray-600 text-xl">123</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-chart-line text-red-500 text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h2 class="text-lg font-semibold">Growth</h2>
+                            <p class="text-gray-600 text-xl">12%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold mb-4">Recent Orders</h2>
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-4 border-b">Order ID</th>
+                            <th class="py-2 px-4 border-b">Customer</th>
+                            <th class="py-2 px-4 border-b">Date</th>
+                            <th class="py-2 px-4 border-b">Status</th>
+                            <th class="py-2 px-4 border-b">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2 px-4 border-b text-center">#1234</td>
+                            <td class="py-2 px-4 border-b text-center">John Doe</td>
+                            <td class="py-2 px-4 border-b text-center">2023-10-01</td>
+                            <td class="py-2 px-4 border-b text-center text-green-500">Completed</td>
+                            <td class="py-2 px-4 border-b text-center">$123.45</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b text-center">#1235</td>
+                            <td class="py-2 px-4 border-b text-center">Jane Smith</td>
+                            <td class="py-2 px-4 border-b text-center">2023-10-02</td>
+                            <td class="py-2 px-4 border-b text-center text-yellow-500">Pending</td>
+                            <td class="py-2 px-4 border-b text-center">$67.89</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b text-center">#1236</td>
+                            <td class="py-2 px-4 border-b text-center">Alice Johnson</td>
+                            <td class="py-2 px-4 border-b text-center">2023-10-03</td>
+                            <td class="py-2 px-4 border-b text-center text-red-500">Cancelled</td>
+                            <td class="py-2 px-4 border-b text-center">$45.67</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b text-center">#1237</td>
+                            <td class="py-2 px-4 border-b text-center">Bob Brown</td>
+                            <td class="py-2 px-4 border-b text-center">2023-10-04</td>
+                            <td class="py-2 px-4 border-b text-center text-green-500">Completed</td>
+                            <td class="py-2 px-4 border-b text-center">$89.00</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b text-center">#1238</td>
+                            <td class="py-2 px-4 border-b text-center">Charlie Davis</td>
+                            <td class="py-2 px-4 border-b text-center">2023-10-05</td>
+                            <td class="py-2 px-4 border-b text-center text-yellow-500">Pending</td>
+                            <td class="py-2 px-4 border-b text-center">$150.75</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
