@@ -22,7 +22,7 @@ passport.use(
                 const email = profile.emails[0].value;
 
                 // Check if user already exists
-                const userCheckQuery = "SELECT * FROM users WHERE email = $1";
+                const userCheckQuery = "SELECT * FROM restaurants WHERE email = $1";
                 const result = await db.query(userCheckQuery, [email]);
 
                 let user;
@@ -31,9 +31,9 @@ passport.use(
                 } else {
                     console.log("🆕 New user, adding to DB:", email);
                     const insertQuery = `
-                        INSERT INTO users (email, password, is_paid)
+                        INSERT INTO restaurants (email, password )
                         VALUES ($1, $2, $3) RETURNING *`;
-                    const newUser = await db.query(insertQuery, [email, "google", 0]);
+                    const newUser = await db.query(insertQuery, [email, "google"]);
                     user = newUser.rows[0];
                 }
 
@@ -59,7 +59,7 @@ passport.serializeUser((user, done) => {
 // Deserialize user from session
 passport.deserializeUser(async (user, done) => {
     try {
-        const result = await db.query("SELECT * FROM users WHERE id = $1", [user.id]);
+        const result = await db.query("SELECT * FROM restaurants WHERE id = $1", [user.id]);
 
         if (result.rows.length > 0) {
             return done(null, result.rows[0]);

@@ -5,10 +5,10 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     try {
-        const users = await db.query(
-            `SELECT * FROM users;`
+        const restaurants = await db.query(
+            `SELECT * FROM restaurants;`
         )
-        console.log(users.rows);
+        console.log(restaurants.rows);
         res.render("home");
         
     } catch (error) {

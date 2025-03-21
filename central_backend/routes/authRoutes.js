@@ -32,8 +32,6 @@ router.get(
             req.session.user = {
               id: req.user.id,
               email: req.user.email,
-              is_paid: req.user.is_paid || 0,
-              isAdmin: req.user.isAdmin || false
             };
             console.log("✅ User session set:", req.session.user); // Check if session is stored
             req.session.save((err) => {
