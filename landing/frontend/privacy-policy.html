@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <title>DotPe</title>
+    <title>QuickServe</title>
     <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -340,10 +340,10 @@
                 Using the website/mobile application will be considered as a deemed acceptance of this policy.</p>
             <h4 class="para-title">Content & Purpose</h4>
             <p class="mb-4">This privacy policy <strong>(“Privacy Policy”)</strong> applies to your use of the domain
-                name www.dotpe.in, an internetbased portal, and our mobile application, owned/operated
-                by Dotpe Private Limited, a company duly incorporated under the provisions of the Indian Companies Act
+                name www.quickserve.in, an internetbased portal, and our mobile application, owned/operated
+                by QuickServe Private Limited, a company duly incorporated under the provisions of the Indian Companies Act
                 (hereinafter,
-                referred to as <strong>“Dotpe”</strong> or <strong>“We”</strong> or <strong>“Our”</strong> or
+                referred to as <strong>QuickServe</strong> or <strong>“We”</strong> or <strong>“Our”</strong> or
                 <strong>“Us”</strong> or <strong>“Company”</strong>). The domain name and the mobile application are
                 collectively referred to as <strong>“Website”</strong>.
             </p>
@@ -636,7 +636,7 @@
                 provided to the
                 Company in its archives for User documented herein. In case the User seeks to update or correct, his/her
                 Personal
-                Information, the User may exercise these rights by emailing the Company atcontact@dotpe.inand
+                Information, the User may exercise these rights by emailing the Company atcontact@quickserve.inand
                 communicate the change(s)
                 for updating the Company’s records.</p>
 
@@ -693,10 +693,10 @@
                 terms shall be immediately
                 informed to the designated Grievance Officer as mentioned below via in writing or through email:</p>
             <p class="mb-4">Shailaz Nag</p>
-            <p class="mb-4">Dotpe Private Limited</p>
+            <p class="mb-4">QuickServe Private Limited</p>
             <p class="mb-4"><strong>Corporate Office:</strong> 8th Floor, Tower D, Unitech World (Unitech Cyber Park),
                 Sector 39, Village Jharsa, Gurugram, Haryana – 122 001, India </p>
-            <p class="mb-4">Email id: <a href="mailto:contact@dotpe.in">contact@dotpe.in</a></p>
+            <p class="mb-4">Email id: <a href="mailto:contact@quickserve.in">contact@quickserve.in</a></p>
             <p class="mb-4">Phone: <a href="tel:0124-4570330">0124-4570330</a></p>
         </div>
     </section>
@@ -725,7 +725,7 @@
                             <div class="col-lg-6 col-sm-6">
                                 <div class="footer-list">
                                     <div class="list-item-header d-flex align-items-center justify-content-start">
-                                        <p class="title">DotPe</p>
+                                        <p class="title">QuickServe</p>
                                     </div>
                                     <div class="list-item-wrap">
                                         <ul class="list-unstyled">
@@ -758,7 +758,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="privacy-policy.html#" id="mobile_link_4" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                    DotPe
+                                    QuickServe
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="mobile_link_4">
                                     <a class="dropdown-item" href="index.html">Home</a>
@@ -817,7 +817,7 @@
                 </div>
 
                 <div class="copyright mt-3">
-                    <p>© DotPe, All rights reserved</p>
+                    <p>© QuickServe, All rights reserved</p>
                 </div>
 
             </div>
@@ -839,25 +839,28 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="request_demo_form">
+                    <form id="request_demo_form" class="form-height" onsubmit="return requestDemo();">
                         <div class="form-content">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <input type="text" class="form-control input-field" id="name" name="name"
-                                        onchange="stateHandle();" placeholder="Name">
+                                    <input type="text" class="form-control input-field" id="name"
+                                        name="name" onchange="stateHandle();" placeholder="Your Name *">
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-6 col-sm-6">
-                                    <input type="number" class="form-control input-field" id="phone" name="phone"
-                                        onchange="stateHandle();" placeholder="Mobile Number">
+                                <div class="form-group col-md-12 col-sm-12 phone-field-modal">
+                                    <span class="phone-code-field">+91</span>
+                                    <input type="text" class="form-control input-field" id="phone"
+                                        name="phone" onchange="stateHandle();"
+                                        placeholder="Mobile Number *">
                                 </div>
-                                <div class="form-group col-md-6 col-sm-6">
-                                    <input type="email" class="form-control input-field" id="email" name="email"
-                                        placeholder="Email">
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <input type="email" class="form-control input-field" id="email"
+                                        name="email" placeholder="Email Address">
                                 </div>
                             </div>
-                            <h5 class="sub-title">Select Business Category</h5>
+
+                            <!-- <h5 class="sub-title">Select Business Category</h5>
                             <div class="form-inline">
                                 <div class="form-check form-radio">
                                     <input class="form-check-input" type="radio" name="business_category"
@@ -915,20 +918,28 @@
                                         Other
                                     </label>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="tc-check">
-                                <div class="form-check">
-                                    <input type="checkbox" onclick="$(this).attr('value', this.checked ? 1 : 0)"
-                                        value="1" class="form-check-input" id="tc_condition_check" checked>
-                                    <label class="form-check-label" for="tc_condition_check">I hereby provide my consent
-                                        to receive emails, phone calls, messages and other communications from Dotpe to
-                                        understand about Dotpe's services, offerings, promotions and other related
-                                        information.</label>
+                                <div class="form-check pl-0">
+                                    <!--<input type="checkbox"
+                                        onclick="$(this).attr('value', this.checked ? 1 : 0)" value="1"
+                                        class="form-check-input" id="tc_condition_check" checked>-->
+                                    <label class="form-check-label" for="tc_condition_check">By clicking
+                                        On Continue I hereby provide my consent to receive emails,
+                                        phone calls, messages and other communications from <span
+                                            class="pere-dot">...</span><span class="full-pera">QuickServe to
+                                            understand
+                                            about QuickServe's services, offerings, promotions and other related
+                                            information.</span> <a class="more-pera"
+                                            href="javascript:void(0)">Read More</a> <a class="less-pera"
+                                            href="javascript:void(0)">Read Less</a>
+                                    </label>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-submit-btn">
-                            <button type="submit" class="btn btn-primary req-demo-btn">Request Demo</button>
+
+                        <div class="form-submit-btn form-hbtn">
+                            <button type="submit" class="btn btn-primary req-demo-btn">Continue</button>
                         </div>
                     </form>
                 </div>
@@ -1085,6 +1096,64 @@
             return false;
         }
 
+    </script>
+    <script>
+        function requestDemo() {
+            // Prevent the default form submission
+            event.preventDefault();
+    
+            // Collect form data
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+    
+            // Validate required fields
+            if (!name || !phone || !email) {
+                alert("Please fill in all required fields.");
+                return false;
+            }
+    
+            // Create the data object
+            const data = {
+                name: name,
+                phone: phone,
+                email: email,
+            };
+    
+            // Send the data to the backend using fetch API
+            fetch("/api/request-demo", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error("Failed to submit the form.");
+                    }
+                })
+                .then((result) => {
+                    console.log("Success:", result);
+    
+                    // Hide the current modal
+                    $('#requestDemoModalNew').modal('hide');
+    
+                    // Show the thank you modal
+                    $('#thankyouModal').modal('show');
+    
+                    // Reset the form
+                    document.getElementById("request_demo_form").reset();
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                    alert("An error occurred. Please try again.");
+                });
+    
+            return false; // Prevent default form submission
+        }
     </script>
 
 </body>

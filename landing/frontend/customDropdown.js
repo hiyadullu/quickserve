@@ -139,7 +139,7 @@ const selectOption = (name) => {
 
 const createBuisnessQueryElement = () => {
   var ele = document.createElement("div");
-  ele.textContent = "For New Business inquiries - +91 - 8068175626 (10 am to 8 pm). For support - help@dotpe.in";
+  ele.textContent = "For New Business inquiries - +91 - 8068175626 (10 am to 8 pm). For support - help@quickserve.in";
   console.log(renderArea, "-----------")
   renderArea.appendChild(ele);
 }

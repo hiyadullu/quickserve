@@ -1,6 +1,6 @@
-# Quick Serve
+# QuickServe
 
-Quick Serve is an ecosystem where cafes and restaurants can onboard and access a suite of services. It provides digital menus, online ordering, payment solutions, and analytics to streamline operations and enhance customer experience.
+QuickServe is an ecosystem where cafes and restaurants can onboard and access a suite of services. It provides digital menus, online ordering, payment solutions, and analytics to streamline operations and enhance customer experience.
 
 ## Features
 

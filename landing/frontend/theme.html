@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>DotPe</title>
+    <title>QuickServe</title>
     <link rel="icon" href="https://cdn.dotpe.in/dotpe-website-live/images/favicon-32x32.png" type="image/png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">    
@@ -1296,7 +1296,7 @@
                             <div class="col-lg-6 col-sm-6">
                                 <div class="footer-list">
                                     <div class="list-item-header d-flex align-items-center justify-content-start">
-                                        <p class="title">DotPe</p>
+                                        <p class="title">QuickServe</p>
                                     </div>
                                     <div class="list-item-wrap">
                                         <ul class="list-unstyled">
@@ -1379,7 +1379,7 @@
                     </a>
                 </div>
                 <div class="copyright mt-3">
-                    <p>© DotPe, All rights reserved</p>
+                    <p>© QuickServe, All rights reserved</p>
                 </div>
                 <div class="mobile-footer-direct-links mt-4">
                     <ul class="list-unstyled p-0 m-0">
@@ -1412,7 +1412,7 @@
                 </div>
 
                 <div class="copyright mt-3">
-                    <p>© DotPe, All rights reserved</p>
+                    <p>© QuickServe, All rights reserved</p>
                 </div>
 
             </div>
@@ -1432,83 +1432,107 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="request_demo_form">
+                <form id="request_demo_form" class="form-height" onsubmit="return requestDemo();">
                     <div class="form-content">
-                        <div class="form-row">                            
+                        <div class="form-row">
                             <div class="form-group col-md-12">
-                                <input type="text" class="form-control input-field" id="name" name="name" onchange="stateHandle();" placeholder="Name">
+                                <input type="text" class="form-control input-field" id="name"
+                                    name="name" onchange="stateHandle();" placeholder="Your Name *">
                             </div>
                         </div>
-                        <div class="form-row">  
-                            <div class="form-group col-md-6 col-sm-6">
-                                <input type="number" class="form-control input-field" id="phone" name="phone" onchange="stateHandle();" placeholder="Mobile Number">
+                        <div class="form-row">
+                            <div class="form-group col-md-12 col-sm-12 phone-field-modal">
+                                <span class="phone-code-field">+91</span>
+                                <input type="text" class="form-control input-field" id="phone"
+                                    name="phone" onchange="stateHandle();"
+                                    placeholder="Mobile Number *">
                             </div>
-                            <div class="form-group col-md-6 col-sm-6">                                
-                                <input type="email" class="form-control input-field" id="email" name="email" placeholder="Email">
+                            <div class="form-group col-md-12 col-sm-12">
+                                <input type="email" class="form-control input-field" id="email"
+                                    name="email" placeholder="Email Address">
                             </div>
                         </div>
-                        
-                        <h5 class="sub-title">Select Business Category</h5>
-                         <div class="form-inline">
+
+                        <!-- <h5 class="sub-title">Select Business Category</h5>
+                        <div class="form-inline">
                             <div class="form-check form-radio">
-                                <input class="form-check-input" type="radio" name="business_category" id="exampleRadios1" value="Fashion & Accessories" checked>
+                                <input class="form-check-input" type="radio" name="business_category"
+                                    id="exampleRadios1" value="Fashion & Accessories" checked>
                                 <label class="form-check-label" for="exampleRadios1">
                                     Fashion & Accessories
                                 </label>
                             </div>
                             <div class="form-check form-radio">
-                                <input class="form-check-input" type="radio" name="business_category" id="exampleRadios2" value="Electronics">
+                                <input class="form-check-input" type="radio" name="business_category"
+                                    id="exampleRadios2" value="Electronics">
                                 <label class="form-check-label" for="exampleRadios2">
                                     Electronics
                                 </label>
                             </div>
                             <div class="form-check form-radio">
-                                <input class="form-check-input" type="radio" name="business_category" id="exampleRadios3" value="Home Decor & Furnishing">
+                                <input class="form-check-input" type="radio" name="business_category"
+                                    id="exampleRadios3" value="Home Decor & Furnishing">
                                 <label class="form-check-label" for="exampleRadios3">
                                     Home Decor & Furnishing
                                 </label>
                             </div>
                             <div class="form-check form-radio">
-                                <input class="form-check-input" type="radio" name="business_category" id="exampleRadios4" value="Arts and Handicrafts">
+                                <input class="form-check-input" type="radio" name="business_category"
+                                    id="exampleRadios4" value="Arts and Handicrafts">
                                 <label class="form-check-label" for="exampleRadios4">
                                     Arts and Handicrafts
                                 </label>
                             </div>
                             <div class="form-check form-radio">
-                                <input class="form-check-input" type="radio" name="business_category" id="exampleRadios5" value="Health & Wellness">
+                                <input class="form-check-input" type="radio" name="business_category"
+                                    id="exampleRadios5" value="Health & Wellness">
                                 <label class="form-check-label" for="exampleRadios5">
                                     Health & Wellness
                                 </label>
                             </div>
                             <div class="form-check form-radio">
-                                <input class="form-check-input" type="radio" name="business_category" id="exampleRadios6" value="Food and Beverage">
+                                <input class="form-check-input" type="radio" name="business_category"
+                                    id="exampleRadios6" value="Food and Beverage">
                                 <label class="form-check-label" for="exampleRadios6">
                                     Food and Beverage
                                 </label>
                             </div>
                             <div class="form-check form-radio">
-                                <input class="form-check-input" type="radio" name="business_category" id="exampleRadios7" value="Supermarket & Groceries">
+                                <input class="form-check-input" type="radio" name="business_category"
+                                    id="exampleRadios7" value="Supermarket & Groceries">
                                 <label class="form-check-label" for="exampleRadios7">
                                     Supermarket & Groceries
                                 </label>
                             </div>
                             <div class="form-check form-radio">
-                                <input class="form-check-input" type="radio" name="business_category" id="exampleRadios8" value="Other">
+                                <input class="form-check-input" type="radio" name="business_category"
+                                    id="exampleRadios8" value="Other">
                                 <label class="form-check-label" for="exampleRadios8">
                                     Other
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="tc-check">
-                            <div class="form-check">
-                               <input type="checkbox" onclick="$(this).attr('value', this.checked ? 1 : 0)" value="1" class="form-check-input" id="tc_condition_check" checked>
-                                <label class="form-check-label" for="tc_condition_check">I hereby provide my consent to receive emails, phone calls, messages and other communications from Dotpe to understand about Dotpe's services, offerings, promotions and other related information.</label>
+                            <div class="form-check pl-0">
+                                <!--<input type="checkbox"
+                                    onclick="$(this).attr('value', this.checked ? 1 : 0)" value="1"
+                                    class="form-check-input" id="tc_condition_check" checked>-->
+                                <label class="form-check-label" for="tc_condition_check">By clicking
+                                    On Continue I hereby provide my consent to receive emails,
+                                    phone calls, messages and other communications from <span
+                                        class="pere-dot">...</span><span class="full-pera">QuickServe to
+                                        understand
+                                        about QuickServe's services, offerings, promotions and other related
+                                        information.</span> <a class="more-pera"
+                                        href="javascript:void(0)">Read More</a> <a class="less-pera"
+                                        href="javascript:void(0)">Read Less</a>
+                                </label>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="form-submit-btn">
-                        <button type="submit" class="btn btn-primary req-demo-btn" >Request Demo</button>
+
+                    <div class="form-submit-btn form-hbtn">
+                        <button type="submit" class="btn btn-primary req-demo-btn">Continue</button>
                     </div>
                 </form>
             </div>
@@ -1695,6 +1719,64 @@
             }
             
          </script> 
+         <script>
+            function requestDemo() {
+                // Prevent the default form submission
+                event.preventDefault();
+        
+                // Collect form data
+                const name = document.getElementById("name").value;
+                const phone = document.getElementById("phone").value;
+                const email = document.getElementById("email").value;
+        
+                // Validate required fields
+                if (!name || !phone || !email) {
+                    alert("Please fill in all required fields.");
+                    return false;
+                }
+        
+                // Create the data object
+                const data = {
+                    name: name,
+                    phone: phone,
+                    email: email,
+                };
+        
+                // Send the data to the backend using fetch API
+                fetch("/api/request-demo", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                })
+                    .then((response) => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error("Failed to submit the form.");
+                        }
+                    })
+                    .then((result) => {
+                        console.log("Success:", result);
+        
+                        // Hide the current modal
+                        $('#requestDemoModalNew').modal('hide');
+        
+                        // Show the thank you modal
+                        $('#thankyouModal').modal('show');
+        
+                        // Reset the form
+                        document.getElementById("request_demo_form").reset();
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                        alert("An error occurred. Please try again.");
+                    });
+        
+                return false; // Prevent default form submission
+            }
+        </script>
     
 </body>
 
