@@ -56,7 +56,7 @@ body {
 
 .explore-btn {
     background-color: #ffffff;
-    color: #ff4873;
+    color: #303bd0;
     padding: 12px 25px;
     border: none;
     font-size: 18px;
@@ -71,7 +71,7 @@ body {
 }
 
 .explore-btn:hover {
-    background: #ff597b;
+    background: #fff700;
     color: #fff;
     transform: scale(1.05);
 }
