@@ -1,25 +1,43 @@
-require('dotenv').config();
-console.log("Database Password:", process.env.PG_PASSWORD);
-
-const express = require('express');
-const pool = require('./db');
+import express from 'express';
+import env from "dotenv";
+import bodyParser from "body-parser";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const port = process.env.PORT || 4000;
+env.config();
 
-app.get('/test-db', async (req, res) => {
+// Create __dirname equivalent for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "../frontend/views/pages"));
+
+app.use(express.static(path.join(__dirname, "../frontend")));
+
+// Middleware for parsing request bodies
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.get('/', async (req, res) => {
     try {
-        const result = await pool.query('SELECT NOW()');
-        res.json({ message: "Database connected!", time: result.rows[0].now });
+        res.redirect('/customer');
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
-process.env.PG_PASSWORD = "your_actual_password_here";
-console.log("Database Password:", process.env.PG_PASSWORD);
 
+app.get('/customer', async (req, res) => {
+    try {
+        res.render('customer');
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Customer server running on port http://localhost:${port}`);
 });
 

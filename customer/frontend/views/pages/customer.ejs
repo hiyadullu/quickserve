@@ -346,7 +346,7 @@
         }
 
         .quantity-btn:hover {
-            background-color: #7c9c30;
+            background-color: #40a5b5;
             transform: scale(1.05);
         }
 
@@ -677,7 +677,8 @@
                 const deliveryButton = document.getElementById('deliveryButton');
                 deliveryButton.classList.add('delivery-animation');
 
-                // Remove animation class after it completes
+                // Remove animat
+                // ion class after it completes
                 setTimeout(() => {
                     deliveryButton.classList.remove('delivery-animation');
                 }, 600);
@@ -741,7 +742,7 @@
                 if (item.querySelector('h3').textContent === itemName) {
                     menuItem = item;
                 }
-            });
+            }); 
 
             // Update cart data structure
             if (!cart[itemName]) {
@@ -753,6 +754,8 @@
             }
 
             cart[itemName].quantity += 1;
+            console.log(cart[itemName]);
+
             qtyElement.textContent = cart[itemName].quantity;
 
             // Apply popover animation to the menu item
@@ -849,6 +852,8 @@
                 alert('Please add items to your cart before placing an order.');
                 return;
             }
+
+            console.log(cart[0]);
 
             alert('Thank you for your order! Your food will be prepared shortly.');
 
