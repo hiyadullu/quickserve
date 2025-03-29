@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"="width=device-width, initial-scale=1.0">
     <title>Quick Serve Restaurant</title>
     <style>
         /* Define color palette */
@@ -731,20 +731,19 @@
         }
 
         function incrementItem(itemName, price) {
-            // Get current item count element
+            const customerId = "12345"; // Replace with dynamic customer ID if available
             const itemId = itemName.replace(/\s+/g, '-');
             const qtyElement = document.getElementById(`qty-${itemId}`);
 
-            // Find the menu item element
             const menuItems = document.querySelectorAll('.menu-item');
             let menuItem;
             menuItems.forEach(item => {
                 if (item.querySelector('h3').textContent === itemName) {
                     menuItem = item;
                 }
-            }); 
+            });
 
-            // Update cart data structure
+            // Initialize the item in the cart if it doesn't exist
             if (!cart[itemName]) {
                 cart[itemName] = {
                     name: itemName,
@@ -753,12 +752,11 @@
                 };
             }
 
+            // Increment the quantity
             cart[itemName].quantity += 1;
-            console.log(cart[itemName]);
-
             qtyElement.textContent = cart[itemName].quantity;
 
-            // Apply popover animation to the menu item
+            // Add animation to the menu item
             if (menuItem) {
                 menuItem.classList.add('item-added');
                 setTimeout(() => {
@@ -766,34 +764,46 @@
                 }, 400);
             }
 
-            // Show notification
-            showCartNotification(itemName);
+            // Save the updated cart to localStorage
+            saveCartToLocalStorage(customerId);
 
-            // Update cart display with flash effect
+            showCartNotification(itemName);
             updateOrderSummary();
             flashCartEffect();
         }
 
         function decrementItem(itemName, price) {
-            // Skip if item not in cart or at zero
+            const customerId = "12345"; // Replace with dynamic customer ID if available
             if (!cart[itemName] || cart[itemName].quantity <= 0) return;
 
-            // Get current item count element
             const itemId = itemName.replace(/\s+/g, '-');
             const qtyElement = document.getElementById(`qty-${itemId}`);
 
-            // Update cart
+            // Decrement the quantity
             cart[itemName].quantity -= 1;
             qtyElement.textContent = cart[itemName].quantity;
 
-            // Remove item if quantity is zero
+            // Remove the item from the cart if the quantity is 0
             if (cart[itemName].quantity === 0) {
                 delete cart[itemName];
             }
 
-            // Update cart display with flash effect
+            // Save the updated cart to localStorage
+            saveCartToLocalStorage(customerId);
+
             updateOrderSummary();
             flashCartEffect();
+        }
+
+        // Helper function to save the cart to localStorage
+        function saveCartToLocalStorage(customerId) {
+            // Filter out items with quantity 0 to keep the cart clean
+            const filteredCart = Object.fromEntries(
+                Object.entries(cart).filter(([_, item]) => item.quantity > 0)
+            );
+
+            localStorage.setItem(`cart-${customerId}`, JSON.stringify(filteredCart));
+            console.log(localStorage.getItem(`cart-${customerId}`));
         }
 
         function flashCartEffect() {
@@ -845,7 +855,8 @@
             orderTotalSpan.textContent = `$${total.toFixed(2)}`;
         }
 
-        function placeOrder() {
+        async function placeOrder() {
+            const customerId = "12345"; // Replace with dynamic customer ID if available
             const itemCount = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
 
             if (itemCount === 0) {
@@ -853,21 +864,48 @@
                 return;
             }
 
-            console.log(cart[0]);
+            // Prepare order data dynamically
+            const orderData = {
+                customerId: customerId,
+                orderMethod: orderMethod,
+                items: Object.values(cart).map(item => ({
+                    name: item.name,
+                    price: item.price,
+                    quantity: item.quantity
+                })),
+                total: Object.values(cart).reduce((sum, item) => sum + item.price * item.quantity, 0)
+            };
 
-            alert('Thank you for your order! Your food will be prepared shortly.');
+            try {
+                // Send order data to the backend
+                const response = await fetch("/api/orders", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(orderData)
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    alert('Order placed successfully!');
+                    window.location.href = `/payment?orderId=${result.orderId}`; // Redirect to payment page
+                } else {
+                    alert("Error processing order!");
+                }
+            } catch (error) {
+                console.error("Error placing order:", error);
+                alert("An error occurred while placing your order. Please try again.");
+            }
 
             // Reset cart and update display
             cart = {};
-
-            // Reset all quantity displays to zero
             const allQuantityElements = document.querySelectorAll('.quantity');
             allQuantityElements.forEach(el => {
                 el.textContent = '0';
             });
-
             updateOrderSummary();
         }
     </script>
+    
+    
 </body>
 </html>

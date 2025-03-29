@@ -23,18 +23,33 @@ app.use(express.json());
 
 app.get('/', async (req, res) => {
     try {
-        res.redirect('/customer');
+        res.render('customer');
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
 
-app.get('/customer', async (req, res) => {
+app.post("/api/orders", async (req, res) => {
+    const { orderData } = req.body;
+
     try {
-        res.render('customer');
+        const result = await pool.query(
+            "INSERT INTO orders (items, total, status) VALUES ($1, $2, $3) RETURNING id",
+            [JSON.stringify(items), total, "pending"]
+        );
+
+        res.json({ success: true, orderId: result.rows[0].id });
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        console.error("Order save error:", err);
+        res.status(500).json({ success: false, error: err.message });
     }
+});
+
+app.get("/process-payment", async (req, res) => {
+    const { orderId } = req.query;
+
+    // Example: Redirect to Razorpay
+    res.redirect(`https://payment-gateway.com/pay?orderId=${orderId}`);
 });
 
 app.listen(port, () => {
