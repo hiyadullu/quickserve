@@ -1,12 +1,21 @@
 import env from "dotenv";
 import express from "express";
-import db from "./db.js"
+import cors from "cors";
+import db from "./db.js";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Startup log
 console.log("🚀 Server script is starting...");
+
+// Enable CORS
+app.use(cors());
+
+// If you want to allow only specific origins:
+app.use(cors({
+    origin: "http://127.0.0.1:5500" // Replace with your frontend's origin
+}));
 
 // Middleware
 app.use(express.json());
@@ -25,6 +34,12 @@ try {
 app.get("/", (req, res) => {
     console.log("✅ Root route accessed");
     res.send("✅ Server is running!");
+});
+
+// Auth route
+app.post("/auth/login", (req, res) => {
+    // Your login logic here
+    res.json({ token: "example-token" });
 });
 
 // Start the server
