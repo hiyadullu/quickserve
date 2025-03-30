@@ -1,9 +1,15 @@
 const express = require("express");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const pool = require("../config/db");
 
 const router = express.Router();
+
+async function hashPassword(plainPassword) {
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
+    console.log("Hashed Password:", hashedPassword);
+}
 
 // Register Route
 router.post("/register", async (req, res) => {
@@ -17,7 +23,7 @@ router.post("/register", async (req, res) => {
         }
 
         // Hash password
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await hashPassword(password);
 
         // Insert user into database
         const newUser = await pool.query(
