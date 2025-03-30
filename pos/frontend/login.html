@@ -39,7 +39,7 @@
                 const data = await response.json();
                 if (response.ok) {
                     localStorage.setItem("token", data.token);
-                    window.location.href = "dashboard.html"; // Redirect to dashboard
+                    window.location.href = "dashboardnew.html"; // Redirect to dashboard
                 } else {
                     document.getElementById("error-message").innerText = data.error;
                 }
