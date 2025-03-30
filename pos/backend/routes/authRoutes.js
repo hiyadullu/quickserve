@@ -1,11 +1,15 @@
-import express from "express";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import pool from "../config/db.js"; // Add .js extension
-import authMiddleware from "../middleware/authMiddleware.js"; // Add .js extension
-
+const express = require("express");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const pool = require("../config/db");
 
 const router = express.Router();
+
+async function hashPassword(plainPassword) {
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
+    console.log("Hashed Password:", hashedPassword);
+}
 
 // Register Route
 router.post("/register", async (req, res) => {
@@ -19,7 +23,7 @@ router.post("/register", async (req, res) => {
         }
 
         // Hash password
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await hashPassword(password);
 
         // Insert user into database
         const newUser = await pool.query(
@@ -35,7 +39,6 @@ router.post("/register", async (req, res) => {
 });
 
 // Login Route
-// Login Route
 router.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
@@ -43,28 +46,14 @@ router.post("/login", async (req, res) => {
         // Check if user exists
         const userQuery = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
         if (userQuery.rows.length === 0) {
-            console.log("❌ User not found in DB");
             return res.status(400).json({ error: "Invalid email or password" });
         }
 
         const user = userQuery.rows[0];
 
-        console.log("✅ User found:", user.email);
-
-        // Debugging: Log stored password
-        console.log("Stored hashed password:", user.password);
-        console.log("Entered password:", password);
-
-        // Hash entered password before comparing (for debugging only)
-        const hashedEnteredPassword = await bcrypt.hash(password, 10);
-        console.log("Hashed entered password (for debugging):", hashedEnteredPassword);
-
         // Compare password
         const isMatch = await bcrypt.compare(password, user.password);
-        console.log("Password match result:", isMatch);
-
         if (!isMatch) {
-            console.log("❌ Password does not match");
             return res.status(400).json({ error: "Invalid email or password" });
         }
 
@@ -81,6 +70,5 @@ router.post("/login", async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 });
-
 
 module.exports = router;

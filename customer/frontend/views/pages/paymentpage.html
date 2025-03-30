@@ -286,16 +286,13 @@
             <p id="confirmationMessage"></p>
         </div>
 
-        <a href="index.html" class="back-button">← Back to Menu</a>
+        <a href="quickserve.html" class="back-button">← Back to Menu</a>
     </div>
 
     <script>
         // Get order details from localStorage or URL parameters
+        // This is overriding your localStorage value with "$32.97"
         window.onload = function() {
-            // For demo, just show a sample total
-            // In real implementation, get this from previous page
-            document.getElementById('orderTotalDisplay').innerText = "Total: $32.97";
-            
             // Initialize with UPI option selected
             selectPaymentMethod('upi');
         };

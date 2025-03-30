@@ -37,55 +37,15 @@ app.get("/", (req, res) => {
     res.send("✅ Server is running!");
 });
 
-// Improved Auth route that validates against database
-app.post("/auth/login", async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        
-        // Input validation
-        if (!email || !password) {
-            return res.status(400).json({ error: "Email and password are required" });
-        }
-        
-        // Query the database to find the user
-        const user = await db.getUserByEmail(email);
-        
-        // Check if user exists
-        if (!user) {
-            return res.status(401).json({ error: "Invalid credentials" });
-        }
-        
-        // Check if password matches
-        const isPasswordValid = await db.verifyPassword(password, user.password);
-        
-        if (!isPasswordValid) {
-            return res.status(401).json({ error: "Invalid credentials" });
-        }
-        
-        // Generate a token
-        const token = generateToken(user.id);
-        
-        // Return the token and user info (excluding password)
-        const { password: _, ...userWithoutPassword } = user;
-        res.json({ 
-            token, 
-            user: userWithoutPassword
-        });
-    } catch (error) {
-        console.error("Login error:", error);
-        res.status(500).json({ error: "An error occurred during login" });
-    }
+// Auth route
+app.post("/auth/login", (req, res) => {
+    // Your login logic here
+    res.json({ token: "example-token" });
 });
-
-// Function to generate a token
-function generateToken(userId) {
-    // In a real app, use JWT or another secure token method
-    return Buffer.from(userId + '-' + Date.now()).toString('base64');
-}
 
 // Start the server
 app.listen(PORT, () => {
     console.log(
-        `Server running on port ${PORT}`
+        `🚀 Server running on port ${PORT}`
     );
 });
