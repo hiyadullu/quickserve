@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickServe Dashboard</title>
+    <style>
+    /* Page Transition Animations */
+    .page-exit {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        animation: slideOutLeft 0.5s forwards;
+        z-index: 1;
+    }
+    
+    .page-enter {
+        animation: slideInRight 0.5s forwards;
+        z-index: 2;
+    }
+    
+    @keyframes slideOutLeft {
+        0% { transform: translateX(0); opacity: 1; }
+        100% { transform: translateX(-30%); opacity: 0; }
+    }
+    
+    @keyframes slideInRight {
+        0% { transform: translateX(30%); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+    }
+    
+    /* Optional: Add these classes to create different transition directions */
+    .slide-up-exit { animation: slideOutDown 0.5s forwards; }
+    .slide-up-enter { animation: slideInUp 0.5s forwards; }
+    
+    @keyframes slideOutDown {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(30%); opacity: 0; }
+    }
+    
+    @keyframes slideInUp {
+        0% { transform: translateY(-30%); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            display: flex;
+            background-color: #E0E1DD;
+            color: #ffffff;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: #0D1B2A;
+            padding: 20px 0;
+            height: 100vh;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            font-size: 24px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #1B263B;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0 10px;
+        }
+
+        .sidebar li {
+            padding: 15px 20px;
+            margin: 8px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar li:hover {
+            background-color: #1B263B;
+            transform: translateX(5px);
+        }
+
+        .sidebar li.active {
+            background-color: #778DA9;
+            font-weight: bold;
+        }
+
+        .sidebar li.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            background-color: #1B263B;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #778DA9;
+        }
+
+        .navbar h2 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .navbar input {
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: none;
+            background-color: #0D1B2A;
+            color: #fff;
+            width: 250px;
+            font-size: 14px;
+        }
+
+        .navbar input::placeholder {
+            color: #778DA9;
+        }
+
+        .navbar input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #778DA9;
+            width: 280px;
+        }
+
+        /* Orders Container */
+        .orders-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Order Section */
+        .order-section {
+            background-color: #0D1B2A;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: 200px;
+        }
+
+        .order-section h3 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .count {
+            background-color: #778DA9;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        /* Order Cards */
+        .order-card {
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .order-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .order-card p {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .order-card p:first-child {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Order Card Colors */
+        .red {
+            background-color: #d90429;
+            border-left: 5px solid #ef233c;
+        }
+
+        .orange {
+            background-color: #f8961e;
+            border-left: 5px solid #f9c74f;
+            color: #333;
+        }
+
+        .yellow {
+            background-color: #f8961e;
+            border-left: 5px solid #f9c74f;
+            color: #333;
+        }
+
+        .green {
+            background-color: #90be6d;
+            border-left: 5px solid #b5e48c;
+            color: #333;
+        }
+
+        .gray {
+            background-color: #90be6d;
+            border-left: 5px solid #b5e48c;
+            color: #333;
+        }
+
+        /* Select Styles */
+        .order-status {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: inherit;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .order-status:focus {
+            outline: none;
+        }
+
+        /* Button Animation Classes */
+        .btn-animated {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .btn-animated:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+
+        .btn-animated:hover:before {
+            left: 100%;
+        }
+
+        .btn-animated:active {
+            transform: scale(0.95);
+        }
+
+        /* Action Button */
+        .action-btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .red .action-btn {
+            background-color: #ef233c;
+        }
+
+        .orange .action-btn, .yellow .action-btn {
+            background-color: #f9c74f;
+            color: #333;
+        }
+
+        .green .action-btn, .gray .action-btn {
+            background-color: #b5e48c;
+            color: #333;
+        }
+
+        .action-btn:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Pulse Animation for New Orders */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(217, 4, 41, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(217, 4, 41, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(217, 4, 41, 0); }
+        }
+
+        .red {
+            animation: pulse 2s infinite;
+        }
+
+        /* Slide Animation for Processing Orders */
+        @keyframes slideInRight {
+            0% { transform: translateX(20px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .orange, .yellow {
+            animation: slideInRight 0.5s ease-out;
+        }
+
+        /* Fade Animation for Processed Orders */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .green, .gray {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        /* Card Movement Animations */
+        @keyframes moveRight {
+            0% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(200px); opacity: 0; }
+            100% { transform: translateX(400px); opacity: 0; }
+        }
+
+        @keyframes moveLeft {
+            0% { transform: translateX(400px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes moveUp {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-20px); opacity: 0; }
+            100% { transform: translateY(-40px); opacity: 0; }
+        }
+
+        @keyframes dropIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            60% { transform: translateY(10px); }
+            80% { transform: translateY(-5px); }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .moving-out {
+            animation: moveRight 0.8s forwards;
+            pointer-events: none;
+        }
+
+        .moving-in {
+            animation: dropIn 0.8s forwards;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #0D1B2A;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            color: #778DA9;
+            font-style: italic;
+        }
+
+        /* Time stamp */
+        .timestamp {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>QuickServe</h2>
+        <ul>
+            <li class="active">Overview</li>
+            <li>Delivered</li>
+            <li>Declined</li>
+            <li>Settings</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <!-- Navbar -->
+        <div class="navbar">
+            <h2>My Orders</h2>
+            <input type="text" placeholder="Search order...">
+        </div>
+
+        <!-- Order Sections -->
+        <div class="orders-container">
+            <!-- New Orders -->
+            <div class="order-section" id="new-orders-section">
+                <h3>NEW ORDERS <span class="count" id="new-count">3</span></h3>
+                <div class="order-card red" id="order-1235">
+                    <p>#1235</p>
+                    <p>2 x Aloo Parantha, 3 x French Fries, 1 x Burger +2 more</p>
+                    <button class="action-btn btn-animated accept-btn" data-order-id="1235">Accept</button>
+                    <button class="action-btn btn-animated decline-btn" style="background-color: rgba(255, 255, 255, 0.1); margin-top: 5px;" data-order-id="1235">Decline</button>
+                </div>
+                <div class="order-card red" id="order-1236">
+                    <p>#1236</p>
+                    <p>3 x French Fries, 1 x Burger +2 more</p>
+                    <button class="action-btn btn-animated accept-btn" data-order-id="1236">Accept</button>
+                    <button class="action-btn btn-animated decline-btn" style="background-color: rgba(255, 255, 255, 0.1); margin-top: 5px;" data-order-id="1236">Decline</button>
+                </div>
+                <div class="order-card red" id="order-1237">
+                    <p>#1237</p>
+                    <p>1 x Pizza, 2 x Coke, 1 x Garlic Bread</p>
+                    <button class="action-btn btn-animated accept-btn" data-order-id="1237">Accept</button>
+                    <button class="action-btn btn-animated decline-btn" style="background-color: rgba(255, 255, 255, 0.1); margin-top: 5px;" data-order-id="1237">Decline</button>
+                </div>
+            </div>
+
+            <!-- Processing Orders -->
+            <div class="order-section" id="processing-orders-section">
+                <h3>PROCESSING <span class="count" id="processing-count">2</span></h3>
+                <div class="order-card orange" id="order-3234">
+                    <p>#3234</p>
+                    <p>2 x Aloo Parantha, 3 x French Fries, 1 x Burger</p>
+                    <button class="action-btn btn-animated ready-btn" data-order-id="3234">Mark as Ready</button>
+                </div>
+                <div class="order-card yellow" id="order-3235">
+                    <p>#3235</p>
+                    <p>3 x French Fries, 1 x Burger</p>
+                    <button class="action-btn btn-animated ready-btn" data-order-id="3235">Mark as Ready</button>
+                </div>
+                <div id="processing-placeholder"></div>
+            </div>
+
+            <!-- Processed Orders -->
+            <div class="order-section" id="processed-orders-section">
+                <h3>PROCESSED <span class="count" id="processed-count">2</span></h3>
+                <div class="order-card green" id="order-2234">
+                    <p>#2234</p>
+                    <p>Processed at 12:15 PM</p>
+                    <button class="action-btn btn-animated delivered-btn" data-order-id="2234">Delivered</button>
+                </div>
+                <div class="order-card green" id="order-2235">
+                    <p>#2235</p>
+                    <p>Processed at 12:20 PM</p>
+                    <button class="action-btn btn-animated delivered-btn" data-order-id="2235">Delivered</button>
+                </div>
+                <div id="processed-placeholder"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Order status updated!</div>
+
+    <script>
+        // Update count badges
+        function updateCounts() {
+            document.getElementById('new-count').textContent = document.querySelectorAll('#new-orders-section .order-card').length;
+            document.getElementById('processing-count').textContent = document.querySelectorAll('#processing-orders-section .order-card').length;
+            document.getElementById('processed-count').textContent = document.querySelectorAll('#processed-orders-section .order-card').length;
+            
+            // Check for empty sections
+            checkEmptyState('new-orders-section');
+            checkEmptyState('processing-orders-section');
+            checkEmptyState('processed-orders-section');
+        }
+        
+        // Check if a section is empty and add a placeholder
+        function checkEmptyState(sectionId) {
+            const section = document.getElementById(sectionId);
+            const cards = section.querySelectorAll('.order-card');
+            const existingEmpty = section.querySelector('.empty-state');
+            
+            if (cards.length === 0 && !existingEmpty) {
+                const emptyMsg = document.createElement('div');
+                emptyMsg.className = 'empty-state';
+                emptyMsg.textContent = 'No orders in this section';
+                section.appendChild(emptyMsg);
+            } else if (cards.length > 0 && existingEmpty) {
+                existingEmpty.remove();
+            }
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Get current time
+        function getCurrentTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            
+            return `${hours}:${minutes} ${ampm}`;
+        }
+
+        // Move order from new to processing
+        function moveToProcessing(orderId) {
+            const orderCard = document.getElementById(`order-${orderId}`);
+            const orderNumber = orderId;
+            const orderItems = orderCard.querySelectorAll('p')[1].textContent;
+            
+            // Animate the card moving out
+            orderCard.classList.add('moving-out');
+            
+            setTimeout(() => {
+                // Remove the original card
+                orderCard.remove();
+                
+                // Create a new card in the processing section
+                const processingCard = document.createElement('div');
+                processingCard.className = 'order-card orange';
+                processingCard.id = `order-${orderNumber}`;
+                processingCard.style.opacity = '0';
+                processingCard.innerHTML = `
+                    <p>#${orderNumber}</p>
+                    <p>${orderItems}</p>
+                    <button class="action-btn btn-animated ready-btn" data-order-id="${orderNumber}">Mark as Ready</button>
+                `;
+                
+                // Insert at the top of processing section
+                const processingSection = document.getElementById('processing-orders-section');
+                const processingPlaceholder = document.getElementById('processing-placeholder');
+                processingSection.insertBefore(processingCard, processingPlaceholder);
+                
+                // Animate the new card coming in
+                setTimeout(() => {
+                    processingCard.style.opacity = '1';
+                    processingCard.style.animation = 'dropIn 0.8s forwards';
+                    
+                    // Add event listener to the new button
+                    processingCard.querySelector('.ready-btn').addEventListener('click', function() {
+                        const orderId = this.getAttribute('data-order-id');
+                        moveToProcessed(orderId);
+                    });
+                    
+                    // Update counts
+                    updateCounts();
+                    
+                    // Show notification
+                    showToast(`Order #${orderNumber} moved to processing`);
+                }, 100);
+            }, 800);
+        }
+
+        // Move order from processing to processed
+        function moveToProcessed(orderId) {
+            const orderCard = document.getElementById(`order-${orderId}`);
+            const orderNumber = orderId;
+            
+            // Animate the card moving out
+            orderCard.classList.add('moving-out');
+            
+            setTimeout(() => {
+                // Remove the original card
+                orderCard.remove();
+                
+                // Create a new card in the processed section
+                const processedCard = document.createElement('div');
+                processedCard.className = 'order-card green';
+                processedCard.id = `order-${orderNumber}`;
+                processedCard.style.opacity = '0';
+                processedCard.innerHTML = `
+                    <p>#${orderNumber}</p>
+                    <p>Processed at ${getCurrentTime()}</p>
+                    <button class="action-btn btn-animated delivered-btn" data-order-id="${orderNumber}">Delivered</button>
+                `;
+                
+                // Insert at the top of processed section
+                const processedSection = document.getElementById('processed-orders-section');
+                const processedPlaceholder = document.getElementById('processed-placeholder');
+                processedSection.insertBefore(processedCard, processedPlaceholder);
+                
+                // Animate the new card coming in
+                setTimeout(() => {
+                    processedCard.style.opacity = '1';
+                    processedCard.style.animation = 'dropIn 0.8s forwards';
+                    
+                    // Add event listener to the new button
+                    processedCard.querySelector('.delivered-btn').addEventListener('click', function() {
+                        const orderId = this.getAttribute('data-order-id');
+                        removeOrder(orderId);
+                    });
+                    
+                    // Update counts
+                    updateCounts();
+                    
+                    // Show notification
+                    showToast(`Order #${orderNumber} is ready for delivery`);
+                }, 100);
+            }, 800);
+        }
+
+        // Remove order (delivered)
+        function removeOrder(orderId) {
+            const orderCard = document.getElementById(`order-${orderId}`);
+            
+            // Animate the card fading out
+            orderCard.style.animation = 'moveUp 0.6s forwards';
+            
+            setTimeout(() => {
+                orderCard.remove();
+                updateCounts();
+                showToast(`Order #${orderId} delivered`);
+            }, 600);
+        }
+
+        // Add ripple effect to buttons
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('action-btn')) {
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.width = '1px';
+                ripple.style.height = '1px';
+                ripple.style.borderRadius = '50%';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.animation = 'ripple 0.6s linear';
+                
+                e.target.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            }
+        });
+
+        // Add hover effect to sidebar items
+        document.querySelectorAll('.sidebar li').forEach(item => {
+            item.addEventListener('mouseover', function() {
+                this.style.paddingLeft = '25px';
+            });
+            item.addEventListener('mouseout', function() {
+                this.style.paddingLeft = '20px';
+            });
+        });
+
+        // Event delegation for all buttons
+        document.addEventListener('click', function(e) {
+            // Accept button
+            if (e.target.classList.contains('accept-btn')) {
+                const orderId = e.target.getAttribute('data-order-id');
+                moveToProcessing(orderId);
+            }
+            
+            // Decline button
+            if (e.target.classList.contains('decline-btn')) {
+                const orderId = e.target.getAttribute('data-order-id');
+                const orderCard = document.getElementById(`order-${orderId}`);
+                orderCard.style.animation = 'moveUp 0.6s forwards';
+                
+                setTimeout(() => {
+                    orderCard.remove();
+                    updateCounts();
+                    showToast(`Order #${orderId} declined`);
+                }, 600);
+            }
+            
+            // Ready button
+            if (e.target.classList.contains('ready-btn')) {
+                const orderId = e.target.getAttribute('data-order-id');
+                moveToProcessed(orderId);
+            }
+            
+            // Delivered button
+            if (e.target.classList.contains('delivered-btn')) {
+                const orderId = e.target.getAttribute('data-order-id');
+                removeOrder(orderId);
+            }
+        });
+
+        // Keyframes for ripple animation
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes ripple {
+                to {
+                    transform: scale(100);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize
+        updateCounts();
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
