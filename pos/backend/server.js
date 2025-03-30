@@ -2,6 +2,7 @@ import env from "dotenv";
 import express from "express";
 import cors from "cors";
 import db from "./db.js";
+import { getUserByEmail, verifyPassword } from "./db.js";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
