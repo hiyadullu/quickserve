@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickServe | Admin Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #000000;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .login-container {
+      width: 420px;
+      background-color: rgba(1, 22, 30, 0.9);
+      display: flex;
+      flex-direction: column;
+      padding: 50px 40px;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .brand {
+      margin-bottom: 50px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .brand:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .brand h1 {
+      color: #ffffff;
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      font-family: 'Cormorant', serif;
+      margin-bottom: 8px;
+    }
+    
+    .brand span {
+      color: #ffffff;
+      opacity: 0.7;
+      font-size: 12px;
+      letter-spacing: 3px;
+      display: block;
+      margin-top: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    
+    .login-form h2 {
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 300;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+      font-family: 'Cormorant', serif;
+      font-style: italic;
+    }
+    
+    .form-group {
+      margin-bottom: 30px;
+      position: relative;
+      text-align: left;
+    }
+    
+    .form-control {
+      background-color: rgba(255, 255, 255, 0.03);
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+      padding: 15px 0;
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s;
+      outline: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+    }
+    
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 300;
+    }
+    
+    .form-control:focus {
+      border-bottom-color: #124559;
+    }
+    
+    .form-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: all 0.3s;
+      pointer-events: none;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .form-control:focus + .form-label, 
+    .form-control:not(:placeholder-shown) + .form-label {
+      opacity: 1;
+      transform: translateY(-30px);
+    }
+    
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .remember-me {
+      display: flex;
+      align-items: center;
+    }
+    
+    .remember-me input {
+      display: none;
+    }
+    
+    .remember-me label {
+      position: relative;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      padding-left: 28px;
+      cursor: pointer;
+      font-weight: 300;
+    }
+    
+    .remember-me label:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.03);
+      transition: all 0.3s;
+    }
+    
+    .remember-me input:checked + label:before {
+      background-color: #124559;
+      border-color: #124559;
+    }
+    
+    .remember-me input:checked + label:after {
+      content: "✓";
+      position: absolute;
+      left: 4px;
+      top: -2px;
+      color: #ffffff;
+      font-size: 12px;
+    }
+    
+    .forgot-password {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-weight: 300;
+    }
+    
+    .forgot-password:hover {
+      color: #ffffff;
+    }
+    
+    .login-btn {
+      width: 100%;
+      padding: 16px;
+      background-color: #124559;
+      border: none;
+      color: #ffffff;
+      font-size: 13px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-bottom: 35px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    
+    .login-btn:hover {
+      background-color: #155066;
+      letter-spacing: 3px;
+    }
+    
+    .login-btn::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 300%;
+      top: 50%;
+      left: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translate(-50%, -50%) rotate(45deg);
+      transition: width 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    
+    .login-btn:hover::after {
+      width: 100%;
+    }
+    
+    .signup-link {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+    }
+    
+    .signup-link a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-weight: 400;
+      position: relative;
+      display: inline-block;
+      margin-left: 5px;
+    }
+    
+    .signup-link a:after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #ffffff;
+      transition: width 0.3s ease;
+    }
+    
+    .signup-link a:hover:after {
+      width: 100%;
+    }
+    
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #01161e 0%, #000000 100%);
+      z-index: 1;
+    }
+    
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, #124559 0%, rgba(18, 69, 89, 0) 70%);
+      opacity: 0.1;
+      transform: translate(-50%, -50%);
+      animation: pulse 15s infinite alternate;
+      z-index: 2;
+    }
+    
+    .circle-1 {
+      width: 800px;
+      height: 800px;
+      top: 50%;
+      left: 50%;
+      animation-delay: 0s;
+    }
+    
+    .circle-2 {
+      width: 600px;
+      height: 600px;
+      top: 70%;
+      left: 30%;
+      animation-delay: 5s;
+    }
+    
+    .circle-3 {
+      width: 400px;
+      height: 400px;
+      top: 30%;
+      left: 70%;
+      animation-delay: 10s;
+    }
+    
+    .ornament {
+      position: absolute;
+      width: 80px;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .ornament-1 {
+      top: 30px;
+      right: 30px;
+    }
+    
+    .ornament-2 {
+      top: 30px;
+      right: 30px;
+      transform: rotate(90deg);
+    }
+    
+    .ornament-3 {
+      bottom: 30px;
+      left: 30px;
+    }
+    
+    .ornament-4 {
+      bottom: 30px;
+      left: 30px;
+      transform: rotate(90deg);
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.1;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.15;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.1;
+      }
+    }
+    
+    @media (max-width: 500px) {
+      .login-container {
+        width: 90%;
+        padding: 40px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
+  
+  <div class="login-container">
+    <div class="ornament ornament-1"></div>
+    <div class="ornament ornament-2"></div>
+    <div class="ornament ornament-3"></div>
+    <div class="ornament ornament-4"></div>
+    
+    <div class="brand">
+      <h1>QUICKSERVE</h1>
+      <span>Admin Portal</span>
+    </div>
+    
+    <div class="login-form">
+      <h2>Welcome back</h2>
+      
+      <form>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email Address" required>
+          <label class="form-label">Email Address</label>
+        </div>
+        
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" required>
+          <label class="form-label">Password</label>
+        </div>
+        
+        <div class="remember-forgot">
+          <div class="remember-me">
+            <input type="checkbox" id="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+        
+        <button type="submit" class="login-btn">Sign In</button>
+        
+        <div class="signup-link">
+          Don't have an account? <a href="#">Request access</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Subtle animation for form fields when focused
+    const formControls = document.querySelectorAll('.form-control');
+    
+    formControls.forEach(control => {
+      control.addEventListener('focus', function() {
+        this.parentElement.style.transition = 'all 0.3s';
+        this.parentElement.style.transform = 'translateX(5px)';
+      });
+      
+      control.addEventListener('blur', function() {
+        this.parentElement.style.transform = 'translateX(0)';
+      });
+    });
+    
+    // Button press animation
+    const loginBtn = document.querySelector('.login-btn');
+    
+    loginBtn.addEventListener('mousedown', function() {
+      this.style.transform = 'scale(0.98)';
+    });
+    
+    loginBtn.addEventListener('mouseup', function() {
+      this.style.transform = 'scale(1)';
+    });
+    
+    // Add hover effect to the login container
+    const loginContainer = document.querySelector('.login-container');
+    
+    document.addEventListener('mousemove', function(e) {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      
+      loginContainer.style.boxShadow = `
+        0 20px 80px rgba(0, 0, 0, 0.5),
+        ${x * 20 - 10}px ${y * 20 - 10}px 50px rgba(18, 69, 89, 0.1)
+      `;
+    });
+  </script>
+</body>
+</html>
