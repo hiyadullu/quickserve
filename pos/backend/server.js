@@ -49,7 +49,6 @@ app.listen(port, () => {
     console.log(`Admin server running on port http://localhost:${port}`);
 });
 
-<<<<<<< HEAD
 // Auth route
 app.post("/auth/login", async (req, res) => {
     console.log("Received login request:", req.body); // Log the request body
@@ -80,5 +79,3 @@ app.post("/auth/login", async (req, res) => {
 app.listen(PORT, () => {
     console.log(`🚀 POS server running on port http://localhost:${PORT}`);
 });
-=======
->>>>>>> 6c72de560cf5136e7c8682b64e19429bdf915725
