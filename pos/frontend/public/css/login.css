@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -12,7 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #ffffff;
+    background: #171616;
+    overflow: hidden;
 }
 
 .container {
@@ -20,117 +21,183 @@ body {
     width: 100%;
     max-width: 1200px;
     height: 90vh;
-    border-radius: 10px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Left Side (Images) */
-.left-section {
-    
-    flex: 1.2;
-    background: url('pinterest-bg.jpg') no-repeat center;
-    background-size: cover;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.464);
     position: relative;
 }
 
-.overlay-text {
+/* Decorative background elements */
+.shape {
     position: absolute;
-    bottom: 10%;
-    left: 10%;
-    width: 80%;
-    font-size: 32px;
-    color: white;
-    font-weight: bold;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: all 0.8s ease;
 }
 
-/* Right Side (Signup Form) */
-.right-section {
-    flex: 0.8;
-    background: white;
-    padding: 40px;
+.shape-1 {
+    width: 150px;
+    height: 150px;
+    background: #efeeeb;
+    top: -50px;
+    right: 10%;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: #06D6A0;
+    bottom: -80px;
+    right: 20%;
+    z-index: -1;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: #118AB2;
+    top: 40%;
+    right: -100px;
+    z-index: -1;
+}
+
+/* Content area */
+.login-content {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    margin-bottom: 2rem;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: fadeInDown 0.8s forwards;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 450px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.8s 0.3s forwards;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #fffefe;
+    margin-bottom: 0.5rem;
     text-align: center;
 }
 
-h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+.subtitle {
+    font-size: 1rem;
+    color: #ababab;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
 label {
-    text-align: left;
-    font-size: 14px;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #444;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #faf6f6;
+    font-weight: 500;
 }
 
 input {
-    padding: 12px;
-    margin-bottom: 15px;
+    width: 100%;
+    padding: 12px 15px;
     border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #118AB2;
+    box-shadow: 0 0 0 2px rgba(17, 138, 178, 0.2);
+    outline: none;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: #33dddd;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #feffff;
 }
 
 .continue-btn {
-    background: #a6a107;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #143e4c, #118AB2);
     color: white;
     border: none;
-    padding: 12px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
     cursor: pointer;
-    border-radius: 6px;
-    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
 }
 
-.or-divider {
-    margin: 15px 0;
-    font-size: 14px;
-    font-weight: bold;
-    color: #666;
+.continue-btn:hover {
+    background: linear-gradient(45deg, #128d77, #0d7a9e);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.google-btn {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    cursor: pointer;
-    border-radius: 6px;
+.continue-btn:active {
+    transform: translateY(0);
 }
 
-.google-btn img {
-    width: 20px;
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-.terms-text {
-    font-size: 12px;
-    color: #666;
-    margin-top: 15px;
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-a {
-    color: #E60023;
-    text-decoration: none;
+/* Hover effect for shapes */
+.container:hover .shape-1 {
+    transform: translateY(-10px) rotate(10deg);
+}
+
+.container:hover .shape-2 {
+    transform: translateY(10px) rotate(-5deg);
+}
+
+.container:hover .shape-3 {
+    transform: translateY(-5px) rotate(5deg);
 }

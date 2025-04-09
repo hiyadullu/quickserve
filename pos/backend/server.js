@@ -78,5 +78,5 @@ app.post("/auth/login", async (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`🚀 POS server running on port ${PORT}`);
+    console.log(`🚀 POS server running on port http://localhost:${PORT}`);
 });
