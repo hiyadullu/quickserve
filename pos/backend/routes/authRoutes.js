@@ -1,33 +1,37 @@
-const express = require("express");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const pool = require("../config/db");
+import express from "express";
+import bcrypt from "bcrypt";
+import db from "../db.js"; // Ensure the file extension is included for ES modules
 
 const router = express.Router();
 
 async function hashPassword(plainPassword) {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
-    console.log("Hashed Password:", hashedPassword);
+    // console.log("Hashed Password:", hashedPassword);
+    return hashedPassword; // Ensure the hashed password is returned
 }
 
+router.get('/login', (req, res) => {
+    res.render('login')
+})
 // Register Route
 router.post("/register", async (req, res) => {
     const { email, password } = req.body;
 
     try {
         // Check if user already exists
-        const userCheck = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+        const userCheck = await db.query(
+            "SELECT * FROM restaurants WHERE email = $1", [email]);
         if (userCheck.rows.length > 0) {
-            return res.status(400).json({ message: "User already exists" });
+            return res.status(400).json({ message: "Restaurant already exists" });
         }
 
         // Hash password
         const hashedPassword = await hashPassword(password);
 
         // Insert user into database
-        const newUser = await pool.query(
-            "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email",
+        const newUser = await db.query(
+            "INSERT INTO restaurants (email, password) VALUES ($1, $2) RETURNING id, email",
             [email, hashedPassword]
         );
 
@@ -41,10 +45,11 @@ router.post("/register", async (req, res) => {
 // Login Route
 router.post("/login", async (req, res) => {
     const { email, password } = req.body;
+    console.log(email, password)
 
     try {
         // Check if user exists
-        const userQuery = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
+        const userQuery = await db.query("SELECT * FROM restaurants WHERE email = $1", [email]);
         if (userQuery.rows.length === 0) {
             return res.status(400).json({ error: "Invalid email or password" });
         }
@@ -54,21 +59,14 @@ router.post("/login", async (req, res) => {
         // Compare password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            return res.status(400).json({ error: "Invalid email or password" });
+            return res.status(400).json({ error: "Invalid password" });
         }
 
-        // Generate JWT token
-        const token = jwt.sign(
-            { userId: user.id, email: user.email },
-            process.env.JWT_SECRET,
-            { expiresIn: "1h" }
-        );
-
-        res.json({ message: "Login successful", token });
+        res.json({ message: "Login successful" });
     } catch (err) {
         console.error("❌ Login Error:", err);
         res.status(500).json({ message: "Server error" });
     }
 });
 
-module.exports = router;
+export default router;
