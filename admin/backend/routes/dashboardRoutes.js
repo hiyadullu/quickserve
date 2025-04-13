@@ -2,6 +2,7 @@ import db from "../db.js";
 import express from "express";
 import { isAuthenticated } from "../middleware/authMiddleware.js";
 
+
 const router = express.Router();
 
 router.get("/", isAuthenticated, async (req, res) => {
@@ -41,7 +42,7 @@ router.get("/restaurants", isAuthenticated, async (req, res) => {
 
 
 // Endpoint to update order status
-router.post('/update-status', authMiddleware.isAuthenticated, async (req, res) => {
+router.post('/update-status', isAuthenticated, async (req, res) => {
   try {
     const { orderId, status } = req.body;
     
@@ -80,7 +81,7 @@ router.post('/update-status', authMiddleware.isAuthenticated, async (req, res) =
 });
 
 // Endpoint to fetch dashboard metrics
-router.get('/metrics', authMiddleware.isAuthenticated, async (req, res) => {
+router.get('/metrics', isAuthenticated, async (req, res) => {
   try {
     // Get total orders (pending orders count)
     const pendingResult = await db.query(
@@ -124,6 +125,5 @@ router.get('/metrics', authMiddleware.isAuthenticated, async (req, res) => {
   }
 });
 
-module.exports = router;
 
 export default router;

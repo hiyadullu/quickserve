@@ -903,6 +903,12 @@
                 el.textContent = '0';
             });
             updateOrderSummary();
+            const urlParams = new URLSearchParams(window.location.search);
+            const restaurantId = urlParams.get('restaurant_id');
+            const tableId = urlParams.get('table_id');
+    
+            console.log("Restaurant:", restaurantId);
+            console.log("Table:", tableId);
         }
     </script>
     

@@ -160,6 +160,29 @@ document.addEventListener('DOMContentLoaded', function() {
             const total = row.querySelector('td:nth-last-child(1)').textContent;
             
             alert(`Details for ${id}:\nCustomer: ${customer}\nDate: ${date}\nStatus: ${status}\nTotal: ${total}`);
-        });
+ 
+        });   
     });
+
+    // Add QR code section
+    const qrSection = document.createElement('div');
+    qrSection.innerHTML = `
+        <h3>Customer QR Code</h3>
+        <img id="qr-image" alt="QR Code" />
+        <p id="qr-link"></p>
+    `;
+    document.body.appendChild(qrSection);
+
+    // Fetch and display the QR code for the vendor
+    const vendorId = "cafe123"; // Replace with the actual vendor ID
+    fetch(`http://localhost:3000/api/generate-qr/${vendorId}`)
+        .then(res => res.json())
+        .then(data => {
+            // Set the QR code image source and link
+            document.getElementById('qr-image').src = data.qr;
+            document.getElementById('qr-link').textContent = data.url;
+        })
+        .catch(err => {
+            console.error("Error fetching QR code:", err);
+        });
 });
