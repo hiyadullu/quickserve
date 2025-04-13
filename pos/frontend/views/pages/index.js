@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     sidebarItems.forEach(item => {
         // Set active class based on current page
         if ((currentPage === 'delivered.html' && item.textContent.trim() === 'Delivered') ||
-            (currentPage === 'declined.html' && item.textContent.trim() === 'Declined') ||
-            (currentPage === 'dashboardnew.html' && item.textContent.trim() === 'Overview')) {
+            (currentPage === 'declined.ejs' && item.textContent.trim() === 'Declined') ||
+            (currentPage === 'dashboard.ejs' && item.textContent.trim() === 'Overview') ||
+            (currentPage === 'dashboard.ejs' && item.textContent.trim() === 'Overview')) {
             item.classList.add('active');
         } else {
             item.classList.remove('active');
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Navigate based on menu item text
             if (text === 'Overview') {
-                window.location.href = 'dashboardnew.html';
+                window.location.href = 'dashboard.ejs';
             } else if (text === 'Delivered') {
                 window.location.href = 'delivered.html';
             } else if (text === 'Declined') {
@@ -86,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 navigateTo = e.target.getAttribute('href');
             } else {
                 const text = e.target.textContent.trim();
-                if (text === 'Overview') navigateTo = 'dashboardnew.html';
+                if (text === 'Overview') navigateTo = 'dashboard.ejs';
                 else if (text === 'Delivered') navigateTo = 'delivered.html';
                 else if (text === 'Declined') navigateTo = 'declined.html';
                 else return; // Don't navigate for other items
@@ -98,4 +99,44 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         }
     });
+    
+    // Handle 404 errors by checking if required page elements exist
+    function checkPageExists() {
+        // If we're already on the error page, don't redirect
+        if (currentPage === 'error404.html') return;
+        
+        // Check for common page elements that should exist on valid pages
+        const hasMainContent = document.querySelector('.container') || 
+                               document.querySelector('main') || 
+                               document.querySelector('.content-section');
+        
+        // If essential elements are missing, redirect to 404 page
+        if (!hasMainContent) {
+            window.location.href = 'error404.html';
+        }
+    }
+    
+    // Run the page existence check after a short delay to ensure DOM is fully loaded
+    setTimeout(checkPageExists, 100);
+});
+
+// Add a global error handler for navigation errors
+window.addEventListener('error', function(e) {
+    // If the error appears to be a resource loading error (like a missing page)
+    if (e.target.tagName === 'LINK' || e.target.tagName === 'SCRIPT') {
+        // Only redirect if we're not already on the error page
+        if (!window.location.href.includes('error404.html')) {
+            window.location.href = 'error404.html';
+        }
+    }
+}, true); // Use capture phase to catch the errors before they bubble up
+
+// Handle 404 errors for fetch requests or AJAX calls
+window.addEventListener('unhandledrejection', function(event) {
+    if (event.reason && (event.reason.status === 404 || event.reason.message.includes('404'))) {
+        // Only redirect if we're not already on the error page
+        if (!window.location.href.includes('error404.html')) {
+            window.location.href = 'error404.html';
+        }
+    }
 });
