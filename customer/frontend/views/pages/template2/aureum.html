@@ -43,7 +43,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 0;
+            padding: 40px 0; /* Increased padding for more space */
             position: fixed;
             width: 100%;
             top: 0;
@@ -58,25 +58,37 @@
         }
         nav.scrolled {
             background-color: rgba(51, 26, 10, 0.95);
-            padding: 20px 0;
+            padding: 25px 0; /* Adjusted scrolled padding */
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
-
+        
         .logo {
             font-size: 28px;
             font-weight: 700;
             color: var(--yellow);
             letter-spacing: 2px;
+            flex: 1; /* Give logo equal flex space */
+            text-align: left;
         }
-
+        
         .nav-links {
             display: flex;
             list-style: none;
+            justify-content: center; /* Center the navigation links */
+            flex: 2; /* Give navigation links more space in the middle */
+            margin: 0;
+            padding: 0;
         }
-        /* Add this to your CSS */
+        
         .nav-buttons {
             display: flex;
-            gap: 15px;
+            gap: 10px; /* Gap between buttons */
+            justify-content: flex-end; /* Align buttons to the right */
+            flex: 1; /* Equal flex space as logo */
+        }
+        
+        .nav-links li {
+            margin: 0 20px; /* Equal margin on both sides for symmetry */
         }
 
         .order-btn {
@@ -97,7 +109,7 @@
         }
 
         .nav-links li {
-            margin-left: 40px;
+            margin: 0 20px; /* Equal margin on both sides for symmetry */
         }
 
         .nav-links a {
@@ -848,8 +860,10 @@
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="order-btn">Order Now</button>
-            <button class="reservation-btn">Reserve a Table</button>
+            <div class="nav-buttons">
+                <button class="reservation-btn">Reserve a Table</button>
+                <button class="order-btn">Order Now</button>
+            </div>
         </div>
     </nav>
 
