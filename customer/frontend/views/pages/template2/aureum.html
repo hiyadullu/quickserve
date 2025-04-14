@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUREUM | Fine Dining & Craft Cocktails</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --dark-brown: #331a0a;
+            --medium-brown: #794901;
+            --rust: #c48d45;
+            --gold: #b88400;
+            --bright-gold: #f7bb01;
+            --yellow: #ffd333;
+            --light-gold: #dfc501;
+            --olive: #665800;
+            --bronze: #8b7004;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-brown);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        nav.scrolled {
+            background-color: rgba(51, 26, 10, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--yellow);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        /* Add this to your CSS */
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .order-btn {
+            background-color: var(--rust);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background-color: var(--bronze);
+            transform: translateY(-2px);
+        }
+
+        .nav-links li {
+            margin-left: 40px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--bright-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .reservation-btn {
+            background-color: var(--gold);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .reservation-btn:hover {
+            background-color: var(--bright-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(51, 26, 10, 0.7), rgba(51, 26, 10, 0.7)), 
+                        url('/api/placeholder/1400/800') center/cover no-repeat;
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent, var(--dark-brown));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin-left: 50px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+        .order-now-btn {
+            background-color: var(--rust);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 20px;
+        }
+        
+        .order-now-btn:hover {
+            background-color: var(--bronze);
+            transform: translateY(-3px);
+        }
+        .cta-btn {
+            background-color: var(--bright-gold);
+            color: var(--dark-brown);
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 20px;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--yellow);
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid var(--bright-gold);
+            padding: 13px 28px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-btn:hover {
+            background-color: rgba(247, 187, 1, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background-color: #1a0d05;
+            position: relative;
+        }
+
+        .about-gold-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--bright-gold));
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 60px;
+            color: var(--yellow);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            bottom: -15px;
+            left: 0;
+            background-color: var(--bright-gold);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-image {
+            flex: 1;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            border: 2px solid var(--gold);
+            z-index: 1;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .about-image:hover::before {
+            top: 15px;
+            left: 15px;
+            width: calc(100% - 30px);
+            height: calc(100% - 30px);
+        }
+
+        /* Menu Section */
+        .menu {
+            padding: 120px 0;
+            background-color: var(--dark-brown);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 10% 10%, var(--medium-brown) 1%, transparent 2%),
+                        radial-gradient(circle at 90% 90%, var(--medium-brown) 1%, transparent 2%);
+            background-size: 30px 30px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            margin: 0 15px;
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--bright-gold);
+            transition: width 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--yellow);
+        }
+
+        .tab-btn.active::after {
+            width: 80%;
+        }
+
+        .tab-btn:hover::after {
+            width: 60%;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed rgba(247, 187, 1, 0.3);
+        }
+
+        .menu-item-content {
+            flex: 1;
+        }
+
+        .menu-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--light-gold);
+            font-weight: 500;
+        }
+
+        .menu-item p {
+            font-size: 14px;
+            color: #bbbbbb;
+            line-height: 1.6;
+        }
+
+        .menu-item-price {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--yellow);
+            margin-left: 20px;
+            white-space: nowrap;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 120px 0;
+            background-color: #1a0d05;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(51, 26, 10, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            color: var(--yellow);
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay span {
+            transform: translateY(0);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background-color: var(--dark-brown);
+            position: relative;
+        }
+
+        .contact-diagonal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(121, 73, 1, 0.1) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-form {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .contact-info {
+            flex: 0 0 350px;
+            margin-left: 60px;
+            padding-left: 60px;
+            border-left: 1px solid rgba(247, 187, 1, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--light-gold);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(247, 187, 1, 0.3);
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--bright-gold);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--gold);
+            color: #fff;
+            border: none;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--bright-gold);
+            transform: translateY(-2px);
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: var(--light-gold);
+        }
+
+        .contact-info-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-info-item h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--yellow);
+        }
+
+        .contact-info-item p {
+            font-size: 16px;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-gold);
+            font-size: 18px;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a0d05;
+            padding: 60px 0 30px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin-right: 30px;
+        }
+
+        .footer-column:last-child {
+            margin-right: 0;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            color: var(--light-gold);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--bright-gold);
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            color: #bbbbbb;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbbbbb;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--yellow);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: #bbbbbb;
+        }
+
+        /* Animations and effects */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .stagger-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .stagger-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(51, 26, 10, 0.95);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease, padding 0.5s ease;
+            }
+            
+            .nav-links.active {
+                max-height: 300px;
+                padding: 20px 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .reservation-btn,
+            .order-btn {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image {
+                order: -1;
+                margin-bottom: 40px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                flex-wrap: wrap;
+            }
+
+            .footer-column {
+                flex: 0 0 48%;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            nav {
+                padding: 20px 0;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-column {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">AUREUM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="order-btn">Order Now</button>
+            <button class="reservation-btn">Reserve a Table</button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-up">Experience <span>Culinary</span> Excellence</h1>
+                <p class="fade-up stagger-delay-1">Indulge in an unforgettable dining experience where contemporary cuisine meets timeless elegance. AUREUM offers a meticulously crafted menu and artisanal cocktails in a sophisticated atmosphere.</p>
+                <div class="fade-up stagger-delay-2">
+                    <button class="cta-btn">Reserve a Table</button>
+                    <button class="order-now-btn">Order Now</button>
+                    <button class="secondary-btn">Explore Menu</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-gold-accent"></div>
+        <div class="container">
+            <h2 class="section-title fade-up">Our Story</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="fade-up">At AUREUM, we celebrate the art of fine dining with a modern approach to classic cuisine. Founded in 2021 by renowned chef Isabella Laurent, our restaurant embodies a passion for culinary excellence and memorable dining experiences.</p>
+                    <p class="fade-up stagger-delay-1">Our philosophy revolves around thoughtfully sourced ingredients, masterful technique, and a deep respect for the seasons. Each dish tells a story of tradition reimagined through contemporary vision, creating a harmonious balance of flavor, texture, and presentation.</p>
+                    <p class="fade-up stagger-delay-2">The elegant ambiance of AUREUM provides the perfect backdrop for our culinary creations. From the warm lighting to the carefully curated décor, every detail has been considered to enhance your dining experience. Whether you're joining us for an intimate dinner or celebrating a special occasion, our attentive staff ensures your time with us is nothing short of exceptional.</p>
+                </div>
+                <div class="about-image fade-up stagger-delay-3">
+                    <img src="aureummain.jpg" alt="AUREUM interior" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="menu-pattern"></div>
+        <div class="container">
+            <h2 class="section-title fade-up">Our Menu</h2>
+            <div class="menu-tabs fade-up">
+                <button class="tab-btn active">Dinner</button>
+                <button class="tab-btn">Cocktails</button>
+                <button class="tab-btn">Wine</button>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item fade-up">
+                    <div class="menu-item-content">
+                        <h3>Truffle Risotto</h3>
+                        <p>Arborio rice, wild mushrooms, aged parmesan, black truffle</p>
+                    </div>
+                    <div class="menu-item-price">$32</div>
+                </div>
+                <div class="menu-item fade-up">
+                    <div class="menu-item-content">
+                        <h3>Pan-Seared Scallops</h3>
+                        <p>Cauliflower purée, pancetta crisps, brown butter, micro herbs</p>
+                    </div>
+                    <div class="menu-item-price">$36</div>
+                </div>
+                <div class="menu-item fade-up">
+                    <div class="menu-item-content">
+                        <h3>Beef Wellington</h3>
+                        <p>Prime filet, wild mushroom duxelles, prosciutto, puff pastry, red wine reduction</p>
+                    </div>
+                    <div class="menu-item-price">$48</div>
+                </div>
+                <div class="menu-item fade-up">
+                    <div class="menu-item-content">
+                        <h3>Herb-Crusted Lamb</h3>
+                        <p>Dijon mustard, herb crust, roasted vegetables, rosemary jus</p>
+                    </div>
+                    <div class="menu-item-price">$42</div>
+                </div>
+                <div class="menu-item fade-up">
+                    <div class="menu-item-content">
+                        <h3>Lobster Linguine</h3>
+                        <p>Fresh Maine lobster, house-made linguine, cherry tomatoes, garlic, chili, lemon</p>
+                    </div>
+                    <div class="menu-item-price">$38</div>
+                </div>
+                <div class="menu-item fade-up">
+                    <div class="menu-item-content">
+                        <h3>Dark Chocolate Soufflé</h3>
+                        <p>Valrhona chocolate, vanilla bean ice cream, salted caramel sauce</p>
+                    </div>
+                    <div class="menu-item-price">$16</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title fade-up">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-up">
+                    <img src="jj.webp" alt="Gallery image 1" />
+                    <div class="gallery-overlay">
+                        <span>Dining Experience</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-up stagger-delay-1">
+                    <img src="signature.jpg" alt="Gallery image 2" />
+                    <div class="gallery-overlay">
+                        <span>Signature Dishes</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-up stagger-delay-2">
+                    <img src="barlounge.jpg" alt="Gallery image 3" />
+                    <div class="gallery-overlay">
+                        <span>Bar & Lounge</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-up stagger-delay-1">
+                    <img src="lounge.jpg" alt="Gallery image 4" />
+                    <div class="gallery-overlay">
+                        <span>Private Events</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-up stagger-delay-2">
+                    <img src="ff.jpg" alt="Gallery image 5" />
+                    <div class="gallery-overlay">
+                        <span>Cocktail Artistry</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-up stagger-delay-3">
+                    <img src="chefdish.jpg" alt="Gallery image 6" />
+                    <div class="gallery-overlay">
+                        <span>Chef's Table</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-diagonal"></div>
+        <div class="container">
+            <h2 class="section-title fade-up">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-form fade-up">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info fade-up stagger-delay-2">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-info-item">
+                        <h4>Address</h4>
+                        <p>42 Gourmet Avenue<br>New York, NY 10012</p>
+                    </div>
+                    <div class="contact-info-item">
+                        <h4>Hours</h4>
+                        <p>
+                            Monday - Thursday: 5:30pm - 10:30pm<br>
+                            Friday - Saturday: 5:30pm - 11:30pm<br>
+                            Sunday: 5:00pm - 10:00pm
+                        </p>
+                    </div>
+                    <div class="contact-info-item">
+                        <h4>Reservations</h4>
+                        <p>
+                            Phone: (212) 555-9876<br>
+                            Email: reservations@aureum.com
+                        </p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-yelp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AUREUM</h3>
+                    <p>Experience the pinnacle of fine dining in the heart of New York. Our award-winning chefs craft unforgettable culinary experiences using only the finest seasonal ingredients.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Private Events</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates on special events, seasonal menus, and exclusive offers.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email address" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AUREUM. All rights reserved. | Designed with passion for culinary excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add Font Awesome for social icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Menu tabs functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    tabBtns.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Here you would normally update the menu items based on the selected tab
+                    // For demo purposes, we'll just update the heading
+                    const menuCategory = this.textContent;
+                    
+                    // Sample menu data - in a real application, you would fetch this data or have it predefined
+                    const menuData = {
+                        'Dinner': [
+                            { name: 'Truffle Risotto', description: 'Arborio rice, wild mushrooms, aged parmesan, black truffle', price: '$32' },
+                            { name: 'Pan-Seared Scallops', description: 'Cauliflower purée, pancetta crisps, brown butter, micro herbs', price: '$36' },
+                            { name: 'Beef Wellington', description: 'Prime filet, wild mushroom duxelles, prosciutto, puff pastry, red wine reduction', price: '$48' },
+                            { name: 'Herb-Crusted Lamb', description: 'Dijon mustard, herb crust, roasted vegetables, rosemary jus', price: '$42' },
+                            { name: 'Lobster Linguine', description: 'Fresh Maine lobster, house-made linguine, cherry tomatoes, garlic, chili, lemon', price: '$38' },
+                            { name: 'Dark Chocolate Soufflé', description: 'Valrhona chocolate, vanilla bean ice cream, salted caramel sauce', price: '$16' }
+                        ],
+                        'Cocktails': [
+                            { name: 'Golden Elixir', description: 'Bourbon, honey-ginger syrup, fresh lemon, smoked cinnamon', price: '$18' },
+                            { name: 'Velvet Rogue', description: 'Aged rum, blackberry liqueur, port wine reduction, aromatic bitters', price: '$19' },
+                            { name: 'Midnight Serenade', description: 'Mezcal, activated charcoal, lime juice, agave nectar, black salt rim', price: '$21' },
+                            { name: 'Lavender Fields', description: 'Gin, crème de violette, lavender syrup, fresh lemon, egg white', price: '$17' },
+                            { name: 'Truffle Old Fashioned', description: 'Truffle-infused bourbon, demerara sugar, angostura & orange bitters', price: '$23' },
+                            { name: 'Aureum Sparkler', description: 'Champagne, elderflower liqueur, gold leaf, edible flowers', price: '$24' }
+                        ],
+                        'Wine': [
+                            { name: 'Château Margaux 2015', description: 'Bordeaux, France - Notes of black currant, violets, and cedar', price: '$290' },
+                            { name: 'Dom Pérignon 2010', description: 'Champagne, France - Elegant, with notes of almond and powdered cocoa', price: '$320' },
+                            { name: 'Opus One 2018', description: 'Napa Valley, USA - Bold, with blackberry, cassis, and vanilla', price: '$275' },
+                            { name: 'Sassicaia 2017', description: 'Tuscany, Italy - Complex, with dark fruit and spice notes', price: '$240' },
+                            { name: 'Cloudy Bay Sauvignon Blanc 2022', description: 'Marlborough, New Zealand - Vibrant, with notes of passionfruit and lime', price: '$85' },
+                            { name: 'Far Niente Chardonnay 2020', description: 'Napa Valley, USA - Rich, with notes of melon and toasted oak', price: '$110' }
+                        ]
+                    };
+                    
+                    // Get the menu items container
+                    const menuItemsContainer = document.querySelector('.menu-items');
+                    menuItemsContainer.innerHTML = '';
+                    
+                    // Add the menu items for the selected category
+                    if (menuData[menuCategory]) {
+                        menuData[menuCategory].forEach((item, index) => {
+                            const menuItem = document.createElement('div');
+                            menuItem.className = 'menu-item fade-up';
+                            if (index > 0) {
+                                menuItem.classList.add(`stagger-delay-${(index % 3) + 1}`);
+                            }
+                            
+                            menuItem.innerHTML = `
+                                <div class="menu-item-content">
+                                    <h3>${item.name}</h3>
+                                    <p>${item.description}</p>
+                                </div>
+                                <div class="menu-item-price">${item.price}</div>
+                            `;
+                            
+                            menuItemsContainer.appendChild(menuItem);
+                        });
+                        
+                        // Re-initialize the fade animations for the new items
+                        setTimeout(() => {
+                            const newFadeElements = menuItemsContainer.querySelectorAll('.fade-up');
+                            newFadeElements.forEach(element => {
+                                element.classList.add('active');
+                            });
+                        }, 100);
+                    }
+                });
+            });
+        });
+
+        // Reservation modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const reservationBtns = document.querySelectorAll('.reservation-btn, .cta-btn');
+            
+            // Create modal element - in a real implementation, you would have this in your HTML
+            const modal = document.createElement('div');
+            modal.className = 'reservation-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2>Reserve a Table</h2>
+                    <form id="reservation-form">
+                        <div class="form-group">
+                            <label for="res-name">Name</label>
+                            <input type="text" id="res-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-email">Email</label>
+                            <input type="email" id="res-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-phone">Phone</label>
+                            <input type="tel" id="res-phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-date">Date</label>
+                            <input type="date" id="res-date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-time">Time</label>
+                            <input type="time" id="res-time" name="time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-guests">Number of Guests</label>
+                            <select id="res-guests" name="guests" required>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6">6 People</option>
+                                <option value="7+">7+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-notes">Special Requests</label>
+                            <textarea id="res-notes" name="notes"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Confirm Reservation</button>
+                    </form>
+                </div>
+            `;
+            
+            // Add modal styles
+            const modalStyle = document.createElement('style');
+            modalStyle.innerHTML = `
+                .reservation-modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1001;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    backdrop-filter: blur(5px);
+                }
+                
+                .modal-content {
+                    background-color: var(--dark-brown);
+                    margin: 5% auto;
+                    padding: 40px;
+                    border: 1px solid var(--gold);
+                    width: 90%;
+                    max-width: 600px;
+                    position: relative;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                    animation: modalFade 0.5s ease;
+                }
+                
+                @keyframes modalFade {
+                    from {opacity: 0; transform: translateY(-30px);}
+                    to {opacity: 1; transform: translateY(0);}
+                }
+                
+                .close-modal {
+                    color: var(--light-gold);
+                    position: absolute;
+                    top: 20px;
+                    right: 25px;
+                    font-size: 28px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: color 0.3s ease;
+                }
+                
+                .close-modal:hover {
+                    color: var(--bright-gold);
+                }
+                
+                .modal-content h2 {
+                    color: var(--yellow);
+                    margin-bottom: 30px;
+                    font-size: 28px;
+                    font-weight: 500;
+                }
+                
+                #reservation-form .form-group {
+                    margin-bottom: 20px;
+                }
+                
+                #reservation-form label {
+                    display: block;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: var(--light-gold);
+                }
+                
+                #reservation-form input,
+                #reservation-form select,
+                #reservation-form textarea {
+                    width: 100%;
+                    padding: 12px 15px;
+                    background-color: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(247, 187, 1, 0.3);
+                    color: #fff;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+                }
+                
+                #reservation-form input:focus,
+                #reservation-form select:focus,
+                #reservation-form textarea:focus {
+                    outline: none;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border-color: var(--bright-gold);
+                }
+                
+                #reservation-form textarea {
+                    height: 100px;
+                    resize: vertical;
+                }
+            `;
+            
+            document.head.appendChild(modalStyle);
+            document.body.appendChild(modal);
+            
+            // Modal functionality
+            reservationBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            const closeModal = document.querySelector('.close-modal');
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Form submission
+            const reservationForm = document.getElementById('reservation-form');
+            reservationForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // In a real implementation, you would send the form data to your server
+                alert('Thank you for your reservation! We will confirm your booking shortly.');
+                
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Handle the "Explore Menu" button
+        document.addEventListener('DOMContentLoaded', function() {
+            const exploreMenuBtn = document.querySelector('.secondary-btn');
+            exploreMenuBtn.addEventListener('click', function() {
+                document.querySelector('#menu').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Initialize GSAP animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero section parallax effect
+            gsap.to('.hero-overlay', {
+                scrollTrigger: {
+                    trigger: '.hero',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                },
+                opacity: 0.9,
+                scale: 1.1
+            });
+
+            // About section animations
+            gsap.registerPlugin(ScrollTrigger);
+            
+            ScrollTrigger.batch('.about-content p', {
+                onEnter: batch => gsap.to(batch, {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.15,
+                    duration: 0.8
+                }),
+                start: 'top 85%'
+            });
+
+            // Menu items reveal
+            ScrollTrigger.batch('.menu-item', {
+                onEnter: batch => gsap.to(batch, {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    duration: 0.6
+                }),
+                start: 'top 90%'
+            });
+
+            // Gallery images animation
+            ScrollTrigger.batch('.gallery-item', {
+                onEnter: batch => gsap.to(batch, {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    duration: 0.6
+                }),
+                start: 'top 85%'
+            });
+        });
+        // Order Now functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const orderBtns = document.querySelectorAll('.order-btn, .order-now-btn');
+    
+    // Create modal element for online ordering
+    const orderModal = document.createElement('div');
+    orderModal.className = 'order-modal';
+    orderModal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Order Online</h2>
+            <div class="order-options">
+                <div class="order-option">
+                    <h3>Delivery</h3>
+                    <p>Enjoy our exquisite cuisine in the comfort of your home.</p>
+                    <button class="submit-btn">Order Delivery</button>
+                </div>
+                <div class="order-option">
+                    <h3>Pickup</h3>
+                    <p>Place your order now and pick it up at your convenience.</p>
+                    <button class="submit-btn">Order Pickup</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add modal styles
+    const orderModalStyle = document.createElement('style');
+    orderModalStyle.innerHTML = `
+        .order-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .order-options {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .order-option {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border: 1px solid var(--rust);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .order-option:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .order-option h3 {
+            color: var(--yellow);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .order-option p {
+            margin-bottom: 25px;
+            color: #e0e0e0;
+        }
+        
+        @media (max-width: 768px) {
+            .order-options {
+                flex-direction: column;
+            }
+        }
+    `;
+    
+        document.head.appendChild(orderModalStyle);
+        document.body.appendChild(orderModal);
+        
+        // Modal functionality
+        orderBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                orderModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        const closeOrderModal = orderModal.querySelector('.close-modal');
+        closeOrderModal.addEventListener('click', function() {
+            orderModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        window.addEventListener('click', function(event) {
+            if (event.target === orderModal) {
+                orderModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Handle order option buttons
+        const orderOptionBtns = orderModal.querySelectorAll('.order-option .submit-btn');
+        orderOptionBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // In a real implementation, you would redirect to the ordering system
+                alert('Redirecting to our online ordering system...');
+                orderModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+    });
+    </script>
+</body>
+</html>                
