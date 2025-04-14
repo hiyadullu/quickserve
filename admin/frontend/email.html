@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Restaurant QR Code is Ready</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        
+        .header {
+            background-color: #FFD166;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333333;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .qr-section {
+            background-color: #f5f5f5;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .qr-code {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        
+        .credentials-section {
+            background-color: #f5f5f5;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .credentials-box {
+            background-color: #ffffff;
+            border: 1px solid #eeeeee;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .credential-item {
+            margin-bottom: 10px;
+        }
+        
+        .credential-label {
+            font-weight: 600;
+            color: #666666;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .credential-value {
+            font-size: 16px;
+            background-color: #f9f9f9;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #eeeeee;
+        }
+        
+        .steps {
+            margin: 30px 0;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            background-color: #FFD166;
+            color: #333333;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #333333;
+            color: white;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .footer {
+            background-color: #333333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 0 5px;
+            text-align: center;
+            line-height: 32px;
+        }
+        
+        .help-text {
+            font-size: 14px;
+            color: #666666;
+            text-align: center;
+            margin: 30px 0 0;
+        }
+        
+        /* Mobile responsive styles */
+        @media only screen and (max-width: 480px) {
+            .header {
+                padding: 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="/api/placeholder/180/50" alt="DineQR Logo" class="logo">
+            <h1>Your Restaurant QR Code is Ready!</h1>
+        </div>
+        
+        <div class="content">
+            <p>Hi [Restaurant Name],</p>
+            
+            <p>Thank you for joining QuickServe! We're excited to provide you with everything you need to start accepting digital orders and enhance your customers' dining experience.</p>
+            
+            <div class="qr-section">
+                <h2>Your Unique QR Code</h2>
+                <p>Display this at your tables or entrance for customers to scan and view your menu.</p>
+                <img src="/api/placeholder/200/200" alt="Your Restaurant QR Code" class="qr-code">
+                <a href="#" class="cta-button">Download QR Code</a>
+            </div>
+            
+            <div class="credentials-section">
+                <h2>Your POS Dashboard Credentials</h2>
+                <p>Use these credentials to log in to your dashboard where you can manage your menu, view orders, and access analytics.</p>
+                
+                <div class="credentials-box">
+                    <div class="credential-item">
+                        <span class="credential-label">Dashboard URL:</span>
+                        <div class="credential-value">https://QuickServe.com/admin</div>
+                    </div>
+                    
+                    <div class="credential-item">
+                        <span class="credential-label">Username:</span>
+                        <div class="credential-value">[Your Username]</div>
+                    </div>
+                    
+                    <div class="credential-item">
+                        <span class="credential-label">Password:</span>
+                        <div class="credential-value">[Your Temporary Password]</div>
+                    </div>
+                </div>
+                
+                <p><strong>Important:</strong> Please change your password after your first login for security reasons.</p>
+            </div>
+            
+            <div class="steps">
+                <h2>Getting Started in 3 Simple Steps</h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3>Log in to your dashboard</h3>
+                        <p>Access your admin panel using the credentials above to start customizing your digital menu.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3>Upload your menu items</h3>
+                        <p>Add your dishes with descriptions, prices, and mouth-watering photos to attract customers.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>Print and display your QR code</h3>
+                        <p>Place the QR codes at your tables and watch as customers start ordering digitally!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="cta-button" style="display: block; width: 80%; max-width: 300px; margin: 30px auto;">Log In to Dashboard</a>
+            
+            <p class="help-text">Need help? Our support team is available 24/7.<br>Contact us at <a href="mailto:support@dineqr.com">support@dineqr.com</a> or call (555) 123-4567.</p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 DineQR. All rights reserved.</p>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon">f</a>
+                <a href="#" class="social-icon">in</a>
+                <a href="#" class="social-icon">ig</a>
+                <a href="#" class="social-icon">tw</a>
+            </div>
+            
+            <p>123 Restaurant Ave, Foodie City, FC 12345</p>
+            <p><a href="#" style="color: white;">Unsubscribe</a> | <a href="#" style="color: white;">Privacy Policy</a></p>
+        </div>
+    </div>
+</body>
+</html>
