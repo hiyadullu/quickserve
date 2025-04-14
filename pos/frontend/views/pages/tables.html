@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Table Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            display: flex;
+            background-color: #E0E1DD;
+            color: #333;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 220px;
+            background-color: #0D1B2A;
+            padding: 20px 0;
+            height: 100vh;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            transform: translateX(0);
+            transition: transform 0.5s ease;
+            z-index: 100;
+        }
+        
+        .sidebar.collapsed {
+            transform: translateX(-250px);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            font-size: 24px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #1B263B;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0 10px;
+        }
+
+        .sidebar li {
+            padding: 15px 20px;
+            margin: 8px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar li::before {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .sidebar li:hover::before {
+            left: 100%;
+        }
+
+        .sidebar li:hover {
+            background-color: #1B263B;
+            transform: translateX(5px);
+        }
+
+        .sidebar li.active {
+            background-color: #778DA9;
+            font-weight: bold;
+        }
+
+        .sidebar-toggle {
+            position: absolute;
+            top: 20px;
+            right: -40px;
+            width: 40px;
+            height: 40px;
+            background-color: #0D1B2A;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 101;
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            background-color: #1B263B;
+            padding: 30px;
+            overflow-y: auto;
+            color: #fff;
+            transition: padding-left 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #778DA9;
+            position: relative;
+        }
+
+        .navbar h2 {
+            font-size: 24px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .navbar h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #778DA9;
+            transition: width 0.5s ease;
+        }
+
+        .navbar h2:hover::after {
+            width: 100%;
+        }
+
+        .time-display {
+            position: absolute;
+            right: 0;
+            background-color: #0D1B2A;
+            padding: 8px 15px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(120, 141, 169, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(120, 141, 169, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(120, 141, 169, 0);
+            }
+        }
+
+        /* Table Status Legend */
+        .legend {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            background-color: #0D1B2A;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .legend:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .legend-item:hover {
+            background-color: #1B263B;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .legend-item:hover .legend-color {
+            transform: scale(1.2);
+        }
+
+        .legend-reserved {
+            background-color: #c1121f;
+        }
+
+        .legend-occupied {
+            background-color: #ffb703;
+        }
+
+        .legend-vacant {
+            background-color: #a7c957;
+        }
+
+        /* Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 1200px) {
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .stat-card {
+            background-color: #0D1B2A;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: scale(0);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-card h4 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #778DA9;
+        }
+
+        .stat-card p {
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover p {
+            transform: scale(1.1);
+        }
+
+        /* Floor Plan */
+        .floor-plan {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            background-color: #0D1B2A;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            min-height: 65vh;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .control-btn {
+            background-color: #415A77;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .control-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .control-btn:hover::before {
+            left: 100%;
+        }
+
+        .control-btn:hover {
+            background-color: #1B263B;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Table Styles */
+        .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+            margin-bottom: 5px;
+        }
+
+        .table-container:hover {
+            transform: translateY(-5px);
+            z-index: 10;
+        }
+
+        .table {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .table:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .table.selected {
+            box-shadow: 0 0 0 3px #fff, 0 8px 20px rgba(0, 0, 0, 0.3);
+            animation: selected-pulse 1.5s infinite;
+        }
+
+        @keyframes selected-pulse {
+            0% {
+                box-shadow: 0 0 0 3px rgba(255,255,255,0.8), 0 8px 20px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 0 6px rgba(255,255,255,0.5), 0 8px 20px rgba(0, 0, 0, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 0 3px rgba(255,255,255,0.8), 0 8px 20px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .table.round {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+        }
+
+        .table.rectangle {
+            border-radius: 10px;
+            width: 100%;
+            height: 90px;
+        }
+
+        .table.square {
+            border-radius: 10px;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto;
+        }
+
+        .table-number {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+
+        .table:hover .table-number {
+            transform: scale(1.2);
+        }
+
+        .table-capacity {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .table:hover .table-capacity {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 3px 8px;
+        }
+
+        /* Status Colors */
+        .table.reserved {
+            background-color: #c1121f;
+        }
+
+        .table.occupied {
+            background-color: #ffb703;
+        }
+
+        .table.vacant {
+            background-color: #a7c957;
+        }
+
+        /* Table Options */
+        .table-options {
+            position: absolute;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.9);
+            background-color: #1B263B;
+            border-radius: 8px;
+            padding: 10px;
+            display: none;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            flex-direction: column;
+            gap: 5px;
+            width: 120px;
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .table-options.show {
+            display: flex;
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+
+        .option-btn {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1) translate(-50%, -50%);
+            transform-origin: 50% 50%;
+        }
+
+        .option-btn:active::after {
+            animation: ripple 0.6s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0) translate(-50%, -50%);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(20) translate(-50%, -50%);
+                opacity: 0;
+            }
+        }
+
+        .option-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-btn.reserved {
+            background-color: #c1121f;
+            color: white;
+        }
+
+        .option-btn.occupied {
+            background-color: #ffb703;
+            color: #333;
+        }
+
+        .option-btn.vacant {
+            background-color: #a7c957;
+            color: #333;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #0D1B2A;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Quick Actions Panel */
+        .quick-actions {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #0D1B2A;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transform: translateX(120%);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .quick-actions.show {
+            transform: translateX(0);
+        }
+
+        .quick-toggle {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            background-color: #0D1B2A;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 101;
+            transition: all 0.3s ease;
+        }
+
+        .quick-toggle:hover {
+            transform: rotate(90deg);
+            background-color: #1B263B;
+        }
+
+        .action-btn {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #415A77;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn:hover {
+            background-color: #1B263B;
+            transform: translateX(5px);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background-color: #1B263B;
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.show .modal {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #415A77;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #778DA9;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #778DA9;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #415A77;
+            border-radius: 5px;
+            background-color: #0D1B2A;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #778DA9;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(120, 141, 169, 0.3);
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #415A77;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #778DA9;
+        }
+
+        .btn-secondary {
+            background-color: #778DA9;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #415A77;
+        }
+
+        /* Add new table button with animation */
+        .add-table-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #415A77;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .add-table-btn:hover {
+            transform: rotate(90deg) scale(1.1);
+            background-color: #778DA9;
+        }
+
+        /* Hover info */
+        .hover-info {
+            position: absolute;
+            top: -70px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+            background-color: #0D1B2A;
+            padding: 8px 12px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+            opacity: 0;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            text-align: center;
+            font-size: 12px;
+            z-index: 20;
+        }
+
+        .table-container:hover .hover-info {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+            top: -70px;
+        }
+
+        /* Loading animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1B263B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.5s ease;
+        }
+
+        .loading-overlay.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border: 8px solid rgba(120, 141, 169, 0.3);
+            border-radius: 50%;
+            border-top-color: #778DA9;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Drag and drop styles */
+        .draggable-table {
+            cursor: grab;
+        }
+
+        .draggable-table:active {
+            cursor: grabbing;
+        }
+
+        .dragging {
+            position: absolute;
+            opacity: 0.8;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .drag-over {
+            background-color: rgba(120, 141, 169, 0.2);
+            border-radius: 10px;
+        }
+
+        /* Notification badge */
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #c1121f;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            animation: badge-pulse 1.5s infinite;
+        }
+
+        @keyframes badge-pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Search bar */
+        .search-bar {
+            position: relative;
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 14px 20px 14px 45px;
+            border: none;
+            border-radius: 30px;
+            background-color: #0D1B2A;
+            color: white;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px #778DA9, 0 4px 15px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #778DA9;
+            font-size: 18px;
+        }
+
+        /* View transitions */
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 500ms, transform 500ms;
+        }
+
+        .fade-exit {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-exit-active {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 500ms, transform 500ms;
+        }
+
+        /* Night mode toggle */
+        .night-mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background-color: #0D1B2A;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .night-mode-toggle:hover {
+            background-color: #1B263B;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            border-radius: 15px;
+            background-color: #778DA9;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-switch::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .night-mode .toggle-switch {
+            background-color: #415A77;
+        }
+
+        .night-mode .toggle-switch::before {
+            transform: translateX(20px);
+        }
+
+        /* Filter Dropdown */
+        .filter-dropdown {
+            position: relative;
+        }
+
+        .filter-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background-color: #0D1B2A;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .filter-btn:hover {
+            background-color: #1B263B;
+            transform: translateY(-2px);
+        }
+
+        .filter-options {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 200px;
+            background-color: #0D1B2A;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transform: translateY(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .filter-dropdown.open .filter-options {
+            transform: translateY(5px);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .filter-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-item:hover {
+            background-color: #1B263B;
+        }
+
+        .filter-item.active {
+            background-color: #415A77;
+        }
+
+        /* Zoom controls */
+        .zoom-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            background-color: #0D1B2A;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .zoom-btn {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: #415A77;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: #415A77;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .zoom-btn:hover {
+            background-color: #1B263B;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h2>Table Manager</h2>
+        <ul>
+            <li class="active"><i class="fas fa-th-large"></i> Dashboard</li>
+            <li><i class="fas fa-chart-pie"></i> Analytics</li>
+            <li><i class="fas fa-calendar-alt"></i> Reservations</li>
+            <li><i class="fas fa-utensils"></i> Menu Items</li>
+            <li><i class="fas fa-cog"></i> Settings</li>
+        </ul>
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="navbar">
+            <h2>Floor Plan Management</h2>
+            <div class="time-display" id="timeDisplay">00:00:00</div>
+        </div>
+
+        <div class="search-bar">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search tables, reservations...">
+            <div class="filter-dropdown" id="filterDropdown">
+                <button class="filter-btn">
+                    <i class="fas fa-filter"></i> Filter
+                </button>
+                <div class="filter-options">
+                    <div class="filter-item active" data-filter="all">All Tables</div>
+                    <div class="filter-item" data-filter="vacant">Vacant Only</div>
+                    <div class="filter-item" data-filter="occupied">Occupied Only</div>
+                    <div class="filter-item" data-filter="reserved">Reserved Only</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn" id="addTableBtn">
+                <i class="fas fa-plus"></i> Add Table
+            </button>
+            <div class="filter-dropdown" id="filterDropdown">
+                <button class="filter-btn">
+                    <i class="fas fa-filter"></i> Filter Tables
+                </button>
+                <div class="filter-options">
+                    <div class="filter-item active" data-filter="all">All Tables</div>
+                    <div class="filter-item" data-filter="vacant">Vacant Only</div>
+                    <div class="filter-item" data-filter="occupied">Occupied Only</div>
+                    <div class="filter-item" data-filter="reserved">Reserved Only</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color legend-vacant"></div>
+                <span>Vacant</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-occupied"></div>
+                <span>Occupied</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-reserved"></div>
+                <span>Reserved</span>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <h4>Total Tables</h4>
+                <p id="totalTablesCount">12</p>
+            </div>
+            <div class="stat-card">
+                <h4>Vacant Tables</h4>
+                <p id="vacantTablesCount">5</p>
+            </div>
+            <div class="stat-card">
+                <h4>Occupied Tables</h4>
+                <p id="occupiedTablesCount">4</p>
+            </div>
+            <div class="stat-card">
+                <h4>Reserved Tables</h4>
+                <p id="reservedTablesCount">3</p>
+            </div>
+        </div>
+
+        <div class="floor-plan" id="floorPlan">
+            <!-- Tables will be dynamically generated here -->
+        </div>
+
+        <!-- Night Mode Toggle -->
+        <div class="night-mode-toggle" id="nightModeToggle">
+            <span>Night Mode</span>
+            <div class="toggle-switch"></div>
+        </div>
+
+        <!-- Add Table Button -->
+        <div class="add-table-btn" id="floatingAddBtn">+</div>
+    </div>
+
+    <!-- Quick Actions Panel -->
+    <div class="quick-actions" id="quickActions">
+        <button class="action-btn">
+            <i class="fas fa-redo-alt"></i> Reset Tables
+        </button>
+        <button class="action-btn">
+            <i class="fas fa-print"></i> Print Layout
+        </button>
+        <button class="action-btn">
+            <i class="fas fa-save"></i> Save Layout
+        </button>
+    </div>
+    <div class="quick-toggle" id="quickToggle">
+        <i class="fas fa-bolt"></i>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Table status updated!</div>
+
+    <!-- Table Options Modal -->
+    <div class="modal-overlay" id="tableOptionsModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Table Options</div>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Table Number</label>
+                    <input type="number" id="tableNumberInput" min="1">
+                </div>
+                <div class="form-group">
+                    <label>Table Shape</label>
+                    <select id="tableShapeSelect">
+                        <option value="round">Round</option>
+                        <option value="square">Square</option>
+                        <option value="rectangle">Rectangle</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Capacity</label>
+                    <input type="number" id="tableCapacityInput" min="1" max="12">
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="tableStatusSelect">
+                        <option value="vacant">Vacant</option>
+                        <option value="occupied">Occupied</option>
+                        <option value="reserved">Reserved</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close-btn">Cancel</button>
+                <button class="btn btn-primary" id="saveTableBtn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Table Modal -->
+    <div class="modal-overlay" id="addTableModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Add New Table</div>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Table Number</label>
+                    <input type="number" id="newTableNumberInput" min="1">
+                </div>
+                <div class="form-group">
+                    <label>Table Shape</label>
+                    <select id="newTableShapeSelect">
+                        <option value="round">Round</option>
+                        <option value="square">Square</option>
+                        <option value="rectangle">Rectangle</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Capacity</label>
+                    <input type="number" id="newTableCapacityInput" min="1" max="12" value="4">
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="newTableStatusSelect">
+                        <option value="vacant">Vacant</option>
+                        <option value="occupied">Occupied</option>
+                        <option value="reserved">Reserved</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close-btn">Cancel</button>
+                <button class="btn btn-primary" id="createTableBtn">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('#filterDropdown')) {
+                filterDropdown.classList.remove('open');
+            }
+        });
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize variables
+            let selectedTable = null;
+            let tables = [];
+            let isDragging = false;
+            let draggedTable = null;
+            let isNightMode = false;
+            
+            // DOM Elements
+            const sidebar = document.getElementById('sidebar');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const floorPlan = document.getElementById('floorPlan');
+            const timeDisplay = document.getElementById('timeDisplay');
+            const quickActions = document.getElementById('quickActions');
+            const quickToggle = document.getElementById('quickToggle');
+            const toast = document.getElementById('toast');
+            const tableOptionsModal = document.getElementById('tableOptionsModal');
+            const addTableModal = document.getElementById('addTableModal');
+            const addTableBtn = document.getElementById('addTableBtn');
+            const floatingAddBtn = document.getElementById('floatingAddBtn');
+            const nightModeToggle = document.getElementById('nightModeToggle');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const filterDropdown = document.getElementById('filterDropdown');
+            
+            const totalTablesCount = document.getElementById('totalTablesCount');
+            const vacantTablesCount = document.getElementById('vacantTablesCount');
+            const occupiedTablesCount = document.getElementById('occupiedTablesCount');
+            const reservedTablesCount = document.getElementById('reservedTablesCount');
+            
+            // Table data (example tables)
+            tables = [
+                { id: 1, number: 1, shape: 'round', capacity: 4, status: 'vacant' },
+                { id: 2, number: 2, shape: 'square', capacity: 2, status: 'occupied' },
+                { id: 3, number: 3, shape: 'rectangle', capacity: 6, status: 'reserved' },
+                { id: 4, number: 4, shape: 'round', capacity: 4, status: 'vacant' },
+                { id: 5, number: 5, shape: 'square', capacity: 2, status: 'occupied' },
+                { id: 6, number: 6, shape: 'rectangle', capacity: 8, status: 'vacant' },
+                { id: 7, number: 7, shape: 'round', capacity: 4, status: 'reserved' },
+                { id: 8, number: 8, shape: 'square', capacity: 2, status: 'vacant' },
+                { id: 9, number: 9, shape: 'rectangle', capacity: 6, status: 'occupied' },
+                { id: 10, number: 10, shape: 'round', capacity: 4, status: 'reserved' },
+                { id: 11, number: 11, shape: 'square', capacity: 2, status: 'vacant' },
+                { id: 12, number: 12, shape: 'rectangle', capacity: 6, status: 'occupied' }
+            ];
+            
+            // Initialize the app
+            function init() {
+                renderTables();
+                updateTableCounts();
+                updateClock();
+                setInterval(updateClock, 1000);
+                
+                // Remove loading overlay after delay
+                setTimeout(() => {
+                    loadingOverlay.classList.add('hide');
+                }, 1500);
+                
+                // Event listeners
+                setupEventListeners();
+            }
+            
+            // Update the digital clock
+            function updateClock() {
+                const now = new Date();
+                let hours = now.getHours();
+                let minutes = now.getMinutes();
+                let seconds = now.getSeconds();
+                
+                hours = hours < 10 ? '0' + hours : hours;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                
+                timeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+            }
+            
+            // Set up all event listeners
+            function setupEventListeners() {
+                // Sidebar toggle
+                sidebarToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('collapsed');
+                    if (sidebar.classList.contains('collapsed')) {
+                        sidebarToggle.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                    } else {
+                        sidebarToggle.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                    }
+                });
+                
+                // Quick actions toggle
+                quickToggle.addEventListener('click', function() {
+                    quickActions.classList.toggle('show');
+                    if (quickActions.classList.contains('show')) {
+                        quickToggle.innerHTML = '<i class="fas fa-times"></i>';
+                    } else {
+                        quickToggle.innerHTML = '<i class="fas fa-bolt"></i>';
+                    }
+                });
+                
+                // Night mode toggle
+                nightModeToggle.addEventListener('click', function() {
+                    document.body.classList.toggle('night-mode');
+                    isNightMode = !isNightMode;
+                });
+                
+                // Add table buttons
+                addTableBtn.addEventListener('click', showAddTableModal);
+                floatingAddBtn.addEventListener('click', showAddTableModal);
+                
+                // Filter dropdown
+                filterDropdown.addEventListener('click', function(e) {
+                    filterDropdown.classList.toggle('open');
+                    
+                    if (e.target.classList.contains('filter-item')) {
+                        const filterItems = document.querySelectorAll('.filter-item');
+                        filterItems.forEach(item => item.classList.remove('active'));
+                        e.target.classList.add('active');
+                        
+                        const filter = e.target.dataset.filter;
+                        filterTables(filter);
+                    }
+                    e.stopPropagation(); // Add this to prevent filtering issues
+                });
+                
+                // Close modals
+                document.querySelectorAll('.modal-close, .modal-close-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        tableOptionsModal.classList.remove('show');
+                        addTableModal.classList.remove('show');
+                    });
+                });
+                
+                // Save table changes
+                document.getElementById('saveTableBtn').addEventListener('click', function() {
+                    if (selectedTable) {
+                        const tableId = parseInt(selectedTable.dataset.id);
+                        const tableIndex = tables.findIndex(t => t.id === tableId);
+                        
+                        if (tableIndex !== -1) {
+                            tables[tableIndex].number = parseInt(document.getElementById('tableNumberInput').value);
+                            tables[tableIndex].shape = document.getElementById('tableShapeSelect').value;
+                            tables[tableIndex].capacity = parseInt(document.getElementById('tableCapacityInput').value);
+                            tables[tableIndex].status = document.getElementById('tableStatusSelect').value;
+                            
+                            renderTables();
+                            updateTableCounts();
+                            tableOptionsModal.classList.remove('show');
+                            showToast('Table updated successfully!');
+                        }
+                    }
+                });
+                
+                // Create new table
+                document.getElementById('createTableBtn').addEventListener('click', function() {
+                    const newId = tables.length > 0 ? Math.max(...tables.map(t => t.id)) + 1 : 1;
+                    const newTable = {
+                        id: newId,
+                        number: parseInt(document.getElementById('newTableNumberInput').value),
+                        shape: document.getElementById('newTableShapeSelect').value,
+                        capacity: parseInt(document.getElementById('newTableCapacityInput').value),
+                        status: document.getElementById('newTableStatusSelect').value
+                    };
+                    
+                    tables.push(newTable);
+                    renderTables();
+                    updateTableCounts();
+                    addTableModal.classList.remove('show');
+                    showToast('New table added!');
+                });
+            }
+            
+            // Show table options modal
+            function showTableOptions(table) {
+                const tableId = parseInt(table.dataset.id);
+                const tableData = tables.find(t => t.id === tableId);
+                
+                if (tableData) {
+                    document.getElementById('tableNumberInput').value = tableData.number;
+                    document.getElementById('tableShapeSelect').value = tableData.shape;
+                    document.getElementById('tableCapacityInput').value = tableData.capacity;
+                    document.getElementById('tableStatusSelect').value = tableData.status;
+                    
+                    tableOptionsModal.classList.add('show');
+                    selectedTable = table;
+                }
+            }
+            
+            // Show add table modal
+            function showAddTableModal() {
+                document.getElementById('newTableNumberInput').value = tables.length + 1;
+                addTableModal.classList.add('show');
+            }
+            
+            // Show a toast notification
+            function showToast(message) {
+                toast.textContent = message;
+                toast.classList.add('show');
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }
+            
+            // Render tables on the floor plan
+            function renderTables() {
+                floorPlan.innerHTML = '';
+                
+                tables.forEach(table => {
+                    const tableContainer = document.createElement('div');
+                    tableContainer.className = 'table-container';
+                    tableContainer.dataset.id = table.id;
+                    
+                    const tableEl = document.createElement('div');
+                    tableEl.className = `table ${table.shape} ${table.status} draggable-table`;
+                    
+                    const tableNumber = document.createElement('div');
+                    tableNumber.className = 'table-number';
+                    tableNumber.textContent = table.number;
+                    
+                    const tableCapacity = document.createElement('div');
+                    tableCapacity.className = 'table-capacity';
+                    tableCapacity.textContent = `${table.capacity} seats`;
+                    
+                    const hoverInfo = document.createElement('div');
+                    hoverInfo.className = 'hover-info';
+                    
+                    // Status with first letter capitalized
+                    const status = table.status.charAt(0).toUpperCase() + table.status.slice(1);
+                    hoverInfo.textContent = `Table ${table.number} - ${status}`;
+                    
+                    tableEl.appendChild(tableNumber);
+                    tableEl.appendChild(tableCapacity);
+                    tableContainer.appendChild(hoverInfo);
+                    tableContainer.appendChild(tableEl);
+                    
+                    // Quick options menu
+                    const tableOptions = document.createElement('div');
+                    tableOptions.className = 'table-options';
+                    
+                    const statusOptions = ['vacant', 'occupied', 'reserved'];
+                    statusOptions.forEach(status => {
+                        const btn = document.createElement('button');
+                        btn.className = `option-btn ${status}`;
+                        btn.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+                        
+                        btn.addEventListener('click', function() {
+                            const tableId = parseInt(tableContainer.dataset.id);
+                            const tableIndex = tables.findIndex(t => t.id === tableId);
+                            
+                            if (tableIndex !== -1) {
+                                tables[tableIndex].status = status;
+                                renderTables();
+                                updateTableCounts();
+                                showToast(`Table ${tables[tableIndex].number} is now ${status}`);
+                            }
+                            
+                            tableOptions.classList.remove('show');
+                        });
+                        
+                        tableOptions.appendChild(btn);
+                    });
+                    
+                    tableContainer.appendChild(tableOptions);
+                    
+                    // Table click event
+                    tableEl.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        
+                        // Hide any open table options
+                        document.querySelectorAll('.table-options.show').forEach(el => {
+                            if (el !== tableOptions) {
+                                el.classList.remove('show');
+                            }
+                        });
+                        
+                        tableOptions.classList.toggle('show');
+                    });
+                    
+                    // Double click to edit
+                    tableEl.addEventListener('dblclick', function() {
+                        showTableOptions(tableContainer);
+                    });
+                    
+                    // Drag functionality
+                    tableEl.addEventListener('mousedown', function(e) {
+                        isDragging = true;
+                        draggedTable = tableContainer;
+                        
+                        // Create clone for dragging
+                        const clone = tableEl.cloneNode(true);
+                        clone.className += ' dragging';
+                        document.body.appendChild(clone);
+                        
+                        // Position clone at cursor
+                        const rect = tableEl.getBoundingClientRect();
+                        const offsetX = e.clientX - rect.left;
+                        const offsetY = e.clientY - rect.top;
+                        
+                        function onMouseMove(e) {
+                            if (isDragging) {
+                                clone.style.left = (e.clientX - offsetX) + 'px';
+                                clone.style.top = (e.clientY - offsetY) + 'px';
+                            }
+                        }
+                        
+                        function onMouseUp() {
+                            isDragging = false;
+                            document.body.removeChild(clone);
+                            document.removeEventListener('mousemove', onMouseMove);
+                            document.removeEventListener('mouseup', onMouseUp);
+                        }
+                        
+                        document.addEventListener('mousemove', onMouseMove);
+                        document.addEventListener('mouseup', onMouseUp);
+                    });
+                    
+                    floorPlan.appendChild(tableContainer);
+                });
+                
+                // Hide options when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.table-options') && !e.target.closest('.table')) {
+                        document.querySelectorAll('.table-options.show').forEach(el => {
+                            el.classList.remove('show');
+                        });
+                    }
+                });
+            }
+            
+            // Filter tables by status
+            function filterTables(filter) {
+                const tableContainers = document.querySelectorAll('.table-container');
+                
+                if (filter === 'all') {
+                    tableContainers.forEach(table => {
+                        table.style.display = 'block';
+                    });
+                } else {
+                    tableContainers.forEach(table => {
+                        const tableId = parseInt(table.dataset.id);
+                        const tableData = tables.find(t => t.id === tableId);
+                        
+                        if (tableData && tableData.status === filter) {
+                            table.style.display = 'block';
+                        } else {
+                            table.style.display = 'none';
+                        }
+                    });
+                }
+            }
+            
+            // Update table count statistics
+            function updateTableCounts() {
+                const total = tables.length;
+                const vacant = tables.filter(t => t.status === 'vacant').length;
+                const occupied = tables.filter(t => t.status === 'occupied').length;
+                const reserved = tables.filter(t => t.status === 'reserved').length;
+                
+                totalTablesCount.textContent = total;
+                vacantTablesCount.textContent = vacant;
+                occupiedTablesCount.textContent = occupied;
+                reservedTablesCount.textContent = reserved;
+            }
+            
+            // Initialize the application
+            init();
+        });
+    </script>
+</body>
+</html>
