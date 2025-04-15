@@ -412,6 +412,93 @@
             color: var(--dark-brown);
         }
 
+        /* Promo Code Section */
+        .promo-code-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(88, 47, 14, 0.2);
+        }
+
+        .promo-code-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .promo-code-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .promo-code-input:focus {
+            outline: none;
+            border-color: var(--medium-brown);
+        }
+
+        .apply-promo-btn {
+            background-color: var(--dark-brown);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .apply-promo-btn:hover {
+            background-color: var(--medium-brown);
+        }
+
+        .apply-promo-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .promo-code-status {
+            font-size: 14px;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .promo-code-status.success {
+            color: #2e7d32;
+        }
+
+        .promo-code-status.error {
+            color: #c62828;
+        }
+
+        .discount-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            color: var(--medium-brown);
+            margin-bottom: 10px;
+        }
+
+        .discount-row .amount {
+            color: #2e7d32;
+            font-weight: 500;
+        }
+
+        .final-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--dark-brown);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(88, 47, 14, 0.2);
+        }
+
         /* Toast Notifications */
         .toast-container {
             position: fixed;
@@ -633,6 +720,24 @@
                     <!-- Order items will be inserted here -->
                 </div>
                 <div class="order-total">
+                    <span>Subtotal</span>
+                    <span id="orderSubtotal">$0.00</span>
+                </div>
+                
+                <!-- Promo Code Section -->
+                <div class="promo-code-section">
+                    <div class="promo-code-form">
+                        <input type="text" id="promoCode" class="promo-code-input" placeholder="Enter promo code">
+                        <button id="applyPromoBtn" class="apply-promo-btn" onclick="applyPromoCode()">Apply</button>
+                    </div>
+                    <div id="promoCodeStatus" class="promo-code-status"></div>
+                    <div id="discountRow" class="discount-row" style="display: none;">
+                        <span>Discount</span>
+                        <span class="amount" id="discountAmount">-$0.00</span>
+                    </div>
+                </div>
+                
+                <div class="final-total">
                     <span>Total Amount</span>
                     <span id="orderTotal">$0.00</span>
                 </div>
@@ -740,8 +845,17 @@
             total: 21.75
         };
 
+        // Sample promo codes (in a real app, this would be validated on the server)
+        const promoCodes = {
+            "WELCOME10": { discount: 0.10, type: "percentage" },
+            "SAVE5": { discount: 5.00, type: "fixed" },
+            "SPECIAL20": { discount: 0.20, type: "percentage" }
+        };
+
         let selectedPaymentMethod = null;
         let selectedUpiApp = null;
+        let appliedPromoCode = null;
+        let discountAmount = 0;
 
         // Initialize the page
         window.onload = function() {
@@ -757,6 +871,7 @@
         // Load Order Summary
         function loadOrderSummary() {
             const orderItems = document.getElementById('orderItems');
+            const orderSubtotal = document.getElementById('orderSubtotal');
             const orderTotal = document.getElementById('orderTotal');
             const cashAmount = document.getElementById('cashAmount');
 
@@ -773,8 +888,67 @@
                 orderItems.appendChild(orderItem);
             });
 
+            orderSubtotal.textContent = `$${orderData.total.toFixed(2)}`;
             orderTotal.textContent = `$${orderData.total.toFixed(2)}`;
             cashAmount.textContent = `$${orderData.total.toFixed(2)}`;
+        }
+
+        // Apply Promo Code
+        function applyPromoCode() {
+            const promoCodeInput = document.getElementById('promoCode');
+            const promoCodeStatus = document.getElementById('promoCodeStatus');
+            const discountRow = document.getElementById('discountRow');
+            const discountAmountElement = document.getElementById('discountAmount');
+            const orderTotal = document.getElementById('orderTotal');
+            const cashAmount = document.getElementById('cashAmount');
+            
+            const code = promoCodeInput.value.trim().toUpperCase();
+            
+            // Reset previous status
+            promoCodeStatus.className = 'promo-code-status';
+            promoCodeStatus.innerHTML = '';
+            
+            if (!code) {
+                promoCodeStatus.className = 'promo-code-status error';
+                promoCodeStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please enter a promo code';
+                return;
+            }
+            
+            // Check if promo code exists
+            if (promoCodes[code]) {
+                const promo = promoCodes[code];
+                let discount = 0;
+                
+                // Calculate discount based on type
+                if (promo.type === 'percentage') {
+                    discount = orderData.total * promo.discount;
+                } else {
+                    discount = promo.discount;
+                }
+                
+                // Ensure discount doesn't exceed total
+                discount = Math.min(discount, orderData.total);
+                
+                // Update UI
+                appliedPromoCode = code;
+                discountAmount = discount;
+                
+                promoCodeStatus.className = 'promo-code-status success';
+                promoCodeStatus.innerHTML = `<i class="fas fa-check-circle"></i> Promo code applied successfully!`;
+                
+                discountRow.style.display = 'flex';
+                discountAmountElement.textContent = `-$${discount.toFixed(2)}`;
+                
+                const finalTotal = orderData.total - discount;
+                orderTotal.textContent = `$${finalTotal.toFixed(2)}`;
+                cashAmount.textContent = `$${finalTotal.toFixed(2)}`;
+                
+                showToast(`Promo code "${code}" applied successfully!`);
+            } else {
+                promoCodeStatus.className = 'promo-code-status error';
+                promoCodeStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Invalid promo code';
+                showToast('Invalid promo code');
+            }
         }
 
         // Select Payment Method
