@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Restaurant - QuickServe Admin</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/add-restaurant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <%- include('../partials/sidebar', { activePage: 'restaurants' }) %>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Add New Restaurant</h1>
+            </div>
+
+            <!-- Add Restaurant Form -->
+            <div class="form-container">
+                <form id="addRestaurantForm" class="form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Restaurant Name</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Location</label>
+                            <input type="text" name="location" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" name="confirmPassword" required>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <a href="/restaurants" class="btn btn-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Add Restaurant</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById('addRestaurantForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(e.target);
+        const data = {
+            name: formData.get('name'),
+            location: formData.get('location'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            tableCount: parseInt(formData.get('tableCount')),
+            password: formData.get('password'),
+            confirmPassword: formData.get('confirmPassword')
+        };
+
+        // Validate passwords match
+        if (data.password !== data.confirmPassword) {
+            alert('Passwords do not match');
+            return;
+        }
+
+        // Validate table count
+        if (data.tableCount < 1) {
+            alert('Number of tables must be at least 1');
+            return;
+        }
+
+        try {
+            const response = await fetch('/restaurants/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('Restaurant added successfully');
+                window.location.href = '/restaurants';
+            } else {
+                const error = await response.json();
+                alert(error.message || 'Failed to add restaurant');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while adding the restaurant');
+        }
+    });
+    </script>
+</body>
+</html>

@@ -32,6 +32,6 @@ app.use("/", homeRoutes);
 app.use("/api", apiRoutes);
 
 app.listen(port, () => {
-    console.log(`Admin server running on port http://localhost:${port}`);
+    console.log(`Landing page server running on port http://localhost:${port}`);
 });
 

@@ -10,7 +10,7 @@ import authRoutes from "./routes/authRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
 
 const app = express();
-const port = process.env.PORT || 4004;
+const port = process.env.PORT || 4003;
 env.config();
 
 // Initialize express-session
@@ -46,7 +46,7 @@ app.use("/auth", authRoutes);
 app.use("/dashboard", dashboardRoutes);
 
 app.listen(port, () => {
-    console.log(`Admin server running on port http://localhost:${port}`);
+    console.log(`POS server running on port http://localhost:${port}`);
 });
 
 // Auth route

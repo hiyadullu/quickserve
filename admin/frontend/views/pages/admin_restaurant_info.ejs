@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= restaurant.name %> - QuickServe Admin</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/restaurant-info.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <%- include('../partials/sidebar', { activePage: 'restaurants' }) %>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1><%= restaurant.name %></h1>
+                <div class="header-actions">
+                    <a href="/restaurants" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Restaurants
+                    </a>
+                </div>
+            </div>
+
+            <!-- Restaurant Overview -->
+            <div class="overview-section">
+                <div class="overview-card">
+                    <div class="overview-header">
+                        <h2>Restaurant Overview</h2>
+                        <span class="status-badge <%= restaurant.status === 'active' ? 'status-active' : 'status-inactive' %>">
+                            <%= restaurant.status.charAt(0).toUpperCase() + restaurant.status.slice(1) %>
+                        </span>
+                    </div>
+                    <div class="overview-grid">
+                        <div class="overview-item">
+                            <span class="overview-label">Restaurant ID</span>
+                            <span class="overview-value">#<%= restaurant.id %></span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-label">Location</span>
+                            <span class="overview-value"><%= restaurant.location %></span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-label">Email</span>
+                            <span class="overview-value"><%= restaurant.email %></span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-label">Phone</span>
+                            <span class="overview-value"><%= restaurant.phone %></span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-label">Tables</span>
+                            <span class="overview-value"><%= restaurant.table_count %></span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-label">Last Login</span>
+                            <span class="overview-value"><%= new Date(restaurant.last_login).toLocaleString() %></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usage Statistics -->
+            <div class="stats-section">
+                <div class="stats-card">
+                    <h2>Usage Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value"><%= restaurant.qr_views || 0 %></span>
+                                <span class="stat-label">QR Code Scans</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value"><%= restaurant.orders_placed || 0 %></span>
+                                <span class="stat-label">Orders Placed</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value"><%= restaurant.unique_customers || 0 %></span>
+                                <span class="stat-label">Unique Customers</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value"><%= restaurant.avg_order_time || '0' %> min</span>
+                                <span class="stat-label">Avg. Order Time</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenue Metrics -->
+            <div class="revenue-section">
+                <div class="revenue-card">
+                    <h2>Revenue Metrics</h2>
+                    <div class="revenue-grid">
+                        <div class="revenue-item">
+                            <div class="revenue-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div class="revenue-info">
+                                <span class="revenue-value">$<%= (restaurant.total_revenue || 0).toFixed(2) %></span>
+                                <span class="revenue-label">Total Revenue</span>
+                            </div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="revenue-info">
+                                <span class="revenue-value">$<%= (restaurant.avg_order_value || 0).toFixed(2) %></span>
+                                <span class="revenue-label">Avg. Order Value</span>
+                            </div>
+                        </div>
+                        <div class="revenue-item">
+                            <div class="revenue-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="revenue-info">
+                                <span class="revenue-value">$<%= (restaurant.monthly_revenue || 0).toFixed(2) %></span>
+                                <span class="revenue-label">Monthly Revenue</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="qr-section">
+                <div class="qr-card">
+                    <div class="qr-header">
+                        <h2>Customer Menu QR Code</h2>
+                        <p>Scan this QR code to access the customer menu page</p>
+                    </div>
+                    <div class="qr-code">
+                        <img src="<%= qrDataUrl %>" alt="QR Code">
+                    </div>
+                    <div class="qr-actions">
+                        <a href="<%= qrDataUrl %>" download="<%= restaurant.name %>-qr-code.png" class="btn btn-primary">
+                            <i class="fas fa-download"></i> Download QR Code
+                        </a>
+                        <button class="btn btn-secondary" onclick="window.print()">
+                            <i class="fas fa-print"></i> Print QR Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

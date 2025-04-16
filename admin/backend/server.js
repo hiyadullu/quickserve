@@ -8,6 +8,8 @@ import { fileURLToPath } from "url";
 import homeRoutes from "./routes/homeRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
+import queriesRoutes from "./routes/queriesRoutes.js";  
+import restaurantsRoutes from "./routes/restaurantsRoutes.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -47,6 +49,8 @@ app.use(express.json());
 app.use("/", homeRoutes);
 app.use("/auth", authRoutes);
 app.use("/dashboard", dashboardRoutes);
+app.use("/queries", queriesRoutes);
+app.use("/restaurants", restaurantsRoutes);
 
 app.listen(port, () => {
     console.log(`Admin server running on port http://localhost:${port}`);

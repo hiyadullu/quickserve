@@ -1,0 +1,133 @@
+/* Restaurant QR Code Page Styles */
+.qr-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.qr-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    text-align: center;
+}
+
+.qr-header {
+    margin-bottom: 2rem;
+}
+
+.qr-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.qr-header p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.qr-code {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.qr-code canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+.qr-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.qr-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+}
+
+.info-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-label {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.info-value {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Print Styles */
+@media print {
+    .sidebar,
+    .header-actions,
+    .qr-actions {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .qr-card {
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+    }
+
+    .qr-code {
+        min-height: 400px;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .qr-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .qr-actions {
+        flex-direction: column;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+} 

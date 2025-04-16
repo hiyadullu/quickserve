@@ -1,4 +1,3 @@
-
     /* Page Transition Animations */
     .page-exit {
         position: absolute;
@@ -42,77 +41,22 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: all 0.3s ease;
         }
 
         body {
-            display: flex;
             background-color: #E0E1DD;
             color: #ffffff;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Sidebar Styles */
-        .sidebar {
-            width: 250px;
-            background-color: #0D1B2A;
-            padding: 20px 0;
-            height: 100vh;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar h2 {
-            color: #fff;
-            text-align: center;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-            font-size: 24px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #1B263B;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0 10px;
-        }
-
-        .sidebar li {
-            padding: 15px 20px;
-            margin: 8px 0;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sidebar li:hover {
-            background-color: #1B263B;
-            transform: translateX(5px);
-        }
-
-        .sidebar li.active {
-            background-color: #778DA9;
-            font-weight: bold;
-        }
-
-        .sidebar li.active::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background-color: #fff;
+            min-height: 100vh;
+            display: flex;
         }
 
         /* Main Content */
         .main {
             flex: 1;
-            background-color: #1B263B;
+            margin-left: 250px; /* Same as sidebar width */
             padding: 20px;
-            overflow-y: auto;
+            background-color: #1B263B;
+            min-height: 100vh;
         }
 
         /* Navbar */
@@ -344,17 +288,11 @@
         }
 
         .orange, .yellow {
-            animation: slideInRight 0.5s ease-out;
-        }
-
-        /* Fade Animation for Processed Orders */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            /* animation: slideInRight 0.5s ease-out; */
         }
 
         .green, .gray {
-            animation: fadeIn 0.8s ease-in;
+            /* animation: fadeIn 0.8s ease-in; */
         }
 
         /* Card Movement Animations */
@@ -396,26 +334,22 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #0D1B2A;
+            background-color: #333;
             color: white;
-            padding: 15px 25px;
+            padding: 10px 20px;
             border-radius: 5px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(100px);
             opacity: 0;
-            transition: all 0.5s ease;
-            z-index: 1000;
+            transition: opacity 0.3s ease;
         }
 
         .toast.show {
-            transform: translateY(0);
             opacity: 1;
         }
 
         /* Empty State */
         .empty-state {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             color: #778DA9;
             font-style: italic;
         }

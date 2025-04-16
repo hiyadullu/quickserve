@@ -1,0 +1,33 @@
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="brand">
+        <h2>QuickServe</h2>
+    </div>
+    <ul class="nav-links">
+        <li class="<%= activePage === 'dashboard' ? 'active' : '' %>">
+            <a href="/dashboard"><i class="fas fa-th-large"></i>Dashboard</a>
+        </li>
+        <li class="<%= activePage === 'queries' ? 'active' : '' %>">
+            <a href="/queries"><i class="fas fa-question-circle"></i>User Queries</a>
+        </li>
+        <li class="<%= activePage === 'restaurants' ? 'active' : '' %>">
+            <a href="/restaurants"><i class="fas fa-utensils"></i>Restaurants</a>
+        </li>
+        <li class="<%= activePage === 'analytics' ? 'active' : '' %>">
+            <a href="#"><i class="fas fa-chart-bar"></i>Analytics</a>
+        </li>
+        <li class="<%= activePage === 'settings' ? 'active' : '' %>">
+            <a href="#"><i class="fas fa-cog"></i>Settings</a>
+        </li>
+        <li class="nav-divider"></li>
+        <li>
+            <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </li>
+        <li>
+            <a href="/auth/add"><i class="fas fa-user-plus"></i>Add Admin</a>
+        </li>
+        <li>
+            <a href="/restaurants/add"><i class="fas fa-utensils"></i>Add Restaurant</a>
+        </li>
+    </ul>
+</div> 

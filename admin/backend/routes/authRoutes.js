@@ -55,40 +55,29 @@ router.post("/login", async (req, res) => {
     const password = req.body.password;
 
     try {
-      const result = await db.query(
-        "SELECT * FROM admin WHERE admin_id = $1", 
-        [admin_id]
-      );
+        const result = await db.query(
+            "SELECT * FROM admin WHERE admin_id = $1", 
+            [admin_id]
+        );
 
-      if (result.rows.length > 0) {
-        const admin = result.rows[0];
-        const storedPassword = admin.password;
+        if (result.rows.length > 0) {
+            const admin = result.rows[0];
 
-        // if(password === storedPassword) {
-        //   //Store session data
-        //   req.session.admin = {
-        //     admin_id: admin.admin_id,
-        //   };
-
-        //   res.redirect("/dashboard");
-        // }
-  
-        if (await bcrypt.compare(password, admin.password)) {
-            //Store session data
-            req.session.admin = {
-                admin_id: admin.admin_id,
-            };
-
-            res.redirect("/dashboard");
-        } 
-        else {
-          res.send("Incorrect Password");
+            if (await bcrypt.compare(password, admin.password)) {
+                // Store session data
+                req.session.admin = {
+                    admin_id: admin.admin_id,
+                };
+                res.redirect("/dashboard");
+            } else {
+                res.status(401).json({ error: "Incorrect password" });
+            }
+        } else {
+            res.status(404).json({ error: "Admin not found" });
         }
-      } else {
-        res.send("Admin not found");
-      }
     } catch (err) {
-      console.log(err);
+        console.error("Login error:", err);
+        res.status(500).json({ error: "An error occurred during login" });
     }
 });
 
