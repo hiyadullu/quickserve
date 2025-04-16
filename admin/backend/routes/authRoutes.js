@@ -1,6 +1,6 @@
 import express from "express";
 import db from "../db.js";
-import bcrypt from "bcrypt";
+import bcrypt from 'bcrypt';
 
 const router = express.Router();
 
@@ -53,6 +53,7 @@ router.post("/add", async (req, res) => {
 router.post("/login", async (req, res) => {
     const admin_id = req.body.admin_id;
     const password = req.body.password;
+    console.log(admin_id, password);
 
     try {
         const result = await db.query(
@@ -88,12 +89,4 @@ router.get("/logout", (req, res) => {
     });
 });
 
-export const isAuthenticated = (req, res, next) => {
-    if (req.isAuthenticated && req.isAuthenticated()) {
-        return next();
-    }
-    res.status(401).json({ message: "Unauthorized" });
-};
-
-export { isAuthenticated };
 export default router;

@@ -30,9 +30,6 @@ app.use(session({
 // Create __dirname equivalent for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const qrRoute = require('./routes/qrRoute');
-app.use('/api', qrRoute);
-
 
 // Set the view engine and views folder
 app.set("view engine", "ejs");

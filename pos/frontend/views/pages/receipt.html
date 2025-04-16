@@ -321,39 +321,8 @@
     </style>
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar no-print">
-        <h2>QuickServe</h2>
-        <ul>
-            <li>Dashboard</li>
-            <li class="active">Delivered</li>
-            <li>Declined</li>
-            <li>Settings</li>
-        </ul>
-    </div>
-
     <!-- Main Content -->
     <div class="main page-enter">
-        <!-- Navbar -->
-        <div class="navbar no-print">
-            <h2>Order Receipt</h2>
-            <div class="action-buttons">
-                <button class="action-btn back" id="back-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                    </svg>
-                    Back to Orders
-                </button>
-                <button class="action-btn" id="print-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
-                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-                        <rect x="6" y="14" width="12" height="8"></rect>
-                    </svg>
-                    Print Receipt
-                </button>
-            </div>
-        </div>
 
         <!-- Receipt Content -->
         <div class="receipt-container" id="receipt">
@@ -446,95 +415,5 @@
             </div>
         </div>
     </div>
-
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">Action completed!</div>
-
-    <script>
-        // Function to show toast notification
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-
-        // Function to get URL parameters
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            const results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
-
-        // Function to load order data
-        function loadOrderData() {
-            // In a real app, you would fetch this data from a server
-            // Here we're just using the order ID from the URL
-            const orderId = getUrlParameter('id') || '1230';
-            document.getElementById('order-number').textContent = orderId;
-            document.getElementById('receipt-order-number').textContent = orderId;
-            
-            // Set current date if not already set
-            const today = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('order-date').textContent = today.toLocaleDateString('en-US', options);
-            
-            // For demo, we're using static data
-            // In real app, you would use the orderId to fetch the correct data
-        }
-
-        // Generate barcode (simple representation for demo)
-        function generateBarcode() {
-            const barcodeSvg = document.getElementById('barcode');
-            const orderId = document.getElementById('order-number').textContent;
-            
-            // Create a simple barcode visualization (not a real barcode)
-            let barcodeHTML = '';
-            const chars = orderId.split('');
-            const width = 180;
-            const height = 50;
-            
-            for (let i = 0; i < chars.length; i++) {
-                const digit = parseInt(chars[i]) || 1;
-                const barWidth = 3 + digit;
-                const x = 10 + i * 15;
-                barcodeHTML += `<rect x="${x}" y="0" width="${barWidth}" height="${height}" fill="#0D1B2A"></rect>`;
-            }
-            
-            barcodeSvg.innerHTML = `<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">${barcodeHTML}</svg>`;
-        }
-
-        // Print function that properly triggers browser print
-        function printReceipt() {
-            showToast('Preparing to print...');
-            
-            // Create a timeout to allow the toast message to be seen
-            setTimeout(() => {
-                // Print the page
-                window.print();
-            }, 800);
-        }
-
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            loadOrderData();
-            generateBarcode();
-            
-            // Back button event listener
-            document.getElementById('back-btn').addEventListener('click', function() {
-                window.location.href = 'delivered.html';
-            });
-            
-            // Print button event listener
-            document.getElementById('print-btn').addEventListener('click', function() {
-                printReceipt();
-            });
-        });
-    </script>
-    <script src="index.js"></script>
 </body>
 </html>

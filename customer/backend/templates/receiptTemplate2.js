@@ -1,0 +1,297 @@
+export function receiptTemplate({
+    restaurant,
+    order,
+    customer,
+    showDownloadButton = false
+}) {
+    return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickServe - Order Receipt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #E0E1DD;
+            color: #333;
+            padding: 20px;
+        }
+
+        .receipt-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .receipt-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px dashed #ccc;
+        }
+
+        .receipt-header h2 {
+            color: #0D1B2A;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .receipt-header p {
+            color: #778DA9;
+            font-size: 14px;
+        }
+
+        .receipt-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .receipt-info-group h3 {
+            color: #0D1B2A;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .receipt-info-group p {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .order-details {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+
+        .order-items {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .order-items th,
+        .order-items td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .order-items th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #0D1B2A;
+        }
+
+        .order-totals {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .grand-total {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #ddd;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .receipt-footer {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px dashed #ccc;
+        }
+
+        .receipt-footer p {
+            color: #778DA9;
+            margin-bottom: 10px;
+        }
+
+        .barcode {
+            margin: 15px auto;
+            text-align: center;
+        }
+
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .receipt-container {
+                box-shadow: none;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+
+        .actions {
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            background-color: #0D1B2A;
+            color: #fff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background-color: #1B263B;
+        }
+
+        .btn-secondary {
+            background-color: #778DA9;
+        }
+
+        .btn-secondary:hover {
+            background-color: #415A77;
+        }
+    </style>
+</head>
+<body>
+    <div class="actions no-print">
+        ${showDownloadButton ? `
+        <a href="/download-receipt/${order.id}" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download PDF
+        </a>
+        ` : ''}
+        <button onclick="window.print()" class="btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
+            </svg>
+            Print Receipt
+        </button>
+    </div>
+
+    <div class="receipt-container" id="receipt">
+        <div class="receipt-header">
+            <h2>QuickServe</h2>
+            <p>${restaurant.address}</p>
+            <p>Tel: ${restaurant.phone} | ${restaurant.email}</p>
+        </div>
+
+        <div class="receipt-info">
+            <div class="receipt-info-group">
+                <h3>Order Information</h3>
+                <p><strong>Order #:</strong> ${order.id}</p>
+                <p><strong>Date:</strong> ${order.date}</p>
+                <p><strong>Time:</strong> ${order.time}</p>
+                <p><strong>Payment Method:</strong> ${order.paymentMethod}</p>
+            </div>
+            <div class="receipt-info-group">
+                <h3>Customer Information</h3>
+                <p><strong>Name:</strong> ${customer.name}</p>
+                <p><strong>Address:</strong> ${customer.address}</p>
+                <p><strong>Phone:</strong> ${customer.phone}</p>
+                <p><strong>Email:</strong> ${customer.email}</p>
+            </div>
+        </div>
+
+        <div class="order-details">
+            <h3>Order Items</h3>
+            <table class="order-items">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${order.items.map(item => `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.quantity}</td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>$${(item.price * item.quantity).toFixed(2)}</td>
+                    </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+
+            <div class="order-totals">
+                <div class="total-row">
+                    <span>Subtotal:</span>
+                    <span>$${order.subtotal.toFixed(2)}</span>
+                </div>
+                <div class="total-row">
+                    <span>Tax (${order.taxRate}%):</span>
+                    <span>$${order.tax.toFixed(2)}</span>
+                </div>
+                ${order.deliveryFee ? `
+                <div class="total-row">
+                    <span>Delivery Fee:</span>
+                    <span>$${order.deliveryFee.toFixed(2)}</span>
+                </div>
+                ` : ''}
+                ${order.tip ? `
+                <div class="total-row">
+                    <span>Tip:</span>
+                    <span>$${order.tip.toFixed(2)}</span>
+                </div>
+                ` : ''}
+                <div class="total-row grand-total">
+                    <span>TOTAL:</span>
+                    <span>$${order.total.toFixed(2)}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="receipt-footer">
+            <p>Thank you for your order!</p>
+            <div class="barcode">
+                <img src="/barcode/${order.id}" alt="Order Barcode">
+            </div>
+            <p>Receipt ID: QSRCT-${new Date().getFullYear()}-${order.id}</p>
+        </div>
+    </div>
+</body>
+</html>
+    `;
+}

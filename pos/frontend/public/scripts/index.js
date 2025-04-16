@@ -8,31 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     sidebarItems.forEach(item => {
         // Set active class based on current page
-        if ((currentPage === 'delivered.html' && item.textContent.trim() === 'Delivered') ||
-            (currentPage === 'declined.ejs' && item.textContent.trim() === 'Declined') ||
-            (currentPage === 'dashboard.ejs' && item.textContent.trim() === 'Overview') ||
-            (currentPage === 'dashboard.ejs' && item.textContent.trim() === 'Overview')) {
+        if ((currentPage === '/delivered' && item.textContent.trim() === 'Delivered') ||
+            (currentPage === '/declined' && item.textContent.trim() === 'Declined') ||
+            (currentPage === '/dashboard' && item.textContent.trim() === 'Overview')) {
             item.classList.add('active');
         } else {
             item.classList.remove('active');
         }
-        
-        // Add click event listeners
-        item.addEventListener('click', function() {
-            const text = this.textContent.trim();
-            
-            // Navigate based on menu item text
-            if (text === 'Overview') {
-                window.location.href = 'dashboard.ejs';
-            } else if (text === 'Delivered') {
-                window.location.href = 'delivered.html';
-            } else if (text === 'Declined') {
-                window.location.href = 'declined.html';
-            } else if (text === 'Settings') {
-                // Future implementation
-                showToast('Settings page coming soon');
-            }
-        });
         
         // Add hover animations
         item.addEventListener('mouseover', function() {
@@ -87,9 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 navigateTo = e.target.getAttribute('href');
             } else {
                 const text = e.target.textContent.trim();
-                if (text === 'Overview') navigateTo = 'dashboard.ejs';
-                else if (text === 'Delivered') navigateTo = 'delivered.html';
-                else if (text === 'Declined') navigateTo = 'declined.html';
+                if (text === 'Dashboard') navigateTo = '/dashboard';
+                else if (text === 'Delivered') navigateTo = '/delivered';
+                else if (text === 'Declined') navigateTo = '/declined';
                 else return; // Don't navigate for other items
             }
             
@@ -109,11 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const hasMainContent = document.querySelector('.container') || 
                                document.querySelector('main') || 
                                document.querySelector('.content-section');
-        
-        // If essential elements are missing, redirect to 404 page
-        if (!hasMainContent) {
-            window.location.href = 'error404.html';
-        }
     }
     
     // Run the page existence check after a short delay to ensure DOM is fully loaded

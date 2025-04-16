@@ -1,15 +1,7 @@
 import express from "express";
-import bcrypt from "bcrypt";
 import db from "../db.js"; // Ensure the file extension is included for ES modules
 
 const router = express.Router();
-
-async function hashPassword(plainPassword) {
-    const saltRounds = 10;
-    const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
-    // console.log("Hashed Password:", hashedPassword);
-    return hashedPassword; // Ensure the hashed password is returned
-}
 
 router.get('/login', (req, res) => {
     res.render('login')
@@ -25,14 +17,10 @@ router.post("/register", async (req, res) => {
         if (userCheck.rows.length > 0) {
             return res.status(400).json({ message: "Restaurant already exists" });
         }
-
-        // Hash password
-        const hashedPassword = await hashPassword(password);
-
         // Insert user into database
         const newUser = await db.query(
             "INSERT INTO restaurants (email, password) VALUES ($1, $2) RETURNING id, email",
-            [email, hashedPassword]
+            [email, password]
         );
 
         res.status(201).json({ message: "User registered successfully", user: newUser.rows[0] });
@@ -45,6 +33,7 @@ router.post("/register", async (req, res) => {
 // Login Route
 router.post("/login", async (req, res) => {
     const { email, password } = req.body;
+    console.log(email, password);
 
     try {
         // Check if user exists
@@ -66,20 +55,22 @@ router.post("/login", async (req, res) => {
             [email]
         );
 
-        // Store user data in session
+        // Set session
         req.session.restaurant = {
             id: restaurant.id,
             email: restaurant.email
         };
-        console.log(req.session.restaurant);
 
-        res.status(200).json({ message: "Login successful" });
+        console.log(req.session.restaurant)
+        res.redirect('/dashboard');
+
     } catch (err) {
-        console.error("❌ Login Error:", err);
+        console.error("Login Error:", err);
         res.status(500).json({ message: "Server error" });
     }
 });
 
+// Logout Route
 router.post("/logout", async (req, res) => {
     try {
         // Update restaurant status to inactive
