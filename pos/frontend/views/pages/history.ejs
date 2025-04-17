@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickServe - Delivered Orders</title>
+    <link rel="stylesheet" href="/public/css/sidebar.css">
     <style>
     /* Page Transition Animations */
     .page-exit {
@@ -392,16 +393,8 @@
     </style>
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>QuickServe</h2>
-        <ul>
-            <li>Dashboard</li>
-            <li class="active">Delivered</li>
-            <li>Declined</li>
-            <li>Settings</li>
-        </ul>
-    </div>
+     <!-- Sidebar -->
+     <%- include('../partials/sidebar') %>
 
     <!-- Main Content -->
     <div class="main">

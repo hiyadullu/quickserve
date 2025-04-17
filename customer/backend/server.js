@@ -11,7 +11,7 @@ import orderRoutes from "./routes/orderRoutes.js";
 import createPageRoutes from "./routes/createPageRoutes.js";
 
 const app = express();
-const port = process.env.PORT || 4002;
+const port = process.env.PORT || 4001;
 env.config();
 
 // Initialize express-session

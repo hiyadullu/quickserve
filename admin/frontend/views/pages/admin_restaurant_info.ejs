@@ -153,6 +153,9 @@
                         <img src="<%= qrDataUrl %>" alt="QR Code">
                     </div>
                     <div class="qr-actions">
+                        <a class="btn btn-primary" onclick="sendEmail('<%= restaurant.id %>')">
+                            <i class="fas fa-envelope"></i> Email Details
+                        </a>
                         <a href="<%= qrDataUrl %>" download="<%= restaurant.name %>-qr-code.png" class="btn btn-primary">
                             <i class="fas fa-download"></i> Download QR Code
                         </a>
@@ -164,5 +167,27 @@
             </div>
         </div>
     </div>
+    <script>
+        async function sendEmail(restaurantId) {
+            try {
+                const response = await fetch('/restaurants/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ restaurantId })
+                });
+                
+                if (response.ok) {
+                    alert('Email sent successfully!');
+                } else {
+                    alert('Failed to send email. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while sending the email.');
+            }
+        }
+    </script>
 </body>
-</html> 
+</html>

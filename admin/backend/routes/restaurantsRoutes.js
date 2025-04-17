@@ -5,6 +5,7 @@ import { generateQRCode } from '../utils/qrGenerator.js';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+import {sendManualEmail} from '../utils/email.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -107,5 +108,27 @@ router.get("/:id", isAuthenticated, async (req, res) => {
         });
     }
 });
+
+router.post('/send-email', async (req, res) => {
+    const { restaurantId } = req.body;
+    const result = await db.query("SELECT id, email, name, password FROM restaurants WHERE id = $1", [restaurantId]);
+    const restaurant = result.rows[0];
+    
+    try {
+        if (!restaurant) {
+            return res.status(404).json({ message: 'Restaurant not found' });
+        }
+
+        const emailSent = await sendManualEmail(restaurant);
+        if (emailSent) {
+            res.status(200).json({ message: 'Email sent successfully' });
+        } else {
+            res.status(500).json({ message: 'Failed to send email' });
+        }
+    } catch (error) {
+        console.error('Error in send-email route:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+})
 
 export default router;

@@ -84,8 +84,8 @@ router.get('/tables', isAuthenticated, async (req, res) => {
     }
 })
 
-router.get('/delivered', isAuthenticated, (req, res) => {
-    res.render('delivered', { currentPage: 'delivered' })
+router.get('/history', isAuthenticated, (req, res) => {
+    res.render('history', { currentPage: 'history' })
 })
 
 router.get('/declined', isAuthenticated, (req, res) => {
