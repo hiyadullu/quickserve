@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickServe - Delivered Orders</title>
     <link rel="stylesheet" href="/public/css/sidebar.css">
+    <link rel="stylesheet" href="/public/css/style.css">
     <style>
     /* Page Transition Animations */
     .page-exit {
@@ -60,66 +61,16 @@
             overflow: hidden;
         }
 
-        /* Sidebar Styles */
-        .sidebar {
-            width: 250px;
-            background-color: #0D1B2A;
-            padding: 20px 0;
-            height: 100vh;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar h2 {
-            color: #fff;
-            text-align: center;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-            font-size: 24px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #1B263B;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0 10px;
-        }
-
-        .sidebar li {
-            padding: 15px 20px;
-            margin: 8px 0;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sidebar li:hover {
-            background-color: #1B263B;
-            transform: translateX(5px);
-        }
-
-        .sidebar li.active {
-            background-color: #778DA9;
-            font-weight: bold;
-        }
-
-        .sidebar li.active::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background-color: #fff;
-        }
+        /* Custom styles for history page */
 
         /* Main Content */
         .main {
-            flex: 1;
+            margin-left: 250px; /* Match sidebar width */
             background-color: #1B263B;
             padding: 20px;
             overflow-y: auto;
+            width: calc(100% - 250px);
+            height: 100vh;
         }
 
         /* Navbar */
@@ -393,8 +344,7 @@
     </style>
 </head>
 <body>
-     <!-- Sidebar -->
-     <%- include('../partials/sidebar') %>
+    <%- include('../partials/sidebar', { active: 'history' }) %>
 
     <!-- Main Content -->
     <div class="main">
@@ -408,19 +358,15 @@
         <div class="stats-container">
             <div class="stat-card">
                 <h4>TODAY</h4>
-                <p>12</p>
+                <p><%= orders_today %></p>
             </div>
             <div class="stat-card">
                 <h4>THIS WEEK</h4>
-                <p>87</p>
+                <p><%= orders_today %></p>
             </div>
             <div class="stat-card">
                 <h4>THIS MONTH</h4>
-                <p>342</p>
-            </div>
-            <div class="stat-card">
-                <h4>AVG DELIVERY TIME</h4>
-                <p>24 min</p>
+                <p><%= orders_today %></p>
             </div>
         </div>
 
@@ -442,134 +388,52 @@
         <!-- Delivered Orders -->
         <div class="delivered-container">
             <div class="delivered-section">
-                <h3>DELIVERED ORDERS <span class="count" id="delivered-count">8</span></h3>
+                <h3>DELIVERED ORDERS <span class="count" id="delivered-count"><%= orders.length %></span></h3>
                 
-                <div class="delivered-card" id="order-1230">
-                    <p>#1230 <span class="timestamp">Today, 2:45 PM</span></p>
-                    <p>2 x Cheese Pizza, 1 x Garlic Bread, 3 x Coke</p>
-                    <p>Customer: John Doe</p>
-                    <p>Address: 123 Main St, Apt 4B</p>
-                    <div class="details">
-                        <p>Order Time: 2:15 PM</p>
-                        <p>Processing Time: 18 min</p>
-                        <p>Delivery Time: 12 min</p>
+                <% if (orders && orders.length > 0) { %>
+                    <% orders.forEach(order => { %>
+                    <div class="delivered-card" id="order-<%= order.order_id %>">
+                        <p>#<%= order.order_id %> <span class="timestamp"><%= order.formattedDate %></span></p>
+                        <p><%= order.items.map(item => `${item.quantity} x ${item.name}`).join(', ') %></p>
+                        <p>Customer: <%= order.customerName %></p>
+                        <div class="details">
+                            <p>Order Time: <%= order.order_time %></p>
+                            <p>Payment Method: <%= order.payment_method %></p>
+                        </div>
+                        <button class="action-btn" onclick="window.location.href='/dashboard/receipt/<%= order.order_id %>'">View Receipt</button>
                     </div>
-                    <button class="action-btn">View Receipt</button>
-                </div>
-
-                <div class="delivered-card" id="order-1228">
-                    <p>#1228 <span class="timestamp">Today, 1:30 PM</span></p>
-                    <p>1 x Burger, 2 x French Fries, 2 x Diet Coke</p>
-                    <p>Customer: Sarah Johnson</p>
-                    <p>Address: 456 Park Ave, Suite 201</p>
-                    <div class="details">
-                        <p>Order Time: 1:05 PM</p>
-                        <p>Processing Time: 15 min</p>
-                        <p>Delivery Time: 10 min</p>
+                    <% }) %>
+                <% } else { %>
+                    <div class="empty-state">
+                        <p>No delivered orders found</p>
                     </div>
-                    <button class="action-btn">View Receipt</button>
-                </div>
-
-                <div class="delivered-card" id="order-1225">
-                    <p>#1225 <span class="timestamp">Today, 12:45 PM</span></p>
-                    <p>2 x Aloo Parantha, 1 x Paneer Tikka, 2 x Lassi</p>
-                    <p>Customer: Raj Patel</p>
-                    <p>Address: 789 Broadway, Floor 3</p>
-                    <div class="details">
-                        <p>Order Time: 12:10 PM</p>
-                        <p>Processing Time: 22 min</p>
-                        <p>Delivery Time: 13 min</p>
-                    </div>
-                    <button class="action-btn">View Receipt</button>
-                </div>
-
-                <div class="delivered-card" id="order-1222">
-                    <p>#1222 <span class="timestamp">Today, 11:20 AM</span></p>
-                    <p>1 x Veg Sandwich, 1 x French Fries, 1 x Iced Tea</p>
-                    <p>Customer: Emily Wilson</p>
-                    <p>Address: 321 Oak St</p>
-                    <div class="details">
-                        <p>Order Time: 10:55 AM</p>
-                        <p>Processing Time: 15 min</p>
-                        <p>Delivery Time: 10 min</p>
-                    </div>
-                    <button class="action-btn">View Receipt</button>
-                </div>
-
-                <div class="delivered-card" id="order-1218">
-                    <p>#1218 <span class="timestamp">Yesterday, 8:15 PM</span></p>
-                    <p>3 x Chicken Wings, 2 x Beer, 1 x Onion Rings</p>
-                    <p>Customer: Michael Brown</p>
-                    <p>Address: 567 Pine St, Apt 7C</p>
-                    <div class="details">
-                        <p>Order Time: 7:45 PM</p>
-                        <p>Processing Time: 20 min</p>
-                        <p>Delivery Time: 10 min</p>
-                    </div>
-                    <button class="action-btn">View Receipt</button>
-                </div>
-
-                <div class="delivered-card" id="order-1215">
-                    <p>#1215 <span class="timestamp">Yesterday, 7:30 PM</span></p>
-                    <p>2 x Pasta, 1 x Garlic Bread, 2 x Wine</p>
-                    <p>Customer: Lisa Garcia</p>
-                    <p>Address: 890 Maple Ave</p>
-                    <div class="details">
-                        <p>Order Time: 7:00 PM</p>
-                        <p>Processing Time: 20 min</p>
-                        <p>Delivery Time: 10 min</p>
-                    </div>
-                    <button class="action-btn">View Receipt</button>
-                </div>
-
-                <div class="delivered-card" id="order-1210">
-                    <p>#1210 <span class="timestamp">Yesterday, 6:45 PM</span></p>
-                    <p>1 x Family Pizza, 2 x Salad, 4 x Soda</p>
-                    <p>Customer: David Smith</p>
-                    <p>Address: 123 Elm St</p>
-                    <div class="details">
-                        <p>Order Time: 6:15 PM</p>
-                        <p>Processing Time: 18 min</p>
-                        <p>Delivery Time: 12 min</p>
-                    </div>
-                    <button class="action-btn">View Receipt</button>
-                </div>
-
-                <div class="delivered-card" id="order-1205">
-                    <p>#1205 <span class="timestamp">Yesterday, 5:30 PM</span></p>
-                    <p>2 x Burrito, 1 x Nachos, 3 x Mexican Coke</p>
-                    <p>Customer: Maria Rodriguez</p>
-                    <p>Address: 456 Cedar St, Apt 2D</p>
-                    <div class="details">
-                        <p>Order Time: 5:00 PM</p>
-                        <p>Processing Time: 20 min</p>
-                        <p>Delivery Time: 10 min</p>
-                    </div>
-                    <button class="action-btn">View Receipt</button>
-                </div>
+                <% } %>
             </div>
         </div>
 
         <!-- Pagination -->
+        <% if (totalPages > 1) { %>
         <div class="pagination">
-            <button class="active">1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>Next »</button>
+            <% if (currentPage > 1) { %>
+                <button onclick="window.location.href='?page=<%= currentPage - 1 %>'">&laquo; Prev</button>
+            <% } %>
+            
+            <% for(let i = 1; i <= totalPages; i++) { %>
+                <button class="<%= currentPage === i ? 'active' : '' %>" 
+                        onclick="window.location.href='?page=<%= i %>'"><%= i %></button>
+            <% } %>
+            
+            <% if (currentPage < totalPages) { %>
+                <button onclick="window.location.href='?page=<%= currentPage + 1 %>'">Next &raquo;</button>
+            <% } %>
         </div>
+        <% } %>
     </div>
 
     <!-- Toast Notification -->
     <div class="toast" id="toast">Receipt downloaded!</div>
 
     <script>
-        // Update delivered count
-        function updateCount() {
-            document.getElementById('delivered-count').textContent = document.querySelectorAll('.delivered-card').length;
-        }
-
         // Show toast notification
         function showToast(message) {
             const toast = document.getElementById('toast');
@@ -581,55 +445,16 @@
             }, 3000);
         }
 
-        // Event listeners for view buttons
-        document.querySelectorAll('.view-btn').forEach(btn => {
-            // Event delegation for receipt buttons
-            document.addEventListener('click', function(e) {
-                if (e.target.classList.contains('action-btn')) {
-                    const orderId = e.target.closest('.delivered-card').id.split('-')[1];
-                    window.location.href = `receipt.html?id=${orderId}`;
-                }
-            });
-        });
-
         // Event listeners for filter button
         document.querySelector('.filter-btn').addEventListener('click', function() {
             const fromDate = document.getElementById('date-from').value;
             const toDate = document.getElementById('date-to').value;
-            showToast(`Filtered from ${fromDate} to ${toDate}`);
-        });
-
-        // Event listeners for pagination
-        document.querySelectorAll('.pagination button').forEach(btn => {
-            btn.addEventListener('click', function() {
-                if (this.textContent !== 'Next »') {
-                    document.querySelectorAll('.pagination button').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                }
-                showToast(`Page ${this.textContent === 'Next »' ? '2' : this.textContent} selected`);
-            });
-        });
-
-        // Event delegation for receipt buttons
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('action-btn')) {
-                const orderId = e.target.closest('.delivered-card').id.split('-')[1];
-                showToast(`Receipt for order #${orderId} viewed`);
+            if (!fromDate || !toDate) {
+                showToast('Please select both dates');
+                return;
             }
+            window.location.href = `/history?from=${fromDate}&to=${toDate}`;
         });
-
-        // Add hover effect to sidebar items
-        document.querySelectorAll('.sidebar li').forEach(item => {
-            item.addEventListener('mouseover', function() {
-                this.style.paddingLeft = '25px';
-            });
-            item.addEventListener('mouseout', function() {
-                this.style.paddingLeft = '20px';
-            });
-        });
-
-        // Initialize
-        updateCount();
     </script>
 </body>
 </html>

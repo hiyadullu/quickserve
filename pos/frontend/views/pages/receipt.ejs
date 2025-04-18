@@ -199,7 +199,7 @@
             Back to Dashboard
         </a>
         <% if (locals.pdfMode) { %>
-        <a href="/receipt/<%= order.id %>/pdf" class="btn">
+        <a href="/receipt/<%= order.order_id %>/pdf" class="btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                 <polyline points="7 10 12 15 17 10"/>
@@ -221,24 +221,16 @@
     <div class="receipt-container" id="receipt">
         <div class="receipt-header">
             <h2>QuickServe</h2>
-            <p><%= restaurant.address %></p>
+            <p><%= restaurant.location %></p>
             <p>Tel: <%= restaurant.phone %> | <%= restaurant.email %></p>
         </div>
 
         <div class="receipt-info">
             <div class="receipt-info-group">
                 <h3>Order Information</h3>
-                <p><strong>Order #:</strong> <%= order.id %></p>
-                <p><strong>Date:</strong> <%= order.date %></p>
-                <p><strong>Time:</strong> <%= order.time %></p>
-                <p><strong>Payment Method:</strong> <%= order.paymentMethod %></p>
-            </div>
-            <div class="receipt-info-group">
-                <h3>Customer Information</h3>
-                <p><strong>Name:</strong> <%= customer.name %></p>
-                <p><strong>Address:</strong> <%= customer.address %></p>
-                <p><strong>Phone:</strong> <%= customer.phone %></p>
-                <p><strong>Email:</strong> <%= customer.email %></p>
+                <p><strong>Order #:</strong> <%= order.order_id %></p>
+                <p><strong>Time:</strong> <%= order.order_time %></p>
+                <p><strong>Payment Method:</strong> <%= order.payment_method %></p>
             </div>
         </div>
 
@@ -296,9 +288,9 @@
         <div class="receipt-footer">
             <p>Thank you for your order!</p>
             <div class="barcode">
-                <img src="/barcode/<%= order.id %>" alt="Order Barcode">
+                <img src="/barcode/<%= order.order_id %>" alt="Order Barcode">
             </div>
-            <p>Receipt ID: QSRCT-<%= new Date().getFullYear() %>-<%= order.id %></p>
+            <p>Receipt ID: QSRCT-<%= new Date().getFullYear() %>-<%= order.order_id %></p>
         </div>
     </div>
 </body>

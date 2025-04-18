@@ -5,12 +5,15 @@
         <li class="<%= currentPage === 'tables' ? 'active' : '' %>"><a href="/dashboard/tables">Tables</a></li>
         <li class="<%= currentPage === 'dashboard' ? 'active' : '' %>"><a href="/dashboard">Dashboard</a></li>
         <li class="<%= currentPage === 'history' ? 'active' : '' %>"><a href="/dashboard/history">History</a></li>
-        <li class="<%= currentPage === 'declined' ? 'active' : '' %>"><a href="/dashboard/declined">Declined</a></li>
-        <li class="<%= currentPage === 'settings' ? 'active' : '' %>"><a href="/dashboard/settings">Settings</a></li>
+        <li>
+            <!-- Logout Button -->
+            <form action="/auth/logout" method="POST" style="margin-top: auto;">
+                <button type="submit" class="logout-btn" style="background: none; border: none; color: #fff; font-size: 16px; cursor: pointer;">
+                    Logout
+                </button>
+            </form>
+        </li>
     </ul>
 
-     <!-- Logout Button -->
-     <form action="/auth/logout" method="POST" style="margin-top: auto;">
-        <button type="submit" class="logout-btn">Logout</button>
-    </form>
+     
 </div> 
