@@ -4,85 +4,394 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            height: 100vh;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+                  
+        body {
+            background-color: #f9f5f0;
+            color: #242424;
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
         }
-
-        .error-container {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 500px;
+        
+        .container {
+            display: flex;
             width: 90%;
+            max-width: 1200px;
+            height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: white;
+            overflow: hidden;
         }
-
-        .error-icon {
-            font-size: 5rem;
-            color: #ff6b6b;
-            margin-bottom: 1rem;
-            animation: bounce 2s infinite;
+        
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 5% 5%;
+            background: linear-gradient(145deg, #fff, #f0f0f0);
         }
-
+        
+        .right-section {
+            flex: 1;
+            background: #790017;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
         h1 {
-            color: #2d3436;
+            font-size: 8rem;
+            font-weight: 700;
+            color: #790017;
             margin-bottom: 0.5rem;
         }
-
-        p {
-            color: #636e72;
+        
+        h2 {
+            font-size: 2rem;
+            font-weight: 300;
             margin-bottom: 2rem;
+            color: #333;
         }
-
-        .home-button {
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 2.5rem;
+            max-width: 400px;
+        }
+        
+        .back-button {
             display: inline-block;
-            padding: 12px 30px;
-            background: #6c5ce7;
+            padding: 12px 28px;
+            background-color: #790017;
             color: white;
             text-decoration: none;
             border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(121, 0, 23, 0.2);
+        }
+        
+        .back-button:hover {
+            background-color: #5e0012;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(121, 0, 23, 0.3);
+        }
+        
+        /* The French Woman Animation */
+        .wine-taster {
+            width: 280px;
+            height: 350px;
+            position: relative;
+        }
+        
+        .head {
+            width: 100px;
+            height: 130px;
+            background: #ffdbac;
+            border-radius: 50% 50% 40% 40%;
+            position: absolute;
+            top: 50px;
+            left: 90px;
+            z-index: 2;
+        }
+        
+        .hair {
+            width: 120px;
+            height: 140px;
+            background: #f0cb6a;
+            border-radius: 50% 50% 30% 30%;
+            position: absolute;
+            top: 20px;
+            left: 80px;
+            z-index: 1;
+        }
+        
+        /* Longer hair with styling */
+        .hair:after {
+            content: "";
+            position: absolute;
+            width: 110px;
+            height: 70px;
+            background: #f0cb6a;
+            border-radius: 20% 20% 40% 40%;
+            bottom: -30px;
+            left: 5px;
+        }
+        
+        .bangs {
+            width: 100px;
+            height: 30px;
+            background: #f0cb6a;
+            border-radius: 40% 40% 0 0;
+            position: absolute;
+            top: 50px;
+            left: 90px;
+            z-index: 3;
+        }
+        
+        .mole {
+            width: 4px;
+            height: 4px;
+            background: #333;
+            border-radius: 50%;
+            position: absolute;
+            top: 110px;
+            left: 110px;
+            z-index: 3;
+        }
+        
+        .eyes {
+            position: absolute;
+            top: 85px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 3;
+        }
+        
+        .eye {
+            width: 14px;
+            height: 6px;
+            background: #333;
+            margin: 0 15px;
+            border-radius: 0 0 50% 50%;
+        }
+        
+        .eyebrows {
+            position: absolute;
+            top: 78px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 3;
+        }
+        
+        .eyebrow {
+            width: 20px;
+            height: 4px;
+            background: #d3a45f;
+            margin: 0 12px;
+        }
+        
+        .nose {
+            width: 8px;
+            height: 14px;
+            background: #ffcfab;
+            position: absolute;
+            top: 95px;
+            left: 135px;
+            border-radius: 30% 30% 60% 60%;
+            z-index: 3;
+        }
+        
+        .mouth {
+            width: 30px;
+            height: 8px;
+            background: #d46c74;
+            position: absolute;
+            top: 125px;
+            left: 125px;
+            border-radius: 0 0 10px 10px;
+            z-index: 3;
+        }
+        
+        .neck {
+            width: 30px;
+            height: 40px;
+            background: #ffdbac;
+            position: absolute;
+            top: 175px;
+            left: 125px;
+            z-index: 1;
+        }
+        
+        .body {
+            width: 140px;
+            height: 180px;
+            background: #222;
+            position: absolute;
+            top: 200px;
+            left: 70px;
+            border-radius: 40px 40px 0 0;
+            z-index: 1;
+        }
+        
+        /* Corrected arm position and animation */
+        .arm {
+            width: 20px;
+            height: 140px;
+            background: #222;
+            position: absolute;
+            top: 210px;
+            left: 70px; /* Start from left side */
+            border-radius: 10px;
+            transform: rotate(20deg); /* Initial angle */
+            transform-origin: top;
+            z-index: 3; /* Bring to front */
+            animation: sipWine 6s infinite ease-in-out;
+        }
+        
+        .hand {
+            width: 24px;
+            height: 30px;
+            background: #ffdbac;
+            position: absolute;
+            bottom: -20px;
+            left: -2px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+        
+        /* Corrected martini glass style */
+        .wine-glass {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            bottom: -60px;
+            left: -20px;
+            z-index: 2;
+        }
+        
+        .glass-top {
+            width: 60px;
+            height: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            position: absolute;
+            clip-path: polygon(0 0, 100% 0, 83% 100%, 17% 100%);
+            background: rgba(255, 255, 255, 0.2); /* Transparent glass */
+            top: 0;
+        }
+        
+        .wine {
+            width: 54px;
+            height: 32px;
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%);
+            background: rgba(175, 0, 14, 0.8); /* Red wine */
+            z-index: -1;
+        }
+        
+        .glass-stem {
+            width: 2px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            bottom: -25px;
+            left: 29px;
+        }
+        
+        .glass-base {
+            width: 25px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            bottom: -30px;
+            left: 17px;
+            border-radius: 50%;
+        }
+        
+        /* Corrected animation for sipping movement */
+        @keyframes sipWine {
+            0%, 100% { transform: rotate(20deg); } /* Starting position */
+            40% { transform: rotate(65deg); } /* Lifted to mouth */
+            60% { transform: rotate(65deg); } /* Hold at mouth */
+            80% { transform: rotate(20deg); } /* Return to starting position */
+        }
+        
+        /* 404 floating animation */
+        .floating-404 {
+            position: absolute;
+            font-size: 180px;
+            color: rgba(255, 255, 255, 0.05);
             font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 0;
+            animation: float 8s ease-in-out infinite;
         }
-
-        .home-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
         }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
             }
-            40% {
-                transform: translateY(-20px);
+            
+            .right-section {
+                min-height: 300px;
             }
-            60% {
-                transform: translateY(-10px);
+            
+            h1 {
+                font-size: 5rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="error-container">
-        <div class="error-icon">
-            <i class="fas fa-exclamation-circle"></i>
+    <div class="container">
+        <div class="left-section">
+            <h1>404</h1>
+            <h2>Page Not Found</h2>
+            <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            <button class="back-button" onclick="history.back()">Go Back</button>
         </div>
-        <h1>Oops! Page Not Found</h1>
-        <p><%= message || 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.' %></p>
-        <a href="/" class="home-button">
-            <i class="fas fa-home"></i> Back to Home
-        </a>
+        <div class="right-section">
+            <div class="floating-404">404</div>
+            <div class="wine-taster">
+                <div class="hair"></div>
+                <div class="head"></div>
+                <div class="bangs"></div>
+                <div class="mole"></div>
+                <div class="eyebrows">
+                    <div class="eyebrow"></div>
+                    <div class="eyebrow"></div>
+                </div>
+                <div class="eyes">
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                </div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+                <div class="neck"></div>
+                <div class="body"></div>
+                <div class="arm">
+                    <div class="hand"></div>
+                    <div class="wine-glass">
+                        <div class="glass-top"></div>
+                        <div class="wine"></div>
+                        <div class="glass-stem"></div>
+                        <div class="glass-base"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
