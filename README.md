@@ -3,7 +3,6 @@
 QuickServe is a digital QR and ledger-based Point of Sale (POS) system designed for small to medium-level restaurants and cafes.  
 It enables seamless order management, improves customer experience, and simplifies backend operations for vendors and administrators.
 
----
 
 ## Features
 
@@ -27,14 +26,12 @@ It enables seamless order management, improves customer experience, and simplifi
    - Serves as the public-facing website for the product.
    - Allows businesses to request a demo by submitting email, phone number, and business details.
 
----
 
 ## Prerequisites
 
 Make sure you have the following installed before working on or running the project:
 
 - Node.js (v16 or higher)
-- npm or yarn
+- npm 
 - PostgreSQL (latest version)
-- Docker and Docker Compose (optional for containerization)
 - Git
