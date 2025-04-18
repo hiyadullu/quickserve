@@ -38,7 +38,3 @@ Make sure you have the following installed before working on or running the proj
 - PostgreSQL (latest version)
 - Docker and Docker Compose (optional for containerization)
 - Git
-
----
-
-
